@@ -8,10 +8,11 @@ verbatim in the training file, and the R005 cross-variant comparisons.
 """
 
 import json
-import random
 import unicodedata
 from collections import Counter
 from pathlib import Path
+
+import numpy as np
 
 RUNS = Path("artifacts/runs")
 DATA = Path("data/processed")
@@ -107,18 +108,23 @@ def accuracy(cases):
 
 def paired_bootstrap(a, b, samples=10_000, seed=13):
     """Accuracy difference b - a with a 95% percentile interval over rows."""
-    rng = random.Random(seed)
-    n = len(a)
-    diffs = []
-    for _ in range(samples):
-        idx = [rng.randrange(n) for _ in range(n)]
-        diffs.append(sum(b[i] - a[i] for i in idx) / n)
-    diffs.sort()
+    rng = np.random.default_rng(seed)
+    d = np.asarray(b, dtype=float) - np.asarray(a, dtype=float)
+    n = len(d)
+    # Chunked to bound memory at about 1000 x n indices.
+    diffs = np.sort(
+        np.concatenate(
+            [
+                d[rng.integers(0, n, (min(1000, samples - i), n))].mean(axis=1)
+                for i in range(0, samples, 1000)
+            ]
+        )
+    )
     return {
-        "diff": round((sum(b) - sum(a)) / n, 4),
+        "diff": round(float(d.mean()), 4),
         "ci95": [
-            round(diffs[int(0.025 * samples)], 4),
-            round(diffs[int(0.975 * samples)], 4),
+            round(float(diffs[int(0.025 * samples)]), 4),
+            round(float(diffs[int(0.975 * samples)]), 4),
         ],
     }
 

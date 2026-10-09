@@ -52,8 +52,8 @@ on accuracy difference, 10k resamples, seed 13.
 
 | Comparison | SIB val | SIB test | News val | News test |
 |---|---|---|---|---|
-| R003 - base | -4.0 [-11.1, +3.0] | +3.9 [-1.5, +9.3] | +6.5 [+3.2, +9.8] | +5.0 [+3.1, +7.1] |
-| R003 - base@512 | - | - | +3.0 [+0.6, +5.5] | +2.5 [+1.0, +4.1] |
+| R003 - base | -4.0 [-11.1, +3.0] | +3.9 [-1.5, +9.3] | +6.5 [+3.2, +9.7] | +5.0 [+3.0, +7.1] |
+| R003 - base@512 | - | - | +3.0 [+0.6, +5.5] | +2.5 [+1.0, +4.2] |
 | R002 - base@512 | - | - | +0.3 [-0.8, +1.4] | -1.4 [-2.3, -0.6] |
 
 ## Deviation: context-length control (added after first results)

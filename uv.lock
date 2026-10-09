@@ -725,6 +725,8 @@ dependencies = [
     { name = "datasets", version = "5.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.14' or sys_platform != 'win32'" },
     { name = "huggingface-hub" },
     { name = "laya" },
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
 ]
 
 [package.dev-dependencies]
@@ -739,6 +741,7 @@ requires-dist = [
     { name = "datasets", specifier = ">=1.1.1" },
     { name = "huggingface-hub", specifier = ">=1.33.0" },
     { name = "laya", specifier = "==0.4.1" },
+    { name = "numpy", specifier = ">=2.4.6" },
 ]
 
 [package.metadata.requires-dev]

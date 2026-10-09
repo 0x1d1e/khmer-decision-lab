@@ -74,15 +74,15 @@ R006 - R003, paired bootstrap 95% CI, points:
 | | MASSIVE | Khmer News | SIB-200 |
 |---|---|---|---|
 | s13 test | +0.40 [-0.57, +1.38] | +37.6 [+35.1, +40.1] | +23.5 [+16.7, +30.4] |
-| s14 test | 0.00 [-1.04, +1.04] | +38.2 [+35.6, +40.7] | +21.6 [+14.7, +28.4] |
-| s13 val | +0.69 [-0.59, +1.97] | +39.6 [+35.6, +43.6] | +11.1 [+1.0, +21.2] |
-| s14 val | -0.98 [-2.31, +0.34] | +39.2 [+35.1, +43.1] | +17.2 [+7.1, +27.3] |
+| s14 test | 0.00 [-1.04, +1.01] | +38.2 [+35.6, +40.7] | +21.6 [+14.7, +28.4] |
+| s13 val | +0.69 [-0.59, +1.97] | +39.6 [+35.6, +43.6] | +11.1 [+1.0, +22.2] |
+| s14 val | -0.98 [-2.26, +0.34] | +39.2 [+35.1, +43.1] | +17.2 [+7.1, +27.3] |
 
 Macro-F1 test, s13 / s14: MASSIVE 0.788 / 0.783 (R003 0.782), News 0.917 /
 0.923 (R003 0.492), SIB-200 0.759 / 0.740 (R003 0.492).
 
-Seed spread (s14 - s13): MASSIVE val -1.67 [-2.95, -0.39], test -0.40
-[-1.38, +0.61]; News and SIB-200 CIs include 0.
+Seed spread (s14 - s13): MASSIVE val -1.67 [-2.90, -0.44], test -0.40
+[-1.41, +0.57]; News and SIB-200 CIs include 0.
 
 Per-label test recall, R003 -> R006 s13: News `life` 8% -> 80%, `economic`
 26% -> 91%, `entertainment` 37% -> 95%; SIB-200 `health` 14% -> 68%,
@@ -92,7 +92,7 @@ mostly `life` <-> `technology` / `entertainment` and `economic` -> `politic`.
 ### Verdicts
 
 - **H1 no forgetting: supported.** Test lower bounds -0.57 (s13) and -1.04
-  (s14) are above -2.0. On validation the s14 lower bound is -2.31, so the
+  (s14) are above -2.0. On validation the s14 lower bound is -2.26, so the
   margin is not large; H1 is defined on test.
 - **H2 in-domain gain: supported.** All four test CIs exclude 0 by a wide
   margin.
@@ -113,7 +113,7 @@ Candidate count (MASSIVE accuracy):
 
 R006 - R003 CIs include 0 at k2-k20; k60 +1.85 [+0.5, +3.2], k60 long
 +1.41 [+0.1, +2.7]. The long head (`max_len` 768, `head_max_len` 576) adds
-+16.2 [+14.5, +18.0] for R006, as for R003 (+16.7).
++16.2 [+14.5, +17.9] for R006, as for R003 (+16.7).
 
 Option order (5 seeded permutations):
 

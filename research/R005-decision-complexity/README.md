@@ -104,16 +104,16 @@ Accuracy %, validation / test. Chance = 1/k.
 | k | base@512 | R002 | R003 | R003 - base (test) |
 |---:|---|---|---|---|
 | 2 | 66.9 / 64.0 | 74.7 / 72.9 | 96.7 / 97.1 | +33.1 [+31.3, +34.8] |
-| 5 | 38.2 / 36.9 | 50.9 / 46.5 | 92.8 / 92.6 | +55.7 [+53.8, +57.5] |
-| 7 | 30.6 / 29.5 | 42.6 / 39.3 | 92.0 / 90.7 | +61.2 [+59.3, +63.1] |
+| 5 | 38.2 / 36.9 | 50.9 / 46.5 | 92.8 / 92.6 | +55.7 [+53.8, +57.6] |
+| 7 | 30.6 / 29.5 | 42.6 / 39.3 | 92.0 / 90.7 | +61.2 [+59.4, +63.0] |
 | 20 | 12.4 / 12.9 | 23.1 / 21.0 | 83.4 / 83.4 | +70.5 [+68.8, +72.2] |
-| 60 | 6.2 / 5.3 | 6.8 / 5.7 | 55.7 / 52.7 | +47.4 [+45.5, +49.2] |
-| 60, long head | 3.9 / 4.7 | 9.9 / 9.5 | 69.5 / 69.4 | +64.6 [+62.8, +66.4] |
+| 60 | 6.2 / 5.3 | 6.8 / 5.7 | 55.7 / 52.7 | +47.4 [+45.6, +49.2] |
+| 60, long head | 3.9 / 4.7 | 9.9 / 9.5 | 69.5 / 69.4 | +64.6 [+62.9, +66.4] |
 
 - Nested k=20 agrees with the original draw (base 13.6 / 13.3, R002 23.6 /
   22.6, R003 83.1 / 83.7).
-- Long head vs default at k=60 (test): R003 +16.7 [+14.9, +18.6], R002 +3.9
-  [+2.8, +5.0], base -0.6 [-1.5, +0.3] (validation -2.3 [-3.3, -1.2]).
+- Long head vs default at k=60 (test): R003 +16.7 [+14.9, +18.5], R002 +3.9
+  [+2.8, +4.9], base -0.6 [-1.5, +0.3] (validation -2.3 [-3.3, -1.2]).
 - Truncation damage is concentrated on the 15 intents that collide at 256
   head tokens (`audio_volume_*`, `iot_hue_*`, `iot_wemo_*`, `email_query*`,
   `iot_cleaning`/`iot_coffee`). R003 test accuracy on those rows (n=427):
@@ -138,7 +138,7 @@ Accuracy %, validation / test. Chance = 1/k.
 | | R003 | 1.0 / 2.5 | 13.1% / 16.7% | -2.0 [-8.8, +4.9] |
 | Khmer News | base@512 | 1.2 / 0.7 | 13.8% / 12.1% | |
 | | R002 | 1.5 / 0.8 | 16.2% / 14.5% | +2.5 [+1.0, +4.0] |
-| | R003 | 1.1 / 0.3 | 9.2% / 10.0% | -2.1 [-4.0, -0.2] |
+| | R003 | 1.1 / 0.3 | 9.2% / 10.0% | -2.1 [-4.0, -0.1] |
 
 Validation flip-rate differences have the same sign. Significant ones: R003
 on MASSIVE -75.3 and News -4.5; R002 on MASSIVE -2.0 and News +2.4.
@@ -158,13 +158,13 @@ brackets).
 | Set | Model | raw id - short | desc - short |
 |---|---|---|---|
 | MASSIVE | base@512 | -0.9 [-2.0, +0.1] (val -0.3) | - |
-| | R002 | -1.5 [-2.9, -0.0] (val -1.1) | - |
-| | R003 | -2.6 [-3.6, -1.7] (val -1.3) | - |
+| | R002 | -1.5 [-2.8, -0.0] (val -1.1) | - |
+| | R003 | -2.6 [-3.5, -1.7] (val -1.3) | - |
 | SIB-200 | base@512 | -0.5 [-2.9, +2.0] (val 0.0) | -1.5 [-5.9, +2.9] (val -10.1 [-17.2, -4.0]) |
 | | R002 | -2.0 [-4.9, +1.0] (val -1.0) | -2.0 [-6.4, +2.5] (val -10.1 [-17.2, -4.0]) |
 | | R003 | -0.5 [-1.5, 0.0] (val +1.0 [0.0, +3.0]) | -2.5 [-6.9, +2.0] (val -7.1 [-13.1, -2.0]) |
-| Khmer News | base@512 | -0.8 [-1.7, -0.1] (val -0.9) | -0.7 [-2.3, +1.0] (val +0.6) |
-| | R002 | -0.7 [-1.6, +0.3] (val -1.7) | -0.5 [-2.1, +1.1] (val -0.6) |
+| Khmer News | base@512 | -0.8 [-1.7, 0.0] (val -0.9) | -0.7 [-2.3, +1.0] (val +0.6) |
+| | R002 | -0.7 [-1.6, +0.3] (val -1.7) | -0.5 [-2.1, +1.2] (val -0.6) |
 | | R003 | -0.8 [-1.5, -0.1] (val -1.2) | +0.7 [-0.8, +2.3] (val +1.4) |
 
 ## Verdicts
@@ -184,7 +184,7 @@ brackets).
   (accuracies 52-54%) is the cleaner one.
 - **H3a supported on MASSIVE and Khmer News, unresolved on SIB-200.** Raw
   ids are never better than short text: the largest point estimate is +1.0,
-  and on MASSIVE and News every CI upper bound is ≤ +0.3. On SIB-200 the CIs
+  and on MASSIVE and News every test CI upper bound is ≤ +0.3. On SIB-200 the CIs
   are too wide for the ≤ +1 criterion (upper bounds up to +3.0). Raw ids are
   significantly worse for R003 on MASSIVE (-2.6, the text it was trained on)
   and on News test.
