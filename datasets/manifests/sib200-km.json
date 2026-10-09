@@ -1,0 +1,19 @@
+{
+  "dataset": "Davlan/sib200",
+  "config": "khm_Khmr",
+  "revision": "38977a667f6fc264d5c26ec57a01e16db040b358",
+  "note": "Original release. mteb/sib200 khm_Khmr was rejected: its validation split is identical to its test split.",
+  "labels": [
+    "entertainment",
+    "geography",
+    "health",
+    "politics",
+    "science/technology",
+    "sports",
+    "travel"
+  ],
+  "splits": {
+    "validation": 99,
+    "test": 204
+  }
+}

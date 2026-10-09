@@ -1,0 +1,18 @@
+{
+  "dataset": "CADT-IDRI/Khmer_News_classification_unsegmented",
+  "config": "default",
+  "revision": "2707fac4b9f1ffb820d4cae1257fece6a0b380c6",
+  "note": "Unsegmented variant, closest to real input. License not stated on the dataset card.",
+  "labels": [
+    "economic",
+    "entertainment",
+    "life",
+    "politic",
+    "sport",
+    "technology"
+  ],
+  "splits": {
+    "validation": 661,
+    "test": 1543
+  }
+}

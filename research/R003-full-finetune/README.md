@@ -34,7 +34,7 @@ of the 6 GB VRAM. The exact error and peak memory were not saved.
 
 ## Results
 
-Independent eval via `scripts/eval_massive.py`:
+Independent eval via `scripts/evaluate.py`:
 
 | Model | Val acc | Test acc | Test macro-F1 | Test ECE | Test Brier |
 |---|---:|---:|---:|---:|---:|

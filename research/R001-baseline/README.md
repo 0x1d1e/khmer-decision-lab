@@ -15,10 +15,15 @@ model is overconfident on Khmer.
 - Inference: Laya defaults on CUDA (bf16 autocast from checkpoint
   `amp_dtype`). Each row has a distinct candidate set, so every request is a
   single example (`rows_alone` = all rows).
+- The base config uses `max_len` 1024, while R002/R003 inherit 512 from
+  training. This does not matter on MASSIVE (short utterances), but it does
+  on long inputs (R004).
 
 ## Results
 
-Full splits, from `uv run python scripts/eval_massive.py {validation,test}`:
+Full splits. The MASSIVE reports came from `scripts/eval_massive.py` (commit
+`f2c761a`), which `scripts/evaluate.py` replaced. Same harness and settings;
+the old script lacked the revision pin and VRAM fields.
 
 | Metric | Validation | Test |
 |---|---:|---:|
