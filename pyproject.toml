@@ -1,7 +1,7 @@
 [project]
 name = "khmer-decision-lab"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reproducible research on lightweight Khmer decision models"
 readme = "README.md"
 authors = [
     { name = "LazyGreed", email = "kosalseng3010@gmail.com" }
@@ -10,6 +10,7 @@ requires-python = ">=3.11"
 dependencies = [
     "bitsandbytes>=0.50.2",
     "datasets>=1.1.1",
+    "huggingface-hub>=1.33.0",
     "laya==0.4.1",
 ]
 
@@ -25,3 +26,7 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.16.10",
 ]
+
+[tool.ruff.lint.isort]
+# The top-level datasets/ manifest directory is not the Hugging Face package.
+known-third-party = ["datasets"]

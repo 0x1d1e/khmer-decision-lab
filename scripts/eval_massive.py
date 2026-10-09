@@ -1,11 +1,19 @@
+"""Evaluate base, R002 and R003 checkpoints on one MASSIVE Khmer split.
+
+Usage: uv run python scripts/eval_massive.py {validation,test}
+"""
+
 import json
+import sys
 from pathlib import Path
 
 import laya
 from laya import evals
 from laya.evals_cli import RouterRunner
 
-DATASET = "data/processed/massive-km-test-full.jsonl"
+SPLIT = sys.argv[1] if len(sys.argv) > 1 else "test"
+assert SPLIT in ("validation", "test"), SPLIT
+DATASET = f"data/processed/massive-km-{SPLIT}-full.jsonl"
 
 CHECKPOINTS = {
     "head-e2": "artifacts/checkpoints/R002-head",
@@ -14,10 +22,7 @@ CHECKPOINTS = {
 
 dataset = evals.Dataset.from_jsonl(DATASET)
 
-models = {
-    name: str(Path(path).resolve())
-    for name, path in CHECKPOINTS.items()
-}
+models = {name: str(Path(path).resolve()) for name, path in CHECKPOINTS.items()}
 
 for name, path in models.items():
     assert Path(path).is_dir(), f"Missing checkpoint: {name}"
@@ -50,7 +55,7 @@ for name in ("multilingual", "head-e2", "full-e2-8bit"):
         },
     )
 
-    output = Path(f"artifacts/runs/{name}-test.json")
+    output = Path(f"artifacts/runs/{name}-{SPLIT}.json")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(report.to_json(), indent=2, ensure_ascii=False),
@@ -76,7 +81,4 @@ for metric in (
         results[name].get(metric, float("nan"))
         for name in ("multilingual", "head-e2", "full-e2-8bit")
     ]
-    print(
-        f"{metric:<28}"
-        + "".join(f"{value:>10.4f}" for value in values)
-    )
+    print(f"{metric:<28}" + "".join(f"{value:>10.4f}" for value in values))
