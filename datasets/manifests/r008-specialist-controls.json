@@ -1,0 +1,169 @@
+{
+  "study": "R008-specialist-controls",
+  "status": "locked_exploratory",
+  "protocol_sha256": "1fc9bcc920eb51ec0f9827827f0910c1c15f19a8cc38693f2ff33a05209b3542",
+  "preparer_sha256": "ce3292e1471f005d88e708e0e537fe16f0cfac2f7387c06ef241e3154c21498e",
+  "implementation_sha256": {
+    "scripts/train_full_8bit.py": "9bf60e2d5bbfed740f039589f7a1b4ebfb6f50bd067eb60d54758e7d542f0ff5",
+    "scripts/laya_amp.py": "9c1eb076971201a502f8c6327bce09cfda92f4733b4383b0c5caa888f34972f6",
+    "scripts/calibrate_r008.py": "03fe4b9d4b557f3e278b5acfab4de438920e885a5a25b448fa8f8a682f1f902f",
+    "scripts/evaluate_r008.py": "0e8046ca1ca20de8b247adeac0bcff3bc8940429590c872d4cb377d5b92902a9",
+    "scripts/summarize_r008.py": "4b6b0916a02661addd4dc997ea803c027db25f94a24be8c5a88bf0772a84a66c",
+    "scripts/r008_identity.py": "61f23f4eff8f7cef7b8218abf3e997d4219b78a773c6c078fbf3515f16f8ad11"
+  },
+  "source": {
+    "r006_manifest": "datasets/manifests/r006-multitask.json",
+    "r006_manifest_sha256": "f0ce6488d679f3b33ecab6c525c6a6f9e82ad0d40d9d17fff15de7f91c00fd78",
+    "mixed_training_file": "data/processed/r006-multitask-train.jsonl",
+    "mixed_training_sha256": "509efb156bf676ea11882d6af052a4b6447984165929ef88b798df92e81043b3",
+    "expected_mixed_training_sha256": "509efb156bf676ea11882d6af052a4b6447984165929ef88b798df92e81043b3",
+    "mixed_training_rows": 17351,
+    "task_rows": {
+      "massive-km": 11514,
+      "khmer-news": 5136,
+      "sib200-km": 701
+    }
+  },
+  "training_split": {
+    "method": "Laya 0.4.1 split_calibration index selection reproduced before training",
+    "historical_calibration_seed": 20260922,
+    "historical_calib_max": 400,
+    "historical_calib_fraction": 0.1,
+    "removed_rows_by_task": {
+      "massive-km": 252,
+      "khmer-news": 128,
+      "sib200-km": 20
+    },
+    "removed_rows_total": 400,
+    "laya_training_calibration_disabled": true,
+    "arms": {
+      "multitask": {
+        "file": "data/processed/r008-multitask-train.jsonl",
+        "sha256": "908eab8b108bb8c4252a821c794c26f8f4742b92e021c76fd4dd8a85cc665378",
+        "rows": 16951,
+        "task_rows": {
+          "khmer-news": 5008,
+          "massive-km": 11262,
+          "sib200-km": 681
+        }
+      },
+      "khmer-news-specialist": {
+        "file": "data/processed/r008-khmer-news-train.jsonl",
+        "sha256": "77f2ef6ee7e7dd0be762f30f68d6150b4db3cc1f868e94f0c47480cbfc462bcf",
+        "rows": 5008,
+        "task_rows": {
+          "khmer-news": 5008
+        }
+      },
+      "sib200-specialist": {
+        "file": "data/processed/r008-sib200-km-train.jsonl",
+        "sha256": "ed2ebd5fbb9e8bdbc78dd9eccaeaa146ee117c1809afc36305036740657930c3",
+        "rows": 681,
+        "task_rows": {
+          "sib200-km": 681
+        }
+      }
+    },
+    "target_task_train_test_exact_state_overlap_rows": {
+      "khmer-news": 0,
+      "sib200-km": 0
+    }
+  },
+  "validation_calibration": {
+    "khmer-news": {
+      "dataset_manifest": "datasets/manifests/khmer-news.json",
+      "dataset_manifest_sha256": "a1fe54b4f67f4a05b84deba811e6373a7a311375b48f82e552f0a24aa085b6b1",
+      "dataset": "CADT-IDRI/Khmer_News_classification_unsegmented",
+      "revision": "2707fac4b9f1ffb820d4cae1257fece6a0b380c6",
+      "source_validation_file": "data/processed/khmer-news-validation.jsonl",
+      "source_validation_sha256": "46d316ea7ca632102183817b1a8d51656eb0719d46b2188af9073aa4079ea17d",
+      "source_validation_rows": 661,
+      "calibration_file": "data/processed/r008-khmer-news-calibration.jsonl",
+      "calibration_sha256": "bf161209f4e4da15f08c353a819be200ae40be4313766f80a998cab4631967b4",
+      "calibration_rows": 657,
+      "test_file": "data/processed/khmer-news-test.jsonl",
+      "test_sha256": "8a710b7f17f06424b45b61d7ce07756a9bde8fc4ed8075647628063cbb67551e",
+      "test_rows": 1543,
+      "test_exact_normalized_state_groups": 1542,
+      "validation_rows_excluded_for_exact_test_state_overlap": 4,
+      "train_test_exact_state_overlap_rows": 0
+    },
+    "sib200-km": {
+      "dataset_manifest": "datasets/manifests/sib200-km.json",
+      "dataset_manifest_sha256": "945b0728295db856d55346dfbb02f03e7b1d56aa43a518382e05925481548d63",
+      "dataset": "Davlan/sib200",
+      "revision": "38977a667f6fc264d5c26ec57a01e16db040b358",
+      "source_validation_file": "data/processed/sib200-km-validation.jsonl",
+      "source_validation_sha256": "61c5fbeb3ce5467aa30aad076209b8e692c1ab8e180512e51e58555d5796d701",
+      "source_validation_rows": 99,
+      "calibration_file": "data/processed/r008-sib200-km-calibration.jsonl",
+      "calibration_sha256": "61c5fbeb3ce5467aa30aad076209b8e692c1ab8e180512e51e58555d5796d701",
+      "calibration_rows": 99,
+      "test_file": "data/processed/sib200-km-test.jsonl",
+      "test_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+      "test_rows": 204,
+      "test_exact_normalized_state_groups": 204,
+      "validation_rows_excluded_for_exact_test_state_overlap": 0,
+      "train_test_exact_state_overlap_rows": 0
+    }
+  },
+  "recipe": {
+    "base_model": "convaiinnovations/laya/multilingual",
+    "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "epochs": 2,
+    "micro_batch": 1,
+    "grad_accum": 32,
+    "encoder_lr": 2.5e-05,
+    "head_lr": 0.0001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "loss": "soft-ce",
+    "freeze_encoder": false,
+    "max_len": 512,
+    "head_max_len": 256,
+    "shuffle_options": [
+      "choice"
+    ],
+    "amp": true,
+    "gradient_checkpointing": true,
+    "optimizer": "bitsandbytes.optim.PagedAdamW8bit",
+    "expected_optimizer_updates_per_seed": {
+      "multitask": 1060,
+      "khmer-news-specialist": 314,
+      "sib200-specialist": 44
+    },
+    "seeds": [
+      13,
+      14
+    ],
+    "matched_on": "per-task row exposure and epochs, not aggregate optimizer updates"
+  },
+  "environment": {
+    "uv_lock_sha256": "7513ff3426257f4c485549f9e49bfe43556bdebcf2c9967cb388fb900d211015",
+    "laya": "0.4.1",
+    "torch": "2.14.1",
+    "bitsandbytes": "0.50.2"
+  },
+  "inference": {
+    "device": "cuda",
+    "autocast_dtype": "bfloat16",
+    "laya_cuda_amp": "bf16"
+  },
+  "amp_guard_scope": "Controlled standalone serial R008 training only, with the frozen dependency lock; see scripts/laya_amp.py and its safety review.",
+  "evaluation": {
+    "test_reports": "artifacts/runs/R008/{task}/{arm}-s{seed}.json",
+    "test_task_rows": {
+      "khmer-news": 1543,
+      "sib200-km": 204
+    },
+    "grouping": "sha256 of NFC-normalized, whitespace-collapsed complete state JSON",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 13,
+    "interval_percentiles": [
+      2.5,
+      97.5
+    ],
+    "noninferiority_margin_percentage_points": -2.0
+  }
+}
