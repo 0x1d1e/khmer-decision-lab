@@ -95,7 +95,7 @@ matched context. On SIB-200 the data cannot tell either way.
   R002 is far better calibrated (0.09-0.14), because head-only training lowered
   its confidence overall, not because it became more accurate. A per-task
   temperature fit on validation would be the fair calibration comparison
-  (R006/R008).
+  (separate from the joint training/calibration change in R006).
 - **Ranking still helps:** R003 has the best AURC on every split (News test
   0.279 vs 0.329 base), so its confidence orders errors better even though
   its level is off.
@@ -107,7 +107,8 @@ matched context. On SIB-200 the data cannot tell either way.
   (0.44 -> 0.37). This points to label-description and prior effects (R005).
 - **Tokenization:** the mmBERT tokenizer averages 1.0 Khmer characters per
   token (5.8 for English), so 512 tokens is about 500 Khmer characters. It
-  limits long-document tasks and drives latency (R007/R009).
+  limits long-document tasks and drives latency; tokenizer/context studies
+  remain separate from [R007's transfer evaluation](../R007-unseen-transfer/).
 
 ## Efficiency
 

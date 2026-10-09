@@ -192,8 +192,9 @@ for task, (pattern, experiments) in TASKS.items():
             entry["recall_by_label"] = label_recall(golds, preds)
             correct[model] = [int(c["correct"]) for c in cases]
             outcomes[task, split, model] = (correct[model], preds)
-            if "peak_vram_mib" in report["config"]:
-                entry["peak_vram_mib"] = report["config"]["peak_vram_mib"]
+            for key in ("peak_vram_mib", "measurement_protocol", "peak_vram_scope"):
+                if key in report["config"]:
+                    entry[key] = report["config"][key]
             if in_train is not None:
                 seen = [c for c, flag in zip(cases, in_train) if flag]
                 unseen = [c for c, flag in zip(cases, in_train) if not flag]

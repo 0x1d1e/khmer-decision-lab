@@ -1,0 +1,242 @@
+{
+  "audit_date": "2026-10-09",
+  "status": "exploratory_targets_prepared_locked",
+  "selection_amendment": {
+    "request": "Use Khmer ASAG and MKQA instead of waiting for SEA-NLI.",
+    "manifest": "datasets/manifests/r007-unseen-transfer.json",
+    "primary": "mkqa-entity-choice",
+    "secondary": "asag",
+    "decision_basis": "ASAG's consistency-filtered, deduplicated slice has only 23 test groups. Derived MKQA has substantially more entity/query groups; neither is a confirmatory native Khmer benchmark.",
+    "checkpoint_scoring_started": false,
+    "training_started": false
+  },
+  "asag": {
+    "dataset": "phorknorak/khmer-asag-benchmark",
+    "revision": "5fadaef3422c5784458d662394b5d891e7ebb659",
+    "file": "dataset_no_10c_biology.csv",
+    "license": "CC-BY-NC-4.0",
+    "decision": "Secondary exploratory teacher-credit diagnostic on a selected consistent, unique-input slice, not universal correctness or an untouched holdout.",
+    "quality_findings": [
+      "118 rows have conflicting binned grades for identical normalized inputs; all excluded, with no preferred-label selection.",
+      "286 repeated input/label rows collapsed, one invalid score excluded and three incomplete inputs excluded at 2048 tokens.",
+      "Only 23 test question groups; 72 retained student hashes cross audit/test. Not unseen-student evaluation.",
+      "Reserved spot-check did not establish a grading rubric, factual correctness of references or native expert certification."
+    ],
+    "responsible_use": "No re-identification or contact with students, teachers or schools; no standalone high-stakes grading. Model input omits identity, class, school, year and score metadata."
+  },
+  "mkqa": {
+    "repository": "apple/ml-mkqa",
+    "revision": "f964fe1bac4d580cee3d4928572df1f676f8e656",
+    "file": "dataset/mkqa.jsonl.gz",
+    "license": "CC-BY-SA-3.0",
+    "decision": "Primary exploratory Khmer-query/English-entity-choice task, not standard MKQA or open-ended QA.",
+    "quality_findings": [
+      "A reserved preview found Thai-script entity names in original km annotations. Use a uniform name vocabulary from English annotations for gold and distractors.",
+      "Require one accepted entity QID with English/Khmer agreement; 42 single-km-entity rows disagree across languages and are excluded.",
+      "Random distractors may be easy or semantically ambiguous; queries and historical answers may be awkward or dated.",
+      "Eight source IDs were inspected under the superseded rendering; retain their entire final components in audit. Exact IDs are in the manifest."
+    ],
+    "interpretation": "Agreement with this derived release. English choices and fixed whole-release label vocabulary are part of the benchmark definition; no target-trained model or performance-based selection.",
+    "prepared_partition_counts_after_quarantine": {
+      "audit": {
+        "precision_assumption": "Independent groups; not established, especially with shared ASAG students. Bounds are design diagnostics, not observed model CIs.",
+        "size_weighted_effective_groups": 336.8083916083916,
+        "accuracy_95_hoeffding_half_width": 0.07400154418149532,
+        "paired_difference_95_hoeffding_half_width": 0.14800308836299064,
+        "rows": 694,
+        "groups": 545,
+        "label_counts": {
+          "A": 181,
+          "B": 163,
+          "C": 197,
+          "D": 153
+        }
+      },
+      "test": {
+        "precision_assumption": "Independent groups; not established, especially with shared ASAG students. Bounds are design diagnostics, not observed model CIs.",
+        "size_weighted_effective_groups": 1330.2912238080778,
+        "accuracy_95_hoeffding_half_width": 0.037235644125024836,
+        "paired_difference_95_hoeffding_half_width": 0.07447128825004967,
+        "rows": 2093,
+        "groups": 1723,
+        "label_counts": {
+          "A": 525,
+          "B": 543,
+          "C": 504,
+          "D": 521
+        }
+      }
+    }
+  },
+  "target_predictions_generated": false,
+  "access_terms_accepted": false,
+  "belebele": {
+    "dataset": "facebook/belebele",
+    "revision": "7899cdfa4e1e0d733fd77c848e2c273cb1d32be2",
+    "source_file": "data/khm_Khmr.jsonl",
+    "source_file_sha256": "af41fc3a36343ea0f83b5ecf089e952e8f712dad22081783e562e50965b16cd7",
+    "license": "CC-BY-SA-4.0",
+    "gated": false,
+    "questions": 900,
+    "passage_groups": 488,
+    "group_key": "link",
+    "overlap_check": {
+      "normalization": "Unicode NFKC, retaining only characters whose Unicode general category begins L, N or M",
+      "adaptation_text": "Single space joining each processed row's state values, in insertion order",
+      "comparison": "Either normalized adaptation text is a substring of normalized flores_passage or the reverse; minimum length of the shorter string is 60 retained characters",
+      "exposure_scope": "All adaptation source rows, including rows later assigned to calibration",
+      "adaptation_manifest": "datasets/manifests/r006-multitask.json",
+      "sources": [
+        {
+          "file": "data/processed/massive-km-train-full.jsonl",
+          "sha256": "0d9a37e0579106fd406aa174a130e3cca5fecc575d6856fceb5d61aed4330ab5",
+          "rows": 11514,
+          "matching_passage_groups": 0,
+          "affected_questions": 0
+        },
+        {
+          "file": "data/processed/khmer-news-train.jsonl",
+          "sha256": "25c3ebd3a52fdcc364fcfe622e24b5c6119bfb6ee516daa29185685a21c87c0b",
+          "rows": 5136,
+          "matching_passage_groups": 0,
+          "affected_questions": 0
+        },
+        {
+          "file": "data/processed/sib200-km-train.jsonl",
+          "sha256": "f1a7114248d4f7612636d0a0be200e8e08bfc930da00f450095a109747d3b08a",
+          "rows": 701,
+          "matching_passage_groups": 315,
+          "affected_questions": 583
+        }
+      ],
+      "nonmatching_questions": 317,
+      "nonmatching_passage_groups": 173,
+      "limitations": [
+        "Nonmatches do not exclude partial, near-duplicate, semantic or pretraining overlap.",
+        "Counts precede any audit reservation or manual label-quality review.",
+        "Whole-passage equality misses training sentences embedded in passages."
+      ]
+    },
+    "decision": "Reject full set as clean unseen-text confirmation under the current gate. Reading-comprehension task and labels remain new, but adapted text exposure confounds that comparison. Nonmatching remainder is too small for confirmatory claims and is not fully audited.",
+    "sources": [
+      "https://huggingface.co/datasets/facebook/belebele/tree/7899cdfa4e1e0d733fd77c848e2c273cb1d32be2",
+      "https://aclanthology.org/2024.acl-long.44/"
+    ]
+  },
+  "sea_nli": {
+    "dataset": "aisingapore/SEA-NLI",
+    "revision": "f3a73ccb4213ff995ef2bf8bcb903eaf53195713",
+    "attempted_file": "normal/test-00000-of-00001.parquet",
+    "access_check": "No locally configured Hugging Face credentials; pinned payload download raised GatedRepoError. No access request submitted.",
+    "selection_status": "superseded_by_operator_choice",
+    "decision": "Historical conditional candidate remains gated and unaudited. ASAG/MKQA replace it; its access approval is no longer an R007 prerequisite."
+  },
+  "inspection_disclosure": {
+    "dataset": "phorknorak/khmer-asag-benchmark",
+    "note": "A public Hugging Face page fetch exposed Biology Q7-Q10 student answers and grading labels before group reservation. Their connected groups are forced to audit. Reserved ASAG and MKQA samples were subsequently reviewed; do not describe this audit-informed derived study as untouched confirmation."
+  },
+  "additional_test_exposure": {
+    "dataset": "apple/ml-mkqa derived mkqa-entity-choice",
+    "rows_emitted": 87,
+    "source_test_line_range_1_indexed": [
+      2120,
+      2206
+    ],
+    "disclosure": "An accidental shell search output exposed model-facing MKQA test rows and gold labels before protocol lock. These rows and all final connected components containing them are quarantined in audit; they are not untouched test data.",
+    "source_ids_persisted_in": "datasets/manifests/r007-unseen-transfer.json additional_mkqa_test_exposure_source_ids and targets.mkqa-entity-choice.audit_source_ids",
+    "checkpoint_scoring_started": false,
+    "training_started": false,
+    "source_ids": [
+      "mkqa:-1628198652370122618",
+      "mkqa:-1739160055668946178",
+      "mkqa:-1792142003460532685",
+      "mkqa:-2116924521509405474",
+      "mkqa:-2279736431350904133",
+      "mkqa:-2878612275776239433",
+      "mkqa:-3336853410194824920",
+      "mkqa:-364635528503064225",
+      "mkqa:-4051797878603257671",
+      "mkqa:-4079501360632666635",
+      "mkqa:-4585273144916701648",
+      "mkqa:-4670358332103076641",
+      "mkqa:-4795649820336631411",
+      "mkqa:-4796256705084179689",
+      "mkqa:-4834952628694822073",
+      "mkqa:-4988966900977295714",
+      "mkqa:-5027877953586573120",
+      "mkqa:-5155851190521267156",
+      "mkqa:-5204051071778439945",
+      "mkqa:-5379461449961067329",
+      "mkqa:-5476378947514613767",
+      "mkqa:-5633170475871936807",
+      "mkqa:-5675324994915280778",
+      "mkqa:-5779087988204512933",
+      "mkqa:-5841550508559779777",
+      "mkqa:-5860978641451248758",
+      "mkqa:-5953668955228832920",
+      "mkqa:-5984734820224640376",
+      "mkqa:-6206485579779452882",
+      "mkqa:-6236828979997085343",
+      "mkqa:-641784624712602786",
+      "mkqa:-66327497241821520",
+      "mkqa:-6833524675513893965",
+      "mkqa:-7114068855233082253",
+      "mkqa:-7128832251820540006",
+      "mkqa:-7247623029104792921",
+      "mkqa:-7461600424446973077",
+      "mkqa:-762930927176712682",
+      "mkqa:-7719864220311874429",
+      "mkqa:-7777606181360344187",
+      "mkqa:-7826444086913016557",
+      "mkqa:-783096745406898875",
+      "mkqa:-7908423204462836045",
+      "mkqa:-806008116627337296",
+      "mkqa:-8276458214241854863",
+      "mkqa:-8319359377581726065",
+      "mkqa:-843909058600034837",
+      "mkqa:-8736955974921746503",
+      "mkqa:-8983137535639837730",
+      "mkqa:1162687162492750961",
+      "mkqa:136972444588876537",
+      "mkqa:160462365288125381",
+      "mkqa:1605903962310739428",
+      "mkqa:2009481386569838770",
+      "mkqa:2381938879170761525",
+      "mkqa:2435557196367437261",
+      "mkqa:2798927680094101511",
+      "mkqa:3072590264362653765",
+      "mkqa:3475861671182753717",
+      "mkqa:3506569397136907907",
+      "mkqa:3511042621024751743",
+      "mkqa:366401565827441613",
+      "mkqa:3693742505271288593",
+      "mkqa:392385488264586853",
+      "mkqa:4318168127658657527",
+      "mkqa:463321303576974739",
+      "mkqa:5111945099118929011",
+      "mkqa:5468187589053946737",
+      "mkqa:5895380370801031278",
+      "mkqa:6265074932803252556",
+      "mkqa:6307517988420504148",
+      "mkqa:6334372079855380267",
+      "mkqa:6353121042331564318",
+      "mkqa:652881902268734841",
+      "mkqa:6822663346480960869",
+      "mkqa:7090097599298220443",
+      "mkqa:7272526264843607782",
+      "mkqa:7332569254170441425",
+      "mkqa:7413176576162269138",
+      "mkqa:7609394874328013444",
+      "mkqa:7894058635465180577",
+      "mkqa:7986080147947252400",
+      "mkqa:8096533595241371101",
+      "mkqa:8609032591740725636",
+      "mkqa:8777228227588168396",
+      "mkqa:9046889476222355445",
+      "mkqa:994642490959176193"
+    ],
+    "quarantined_source_id_count": 87,
+    "post_quarantine_test_rows": 2093,
+    "post_quarantine_test_groups": 1723
+  }
+}

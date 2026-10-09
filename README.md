@@ -28,8 +28,27 @@ and non-autoregressive decision models.
 | [R004](research/R004-cross-task/) | Cross-task generalization (SIB-200, Khmer News) | done |
 | [R005](research/R005-decision-complexity/) | Decision complexity: candidate count, option order, option text | done |
 | [R006](research/R006-multitask/) | Multi-task fine-tuning (MASSIVE + Khmer News + SIB-200) | done |
+| [R007](research/R007-unseen-transfer/) | Frozen transfer: derived MKQA choices + ASAG grading | exploratory protocol locked, no scores yet |
 
 Machine-readable metrics: `research/results.json`.
+
+## Current evidence
+
+Full-encoder adaptation reaches about 84% on MASSIVE Khmer with 20
+candidates. R006 adds Khmer News (93%) and SIB-200 (74-76%) without a
+measurable MASSIVE test loss across its two seeds. These are all trained
+tasks: unseen-task transfer and superiority over single-task specialists
+remain untested. R007 tests transfer before further training; OCR robustness
+and tokenizer/context changes follow separately.
+
+Metric definitions: `brier` is the Brier score of top-answer confidence
+against correctness, not multiclass Brier. `latency_*` is request wall time;
+`cost_per_decision_*` divides batch time by batch size and measures amortized
+cost, not individual request latency. Historical reports include cold
+loading in timing and may count the preceding model in peak VRAM. New
+`scripts/evaluate.py` reports are tagged `isolated-warm-v1`: models unload
+before loading the next; loading and warm-up are recorded separately.
+Do not compare efficiency across these protocols as if they were identical.
 
 ## Reproduction
 
@@ -38,6 +57,8 @@ git-ignored `data/` and `artifacts/` directories.
 
 ```
 uv sync --frozen
+# Checks: uv run ruff check .; uv run pytest -q
+# GPU regression tests need the existing local data/checkpoints; otherwise skip.
 uv run python scripts/prepare_massive.py           # R000 data
 # R002: laya-train command in research/R002-head-finetune/README.md
 uv run python scripts/train_full_8bit.py           # R003, about 37 min on RTX 3050
@@ -51,5 +72,7 @@ done; done
 # R004 max_len control: see research/R004-cross-task/README.md
 # R005: prepare_r005.py + eval loop in research/R005-decision-complexity/README.md
 # R006: prepare_r006.py + train/eval loop in research/R006-multitask/README.md
+uv run python scripts/prepare_r007.py              # R007 exploratory exports; no scoring
+# R007: scoring requires the committed locked manifest; see research/R007-unseen-transfer/README.md
 uv run python scripts/summarize_runs.py            # research/results.json
 ```

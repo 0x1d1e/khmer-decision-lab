@@ -170,11 +170,46 @@ longer).
 - R003 has one seed; the R006 - R003 comparison mixes method and seed
   variance.
 - SIB-200 test has 204 rows; its CIs are wide and its ECE is noisy.
-- One choice temperature is fit on a 400-row slice of the mixed file; its
-  per-task composition is not recorded.
+- One pooled choice temperature is fit on a 400-row slice of the mixed file.
+  Only 20 of those rows are SIB-200 (audit below), so the slice offers little
+  task-specific calibration evidence.
 - The topic tasks are now in-domain. This experiment says nothing about
-  generalization to an unseen Khmer task; that needs a held-out task (R007+).
+  generalization to an unseen Khmer task; that is
+  [R007's question](../R007-unseen-transfer/).
 - Secondary results are seed 13 only.
+
+## Post-run audit
+
+The hypotheses, verdicts and historical metrics above are unchanged.
+R006 demonstrates joint adaptation, not superiority over News/SIB-only
+specialists or transfer to tasks absent from training.
+
+The saved training reports use calibration seed `20260922` for both model
+seeds. Reconstructing Laya 0.4.1's `read_data`, `items_from_rows` and
+`split_calibration` on the manifest-hashed mixed file yields 17,351 usable
+items, no skipped items, and 16,951 weight-training items. The 400 held-out
+calibration items contain **252 MASSIVE, 128 News and 20 SIB-200** rows.
+Both runs therefore share the calibration partition. These counts were
+reconstructed after the runs, not logged as per-task telemetry at the time.
+They limit calibration interpretation; they do not explain SIB errors by
+themselves. Weight-training data and calibration distribution changed
+together, so their effects remain unseparated.
+
+The preserved run log contains the scheduler-before-optimizer warning for
+both seeds. Laya's AMP path calls `scaler.step(optimizer)` and
+`scaler.update()`, then unconditionally calls `scheduler.step()`. A skipped
+optimizer update can therefore advance the schedule. Neither skip counts
+nor effective updates were recorded; their historical values are unknown.
+Before another training experiment, reproduce and correct this upstream
+behavior and record actual optimizer identity, successful/skipped updates,
+training-only duration, peak allocated VRAM and failures. Do not retrain
+R006 merely to fill these records.
+
+The current evaluation script isolates models and separates cold loading
+and warm-up from scored inference. Its efficiency numbers follow a new
+measurement protocol; rerunning the commands below does not reproduce the
+historical cold-load timing/VRAM fields exactly. Historical accuracy reports
+and `research/results.json` are preserved.
 
 ## Reproduction
 
