@@ -6,7 +6,8 @@
           "R001",
           "R002",
           "R003",
-          "R005"
+          "R005",
+          "R006"
         ],
         "n": 2033,
         "options_per_row": [
@@ -332,6 +333,166 @@
             "accuracy_utterance_in_train": 0.1211,
             "accuracy_utterance_not_in_train": 0.1388,
             "report": "artifacts/runs/massive-km-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8382,
+            "ece": 0.0188,
+            "brier": 0.0857,
+            "aurc": 0.0304,
+            "mean_confidence": 0.8415,
+            "selective_accuracy@50": 0.9921,
+            "selective_accuracy@80": 0.9392,
+            "latency_p50_ms": 17.4577,
+            "latency_p95_ms": 20.0094,
+            "cost_per_decision_p50_ms": 17.4577,
+            "macro_f1": 0.8056,
+            "recall_by_label": {
+              "alarm_query": 0.7895,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9355,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6,
+              "audio_volume_up": 0.75,
+              "calendar_query": 0.8922,
+              "calendar_remove": 0.8723,
+              "calendar_set": 0.9389,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.878,
+              "datetime_convert": 0.3333,
+              "datetime_query": 0.8125,
+              "email_addcontact": 1.0,
+              "email_query": 0.9452,
+              "email_querycontact": 0.8125,
+              "email_sendemail": 0.9048,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.6667,
+              "iot_cleaning": 0.9474,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8636,
+              "iot_hue_lightdim": 0.8235,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 0.8,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.86,
+              "lists_remove": 0.7027,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.8333,
+              "music_settings": 0.75,
+              "news_query": 0.8171,
+              "play_audiobook": 0.8571,
+              "play_game": 0.8636,
+              "play_music": 0.9675,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.9348,
+              "qa_currency": 0.9062,
+              "qa_definition": 0.7091,
+              "qa_factoid": 0.7667,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.7917,
+              "recommendation_events": 0.6154,
+              "recommendation_locations": 0.7097,
+              "recommendation_movies": 0.6667,
+              "social_post": 0.88,
+              "social_query": 0.5556,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.7917,
+              "transport_query": 0.6944,
+              "transport_taxi": 0.8519,
+              "transport_ticket": 0.8,
+              "transport_traffic": 0.8182,
+              "weather_query": 0.9048
+            },
+            "peak_vram_mib": 1505.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8166,
+            "accuracy_utterance_not_in_train": 0.8417,
+            "report": "artifacts/runs/massive-km-validation/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.8214,
+            "ece": 0.0229,
+            "brier": 0.0917,
+            "aurc": 0.0364,
+            "mean_confidence": 0.83,
+            "selective_accuracy@50": 0.9912,
+            "selective_accuracy@80": 0.9262,
+            "latency_p50_ms": 17.5317,
+            "latency_p95_ms": 20.0566,
+            "cost_per_decision_p50_ms": 17.5317,
+            "macro_f1": 0.7842,
+            "recall_by_label": {
+              "alarm_query": 0.7368,
+              "alarm_remove": 0.5,
+              "alarm_set": 0.9032,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6667,
+              "audio_volume_up": 0.8333,
+              "calendar_query": 0.8627,
+              "calendar_remove": 0.8511,
+              "calendar_set": 0.916,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.7561,
+              "datetime_convert": 0.2222,
+              "datetime_query": 0.8594,
+              "email_addcontact": 1.0,
+              "email_query": 0.8767,
+              "email_querycontact": 0.75,
+              "email_sendemail": 0.9365,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.6762,
+              "iot_cleaning": 0.9474,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8182,
+              "iot_hue_lightdim": 0.8824,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 0.6,
+              "iot_hue_lightup": 0.9167,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 0.7143,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.82,
+              "lists_remove": 0.6757,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.6875,
+              "music_query": 0.8,
+              "music_settings": 0.625,
+              "news_query": 0.7927,
+              "play_audiobook": 0.7714,
+              "play_game": 0.8636,
+              "play_music": 0.9512,
+              "play_podcasts": 0.8529,
+              "play_radio": 0.9348,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.6909,
+              "qa_factoid": 0.7444,
+              "qa_maths": 0.6923,
+              "qa_stock": 0.8333,
+              "recommendation_events": 0.5769,
+              "recommendation_locations": 0.7419,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.82,
+              "social_query": 0.6667,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.875,
+              "transport_query": 0.7222,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.68,
+              "transport_traffic": 0.7727,
+              "weather_query": 0.8968
+            },
+            "peak_vram_mib": 2502.4,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8062,
+            "accuracy_utterance_not_in_train": 0.824,
+            "report": "artifacts/runs/massive-km-validation/mt-s14.json"
           }
         },
         "accuracy_diffs": {
@@ -362,6 +523,41 @@
               0.6744,
               0.7162
             ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0069,
+            "ci95": [
+              -0.0059,
+              0.0197
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": -0.0098,
+            "ci95": [
+              -0.0231,
+              0.0034
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7019,
+            "ci95": [
+              0.6808,
+              0.7231
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.6852,
+            "ci95": [
+              0.664,
+              0.7063
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0167,
+            "ci95": [
+              -0.0295,
+              -0.0039
+            ]
           }
         }
       },
@@ -370,7 +566,8 @@
           "R001",
           "R002",
           "R003",
-          "R005"
+          "R005",
+          "R006"
         ],
         "n": 2974,
         "options_per_row": [
@@ -696,6 +893,166 @@
             "accuracy_utterance_in_train": 0.1096,
             "accuracy_utterance_not_in_train": 0.1371,
             "report": "artifacts/runs/massive-km-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.841,
+            "ece": 0.0207,
+            "brier": 0.0901,
+            "aurc": 0.0346,
+            "mean_confidence": 0.8419,
+            "selective_accuracy@50": 0.9866,
+            "selective_accuracy@80": 0.9307,
+            "latency_p50_ms": 17.529,
+            "latency_p95_ms": 20.2916,
+            "cost_per_decision_p50_ms": 17.529,
+            "macro_f1": 0.7878,
+            "recall_by_label": {
+              "alarm_query": 0.7941,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9512,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.8125,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8413,
+              "calendar_remove": 0.9403,
+              "calendar_set": 0.9282,
+              "cooking_recipe": 0.7222,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8864,
+              "email_addcontact": 0.8333,
+              "email_query": 0.958,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6982,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.9259,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8974,
+              "lists_query": 0.7255,
+              "lists_remove": 0.5962,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8333,
+              "music_query": 0.8286,
+              "music_settings": 0.6667,
+              "news_query": 0.8065,
+              "play_audiobook": 0.9024,
+              "play_game": 0.8857,
+              "play_music": 0.9489,
+              "play_podcasts": 0.8413,
+              "play_radio": 0.9167,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7719,
+              "qa_factoid": 0.8652,
+              "qa_maths": 0.96,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6512,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8395,
+              "social_query": 0.52,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7429,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8438,
+            "accuracy_utterance_not_in_train": 0.8405,
+            "report": "artifacts/runs/massive-km-test/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.8369,
+            "ece": 0.0157,
+            "brier": 0.0971,
+            "aurc": 0.0373,
+            "mean_confidence": 0.8327,
+            "selective_accuracy@50": 0.9832,
+            "selective_accuracy@80": 0.924,
+            "latency_p50_ms": 17.478,
+            "latency_p95_ms": 20.0753,
+            "cost_per_decision_p50_ms": 17.478,
+            "macro_f1": 0.7834,
+            "recall_by_label": {
+              "alarm_query": 0.8235,
+              "alarm_remove": 0.7143,
+              "alarm_set": 0.9756,
+              "audio_volume_down": 0.9091,
+              "audio_volume_mute": 0.9062,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.5385,
+              "calendar_query": 0.8333,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.89,
+              "cooking_recipe": 0.7222,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.7955,
+              "email_addcontact": 0.75,
+              "email_query": 0.9412,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9474,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7456,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9444,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.8519,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8462,
+              "lists_query": 0.7255,
+              "lists_remove": 0.75,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.8056,
+              "music_query": 0.7429,
+              "music_settings": 0.5,
+              "news_query": 0.8145,
+              "play_audiobook": 0.8049,
+              "play_game": 0.9143,
+              "play_music": 0.9659,
+              "play_podcasts": 0.873,
+              "play_radio": 0.8472,
+              "qa_currency": 0.9231,
+              "qa_definition": 0.7368,
+              "qa_factoid": 0.8369,
+              "qa_maths": 0.88,
+              "qa_stock": 0.9615,
+              "recommendation_events": 0.7209,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8765,
+              "social_query": 0.56,
+              "takeaway_order": 0.9091,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 2502.4,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8368,
+            "accuracy_utterance_not_in_train": 0.8369,
+            "report": "artifacts/runs/massive-km-test/mt-s14.json"
           }
         },
         "accuracy_diffs": {
@@ -726,6 +1083,41 @@
               0.6866,
               0.7206
             ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.004,
+            "ci95": [
+              -0.0057,
+              0.0138
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0,
+            "ci95": [
+              -0.0104,
+              0.0104
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7078,
+            "ci95": [
+              0.6907,
+              0.7246
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.7038,
+            "ci95": [
+              0.6863,
+              0.7209
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.004,
+            "ci95": [
+              -0.0138,
+              0.0061
+            ]
           }
         }
       }
@@ -734,7 +1126,8 @@
       "validation": {
         "experiments": [
           "R004",
-          "R005"
+          "R005",
+          "R006"
         ],
         "n": 99,
         "options_per_row": [
@@ -843,6 +1236,56 @@
             },
             "peak_vram_mib": 1571.1,
             "report": "artifacts/runs/sib200-km-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6768,
+            "ece": 0.1204,
+            "brier": 0.1483,
+            "aurc": 0.1013,
+            "mean_confidence": 0.7654,
+            "selective_accuracy@50": 0.94,
+            "selective_accuracy@80": 0.775,
+            "latency_p50_ms": 95.9458,
+            "latency_p95_ms": 5114.1463,
+            "cost_per_decision_p50_ms": 12.1312,
+            "macro_f1": 0.6569,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.6429,
+              "science/technology": 0.84,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1571.1,
+            "report": "artifacts/runs/sib200-km-validation/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.7374,
+            "ece": 0.0852,
+            "brier": 0.1504,
+            "aurc": 0.0994,
+            "mean_confidence": 0.7225,
+            "selective_accuracy@50": 0.9,
+            "selective_accuracy@80": 0.8375,
+            "latency_p50_ms": 95.8256,
+            "latency_p95_ms": 3150.3645,
+            "cost_per_decision_p50_ms": 12.1517,
+            "macro_f1": 0.7314,
+            "recall_by_label": {
+              "entertainment": 0.4444,
+              "geography": 0.875,
+              "health": 0.6364,
+              "politics": 0.7857,
+              "science/technology": 0.8,
+              "sports": 0.8333,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 2502.6,
+            "report": "artifacts/runs/sib200-km-validation/mt-s14.json"
           }
         },
         "accuracy_diffs": {
@@ -873,13 +1316,49 @@
               -0.1111,
               0.0303
             ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1111,
+            "ci95": [
+              0.0101,
+              0.2121
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.1717,
+            "ci95": [
+              0.0707,
+              0.2727
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.0707,
+            "ci95": [
+              -0.0303,
+              0.1717
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.1313,
+            "ci95": [
+              0.0404,
+              0.2222
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.0606,
+            "ci95": [
+              -0.0202,
+              0.1414
+            ]
           }
         }
       },
       "test": {
         "experiments": [
           "R004",
-          "R005"
+          "R005",
+          "R006"
         ],
         "n": 204,
         "options_per_row": [
@@ -988,6 +1467,56 @@
             },
             "peak_vram_mib": 1584.5,
             "report": "artifacts/runs/sib200-km-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7598,
+            "ece": 0.1171,
+            "brier": 0.1595,
+            "aurc": 0.1046,
+            "mean_confidence": 0.7933,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.7988,
+            "latency_p50_ms": 104.5361,
+            "latency_p95_ms": 154.7636,
+            "cost_per_decision_p50_ms": 13.067,
+            "macro_f1": 0.7592,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.7647,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.8039,
+              "sports": 0.8,
+              "travel": 0.775
+            },
+            "peak_vram_mib": 1584.5,
+            "report": "artifacts/runs/sib200-km-test/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.7402,
+            "ece": 0.0765,
+            "brier": 0.1504,
+            "aurc": 0.104,
+            "mean_confidence": 0.7523,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.8171,
+            "latency_p50_ms": 103.6144,
+            "latency_p95_ms": 153.2608,
+            "cost_per_decision_p50_ms": 12.9518,
+            "macro_f1": 0.7395,
+            "recall_by_label": {
+              "entertainment": 0.4737,
+              "geography": 0.7647,
+              "health": 0.7273,
+              "politics": 0.7667,
+              "science/technology": 0.7843,
+              "sports": 0.84,
+              "travel": 0.725
+            },
+            "peak_vram_mib": 2502.4,
+            "report": "artifacts/runs/sib200-km-test/mt-s14.json"
           }
         },
         "accuracy_diffs": {
@@ -1018,6 +1547,41 @@
               -0.0147,
               0.0931
             ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.2353,
+            "ci95": [
+              0.1667,
+              0.3039
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.2157,
+            "ci95": [
+              0.1471,
+              0.2843
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2745,
+            "ci95": [
+              0.2059,
+              0.3431
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.2549,
+            "ci95": [
+              0.1814,
+              0.3284
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0196,
+            "ci95": [
+              -0.0735,
+              0.0294
+            ]
           }
         }
       }
@@ -1026,7 +1590,8 @@
       "validation": {
         "experiments": [
           "R004",
-          "R005"
+          "R005",
+          "R006"
         ],
         "n": 661,
         "options_per_row": [
@@ -1131,6 +1696,54 @@
             },
             "peak_vram_mib": 1597.1,
             "report": "artifacts/runs/khmer-news-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9395,
+            "ece": 0.0252,
+            "brier": 0.0453,
+            "aurc": 0.0101,
+            "mean_confidence": 0.9407,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.983,
+            "latency_p50_ms": 185.1314,
+            "latency_p95_ms": 187.9858,
+            "cost_per_decision_p50_ms": 23.1434,
+            "macro_f1": 0.9332,
+            "recall_by_label": {
+              "economic": 0.9541,
+              "entertainment": 0.9333,
+              "life": 0.9333,
+              "politic": 0.9688,
+              "sport": 0.9778,
+              "technology": 0.8333
+            },
+            "peak_vram_mib": 1597.1,
+            "report": "artifacts/runs/khmer-news-validation/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.9349,
+            "ece": 0.0218,
+            "brier": 0.0471,
+            "aurc": 0.0146,
+            "mean_confidence": 0.9278,
+            "selective_accuracy@50": 0.9909,
+            "selective_accuracy@80": 0.9811,
+            "latency_p50_ms": 185.5606,
+            "latency_p95_ms": 188.4734,
+            "cost_per_decision_p50_ms": 23.1954,
+            "macro_f1": 0.9273,
+            "recall_by_label": {
+              "economic": 0.9725,
+              "entertainment": 0.8889,
+              "life": 0.9333,
+              "politic": 0.9635,
+              "sport": 0.9889,
+              "technology": 0.8222
+            },
+            "peak_vram_mib": 2503.2,
+            "report": "artifacts/runs/khmer-news-validation/mt-s14.json"
           }
         },
         "accuracy_diffs": {
@@ -1161,13 +1774,49 @@
               0.0061,
               0.0545
             ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3964,
+            "ci95": [
+              0.3555,
+              0.4357
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.3918,
+            "ci95": [
+              0.351,
+              0.4312
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4266,
+            "ci95": [
+              0.3858,
+              0.466
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.4221,
+            "ci95": [
+              0.3812,
+              0.4614
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0045,
+            "ci95": [
+              -0.0182,
+              0.0091
+            ]
           }
         }
       },
       "test": {
         "experiments": [
           "R004",
-          "R005"
+          "R005",
+          "R006"
         ],
         "n": 1543,
         "options_per_row": [
@@ -1272,6 +1921,54 @@
             },
             "peak_vram_mib": 1597.1,
             "report": "artifacts/runs/khmer-news-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9255,
+            "ece": 0.0184,
+            "brier": 0.0548,
+            "aurc": 0.0117,
+            "mean_confidence": 0.9421,
+            "selective_accuracy@50": 0.9948,
+            "selective_accuracy@80": 0.9822,
+            "latency_p50_ms": 187.0101,
+            "latency_p95_ms": 192.594,
+            "cost_per_decision_p50_ms": 23.3796,
+            "macro_f1": 0.9171,
+            "recall_by_label": {
+              "economic": 0.9102,
+              "entertainment": 0.9476,
+              "life": 0.8,
+              "politic": 0.9777,
+              "sport": 0.9713,
+              "technology": 0.89
+            },
+            "peak_vram_mib": 1597.1,
+            "report": "artifacts/runs/khmer-news-test/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.9313,
+            "ece": 0.0114,
+            "brier": 0.0536,
+            "aurc": 0.0122,
+            "mean_confidence": 0.9269,
+            "selective_accuracy@50": 0.9961,
+            "selective_accuracy@80": 0.9749,
+            "latency_p50_ms": 185.9043,
+            "latency_p95_ms": 189.6452,
+            "cost_per_decision_p50_ms": 23.2475,
+            "macro_f1": 0.9232,
+            "recall_by_label": {
+              "economic": 0.9375,
+              "entertainment": 0.9286,
+              "life": 0.8333,
+              "politic": 0.9755,
+              "sport": 0.9761,
+              "technology": 0.8852
+            },
+            "peak_vram_mib": 2503.2,
+            "report": "artifacts/runs/khmer-news-test/mt-s14.json"
           }
         },
         "accuracy_diffs": {
@@ -1301,6 +1998,41 @@
             "ci95": [
               0.0097,
               0.0408
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3759,
+            "ci95": [
+              0.3506,
+              0.4005
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.3817,
+            "ci95": [
+              0.3558,
+              0.407
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4012,
+            "ci95": [
+              0.3752,
+              0.4264
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.407,
+            "ci95": [
+              0.3811,
+              0.4323
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.0058,
+            "ci95": [
+              -0.0039,
+              0.0156
             ]
           }
         }
@@ -1558,6 +2290,86 @@
             "accuracy_utterance_in_train": 0.6367,
             "accuracy_utterance_not_in_train": 0.6737,
             "report": "artifacts/runs/massive-km-k2-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9685,
+            "ece": 0.0092,
+            "brier": 0.0214,
+            "aurc": 0.0018,
+            "mean_confidence": 0.9734,
+            "selective_accuracy@50": 1.0,
+            "selective_accuracy@80": 0.9982,
+            "latency_p50_ms": 11.6807,
+            "latency_p95_ms": 12.2024,
+            "cost_per_decision_p50_ms": 11.6778,
+            "macro_f1": 0.9548,
+            "recall_by_label": {
+              "alarm_query": 0.9474,
+              "alarm_remove": 0.8571,
+              "alarm_set": 1.0,
+              "audio_volume_down": 0.875,
+              "audio_volume_mute": 0.9333,
+              "audio_volume_up": 0.9167,
+              "calendar_query": 0.9804,
+              "calendar_remove": 1.0,
+              "calendar_set": 1.0,
+              "cooking_query": 1.0,
+              "cooking_recipe": 0.9756,
+              "datetime_convert": 1.0,
+              "datetime_query": 0.9688,
+              "email_addcontact": 1.0,
+              "email_query": 0.9726,
+              "email_querycontact": 1.0,
+              "email_sendemail": 1.0,
+              "general_greet": 1.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.9619,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.9545,
+              "iot_hue_lightdim": 0.9412,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 1.0,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 1.0,
+              "lists_query": 1.0,
+              "lists_remove": 0.9459,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.875,
+              "music_query": 1.0,
+              "music_settings": 0.875,
+              "news_query": 0.9634,
+              "play_audiobook": 0.9143,
+              "play_game": 0.9545,
+              "play_music": 1.0,
+              "play_podcasts": 0.9412,
+              "play_radio": 0.9783,
+              "qa_currency": 1.0,
+              "qa_definition": 0.9455,
+              "qa_factoid": 1.0,
+              "qa_maths": 0.8462,
+              "qa_stock": 0.9167,
+              "recommendation_events": 0.8846,
+              "recommendation_locations": 0.9355,
+              "recommendation_movies": 0.9167,
+              "social_post": 0.98,
+              "social_query": 0.8889,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.9583,
+              "transport_query": 0.9444,
+              "transport_taxi": 0.8889,
+              "transport_ticket": 0.96,
+              "transport_traffic": 0.9545,
+              "weather_query": 0.9683
+            },
+            "peak_vram_mib": 1501.1,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.9689,
+            "accuracy_utterance_not_in_train": 0.9685,
+            "report": "artifacts/runs/massive-km-k2-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -1573,6 +2385,20 @@
             "ci95": [
               0.2774,
               0.3197
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0015,
+            "ci95": [
+              -0.0044,
+              0.0074
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.3,
+            "ci95": [
+              0.2789,
+              0.3212
             ]
           }
         }
@@ -1828,6 +2654,86 @@
             "accuracy_utterance_in_train": 0.6131,
             "accuracy_utterance_not_in_train": 0.6448,
             "report": "artifacts/runs/massive-km-k2-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9704,
+            "ece": 0.0044,
+            "brier": 0.0211,
+            "aurc": 0.0016,
+            "mean_confidence": 0.9724,
+            "selective_accuracy@50": 1.0,
+            "selective_accuracy@80": 0.9992,
+            "latency_p50_ms": 11.8313,
+            "latency_p95_ms": 12.4223,
+            "cost_per_decision_p50_ms": 11.8198,
+            "macro_f1": 0.9571,
+            "recall_by_label": {
+              "alarm_query": 1.0,
+              "alarm_remove": 0.9524,
+              "alarm_set": 1.0,
+              "audio_volume_down": 1.0,
+              "audio_volume_mute": 0.9688,
+              "audio_volume_other": 1.0,
+              "audio_volume_up": 0.8462,
+              "calendar_query": 0.9921,
+              "calendar_remove": 0.9552,
+              "calendar_set": 0.9856,
+              "cooking_recipe": 0.9583,
+              "datetime_convert": 0.9333,
+              "datetime_query": 0.9886,
+              "email_addcontact": 1.0,
+              "email_query": 0.9916,
+              "email_querycontact": 1.0,
+              "email_sendemail": 1.0,
+              "general_greet": 1.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.9822,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 0.9444,
+              "iot_hue_lightchange": 0.9722,
+              "iot_hue_lightdim": 1.0,
+              "iot_hue_lightoff": 0.9767,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 1.0,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.9487,
+              "lists_query": 0.9216,
+              "lists_remove": 0.8654,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.9722,
+              "music_query": 0.9429,
+              "music_settings": 1.0,
+              "news_query": 0.9516,
+              "play_audiobook": 0.9756,
+              "play_game": 0.9714,
+              "play_music": 0.9716,
+              "play_podcasts": 0.9365,
+              "play_radio": 0.9861,
+              "qa_currency": 0.9744,
+              "qa_definition": 0.9649,
+              "qa_factoid": 1.0,
+              "qa_maths": 1.0,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.9535,
+              "recommendation_locations": 0.9677,
+              "recommendation_movies": 1.0,
+              "social_post": 0.9877,
+              "social_query": 1.0,
+              "takeaway_order": 0.9545,
+              "takeaway_query": 1.0,
+              "transport_query": 0.9412,
+              "transport_taxi": 0.9565,
+              "transport_ticket": 0.9143,
+              "transport_traffic": 0.9333,
+              "weather_query": 0.9231
+            },
+            "peak_vram_mib": 1507.1,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.972,
+            "accuracy_utterance_not_in_train": 0.9701,
+            "report": "artifacts/runs/massive-km-k2-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -1843,6 +2749,20 @@
             "ci95": [
               0.3134,
               0.348
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": -0.0003,
+            "ci95": [
+              -0.0057,
+              0.005
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.3302,
+            "ci95": [
+              0.313,
+              0.3477
             ]
           }
         }
@@ -2100,6 +3020,86 @@
             "accuracy_utterance_in_train": 0.346,
             "accuracy_utterance_not_in_train": 0.3876,
             "report": "artifacts/runs/massive-km-k5-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9336,
+            "ece": 0.0071,
+            "brier": 0.0443,
+            "aurc": 0.007,
+            "mean_confidence": 0.9342,
+            "selective_accuracy@50": 1.0,
+            "selective_accuracy@80": 0.9889,
+            "latency_p50_ms": 12.0157,
+            "latency_p95_ms": 14.6771,
+            "cost_per_decision_p50_ms": 12.0157,
+            "macro_f1": 0.9116,
+            "recall_by_label": {
+              "alarm_query": 0.9474,
+              "alarm_remove": 0.8571,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.875,
+              "audio_volume_mute": 0.8,
+              "audio_volume_up": 0.8333,
+              "calendar_query": 0.9412,
+              "calendar_remove": 1.0,
+              "calendar_set": 0.9771,
+              "cooking_query": 1.0,
+              "cooking_recipe": 0.9268,
+              "datetime_convert": 1.0,
+              "datetime_query": 0.9531,
+              "email_addcontact": 1.0,
+              "email_query": 0.9726,
+              "email_querycontact": 1.0,
+              "email_sendemail": 0.9683,
+              "general_greet": 1.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.9333,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.9545,
+              "iot_hue_lightdim": 0.9412,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 1.0,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.94,
+              "lists_remove": 0.9189,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.8125,
+              "music_query": 0.9333,
+              "music_settings": 0.875,
+              "news_query": 0.9268,
+              "play_audiobook": 0.9143,
+              "play_game": 0.9545,
+              "play_music": 0.9919,
+              "play_podcasts": 0.9118,
+              "play_radio": 0.9565,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.8182,
+              "qa_factoid": 0.9333,
+              "qa_maths": 0.7692,
+              "qa_stock": 0.9167,
+              "recommendation_events": 0.8077,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.8333,
+              "social_post": 0.96,
+              "social_query": 0.7778,
+              "takeaway_order": 0.95,
+              "takeaway_query": 0.9167,
+              "transport_query": 0.8056,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.92,
+              "transport_traffic": 0.9091,
+              "weather_query": 0.9365
+            },
+            "peak_vram_mib": 1500.8,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.9308,
+            "accuracy_utterance_not_in_train": 0.9341,
+            "report": "artifacts/runs/massive-km-k5-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -2115,6 +3115,20 @@
             "ci95": [
               0.5229,
               0.5691
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0059,
+            "ci95": [
+              -0.0025,
+              0.0143
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.5519,
+            "ci95": [
+              0.5293,
+              0.575
             ]
           }
         }
@@ -2370,6 +3384,86 @@
             "accuracy_utterance_in_train": 0.324,
             "accuracy_utterance_not_in_train": 0.3768,
             "report": "artifacts/runs/massive-km-k5-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9297,
+            "ece": 0.008,
+            "brier": 0.0445,
+            "aurc": 0.007,
+            "mean_confidence": 0.9346,
+            "selective_accuracy@50": 1.0,
+            "selective_accuracy@80": 0.9912,
+            "latency_p50_ms": 12.3418,
+            "latency_p95_ms": 29.6579,
+            "cost_per_decision_p50_ms": 12.3418,
+            "macro_f1": 0.9054,
+            "recall_by_label": {
+              "alarm_query": 0.9118,
+              "alarm_remove": 0.8571,
+              "alarm_set": 1.0,
+              "audio_volume_down": 1.0,
+              "audio_volume_mute": 0.9375,
+              "audio_volume_other": 0.6667,
+              "audio_volume_up": 0.6923,
+              "calendar_query": 0.9683,
+              "calendar_remove": 0.9552,
+              "calendar_set": 0.9713,
+              "cooking_recipe": 0.8889,
+              "datetime_convert": 0.9333,
+              "datetime_query": 0.9091,
+              "email_addcontact": 1.0,
+              "email_query": 0.9916,
+              "email_querycontact": 0.9615,
+              "email_sendemail": 0.9912,
+              "general_greet": 1.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.929,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.9444,
+              "iot_hue_lightchange": 0.9444,
+              "iot_hue_lightdim": 1.0,
+              "iot_hue_lightoff": 0.9767,
+              "iot_hue_lighton": 0.6667,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 0.9,
+              "lists_createoradd": 0.8974,
+              "lists_query": 0.7647,
+              "lists_remove": 0.8269,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.8333,
+              "music_query": 0.8857,
+              "music_settings": 1.0,
+              "news_query": 0.8952,
+              "play_audiobook": 0.9512,
+              "play_game": 0.9143,
+              "play_music": 0.9545,
+              "play_podcasts": 0.8889,
+              "play_radio": 0.9722,
+              "qa_currency": 0.9487,
+              "qa_definition": 0.8947,
+              "qa_factoid": 0.9787,
+              "qa_maths": 1.0,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.8372,
+              "recommendation_locations": 0.9355,
+              "recommendation_movies": 0.9,
+              "social_post": 0.9383,
+              "social_query": 0.88,
+              "takeaway_order": 0.9091,
+              "takeaway_query": 0.8857,
+              "transport_query": 0.8824,
+              "transport_taxi": 0.913,
+              "transport_ticket": 0.8857,
+              "transport_traffic": 0.8,
+              "weather_query": 0.891
+            },
+            "peak_vram_mib": 1507.0,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.9091,
+            "accuracy_utterance_not_in_train": 0.9332,
+            "report": "artifacts/runs/massive-km-k5-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -2385,6 +3479,20 @@
             "ci95": [
               0.5377,
               0.5753
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0037,
+            "ci95": [
+              -0.0037,
+              0.0111
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.5605,
+            "ci95": [
+              0.5417,
+              0.579
             ]
           }
         }
@@ -2642,6 +3750,86 @@
             "accuracy_utterance_in_train": 0.263,
             "accuracy_utterance_not_in_train": 0.3125,
             "report": "artifacts/runs/massive-km-k7-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9144,
+            "ece": 0.0144,
+            "brier": 0.0533,
+            "aurc": 0.0103,
+            "mean_confidence": 0.9179,
+            "selective_accuracy@50": 1.0,
+            "selective_accuracy@80": 0.9852,
+            "latency_p50_ms": 12.2921,
+            "latency_p95_ms": 15.234,
+            "cost_per_decision_p50_ms": 12.2921,
+            "macro_f1": 0.8861,
+            "recall_by_label": {
+              "alarm_query": 0.8947,
+              "alarm_remove": 0.7857,
+              "alarm_set": 1.0,
+              "audio_volume_down": 0.875,
+              "audio_volume_mute": 0.7333,
+              "audio_volume_up": 0.8333,
+              "calendar_query": 0.951,
+              "calendar_remove": 0.9787,
+              "calendar_set": 0.9695,
+              "cooking_query": 1.0,
+              "cooking_recipe": 0.9268,
+              "datetime_convert": 0.8889,
+              "datetime_query": 0.9219,
+              "email_addcontact": 1.0,
+              "email_query": 0.9589,
+              "email_querycontact": 0.9375,
+              "email_sendemail": 0.9841,
+              "general_greet": 0.5,
+              "general_joke": 1.0,
+              "general_quirky": 0.8762,
+              "iot_cleaning": 0.9474,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.9091,
+              "iot_hue_lightdim": 0.9412,
+              "iot_hue_lightoff": 0.9412,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 1.0,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.9,
+              "lists_remove": 0.8649,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.8125,
+              "music_query": 0.9667,
+              "music_settings": 0.625,
+              "news_query": 0.8902,
+              "play_audiobook": 0.8857,
+              "play_game": 0.9545,
+              "play_music": 0.9675,
+              "play_podcasts": 0.8824,
+              "play_radio": 0.9348,
+              "qa_currency": 0.9062,
+              "qa_definition": 0.8364,
+              "qa_factoid": 0.9,
+              "qa_maths": 0.7692,
+              "qa_stock": 0.9167,
+              "recommendation_events": 0.7692,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.75,
+              "social_post": 0.96,
+              "social_query": 0.7778,
+              "takeaway_order": 0.95,
+              "takeaway_query": 0.9167,
+              "transport_query": 0.7778,
+              "transport_taxi": 0.7778,
+              "transport_ticket": 0.88,
+              "transport_traffic": 0.9091,
+              "weather_query": 0.9365
+            },
+            "peak_vram_mib": 1501.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.917,
+            "accuracy_utterance_not_in_train": 0.914,
+            "report": "artifacts/runs/massive-km-k7-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -2657,6 +3845,20 @@
             "ci95": [
               0.5922,
               0.636
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": -0.0054,
+            "ci95": [
+              -0.0143,
+              0.0034
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.609,
+            "ci95": [
+              0.5868,
+              0.6311
             ]
           }
         }
@@ -2912,6 +4114,86 @@
             "accuracy_utterance_in_train": 0.2634,
             "accuracy_utterance_not_in_train": 0.3002,
             "report": "artifacts/runs/massive-km-k7-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9092,
+            "ece": 0.0126,
+            "brier": 0.0556,
+            "aurc": 0.0116,
+            "mean_confidence": 0.9168,
+            "selective_accuracy@50": 0.9993,
+            "selective_accuracy@80": 0.9828,
+            "latency_p50_ms": 12.4411,
+            "latency_p95_ms": 15.363,
+            "cost_per_decision_p50_ms": 12.4411,
+            "macro_f1": 0.8728,
+            "recall_by_label": {
+              "alarm_query": 0.9118,
+              "alarm_remove": 0.8095,
+              "alarm_set": 1.0,
+              "audio_volume_down": 0.7273,
+              "audio_volume_mute": 0.9062,
+              "audio_volume_other": 0.6667,
+              "audio_volume_up": 0.6923,
+              "calendar_query": 0.9206,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.9713,
+              "cooking_recipe": 0.8611,
+              "datetime_convert": 0.8667,
+              "datetime_query": 0.9091,
+              "email_addcontact": 1.0,
+              "email_query": 0.9748,
+              "email_querycontact": 0.8462,
+              "email_sendemail": 0.9825,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.8994,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.9444,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 1.0,
+              "iot_hue_lightoff": 0.9535,
+              "iot_hue_lighton": 0.6667,
+              "iot_hue_lightup": 0.9259,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 0.9,
+              "lists_createoradd": 0.8205,
+              "lists_query": 0.7647,
+              "lists_remove": 0.8269,
+              "music_dislikeness": 0.75,
+              "music_likeness": 0.8056,
+              "music_query": 0.8571,
+              "music_settings": 0.8333,
+              "news_query": 0.879,
+              "play_audiobook": 0.9512,
+              "play_game": 0.8857,
+              "play_music": 0.9489,
+              "play_podcasts": 0.8889,
+              "play_radio": 0.9861,
+              "qa_currency": 0.9487,
+              "qa_definition": 0.8246,
+              "qa_factoid": 0.9645,
+              "qa_maths": 1.0,
+              "qa_stock": 0.9615,
+              "recommendation_events": 0.8372,
+              "recommendation_locations": 0.9355,
+              "recommendation_movies": 0.85,
+              "social_post": 0.9136,
+              "social_query": 0.84,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8857,
+              "transport_query": 0.7843,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.8571,
+              "transport_traffic": 0.8,
+              "weather_query": 0.8974
+            },
+            "peak_vram_mib": 1509.3,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8834,
+            "accuracy_utterance_not_in_train": 0.9136,
+            "report": "artifacts/runs/massive-km-k7-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -2927,6 +4209,20 @@
             "ci95": [
               0.5931,
               0.6308
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.002,
+            "ci95": [
+              -0.0064,
+              0.0104
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6143,
+            "ci95": [
+              0.5962,
+              0.6325
             ]
           }
         }
@@ -3184,6 +4480,86 @@
             "accuracy_utterance_in_train": 0.1003,
             "accuracy_utterance_not_in_train": 0.1284,
             "report": "artifacts/runs/massive-km-k20-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8441,
+            "ece": 0.0149,
+            "brier": 0.0901,
+            "aurc": 0.0308,
+            "mean_confidence": 0.8396,
+            "selective_accuracy@50": 0.9931,
+            "selective_accuracy@80": 0.9342,
+            "latency_p50_ms": 17.4323,
+            "latency_p95_ms": 20.0132,
+            "cost_per_decision_p50_ms": 17.4323,
+            "macro_f1": 0.795,
+            "recall_by_label": {
+              "alarm_query": 0.7895,
+              "alarm_remove": 0.7143,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.625,
+              "audio_volume_mute": 0.6667,
+              "audio_volume_up": 0.8333,
+              "calendar_query": 0.8529,
+              "calendar_remove": 0.9362,
+              "calendar_set": 0.9084,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.878,
+              "datetime_convert": 0.6667,
+              "datetime_query": 0.8281,
+              "email_addcontact": 1.0,
+              "email_query": 0.9452,
+              "email_querycontact": 0.75,
+              "email_sendemail": 0.9524,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.7048,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8636,
+              "iot_hue_lightdim": 0.8235,
+              "iot_hue_lightoff": 0.9412,
+              "iot_hue_lighton": 0.8,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 0.8571,
+              "lists_createoradd": 0.84,
+              "lists_query": 0.86,
+              "lists_remove": 0.7568,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.625,
+              "music_query": 0.8333,
+              "music_settings": 0.5,
+              "news_query": 0.8049,
+              "play_audiobook": 0.8857,
+              "play_game": 0.8182,
+              "play_music": 0.9593,
+              "play_podcasts": 0.7941,
+              "play_radio": 0.8261,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.7636,
+              "qa_factoid": 0.8667,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.8333,
+              "recommendation_events": 0.6538,
+              "recommendation_locations": 0.7742,
+              "recommendation_movies": 0.75,
+              "social_post": 0.86,
+              "social_query": 0.6111,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.875,
+              "transport_query": 0.6944,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.76,
+              "transport_traffic": 0.9545,
+              "weather_query": 0.881
+            },
+            "peak_vram_mib": 1502.6,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8443,
+            "accuracy_utterance_not_in_train": 0.844,
+            "report": "artifacts/runs/massive-km-k20-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -3199,6 +4575,20 @@
             "ci95": [
               0.6881,
               0.7304
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0098,
+            "ci95": [
+              -0.003,
+              0.0221
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7196,
+            "ci95": [
+              0.699,
+              0.7398
             ]
           }
         }
@@ -3454,6 +4844,86 @@
             "accuracy_utterance_in_train": 0.0979,
             "accuracy_utterance_not_in_train": 0.134,
             "report": "artifacts/runs/massive-km-k20-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8369,
+            "ece": 0.0136,
+            "brier": 0.0895,
+            "aurc": 0.0331,
+            "mean_confidence": 0.8378,
+            "selective_accuracy@50": 0.9913,
+            "selective_accuracy@80": 0.9324,
+            "latency_p50_ms": 17.5982,
+            "latency_p95_ms": 31.2498,
+            "cost_per_decision_p50_ms": 17.5982,
+            "macro_f1": 0.7897,
+            "recall_by_label": {
+              "alarm_query": 0.8235,
+              "alarm_remove": 0.7619,
+              "alarm_set": 0.9512,
+              "audio_volume_down": 0.4545,
+              "audio_volume_mute": 0.875,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8968,
+              "calendar_remove": 0.8806,
+              "calendar_set": 0.9043,
+              "cooking_recipe": 0.7639,
+              "datetime_convert": 0.4667,
+              "datetime_query": 0.8182,
+              "email_addcontact": 0.9167,
+              "email_query": 0.9412,
+              "email_querycontact": 0.7308,
+              "email_sendemail": 0.9298,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7396,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.8889,
+              "iot_hue_lightchange": 0.8611,
+              "iot_hue_lightdim": 1.0,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.6667,
+              "iot_hue_lightup": 0.8519,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 0.9,
+              "lists_createoradd": 0.7692,
+              "lists_query": 0.6667,
+              "lists_remove": 0.7115,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8333,
+              "music_query": 0.7429,
+              "music_settings": 0.6667,
+              "news_query": 0.8145,
+              "play_audiobook": 0.8537,
+              "play_game": 0.8286,
+              "play_music": 0.9261,
+              "play_podcasts": 0.8889,
+              "play_radio": 0.9444,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.6842,
+              "qa_factoid": 0.844,
+              "qa_maths": 0.96,
+              "qa_stock": 0.9231,
+              "recommendation_events": 0.7442,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8889,
+              "social_query": 0.56,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8,
+              "transport_query": 0.7059,
+              "transport_taxi": 0.7826,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.6667,
+              "weather_query": 0.8269
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8089,
+            "accuracy_utterance_not_in_train": 0.8417,
+            "report": "artifacts/runs/massive-km-k20-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -3469,6 +4939,20 @@
             "ci95": [
               0.6876,
               0.7216
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0034,
+            "ci95": [
+              -0.0071,
+              0.0138
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7081,
+            "ci95": [
+              0.6913,
+              0.7246
             ]
           }
         }
@@ -3726,6 +5210,86 @@
             "accuracy_utterance_in_train": 0.0692,
             "accuracy_utterance_not_in_train": 0.0608,
             "report": "artifacts/runs/massive-km-k60-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.5785,
+            "ece": 0.038,
+            "brier": 0.1633,
+            "aurc": 0.1908,
+            "mean_confidence": 0.557,
+            "selective_accuracy@50": 0.8348,
+            "selective_accuracy@80": 0.6792,
+            "latency_p50_ms": 21.7334,
+            "latency_p95_ms": 23.3957,
+            "cost_per_decision_p50_ms": 21.7334,
+            "macro_f1": 0.4537,
+            "recall_by_label": {
+              "alarm_query": 0.6842,
+              "alarm_remove": 0.5,
+              "alarm_set": 0.9032,
+              "audio_volume_down": 0.25,
+              "audio_volume_mute": 0.2667,
+              "audio_volume_up": 0.25,
+              "calendar_query": 0.7157,
+              "calendar_remove": 0.8511,
+              "calendar_set": 0.8244,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.7073,
+              "datetime_convert": 0.4444,
+              "datetime_query": 0.7969,
+              "email_addcontact": 1.0,
+              "email_query": 0.4795,
+              "email_querycontact": 0.125,
+              "email_sendemail": 0.1587,
+              "general_greet": 0.0,
+              "general_joke": 0.9333,
+              "general_quirky": 0.1333,
+              "iot_cleaning": 0.1053,
+              "iot_coffee": 0.0714,
+              "iot_hue_lightchange": 0.0455,
+              "iot_hue_lightdim": 0.0,
+              "iot_hue_lightoff": 0.0,
+              "iot_hue_lighton": 0.0,
+              "iot_hue_lightup": 0.0833,
+              "iot_wemo_off": 0.0,
+              "iot_wemo_on": 0.0,
+              "lists_createoradd": 0.72,
+              "lists_query": 0.74,
+              "lists_remove": 0.4324,
+              "music_dislikeness": 0.0,
+              "music_likeness": 0.5,
+              "music_query": 0.6667,
+              "music_settings": 0.0,
+              "news_query": 0.6585,
+              "play_audiobook": 0.7143,
+              "play_game": 0.8636,
+              "play_music": 0.8862,
+              "play_podcasts": 0.4706,
+              "play_radio": 0.6739,
+              "qa_currency": 0.9062,
+              "qa_definition": 0.5818,
+              "qa_factoid": 0.0111,
+              "qa_maths": 0.3846,
+              "qa_stock": 0.5833,
+              "recommendation_events": 0.7308,
+              "recommendation_locations": 0.7742,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.84,
+              "social_query": 0.1111,
+              "takeaway_order": 0.75,
+              "takeaway_query": 0.8333,
+              "transport_query": 0.3056,
+              "transport_taxi": 0.5185,
+              "transport_ticket": 0.6,
+              "transport_traffic": 0.9091,
+              "weather_query": 0.8333
+            },
+            "peak_vram_mib": 1505.8,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.5709,
+            "accuracy_utterance_not_in_train": 0.5797,
+            "report": "artifacts/runs/massive-km-k60-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -3741,6 +5305,20 @@
             "ci95": [
               0.4727,
               0.518
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0212,
+            "ci95": [
+              0.0049,
+              0.0374
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.5165,
+            "ci95": [
+              0.4934,
+              0.5391
             ]
           }
         }
@@ -3996,6 +5574,86 @@
             "accuracy_utterance_in_train": 0.042,
             "accuracy_utterance_not_in_train": 0.055,
             "report": "artifacts/runs/massive-km-k60-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.5454,
+            "ece": 0.0255,
+            "brier": 0.1752,
+            "aurc": 0.2245,
+            "mean_confidence": 0.5462,
+            "selective_accuracy@50": 0.7861,
+            "selective_accuracy@80": 0.634,
+            "latency_p50_ms": 22.2172,
+            "latency_p95_ms": 33.7999,
+            "cost_per_decision_p50_ms": 22.2172,
+            "macro_f1": 0.4417,
+            "recall_by_label": {
+              "alarm_query": 0.6471,
+              "alarm_remove": 0.5238,
+              "alarm_set": 0.8537,
+              "audio_volume_down": 0.2727,
+              "audio_volume_mute": 0.1875,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.0,
+              "calendar_query": 0.6667,
+              "calendar_remove": 0.8358,
+              "calendar_set": 0.7703,
+              "cooking_recipe": 0.6528,
+              "datetime_convert": 0.2667,
+              "datetime_query": 0.7273,
+              "email_addcontact": 0.9167,
+              "email_query": 0.4706,
+              "email_querycontact": 0.3077,
+              "email_sendemail": 0.2281,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.1657,
+              "iot_cleaning": 0.0385,
+              "iot_coffee": 0.0833,
+              "iot_hue_lightchange": 0.1944,
+              "iot_hue_lightdim": 0.0,
+              "iot_hue_lightoff": 0.0,
+              "iot_hue_lighton": 0.0,
+              "iot_hue_lightup": 0.037,
+              "iot_wemo_off": 0.0,
+              "iot_wemo_on": 0.0,
+              "lists_createoradd": 0.6667,
+              "lists_query": 0.549,
+              "lists_remove": 0.3654,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.5278,
+              "music_query": 0.6286,
+              "music_settings": 0.1667,
+              "news_query": 0.6774,
+              "play_audiobook": 0.5122,
+              "play_game": 0.8,
+              "play_music": 0.8636,
+              "play_podcasts": 0.6349,
+              "play_radio": 0.6111,
+              "qa_currency": 0.8718,
+              "qa_definition": 0.7193,
+              "qa_factoid": 0.0142,
+              "qa_maths": 0.6,
+              "qa_stock": 0.8846,
+              "recommendation_events": 0.6744,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.75,
+              "social_post": 0.7531,
+              "social_query": 0.24,
+              "takeaway_order": 0.7273,
+              "takeaway_query": 0.6,
+              "transport_query": 0.2941,
+              "transport_taxi": 0.6522,
+              "transport_ticket": 0.8571,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8077
+            },
+            "peak_vram_mib": 1505.6,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.4965,
+            "accuracy_utterance_not_in_train": 0.5536,
+            "report": "artifacts/runs/massive-km-k60-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -4011,6 +5669,20 @@
             "ci95": [
               0.4553,
               0.4923
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0185,
+            "ci95": [
+              0.005,
+              0.0319
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4923,
+            "ci95": [
+              0.4738,
+              0.5108
             ]
           }
         }
@@ -4268,6 +5940,86 @@
             "accuracy_utterance_in_train": 0.0381,
             "accuracy_utterance_not_in_train": 0.0396,
             "report": "artifacts/runs/massive-km-k60-long-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7172,
+            "ece": 0.0265,
+            "brier": 0.1365,
+            "aurc": 0.0946,
+            "mean_confidence": 0.7007,
+            "selective_accuracy@50": 0.9381,
+            "selective_accuracy@80": 0.8175,
+            "latency_p50_ms": 35.8639,
+            "latency_p95_ms": 37.1112,
+            "cost_per_decision_p50_ms": 35.8639,
+            "macro_f1": 0.6523,
+            "recall_by_label": {
+              "alarm_query": 0.5789,
+              "alarm_remove": 0.4286,
+              "alarm_set": 0.871,
+              "audio_volume_down": 0.5,
+              "audio_volume_mute": 0.6,
+              "audio_volume_up": 0.75,
+              "calendar_query": 0.7451,
+              "calendar_remove": 0.8085,
+              "calendar_set": 0.8473,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.7317,
+              "datetime_convert": 0.3333,
+              "datetime_query": 0.7031,
+              "email_addcontact": 1.0,
+              "email_query": 0.8767,
+              "email_querycontact": 0.5625,
+              "email_sendemail": 0.873,
+              "general_greet": 0.0,
+              "general_joke": 0.9333,
+              "general_quirky": 0.3905,
+              "iot_cleaning": 0.7895,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.6364,
+              "iot_hue_lightdim": 0.7059,
+              "iot_hue_lightoff": 0.8235,
+              "iot_hue_lighton": 0.6,
+              "iot_hue_lightup": 0.75,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 0.8571,
+              "lists_createoradd": 0.84,
+              "lists_query": 0.72,
+              "lists_remove": 0.4324,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.5625,
+              "music_query": 0.6667,
+              "music_settings": 0.0,
+              "news_query": 0.7073,
+              "play_audiobook": 0.8857,
+              "play_game": 0.8182,
+              "play_music": 0.9268,
+              "play_podcasts": 0.7647,
+              "play_radio": 0.6957,
+              "qa_currency": 0.9062,
+              "qa_definition": 0.5818,
+              "qa_factoid": 0.6444,
+              "qa_maths": 0.4615,
+              "qa_stock": 0.6667,
+              "recommendation_events": 0.3846,
+              "recommendation_locations": 0.7419,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.82,
+              "social_query": 0.1667,
+              "takeaway_order": 0.75,
+              "takeaway_query": 0.625,
+              "transport_query": 0.4444,
+              "transport_taxi": 0.7407,
+              "transport_ticket": 0.56,
+              "transport_traffic": 0.8182,
+              "weather_query": 0.8333
+            },
+            "peak_vram_mib": 1512.2,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.6955,
+            "accuracy_utterance_not_in_train": 0.7208,
+            "report": "artifacts/runs/massive-km-k60-long-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -4283,6 +6035,20 @@
             "ci95": [
               0.6345,
               0.6768
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0221,
+            "ci95": [
+              0.0074,
+              0.0369
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6778,
+            "ci95": [
+              0.6572,
+              0.6985
             ]
           }
         }
@@ -4538,6 +6304,86 @@
             "accuracy_utterance_in_train": 0.0326,
             "accuracy_utterance_not_in_train": 0.0499,
             "report": "artifacts/runs/massive-km-k60-long-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7078,
+            "ece": 0.02,
+            "brier": 0.1434,
+            "aurc": 0.1034,
+            "mean_confidence": 0.7007,
+            "selective_accuracy@50": 0.9267,
+            "selective_accuracy@80": 0.8001,
+            "latency_p50_ms": 35.9359,
+            "latency_p95_ms": 37.1824,
+            "cost_per_decision_p50_ms": 35.9359,
+            "macro_f1": 0.6414,
+            "recall_by_label": {
+              "alarm_query": 0.6176,
+              "alarm_remove": 0.619,
+              "alarm_set": 0.7805,
+              "audio_volume_down": 0.0909,
+              "audio_volume_mute": 0.8125,
+              "audio_volume_other": 0.0,
+              "audio_volume_up": 0.4615,
+              "calendar_query": 0.6746,
+              "calendar_remove": 0.8209,
+              "calendar_set": 0.8278,
+              "cooking_recipe": 0.5694,
+              "datetime_convert": 0.2,
+              "datetime_query": 0.7727,
+              "email_addcontact": 0.8333,
+              "email_query": 0.8824,
+              "email_querycontact": 0.6923,
+              "email_sendemail": 0.8596,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.4083,
+              "iot_cleaning": 0.8077,
+              "iot_coffee": 0.8889,
+              "iot_hue_lightchange": 0.6389,
+              "iot_hue_lightdim": 0.7619,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.8519,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.7436,
+              "lists_query": 0.4314,
+              "lists_remove": 0.3269,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.5833,
+              "music_query": 0.6571,
+              "music_settings": 0.3333,
+              "news_query": 0.6613,
+              "play_audiobook": 0.7317,
+              "play_game": 0.8286,
+              "play_music": 0.892,
+              "play_podcasts": 0.7937,
+              "play_radio": 0.75,
+              "qa_currency": 0.8718,
+              "qa_definition": 0.6491,
+              "qa_factoid": 0.6809,
+              "qa_maths": 0.8,
+              "qa_stock": 0.9615,
+              "recommendation_events": 0.5116,
+              "recommendation_locations": 0.8387,
+              "recommendation_movies": 0.7,
+              "social_post": 0.7654,
+              "social_query": 0.24,
+              "takeaway_order": 0.7727,
+              "takeaway_query": 0.6,
+              "transport_query": 0.451,
+              "transport_taxi": 0.7826,
+              "transport_ticket": 0.5714,
+              "transport_traffic": 0.6,
+              "weather_query": 0.7756
+            },
+            "peak_vram_mib": 1513.7,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.6667,
+            "accuracy_utterance_not_in_train": 0.7147,
+            "report": "artifacts/runs/massive-km-k60-long-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -4553,6 +6399,20 @@
             "ci95": [
               0.6284,
               0.6638
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0141,
+            "ci95": [
+              0.001,
+              0.0272
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6604,
+            "ci95": [
+              0.6426,
+              0.6779
             ]
           }
         }
@@ -4810,6 +6670,86 @@
             "accuracy_utterance_in_train": 0.0796,
             "accuracy_utterance_not_in_train": 0.1502,
             "report": "artifacts/runs/massive-km-perm0-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8382,
+            "ece": 0.0167,
+            "brier": 0.0854,
+            "aurc": 0.0296,
+            "mean_confidence": 0.8405,
+            "selective_accuracy@50": 0.9931,
+            "selective_accuracy@80": 0.9342,
+            "latency_p50_ms": 17.3482,
+            "latency_p95_ms": 19.89,
+            "cost_per_decision_p50_ms": 17.3482,
+            "macro_f1": 0.8114,
+            "recall_by_label": {
+              "alarm_query": 0.7368,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9355,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6,
+              "audio_volume_up": 0.9167,
+              "calendar_query": 0.8922,
+              "calendar_remove": 0.8936,
+              "calendar_set": 0.9389,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.9024,
+              "datetime_convert": 0.3333,
+              "datetime_query": 0.8281,
+              "email_addcontact": 1.0,
+              "email_query": 0.9178,
+              "email_querycontact": 0.75,
+              "email_sendemail": 0.9048,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.7048,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.9091,
+              "iot_hue_lightdim": 0.8235,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.86,
+              "lists_remove": 0.6486,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.7667,
+              "music_settings": 0.625,
+              "news_query": 0.8293,
+              "play_audiobook": 0.8571,
+              "play_game": 0.8636,
+              "play_music": 0.9756,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.9565,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.7091,
+              "qa_factoid": 0.7333,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.7917,
+              "recommendation_events": 0.6154,
+              "recommendation_locations": 0.7419,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.86,
+              "social_query": 0.6667,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.8333,
+              "transport_query": 0.6389,
+              "transport_taxi": 0.8519,
+              "transport_ticket": 0.76,
+              "transport_traffic": 0.8636,
+              "weather_query": 0.873
+            },
+            "peak_vram_mib": 1505.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8374,
+            "accuracy_utterance_not_in_train": 0.8383,
+            "report": "artifacts/runs/massive-km-perm0-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -4825,6 +6765,20 @@
             "ci95": [
               0.6768,
               0.7191
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": -0.0005,
+            "ci95": [
+              -0.0133,
+              0.0123
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.698,
+            "ci95": [
+              0.6763,
+              0.7186
             ]
           }
         }
@@ -5080,6 +7034,86 @@
             "accuracy_utterance_in_train": 0.1189,
             "accuracy_utterance_not_in_train": 0.1371,
             "report": "artifacts/runs/massive-km-perm0-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8383,
+            "ece": 0.0141,
+            "brier": 0.0902,
+            "aurc": 0.0348,
+            "mean_confidence": 0.8406,
+            "selective_accuracy@50": 0.9879,
+            "selective_accuracy@80": 0.9349,
+            "latency_p50_ms": 17.3584,
+            "latency_p95_ms": 19.9304,
+            "cost_per_decision_p50_ms": 17.3584,
+            "macro_f1": 0.7848,
+            "recall_by_label": {
+              "alarm_query": 0.8529,
+              "alarm_remove": 0.7619,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.7273,
+              "audio_volume_mute": 0.875,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6923,
+              "calendar_query": 0.8333,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.9282,
+              "cooking_recipe": 0.6944,
+              "datetime_convert": 0.6667,
+              "datetime_query": 0.8864,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9496,
+              "email_querycontact": 0.8462,
+              "email_sendemail": 0.9298,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.716,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8611,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 1.0,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.6863,
+              "lists_remove": 0.6346,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8333,
+              "music_query": 0.8286,
+              "music_settings": 0.5,
+              "news_query": 0.8387,
+              "play_audiobook": 0.9024,
+              "play_game": 0.8857,
+              "play_music": 0.9375,
+              "play_podcasts": 0.8413,
+              "play_radio": 0.8889,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7368,
+              "qa_factoid": 0.8085,
+              "qa_maths": 0.96,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6744,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8519,
+              "social_query": 0.52,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.5882,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8526
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8345,
+            "accuracy_utterance_not_in_train": 0.8389,
+            "report": "artifacts/runs/massive-km-perm0-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -5095,6 +7129,20 @@
             "ci95": [
               0.6799,
               0.7145
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0067,
+            "ci95": [
+              -0.0037,
+              0.0168
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7038,
+            "ci95": [
+              0.6866,
+              0.7209
             ]
           }
         }
@@ -5352,6 +7400,86 @@
             "accuracy_utterance_in_train": 0.0934,
             "accuracy_utterance_not_in_train": 0.1359,
             "report": "artifacts/runs/massive-km-perm1-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8401,
+            "ece": 0.019,
+            "brier": 0.0895,
+            "aurc": 0.0312,
+            "mean_confidence": 0.8433,
+            "selective_accuracy@50": 0.9892,
+            "selective_accuracy@80": 0.9318,
+            "latency_p50_ms": 17.3242,
+            "latency_p95_ms": 19.8656,
+            "cost_per_decision_p50_ms": 17.3242,
+            "macro_f1": 0.8129,
+            "recall_by_label": {
+              "alarm_query": 0.7368,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6,
+              "audio_volume_up": 0.9167,
+              "calendar_query": 0.902,
+              "calendar_remove": 0.8723,
+              "calendar_set": 0.9313,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.8293,
+              "datetime_convert": 0.3333,
+              "datetime_query": 0.8281,
+              "email_addcontact": 1.0,
+              "email_query": 0.9589,
+              "email_querycontact": 0.75,
+              "email_sendemail": 0.9048,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.6857,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8636,
+              "iot_hue_lightdim": 0.8235,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.96,
+              "lists_query": 0.88,
+              "lists_remove": 0.6216,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.7333,
+              "music_settings": 0.75,
+              "news_query": 0.8415,
+              "play_audiobook": 0.8571,
+              "play_game": 0.8636,
+              "play_music": 0.9675,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.9348,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.7455,
+              "qa_factoid": 0.7444,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.7917,
+              "recommendation_events": 0.6154,
+              "recommendation_locations": 0.7419,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.88,
+              "social_query": 0.6111,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.8333,
+              "transport_query": 0.6667,
+              "transport_taxi": 0.8519,
+              "transport_ticket": 0.76,
+              "transport_traffic": 0.8636,
+              "weather_query": 0.8968
+            },
+            "peak_vram_mib": 1505.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8304,
+            "accuracy_utterance_not_in_train": 0.8417,
+            "report": "artifacts/runs/massive-km-perm1-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -5367,6 +7495,20 @@
             "ci95": [
               0.6808,
               0.7226
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0084,
+            "ci95": [
+              -0.0039,
+              0.0212
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7103,
+            "ci95": [
+              0.6891,
+              0.7304
             ]
           }
         }
@@ -5622,6 +7764,86 @@
             "accuracy_utterance_in_train": 0.1072,
             "accuracy_utterance_not_in_train": 0.1473,
             "report": "artifacts/runs/massive-km-perm1-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8406,
+            "ece": 0.0176,
+            "brier": 0.0907,
+            "aurc": 0.0345,
+            "mean_confidence": 0.8415,
+            "selective_accuracy@50": 0.9859,
+            "selective_accuracy@80": 0.9336,
+            "latency_p50_ms": 17.3411,
+            "latency_p95_ms": 19.8874,
+            "cost_per_decision_p50_ms": 17.3411,
+            "macro_f1": 0.7909,
+            "recall_by_label": {
+              "alarm_query": 0.8529,
+              "alarm_remove": 0.7619,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.9091,
+              "audio_volume_mute": 0.7812,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6923,
+              "calendar_query": 0.8413,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.9234,
+              "cooking_recipe": 0.7361,
+              "datetime_convert": 0.6667,
+              "datetime_query": 0.9091,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9496,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.716,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8333,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 1.0,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.7255,
+              "lists_remove": 0.6346,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8056,
+              "music_query": 0.8,
+              "music_settings": 0.6667,
+              "news_query": 0.8226,
+              "play_audiobook": 0.878,
+              "play_game": 0.8857,
+              "play_music": 0.9432,
+              "play_podcasts": 0.8413,
+              "play_radio": 0.8889,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7193,
+              "qa_factoid": 0.8369,
+              "qa_maths": 0.96,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6744,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.75,
+              "social_post": 0.8519,
+              "social_query": 0.52,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8571,
+              "transport_query": 0.6078,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7714,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8462,
+            "accuracy_utterance_not_in_train": 0.8397,
+            "report": "artifacts/runs/massive-km-perm1-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -5637,6 +7859,20 @@
             "ci95": [
               0.6725,
               0.7078
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0091,
+            "ci95": [
+              -0.001,
+              0.0192
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6991,
+            "ci95": [
+              0.6816,
+              0.7165
             ]
           }
         }
@@ -5894,6 +8130,86 @@
             "accuracy_utterance_in_train": 0.0934,
             "accuracy_utterance_not_in_train": 0.1508,
             "report": "artifacts/runs/massive-km-perm2-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8372,
+            "ece": 0.017,
+            "brier": 0.0861,
+            "aurc": 0.0307,
+            "mean_confidence": 0.84,
+            "selective_accuracy@50": 0.9902,
+            "selective_accuracy@80": 0.9336,
+            "latency_p50_ms": 17.3818,
+            "latency_p95_ms": 19.9555,
+            "cost_per_decision_p50_ms": 17.3818,
+            "macro_f1": 0.8074,
+            "recall_by_label": {
+              "alarm_query": 0.6842,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6,
+              "audio_volume_up": 0.9167,
+              "calendar_query": 0.8922,
+              "calendar_remove": 0.8723,
+              "calendar_set": 0.9313,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.9024,
+              "datetime_convert": 0.4444,
+              "datetime_query": 0.8281,
+              "email_addcontact": 1.0,
+              "email_query": 0.9452,
+              "email_querycontact": 0.8125,
+              "email_sendemail": 0.9048,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.6762,
+              "iot_cleaning": 0.9474,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8636,
+              "iot_hue_lightdim": 0.8235,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.88,
+              "lists_remove": 0.7027,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.8,
+              "music_settings": 0.625,
+              "news_query": 0.8415,
+              "play_audiobook": 0.8286,
+              "play_game": 0.8636,
+              "play_music": 0.9593,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.9348,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.6909,
+              "qa_factoid": 0.7556,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.8333,
+              "recommendation_events": 0.5769,
+              "recommendation_locations": 0.7097,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.88,
+              "social_query": 0.5556,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.8333,
+              "transport_query": 0.6944,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.72,
+              "transport_traffic": 0.8636,
+              "weather_query": 0.881
+            },
+            "peak_vram_mib": 1505.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8235,
+            "accuracy_utterance_not_in_train": 0.8394,
+            "report": "artifacts/runs/massive-km-perm2-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -5909,6 +8225,20 @@
             "ci95": [
               0.669,
               0.7118
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0039,
+            "ci95": [
+              -0.0089,
+              0.0167
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6945,
+            "ci95": [
+              0.6734,
+              0.7152
             ]
           }
         }
@@ -6164,6 +8494,86 @@
             "accuracy_utterance_in_train": 0.1072,
             "accuracy_utterance_not_in_train": 0.1426,
             "report": "artifacts/runs/massive-km-perm2-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8386,
+            "ece": 0.0162,
+            "brier": 0.0916,
+            "aurc": 0.0355,
+            "mean_confidence": 0.8414,
+            "selective_accuracy@50": 0.9879,
+            "selective_accuracy@80": 0.9298,
+            "latency_p50_ms": 17.4136,
+            "latency_p95_ms": 19.9799,
+            "cost_per_decision_p50_ms": 17.4136,
+            "macro_f1": 0.7878,
+            "recall_by_label": {
+              "alarm_query": 0.8529,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.6364,
+              "audio_volume_mute": 0.8438,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6923,
+              "calendar_query": 0.8413,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.9426,
+              "cooking_recipe": 0.7083,
+              "datetime_convert": 0.7333,
+              "datetime_query": 0.875,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9496,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.6864,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8333,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.7255,
+              "lists_remove": 0.6538,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.7778,
+              "music_query": 0.8286,
+              "music_settings": 0.6667,
+              "news_query": 0.8145,
+              "play_audiobook": 0.8537,
+              "play_game": 0.8857,
+              "play_music": 0.9375,
+              "play_podcasts": 0.8413,
+              "play_radio": 0.9167,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7544,
+              "qa_factoid": 0.8582,
+              "qa_maths": 0.96,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6977,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.75,
+              "social_post": 0.8642,
+              "social_query": 0.52,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.7714,
+              "transport_query": 0.6471,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8485,
+            "accuracy_utterance_not_in_train": 0.8369,
+            "report": "artifacts/runs/massive-km-perm2-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -6179,6 +8589,20 @@
             "ci95": [
               0.6775,
               0.7125
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0061,
+            "ci95": [
+              -0.0047,
+              0.0165
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7011,
+            "ci95": [
+              0.6836,
+              0.7182
             ]
           }
         }
@@ -6436,6 +8860,86 @@
             "accuracy_utterance_in_train": 0.1176,
             "accuracy_utterance_not_in_train": 0.1336,
             "report": "artifacts/runs/massive-km-perm3-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8367,
+            "ece": 0.0251,
+            "brier": 0.0862,
+            "aurc": 0.0305,
+            "mean_confidence": 0.8407,
+            "selective_accuracy@50": 0.9912,
+            "selective_accuracy@80": 0.933,
+            "latency_p50_ms": 17.3177,
+            "latency_p95_ms": 19.8828,
+            "cost_per_decision_p50_ms": 17.3177,
+            "macro_f1": 0.8097,
+            "recall_by_label": {
+              "alarm_query": 0.7368,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6,
+              "audio_volume_up": 0.8333,
+              "calendar_query": 0.902,
+              "calendar_remove": 0.8511,
+              "calendar_set": 0.9313,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.9024,
+              "datetime_convert": 0.4444,
+              "datetime_query": 0.7969,
+              "email_addcontact": 1.0,
+              "email_query": 0.9452,
+              "email_querycontact": 0.75,
+              "email_sendemail": 0.9048,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.6857,
+              "iot_cleaning": 1.0,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.9091,
+              "iot_hue_lightdim": 0.7647,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 1.0,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.92,
+              "lists_query": 0.86,
+              "lists_remove": 0.7027,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.8,
+              "music_settings": 0.75,
+              "news_query": 0.8415,
+              "play_audiobook": 0.8571,
+              "play_game": 0.8636,
+              "play_music": 0.9675,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.9565,
+              "qa_currency": 0.9062,
+              "qa_definition": 0.7091,
+              "qa_factoid": 0.7222,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.8333,
+              "recommendation_events": 0.5769,
+              "recommendation_locations": 0.7097,
+              "recommendation_movies": 0.5,
+              "social_post": 0.86,
+              "social_query": 0.5556,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.7917,
+              "transport_query": 0.7222,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.84,
+              "transport_traffic": 0.8636,
+              "weather_query": 0.873
+            },
+            "peak_vram_mib": 1505.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8235,
+            "accuracy_utterance_not_in_train": 0.8389,
+            "report": "artifacts/runs/massive-km-perm3-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -6451,6 +8955,20 @@
             "ci95": [
               0.6813,
               0.7231
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.003,
+            "ci95": [
+              -0.0098,
+              0.0157
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7054,
+            "ci95": [
+              0.6842,
+              0.7265
             ]
           }
         }
@@ -6706,6 +9224,86 @@
             "accuracy_utterance_in_train": 0.1072,
             "accuracy_utterance_not_in_train": 0.143,
             "report": "artifacts/runs/massive-km-perm3-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8386,
+            "ece": 0.0178,
+            "brier": 0.0911,
+            "aurc": 0.0348,
+            "mean_confidence": 0.8405,
+            "selective_accuracy@50": 0.9899,
+            "selective_accuracy@80": 0.9282,
+            "latency_p50_ms": 17.3376,
+            "latency_p95_ms": 19.8803,
+            "cost_per_decision_p50_ms": 17.3376,
+            "macro_f1": 0.7855,
+            "recall_by_label": {
+              "alarm_query": 0.8529,
+              "alarm_remove": 0.7619,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.875,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8571,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.933,
+              "cooking_recipe": 0.6944,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.8864,
+              "email_addcontact": 0.8333,
+              "email_query": 0.958,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9298,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7101,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.8889,
+              "iot_hue_lightchange": 0.8611,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8462,
+              "lists_query": 0.6863,
+              "lists_remove": 0.6154,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8333,
+              "music_query": 0.8,
+              "music_settings": 0.6667,
+              "news_query": 0.8306,
+              "play_audiobook": 0.878,
+              "play_game": 0.8857,
+              "play_music": 0.9318,
+              "play_podcasts": 0.8413,
+              "play_radio": 0.9028,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7368,
+              "qa_factoid": 0.8369,
+              "qa_maths": 0.92,
+              "qa_stock": 0.9615,
+              "recommendation_events": 0.6512,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8642,
+              "social_query": 0.52,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8,
+              "transport_query": 0.6471,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.6,
+              "weather_query": 0.859
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8485,
+            "accuracy_utterance_not_in_train": 0.8369,
+            "report": "artifacts/runs/massive-km-perm3-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -6721,6 +9319,20 @@
             "ci95": [
               0.6789,
               0.7135
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0044,
+            "ci95": [
+              -0.0057,
+              0.0145
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7007,
+            "ci95": [
+              0.6833,
+              0.7176
             ]
           }
         }
@@ -6978,6 +9590,86 @@
             "accuracy_utterance_in_train": 0.1038,
             "accuracy_utterance_not_in_train": 0.1313,
             "report": "artifacts/runs/massive-km-perm4-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8347,
+            "ece": 0.0216,
+            "brier": 0.0843,
+            "aurc": 0.03,
+            "mean_confidence": 0.8412,
+            "selective_accuracy@50": 0.9931,
+            "selective_accuracy@80": 0.9343,
+            "latency_p50_ms": 17.3557,
+            "latency_p95_ms": 19.9077,
+            "cost_per_decision_p50_ms": 17.3557,
+            "macro_f1": 0.8034,
+            "recall_by_label": {
+              "alarm_query": 0.6842,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.6667,
+              "audio_volume_up": 0.8333,
+              "calendar_query": 0.902,
+              "calendar_remove": 0.8936,
+              "calendar_set": 0.9313,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.8293,
+              "datetime_convert": 0.4444,
+              "datetime_query": 0.8438,
+              "email_addcontact": 1.0,
+              "email_query": 0.9178,
+              "email_querycontact": 0.8125,
+              "email_sendemail": 0.9048,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.6857,
+              "iot_cleaning": 0.9474,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8636,
+              "iot_hue_lightdim": 0.7647,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 0.8,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.84,
+              "lists_query": 0.8,
+              "lists_remove": 0.6757,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.8333,
+              "music_settings": 0.625,
+              "news_query": 0.8293,
+              "play_audiobook": 0.8571,
+              "play_game": 0.8636,
+              "play_music": 0.9512,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.9565,
+              "qa_currency": 0.9375,
+              "qa_definition": 0.6545,
+              "qa_factoid": 0.7556,
+              "qa_maths": 0.6154,
+              "qa_stock": 0.7917,
+              "recommendation_events": 0.5385,
+              "recommendation_locations": 0.7419,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.88,
+              "social_query": 0.6667,
+              "takeaway_order": 0.9,
+              "takeaway_query": 0.8333,
+              "transport_query": 0.75,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.8,
+              "transport_traffic": 0.8636,
+              "weather_query": 0.8889
+            },
+            "peak_vram_mib": 1505.0,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8201,
+            "accuracy_utterance_not_in_train": 0.8372,
+            "report": "artifacts/runs/massive-km-perm4-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -6993,6 +9685,20 @@
             "ci95": [
               0.6837,
               0.726
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0025,
+            "ci95": [
+              -0.0098,
+              0.0143
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7073,
+            "ci95": [
+              0.6867,
+              0.728
             ]
           }
         }
@@ -7248,6 +9954,86 @@
             "accuracy_utterance_in_train": 0.1235,
             "accuracy_utterance_not_in_train": 0.1375,
             "report": "artifacts/runs/massive-km-perm4-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8423,
+            "ece": 0.0172,
+            "brier": 0.0902,
+            "aurc": 0.0339,
+            "mean_confidence": 0.8411,
+            "selective_accuracy@50": 0.9892,
+            "selective_accuracy@80": 0.9319,
+            "latency_p50_ms": 17.3754,
+            "latency_p95_ms": 19.9305,
+            "cost_per_decision_p50_ms": 17.3754,
+            "macro_f1": 0.7897,
+            "recall_by_label": {
+              "alarm_query": 0.8235,
+              "alarm_remove": 0.7619,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.7273,
+              "audio_volume_mute": 0.875,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8492,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.9378,
+              "cooking_recipe": 0.7083,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.9091,
+              "email_addcontact": 0.75,
+              "email_query": 0.958,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7219,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8974,
+              "lists_query": 0.6667,
+              "lists_remove": 0.6538,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.7778,
+              "music_query": 0.8286,
+              "music_settings": 0.5,
+              "news_query": 0.8145,
+              "play_audiobook": 0.878,
+              "play_game": 0.8857,
+              "play_music": 0.9375,
+              "play_podcasts": 0.8254,
+              "play_radio": 0.8889,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7719,
+              "qa_factoid": 0.8582,
+              "qa_maths": 0.92,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6744,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8765,
+              "social_query": 0.56,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.7429,
+              "transport_query": 0.6471,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8526
+            },
+            "peak_vram_mib": 1504.5,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8438,
+            "accuracy_utterance_not_in_train": 0.842,
+            "report": "artifacts/runs/massive-km-perm4-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -7263,6 +10049,20 @@
             "ci95": [
               0.6782,
               0.7125
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0108,
+            "ci95": [
+              0.0007,
+              0.0212
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.7068,
+            "ci95": [
+              0.6893,
+              0.7239
             ]
           }
         }
@@ -7520,6 +10320,86 @@
             "accuracy_utterance_in_train": 0.1073,
             "accuracy_utterance_not_in_train": 0.137,
             "report": "artifacts/runs/massive-km-raw-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8214,
+            "ece": 0.0151,
+            "brier": 0.0931,
+            "aurc": 0.0366,
+            "mean_confidence": 0.8262,
+            "selective_accuracy@50": 0.9892,
+            "selective_accuracy@80": 0.9219,
+            "latency_p50_ms": 17.6122,
+            "latency_p95_ms": 20.6465,
+            "cost_per_decision_p50_ms": 17.6122,
+            "macro_f1": 0.7902,
+            "recall_by_label": {
+              "alarm_query": 0.7368,
+              "alarm_remove": 0.6429,
+              "alarm_set": 0.9677,
+              "audio_volume_down": 0.75,
+              "audio_volume_mute": 0.5333,
+              "audio_volume_up": 0.9167,
+              "calendar_query": 0.8922,
+              "calendar_remove": 0.8936,
+              "calendar_set": 0.9313,
+              "cooking_query": 0.5,
+              "cooking_recipe": 0.9024,
+              "datetime_convert": 0.3333,
+              "datetime_query": 0.8438,
+              "email_addcontact": 1.0,
+              "email_query": 0.9178,
+              "email_querycontact": 0.9375,
+              "email_sendemail": 0.9206,
+              "general_greet": 0.0,
+              "general_joke": 1.0,
+              "general_quirky": 0.4095,
+              "iot_cleaning": 0.9474,
+              "iot_coffee": 1.0,
+              "iot_hue_lightchange": 0.8636,
+              "iot_hue_lightdim": 0.8235,
+              "iot_hue_lightoff": 1.0,
+              "iot_hue_lighton": 0.8,
+              "iot_hue_lightup": 0.8333,
+              "iot_wemo_off": 0.8,
+              "iot_wemo_on": 1.0,
+              "lists_createoradd": 0.88,
+              "lists_query": 0.88,
+              "lists_remove": 0.7027,
+              "music_dislikeness": 1.0,
+              "music_likeness": 0.75,
+              "music_query": 0.8,
+              "music_settings": 0.5,
+              "news_query": 0.8537,
+              "play_audiobook": 0.8286,
+              "play_game": 0.8636,
+              "play_music": 0.9675,
+              "play_podcasts": 0.8235,
+              "play_radio": 0.8913,
+              "qa_currency": 0.9688,
+              "qa_definition": 0.7273,
+              "qa_factoid": 0.6,
+              "qa_maths": 0.6923,
+              "qa_stock": 0.7083,
+              "recommendation_events": 0.6923,
+              "recommendation_locations": 0.8065,
+              "recommendation_movies": 0.5833,
+              "social_post": 0.88,
+              "social_query": 0.6111,
+              "takeaway_order": 0.85,
+              "takeaway_query": 0.875,
+              "transport_query": 0.6667,
+              "transport_taxi": 0.8148,
+              "transport_ticket": 0.72,
+              "transport_traffic": 0.9091,
+              "weather_query": 0.9048
+            },
+            "peak_vram_mib": 1505.1,
+            "n_utterance_in_train": 289,
+            "accuracy_utterance_in_train": 0.8131,
+            "accuracy_utterance_not_in_train": 0.8228,
+            "report": "artifacts/runs/massive-km-raw-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -7535,6 +10415,20 @@
             "ci95": [
               0.6645,
               0.7063
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.003,
+            "ci95": [
+              -0.0098,
+              0.0157
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6886,
+            "ci95": [
+              0.6675,
+              0.7093
             ]
           }
         }
@@ -7790,6 +10684,86 @@
             "accuracy_utterance_in_train": 0.0723,
             "accuracy_utterance_not_in_train": 0.1324,
             "report": "artifacts/runs/massive-km-raw-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8194,
+            "ece": 0.0217,
+            "brier": 0.1033,
+            "aurc": 0.0438,
+            "mean_confidence": 0.8227,
+            "selective_accuracy@50": 0.9792,
+            "selective_accuracy@80": 0.9097,
+            "latency_p50_ms": 17.7597,
+            "latency_p95_ms": 20.8313,
+            "cost_per_decision_p50_ms": 17.7597,
+            "macro_f1": 0.7737,
+            "recall_by_label": {
+              "alarm_query": 0.8235,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9756,
+              "audio_volume_down": 0.6364,
+              "audio_volume_mute": 0.8125,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6923,
+              "calendar_query": 0.8571,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.9187,
+              "cooking_recipe": 0.7917,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8864,
+              "email_addcontact": 0.75,
+              "email_query": 0.9664,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.3905,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8611,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.9259,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8462,
+              "lists_query": 0.7255,
+              "lists_remove": 0.6731,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8056,
+              "music_query": 0.8,
+              "music_settings": 0.6667,
+              "news_query": 0.8468,
+              "play_audiobook": 0.8293,
+              "play_game": 0.9143,
+              "play_music": 0.9602,
+              "play_podcasts": 0.873,
+              "play_radio": 0.9028,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.807,
+              "qa_factoid": 0.6099,
+              "qa_maths": 0.96,
+              "qa_stock": 0.8846,
+              "recommendation_events": 0.7442,
+              "recommendation_locations": 0.9355,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8519,
+              "social_query": 0.6,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.8,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8718
+            },
+            "peak_vram_mib": 1505.2,
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8275,
+            "accuracy_utterance_not_in_train": 0.8181,
+            "report": "artifacts/runs/massive-km-raw-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -7805,6 +10779,20 @@
             "ci95": [
               0.6695,
               0.7041
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0087,
+            "ci95": [
+              -0.0027,
+              0.0202
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.6957,
+            "ci95": [
+              0.6782,
+              0.7132
             ]
           }
         }
@@ -7897,6 +10885,31 @@
             },
             "peak_vram_mib": 1505.0,
             "report": "artifacts/runs/sib200-km-perm0-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.697,
+            "ece": 0.1291,
+            "brier": 0.1488,
+            "aurc": 0.1006,
+            "mean_confidence": 0.7583,
+            "selective_accuracy@50": 0.96,
+            "selective_accuracy@80": 0.775,
+            "latency_p50_ms": 16.9166,
+            "latency_p95_ms": 22.4608,
+            "cost_per_decision_p50_ms": 16.9166,
+            "macro_f1": 0.669,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.6429,
+              "science/technology": 0.92,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1505.0,
+            "report": "artifacts/runs/sib200-km-perm0-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -7912,6 +10925,20 @@
             "ci95": [
               -0.0909,
               0.0505
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1515,
+            "ci95": [
+              0.0505,
+              0.2525
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.1313,
+            "ci95": [
+              0.0404,
+              0.2323
             ]
           }
         }
@@ -8002,6 +11029,31 @@
             },
             "peak_vram_mib": 1506.1,
             "report": "artifacts/runs/sib200-km-perm0-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7353,
+            "ece": 0.1085,
+            "brier": 0.1557,
+            "aurc": 0.1015,
+            "mean_confidence": 0.7862,
+            "selective_accuracy@50": 0.9314,
+            "selective_accuracy@80": 0.8049,
+            "latency_p50_ms": 16.2602,
+            "latency_p95_ms": 21.0249,
+            "cost_per_decision_p50_ms": 16.2602,
+            "macro_f1": 0.7327,
+            "recall_by_label": {
+              "entertainment": 0.6316,
+              "geography": 0.7059,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.7843,
+              "sports": 0.76,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1506.1,
+            "report": "artifacts/runs/sib200-km-perm0-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8017,6 +11069,20 @@
             "ci95": [
               -0.0245,
               0.0882
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.2206,
+            "ci95": [
+              0.1471,
+              0.2941
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.25,
+            "ci95": [
+              0.1765,
+              0.3235
             ]
           }
         }
@@ -8109,6 +11175,31 @@
             },
             "peak_vram_mib": 1505.0,
             "report": "artifacts/runs/sib200-km-perm1-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6768,
+            "ece": 0.0896,
+            "brier": 0.1454,
+            "aurc": 0.1035,
+            "mean_confidence": 0.7569,
+            "selective_accuracy@50": 0.94,
+            "selective_accuracy@80": 0.775,
+            "latency_p50_ms": 16.0844,
+            "latency_p95_ms": 21.2865,
+            "cost_per_decision_p50_ms": 16.0844,
+            "macro_f1": 0.6487,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.5714,
+              "science/technology": 0.88,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1505.0,
+            "report": "artifacts/runs/sib200-km-perm1-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8124,6 +11215,20 @@
             "ci95": [
               -0.101,
               0.0606
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1313,
+            "ci95": [
+              0.0303,
+              0.2323
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.1111,
+            "ci95": [
+              0.0101,
+              0.2121
             ]
           }
         }
@@ -8214,6 +11319,31 @@
             },
             "peak_vram_mib": 1506.1,
             "report": "artifacts/runs/sib200-km-perm1-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7108,
+            "ece": 0.09,
+            "brier": 0.151,
+            "aurc": 0.1065,
+            "mean_confidence": 0.7863,
+            "selective_accuracy@50": 0.9314,
+            "selective_accuracy@80": 0.811,
+            "latency_p50_ms": 16.522,
+            "latency_p95_ms": 21.0422,
+            "cost_per_decision_p50_ms": 16.522,
+            "macro_f1": 0.7053,
+            "recall_by_label": {
+              "entertainment": 0.6316,
+              "geography": 0.5882,
+              "health": 0.6818,
+              "politics": 0.7333,
+              "science/technology": 0.7255,
+              "sports": 0.8,
+              "travel": 0.725
+            },
+            "peak_vram_mib": 1506.1,
+            "report": "artifacts/runs/sib200-km-perm1-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8229,6 +11359,20 @@
             "ci95": [
               -0.0196,
               0.098
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1912,
+            "ci95": [
+              0.1127,
+              0.2647
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2304,
+            "ci95": [
+              0.152,
+              0.3088
             ]
           }
         }
@@ -8321,6 +11465,31 @@
             },
             "peak_vram_mib": 1505.0,
             "report": "artifacts/runs/sib200-km-perm2-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6768,
+            "ece": 0.1385,
+            "brier": 0.1344,
+            "aurc": 0.0917,
+            "mean_confidence": 0.7582,
+            "selective_accuracy@50": 0.96,
+            "selective_accuracy@80": 0.775,
+            "latency_p50_ms": 16.0826,
+            "latency_p95_ms": 21.3851,
+            "cost_per_decision_p50_ms": 16.0826,
+            "macro_f1": 0.653,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.6429,
+              "science/technology": 0.84,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1505.0,
+            "report": "artifacts/runs/sib200-km-perm2-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8336,6 +11505,20 @@
             "ci95": [
               -0.0707,
               0.0909
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1212,
+            "ci95": [
+              0.0202,
+              0.2222
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.1313,
+            "ci95": [
+              0.0404,
+              0.2222
             ]
           }
         }
@@ -8426,6 +11609,31 @@
             },
             "peak_vram_mib": 1506.1,
             "report": "artifacts/runs/sib200-km-perm2-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7598,
+            "ece": 0.0832,
+            "brier": 0.1617,
+            "aurc": 0.1047,
+            "mean_confidence": 0.7872,
+            "selective_accuracy@50": 0.9216,
+            "selective_accuracy@80": 0.811,
+            "latency_p50_ms": 16.244,
+            "latency_p95_ms": 20.9697,
+            "cost_per_decision_p50_ms": 16.244,
+            "macro_f1": 0.7634,
+            "recall_by_label": {
+              "entertainment": 0.6842,
+              "geography": 0.7647,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.7843,
+              "sports": 0.8,
+              "travel": 0.75
+            },
+            "peak_vram_mib": 1506.1,
+            "report": "artifacts/runs/sib200-km-perm2-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8441,6 +11649,20 @@
             "ci95": [
               -0.0049,
               0.1127
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.2255,
+            "ci95": [
+              0.1471,
+              0.299
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2794,
+            "ci95": [
+              0.201,
+              0.3529
             ]
           }
         }
@@ -8533,6 +11755,31 @@
             },
             "peak_vram_mib": 1505.0,
             "report": "artifacts/runs/sib200-km-perm3-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6869,
+            "ece": 0.1266,
+            "brier": 0.1435,
+            "aurc": 0.0981,
+            "mean_confidence": 0.7607,
+            "selective_accuracy@50": 0.96,
+            "selective_accuracy@80": 0.775,
+            "latency_p50_ms": 25.3866,
+            "latency_p95_ms": 74.201,
+            "cost_per_decision_p50_ms": 25.3866,
+            "macro_f1": 0.6555,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.6429,
+              "science/technology": 0.88,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1505.0,
+            "report": "artifacts/runs/sib200-km-perm3-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8548,6 +11795,20 @@
             "ci95": [
               -0.0909,
               0.0505
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1313,
+            "ci95": [
+              0.0303,
+              0.2323
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.1111,
+            "ci95": [
+              0.0101,
+              0.2121
             ]
           }
         }
@@ -8638,6 +11899,31 @@
             },
             "peak_vram_mib": 1506.1,
             "report": "artifacts/runs/sib200-km-perm3-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7402,
+            "ece": 0.0983,
+            "brier": 0.1561,
+            "aurc": 0.1024,
+            "mean_confidence": 0.7893,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.811,
+            "latency_p50_ms": 16.2828,
+            "latency_p95_ms": 21.1688,
+            "cost_per_decision_p50_ms": 16.2828,
+            "macro_f1": 0.735,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.7059,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.7647,
+              "sports": 0.76,
+              "travel": 0.775
+            },
+            "peak_vram_mib": 1506.1,
+            "report": "artifacts/runs/sib200-km-perm3-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8653,6 +11939,20 @@
             "ci95": [
               0.0,
               0.1176
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.201,
+            "ci95": [
+              0.1275,
+              0.2745
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2598,
+            "ci95": [
+              0.1863,
+              0.3333
             ]
           }
         }
@@ -8745,6 +12045,31 @@
             },
             "peak_vram_mib": 1505.0,
             "report": "artifacts/runs/sib200-km-perm4-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.697,
+            "ece": 0.1242,
+            "brier": 0.145,
+            "aurc": 0.0967,
+            "mean_confidence": 0.7566,
+            "selective_accuracy@50": 0.96,
+            "selective_accuracy@80": 0.775,
+            "latency_p50_ms": 16.6932,
+            "latency_p95_ms": 21.6563,
+            "cost_per_decision_p50_ms": 16.6932,
+            "macro_f1": 0.6787,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.7857,
+              "science/technology": 0.84,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1505.0,
+            "report": "artifacts/runs/sib200-km-perm4-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8760,6 +12085,20 @@
             "ci95": [
               -0.0909,
               0.0303
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1515,
+            "ci95": [
+              0.0505,
+              0.2525
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.1212,
+            "ci95": [
+              0.0202,
+              0.2222
             ]
           }
         }
@@ -8850,6 +12189,31 @@
             },
             "peak_vram_mib": 1506.1,
             "report": "artifacts/runs/sib200-km-perm4-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7451,
+            "ece": 0.0654,
+            "brier": 0.1513,
+            "aurc": 0.0987,
+            "mean_confidence": 0.7824,
+            "selective_accuracy@50": 0.9314,
+            "selective_accuracy@80": 0.8232,
+            "latency_p50_ms": 16.2737,
+            "latency_p95_ms": 20.9676,
+            "cost_per_decision_p50_ms": 16.2737,
+            "macro_f1": 0.7452,
+            "recall_by_label": {
+              "entertainment": 0.6316,
+              "geography": 0.6471,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.7647,
+              "sports": 0.8,
+              "travel": 0.775
+            },
+            "peak_vram_mib": 1506.1,
+            "report": "artifacts/runs/sib200-km-perm4-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8865,6 +12229,20 @@
             "ci95": [
               -0.0049,
               0.1029
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.2304,
+            "ci95": [
+              0.1569,
+              0.299
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2794,
+            "ci95": [
+              0.2059,
+              0.3529
             ]
           }
         }
@@ -8957,6 +12335,31 @@
             },
             "peak_vram_mib": 1571.1,
             "report": "artifacts/runs/sib200-km-raw-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6869,
+            "ece": 0.1186,
+            "brier": 0.1516,
+            "aurc": 0.0999,
+            "mean_confidence": 0.7708,
+            "selective_accuracy@50": 0.94,
+            "selective_accuracy@80": 0.7875,
+            "latency_p50_ms": 95.6108,
+            "latency_p95_ms": 5058.2384,
+            "cost_per_decision_p50_ms": 11.9729,
+            "macro_f1": 0.6631,
+            "recall_by_label": {
+              "entertainment": 0.2222,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.6429,
+              "science/technology": 0.88,
+              "sports": 0.75,
+              "travel": 0.7
+            },
+            "peak_vram_mib": 1571.1,
+            "report": "artifacts/runs/sib200-km-raw-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -8972,6 +12375,20 @@
             "ci95": [
               -0.101,
               0.0404
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1111,
+            "ci95": [
+              0.0101,
+              0.2121
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.0808,
+            "ci95": [
+              -0.0202,
+              0.1717
             ]
           }
         }
@@ -9062,6 +12479,31 @@
             },
             "peak_vram_mib": 1584.5,
             "report": "artifacts/runs/sib200-km-raw-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7549,
+            "ece": 0.0941,
+            "brier": 0.1597,
+            "aurc": 0.1035,
+            "mean_confidence": 0.797,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.7927,
+            "latency_p50_ms": 103.4706,
+            "latency_p95_ms": 152.7887,
+            "cost_per_decision_p50_ms": 12.9338,
+            "macro_f1": 0.7548,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.7647,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.8039,
+              "sports": 0.76,
+              "travel": 0.775
+            },
+            "peak_vram_mib": 1584.5,
+            "report": "artifacts/runs/sib200-km-raw-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9077,6 +12519,20 @@
             "ci95": [
               -0.0147,
               0.0931
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.2353,
+            "ci95": [
+              0.1667,
+              0.3039
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2745,
+            "ci95": [
+              0.201,
+              0.348
             ]
           }
         }
@@ -9169,6 +12625,31 @@
             },
             "peak_vram_mib": 1562.6,
             "report": "artifacts/runs/sib200-km-desc-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6869,
+            "ece": 0.0959,
+            "brier": 0.1507,
+            "aurc": 0.1091,
+            "mean_confidence": 0.7538,
+            "selective_accuracy@50": 0.94,
+            "selective_accuracy@80": 0.7625,
+            "latency_p50_ms": 113.0971,
+            "latency_p95_ms": 4773.4181,
+            "cost_per_decision_p50_ms": 14.1591,
+            "macro_f1": 0.6758,
+            "recall_by_label": {
+              "entertainment": 0.3333,
+              "geography": 0.75,
+              "health": 0.5455,
+              "politics": 0.6429,
+              "science/technology": 0.92,
+              "sports": 0.75,
+              "travel": 0.6
+            },
+            "peak_vram_mib": 1562.6,
+            "report": "artifacts/runs/sib200-km-desc-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9184,6 +12665,20 @@
             "ci95": [
               -0.0707,
               0.0505
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.1919,
+            "ci95": [
+              0.101,
+              0.2828
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.1818,
+            "ci95": [
+              0.0909,
+              0.2727
             ]
           }
         }
@@ -9274,6 +12769,31 @@
             },
             "peak_vram_mib": 1582.3,
             "report": "artifacts/runs/sib200-km-desc-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7353,
+            "ece": 0.0891,
+            "brier": 0.1673,
+            "aurc": 0.1159,
+            "mean_confidence": 0.7803,
+            "selective_accuracy@50": 0.902,
+            "selective_accuracy@80": 0.7866,
+            "latency_p50_ms": 119.9695,
+            "latency_p95_ms": 174.8622,
+            "cost_per_decision_p50_ms": 14.9962,
+            "macro_f1": 0.7241,
+            "recall_by_label": {
+              "entertainment": 0.4737,
+              "geography": 0.6471,
+              "health": 0.6818,
+              "politics": 0.7667,
+              "science/technology": 0.8039,
+              "sports": 0.84,
+              "travel": 0.75
+            },
+            "peak_vram_mib": 1582.3,
+            "report": "artifacts/runs/sib200-km-desc-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9289,6 +12809,20 @@
             "ci95": [
               -0.0196,
               0.0833
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.2353,
+            "ci95": [
+              0.1667,
+              0.3039
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.2647,
+            "ci95": [
+              0.1912,
+              0.3382
             ]
           }
         }
@@ -9378,6 +12912,30 @@
             },
             "peak_vram_mib": 1515.8,
             "report": "artifacts/runs/khmer-news-perm0-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9365,
+            "ece": 0.0141,
+            "brier": 0.045,
+            "aurc": 0.0103,
+            "mean_confidence": 0.9399,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.9849,
+            "latency_p50_ms": 29.7496,
+            "latency_p95_ms": 31.0798,
+            "cost_per_decision_p50_ms": 29.7496,
+            "macro_f1": 0.9287,
+            "recall_by_label": {
+              "economic": 0.9633,
+              "entertainment": 0.9222,
+              "life": 0.9222,
+              "politic": 0.9688,
+              "sport": 0.9778,
+              "technology": 0.8222
+            },
+            "peak_vram_mib": 1515.8,
+            "report": "artifacts/runs/khmer-news-perm0-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9393,6 +12951,20 @@
             "ci95": [
               0.0121,
               0.0635
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3994,
+            "ci95": [
+              0.3585,
+              0.4387
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4372,
+            "ci95": [
+              0.3964,
+              0.4781
             ]
           }
         }
@@ -9480,6 +13052,30 @@
             },
             "peak_vram_mib": 1515.4,
             "report": "artifacts/runs/khmer-news-perm0-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9255,
+            "ece": 0.0225,
+            "brier": 0.0544,
+            "aurc": 0.0114,
+            "mean_confidence": 0.9411,
+            "selective_accuracy@50": 0.9961,
+            "selective_accuracy@80": 0.9798,
+            "latency_p50_ms": 29.574,
+            "latency_p95_ms": 30.8555,
+            "cost_per_decision_p50_ms": 29.574,
+            "macro_f1": 0.9173,
+            "recall_by_label": {
+              "economic": 0.9102,
+              "entertainment": 0.9429,
+              "life": 0.8143,
+              "politic": 0.9777,
+              "sport": 0.9713,
+              "technology": 0.8804
+            },
+            "peak_vram_mib": 1515.4,
+            "report": "artifacts/runs/khmer-news-perm0-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9495,6 +13091,20 @@
             "ci95": [
               0.0065,
               0.0363
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3811,
+            "ci95": [
+              0.3558,
+              0.4064
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4025,
+            "ci95": [
+              0.3765,
+              0.4277
             ]
           }
         }
@@ -9584,6 +13194,30 @@
             },
             "peak_vram_mib": 1515.8,
             "report": "artifacts/runs/khmer-news-perm1-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.941,
+            "ece": 0.0205,
+            "brier": 0.0437,
+            "aurc": 0.0096,
+            "mean_confidence": 0.9399,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.9849,
+            "latency_p50_ms": 29.8429,
+            "latency_p95_ms": 31.238,
+            "cost_per_decision_p50_ms": 29.8429,
+            "macro_f1": 0.9334,
+            "recall_by_label": {
+              "economic": 0.9541,
+              "entertainment": 0.9333,
+              "life": 0.9333,
+              "politic": 0.9792,
+              "sport": 0.9778,
+              "technology": 0.8222
+            },
+            "peak_vram_mib": 1515.8,
+            "report": "artifacts/runs/khmer-news-perm1-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9599,6 +13233,20 @@
             "ci95": [
               0.0151,
               0.0635
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.4039,
+            "ci95": [
+              0.3631,
+              0.4448
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4433,
+            "ci95": [
+              0.4024,
+              0.4826
             ]
           }
         }
@@ -9686,6 +13334,30 @@
             },
             "peak_vram_mib": 1515.4,
             "report": "artifacts/runs/khmer-news-perm1-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9248,
+            "ece": 0.0199,
+            "brier": 0.0548,
+            "aurc": 0.0117,
+            "mean_confidence": 0.9413,
+            "selective_accuracy@50": 0.9974,
+            "selective_accuracy@80": 0.9798,
+            "latency_p50_ms": 29.9749,
+            "latency_p95_ms": 31.7194,
+            "cost_per_decision_p50_ms": 29.9749,
+            "macro_f1": 0.9162,
+            "recall_by_label": {
+              "economic": 0.9141,
+              "entertainment": 0.9476,
+              "life": 0.8,
+              "politic": 0.9777,
+              "sport": 0.9713,
+              "technology": 0.8804
+            },
+            "peak_vram_mib": 1515.4,
+            "report": "artifacts/runs/khmer-news-perm1-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9701,6 +13373,20 @@
             "ci95": [
               0.0039,
               0.0337
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3824,
+            "ci95": [
+              0.3571,
+              0.407
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4012,
+            "ci95": [
+              0.3752,
+              0.4258
             ]
           }
         }
@@ -9790,6 +13476,30 @@
             },
             "peak_vram_mib": 1515.8,
             "report": "artifacts/runs/khmer-news-perm2-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.941,
+            "ece": 0.0195,
+            "brier": 0.0436,
+            "aurc": 0.01,
+            "mean_confidence": 0.939,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.9849,
+            "latency_p50_ms": 30.3566,
+            "latency_p95_ms": 40.6994,
+            "cost_per_decision_p50_ms": 30.3566,
+            "macro_f1": 0.9335,
+            "recall_by_label": {
+              "economic": 0.9541,
+              "entertainment": 0.9222,
+              "life": 0.9333,
+              "politic": 0.9792,
+              "sport": 0.9778,
+              "technology": 0.8333
+            },
+            "peak_vram_mib": 1515.8,
+            "report": "artifacts/runs/khmer-news-perm2-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9805,6 +13515,20 @@
             "ci95": [
               0.0076,
               0.059
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.4054,
+            "ci95": [
+              0.3646,
+              0.4448
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4387,
+            "ci95": [
+              0.3979,
+              0.4781
             ]
           }
         }
@@ -9892,6 +13616,30 @@
             },
             "peak_vram_mib": 1515.4,
             "report": "artifacts/runs/khmer-news-perm2-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9255,
+            "ece": 0.0273,
+            "brier": 0.055,
+            "aurc": 0.0118,
+            "mean_confidence": 0.9412,
+            "selective_accuracy@50": 0.9948,
+            "selective_accuracy@80": 0.9814,
+            "latency_p50_ms": 29.6451,
+            "latency_p95_ms": 30.9962,
+            "cost_per_decision_p50_ms": 29.6451,
+            "macro_f1": 0.9171,
+            "recall_by_label": {
+              "economic": 0.9102,
+              "entertainment": 0.9429,
+              "life": 0.819,
+              "politic": 0.9777,
+              "sport": 0.9665,
+              "technology": 0.8804
+            },
+            "peak_vram_mib": 1515.4,
+            "report": "artifacts/runs/khmer-news-perm2-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -9907,6 +13655,20 @@
             "ci95": [
               0.0078,
               0.0382
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3811,
+            "ci95": [
+              0.3558,
+              0.4064
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4044,
+            "ci95": [
+              0.3791,
+              0.4297
             ]
           }
         }
@@ -9996,6 +13758,30 @@
             },
             "peak_vram_mib": 1515.8,
             "report": "artifacts/runs/khmer-news-perm3-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.941,
+            "ece": 0.0132,
+            "brier": 0.0461,
+            "aurc": 0.0105,
+            "mean_confidence": 0.9388,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.983,
+            "latency_p50_ms": 29.7322,
+            "latency_p95_ms": 31.0751,
+            "cost_per_decision_p50_ms": 29.7322,
+            "macro_f1": 0.9336,
+            "recall_by_label": {
+              "economic": 0.9541,
+              "entertainment": 0.9222,
+              "life": 0.9333,
+              "politic": 0.9792,
+              "sport": 0.9778,
+              "technology": 0.8333
+            },
+            "peak_vram_mib": 1515.8,
+            "report": "artifacts/runs/khmer-news-perm3-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10011,6 +13797,20 @@
             "ci95": [
               -0.0091,
               0.0408
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.4145,
+            "ci95": [
+              0.3737,
+              0.4539
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4312,
+            "ci95": [
+              0.3903,
+              0.4705
             ]
           }
         }
@@ -10098,6 +13898,30 @@
             },
             "peak_vram_mib": 1515.4,
             "report": "artifacts/runs/khmer-news-perm3-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9229,
+            "ece": 0.0213,
+            "brier": 0.0549,
+            "aurc": 0.0121,
+            "mean_confidence": 0.9424,
+            "selective_accuracy@50": 0.9948,
+            "selective_accuracy@80": 0.9798,
+            "latency_p50_ms": 29.6781,
+            "latency_p95_ms": 30.9869,
+            "cost_per_decision_p50_ms": 29.6781,
+            "macro_f1": 0.914,
+            "recall_by_label": {
+              "economic": 0.9102,
+              "entertainment": 0.9429,
+              "life": 0.8048,
+              "politic": 0.9777,
+              "sport": 0.9713,
+              "technology": 0.8708
+            },
+            "peak_vram_mib": 1515.4,
+            "report": "artifacts/runs/khmer-news-perm3-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10113,6 +13937,20 @@
             "ci95": [
               0.0013,
               0.0311
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3785,
+            "ci95": [
+              0.3526,
+              0.4038
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.3947,
+            "ci95": [
+              0.3688,
+              0.42
             ]
           }
         }
@@ -10202,6 +14040,30 @@
             },
             "peak_vram_mib": 1515.8,
             "report": "artifacts/runs/khmer-news-perm4-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9365,
+            "ece": 0.0218,
+            "brier": 0.045,
+            "aurc": 0.0104,
+            "mean_confidence": 0.9402,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.9849,
+            "latency_p50_ms": 29.7185,
+            "latency_p95_ms": 31.1062,
+            "cost_per_decision_p50_ms": 29.7185,
+            "macro_f1": 0.9286,
+            "recall_by_label": {
+              "economic": 0.9541,
+              "entertainment": 0.9222,
+              "life": 0.9333,
+              "politic": 0.974,
+              "sport": 0.9778,
+              "technology": 0.8111
+            },
+            "peak_vram_mib": 1515.8,
+            "report": "artifacts/runs/khmer-news-perm4-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10217,6 +14079,20 @@
             "ci95": [
               0.0091,
               0.0605
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3994,
+            "ci95": [
+              0.3585,
+              0.4387
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4342,
+            "ci95": [
+              0.3933,
+              0.4735
             ]
           }
         }
@@ -10304,6 +14180,30 @@
             },
             "peak_vram_mib": 1515.4,
             "report": "artifacts/runs/khmer-news-perm4-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9248,
+            "ece": 0.023,
+            "brier": 0.0547,
+            "aurc": 0.0121,
+            "mean_confidence": 0.9412,
+            "selective_accuracy@50": 0.9948,
+            "selective_accuracy@80": 0.9798,
+            "latency_p50_ms": 29.84,
+            "latency_p95_ms": 31.2377,
+            "cost_per_decision_p50_ms": 29.84,
+            "macro_f1": 0.9169,
+            "recall_by_label": {
+              "economic": 0.9102,
+              "entertainment": 0.9476,
+              "life": 0.8095,
+              "politic": 0.9733,
+              "sport": 0.9713,
+              "technology": 0.8852
+            },
+            "peak_vram_mib": 1515.4,
+            "report": "artifacts/runs/khmer-news-perm4-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10319,6 +14219,20 @@
             "ci95": [
               0.0058,
               0.0356
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3791,
+            "ci95": [
+              0.3539,
+              0.4044
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.3999,
+            "ci95": [
+              0.3739,
+              0.4251
             ]
           }
         }
@@ -10408,6 +14322,30 @@
             },
             "peak_vram_mib": 1597.1,
             "report": "artifacts/runs/khmer-news-raw-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9425,
+            "ece": 0.0192,
+            "brier": 0.0457,
+            "aurc": 0.0102,
+            "mean_confidence": 0.9394,
+            "selective_accuracy@50": 0.994,
+            "selective_accuracy@80": 0.983,
+            "latency_p50_ms": 185.3865,
+            "latency_p95_ms": 188.4373,
+            "cost_per_decision_p50_ms": 23.1804,
+            "macro_f1": 0.9366,
+            "recall_by_label": {
+              "economic": 0.9633,
+              "entertainment": 0.9333,
+              "life": 0.9222,
+              "politic": 0.9688,
+              "sport": 0.9778,
+              "technology": 0.8556
+            },
+            "peak_vram_mib": 1597.1,
+            "report": "artifacts/runs/khmer-news-raw-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10423,6 +14361,20 @@
             "ci95": [
               0.003,
               0.0514
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.4115,
+            "ci95": [
+              0.3707,
+              0.4508
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4387,
+            "ci95": [
+              0.3979,
+              0.4781
             ]
           }
         }
@@ -10510,6 +14462,30 @@
             },
             "peak_vram_mib": 1597.1,
             "report": "artifacts/runs/khmer-news-raw-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9261,
+            "ece": 0.0232,
+            "brier": 0.0562,
+            "aurc": 0.0124,
+            "mean_confidence": 0.9398,
+            "selective_accuracy@50": 0.9961,
+            "selective_accuracy@80": 0.9822,
+            "latency_p50_ms": 186.5648,
+            "latency_p95_ms": 189.9198,
+            "cost_per_decision_p50_ms": 23.3234,
+            "macro_f1": 0.9183,
+            "recall_by_label": {
+              "economic": 0.9102,
+              "entertainment": 0.9476,
+              "life": 0.8048,
+              "politic": 0.9733,
+              "sport": 0.9761,
+              "technology": 0.8947
+            },
+            "peak_vram_mib": 1597.1,
+            "report": "artifacts/runs/khmer-news-raw-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10525,6 +14501,20 @@
             "ci95": [
               0.0104,
               0.0421
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3843,
+            "ci95": [
+              0.359,
+              0.4096
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.4102,
+            "ci95": [
+              0.3843,
+              0.4355
             ]
           }
         }
@@ -10614,6 +14604,30 @@
             },
             "peak_vram_mib": 1597.1,
             "report": "artifacts/runs/khmer-news-desc-validation/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9259,
+            "ece": 0.0227,
+            "brier": 0.0483,
+            "aurc": 0.0105,
+            "mean_confidence": 0.9219,
+            "selective_accuracy@50": 0.991,
+            "selective_accuracy@80": 0.9849,
+            "latency_p50_ms": 185.4534,
+            "latency_p95_ms": 188.1747,
+            "cost_per_decision_p50_ms": 23.1907,
+            "macro_f1": 0.9153,
+            "recall_by_label": {
+              "economic": 0.9541,
+              "entertainment": 0.9111,
+              "life": 0.8333,
+              "politic": 0.9792,
+              "sport": 0.9778,
+              "technology": 0.8333
+            },
+            "peak_vram_mib": 1597.1,
+            "report": "artifacts/runs/khmer-news-desc-validation/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10629,6 +14643,20 @@
             "ci95": [
               0.0136,
               0.062
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.3691,
+            "ci95": [
+              0.3298,
+              0.407
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.407,
+            "ci95": [
+              0.3661,
+              0.4463
             ]
           }
         }
@@ -10716,6 +14744,30 @@
             },
             "peak_vram_mib": 1597.1,
             "report": "artifacts/runs/khmer-news-desc-test/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.9157,
+            "ece": 0.0154,
+            "brier": 0.0581,
+            "aurc": 0.0138,
+            "mean_confidence": 0.9198,
+            "selective_accuracy@50": 0.9935,
+            "selective_accuracy@80": 0.9749,
+            "latency_p50_ms": 186.336,
+            "latency_p95_ms": 189.5734,
+            "cost_per_decision_p50_ms": 23.2985,
+            "macro_f1": 0.9043,
+            "recall_by_label": {
+              "economic": 0.9141,
+              "entertainment": 0.9524,
+              "life": 0.7048,
+              "politic": 0.9733,
+              "sport": 0.9713,
+              "technology": 0.9139
+            },
+            "peak_vram_mib": 1597.1,
+            "report": "artifacts/runs/khmer-news-desc-test/mt-s13.json"
           }
         },
         "accuracy_diffs": {
@@ -10731,6 +14783,20 @@
             "ci95": [
               0.022,
               0.0551
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.359,
+            "ci95": [
+              0.3344,
+              0.3837
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.3979,
+            "ci95": [
+              0.3727,
+              0.4232
             ]
           }
         }
@@ -10796,6 +14862,25 @@
           "k60_long_acc_gold_colliding": 0.7355,
           "k60_long_acc_gold_distinct": 0.6896,
           "n_gold_colliding": 242
+        },
+        "mt-s13": {
+          "k2": 0.9685,
+          "k5": 0.9336,
+          "k7": 0.9144,
+          "k20": 0.8441,
+          "k60": 0.5785,
+          "k60_long - k60": {
+            "diff": 0.1387,
+            "ci95": [
+              0.119,
+              0.1589
+            ]
+          },
+          "k60_acc_gold_colliding": 0.2107,
+          "k60_acc_gold_distinct": 0.6281,
+          "k60_long_acc_gold_colliding": 0.7686,
+          "k60_long_acc_gold_distinct": 0.7102,
+          "n_gold_colliding": 242
         }
       },
       "test": {
@@ -10855,6 +14940,25 @@
           "k60_long_acc_gold_colliding": 0.7775,
           "k60_long_acc_gold_distinct": 0.6796,
           "n_gold_colliding": 427
+        },
+        "mt-s13": {
+          "k2": 0.9704,
+          "k5": 0.9297,
+          "k7": 0.9092,
+          "k20": 0.8369,
+          "k60": 0.5454,
+          "k60_long - k60": {
+            "diff": 0.1624,
+            "ci95": [
+              0.1453,
+              0.1799
+            ]
+          },
+          "k60_acc_gold_colliding": 0.2014,
+          "k60_acc_gold_distinct": 0.6031,
+          "k60_long_acc_gold_colliding": 0.7799,
+          "k60_long_acc_gold_distinct": 0.6957,
+          "n_gold_colliding": 427
         }
       }
     },
@@ -10907,6 +15011,24 @@
                 -0.7334
               ]
             }
+          },
+          "mt-s13": {
+            "accuracy_by_permutation": [
+              0.8382,
+              0.8401,
+              0.8372,
+              0.8367,
+              0.8347
+            ],
+            "accuracy_range": 0.0054,
+            "flip_rate": 0.0925,
+            "flip_rate - base": {
+              "diff": -0.7683,
+              "ci95": [
+                -0.7875,
+                -0.7486
+              ]
+            }
           }
         },
         "test": {
@@ -10954,6 +15076,24 @@
               "ci95": [
                 -0.7629,
                 -0.729
+              ]
+            }
+          },
+          "mt-s13": {
+            "accuracy_by_permutation": [
+              0.8383,
+              0.8406,
+              0.8386,
+              0.8386,
+              0.8423
+            ],
+            "accuracy_range": 0.004,
+            "flip_rate": 0.0962,
+            "flip_rate - base": {
+              "diff": -0.7542,
+              "ci95": [
+                -0.77,
+                -0.7377
               ]
             }
           }
@@ -11007,6 +15147,24 @@
                 0.0404
               ]
             }
+          },
+          "mt-s13": {
+            "accuracy_by_permutation": [
+              0.697,
+              0.6768,
+              0.6768,
+              0.6869,
+              0.697
+            ],
+            "accuracy_range": 0.0202,
+            "flip_rate": 0.101,
+            "flip_rate - base": {
+              "diff": -0.0808,
+              "ci95": [
+                -0.1717,
+                0.0101
+              ]
+            }
           }
         },
         "test": {
@@ -11054,6 +15212,24 @@
               "ci95": [
                 -0.0882,
                 0.049
+              ]
+            }
+          },
+          "mt-s13": {
+            "accuracy_by_permutation": [
+              0.7353,
+              0.7108,
+              0.7598,
+              0.7402,
+              0.7451
+            ],
+            "accuracy_range": 0.049,
+            "flip_rate": 0.1225,
+            "flip_rate - base": {
+              "diff": -0.0637,
+              "ci95": [
+                -0.1324,
+                0.0049
               ]
             }
           }
@@ -11107,6 +15283,24 @@
                 -0.0151
               ]
             }
+          },
+          "mt-s13": {
+            "accuracy_by_permutation": [
+              0.9365,
+              0.941,
+              0.941,
+              0.941,
+              0.9365
+            ],
+            "accuracy_range": 0.0045,
+            "flip_rate": 0.0182,
+            "flip_rate - base": {
+              "diff": -0.1195,
+              "ci95": [
+                -0.1483,
+                -0.0923
+              ]
+            }
           }
         },
         "test": {
@@ -11156,6 +15350,24 @@
                 -0.0019
               ]
             }
+          },
+          "mt-s13": {
+            "accuracy_by_permutation": [
+              0.9255,
+              0.9248,
+              0.9255,
+              0.9229,
+              0.9248
+            ],
+            "accuracy_range": 0.0026,
+            "flip_rate": 0.0175,
+            "flip_rate - base": {
+              "diff": -0.103,
+              "ci95": [
+                -0.1212,
+                -0.0855
+              ]
+            }
           }
         }
       }
@@ -11195,6 +15407,17 @@
                 -0.0025
               ]
             }
+          },
+          "mt-s13": {
+            "short": 0.8382,
+            "raw": 0.8214,
+            "raw - short": {
+              "diff": -0.0167,
+              "ci95": [
+                -0.0271,
+                -0.0059
+              ]
+            }
           }
         },
         "test": {
@@ -11228,6 +15451,17 @@
               "ci95": [
                 -0.0356,
                 -0.0171
+              ]
+            }
+          },
+          "mt-s13": {
+            "short": 0.841,
+            "raw": 0.8194,
+            "raw - short": {
+              "diff": -0.0215,
+              "ci95": [
+                -0.0309,
+                -0.0121
               ]
             }
           }
@@ -11291,6 +15525,25 @@
                 -0.0202
               ]
             }
+          },
+          "mt-s13": {
+            "short": 0.6768,
+            "raw": 0.6869,
+            "raw - short": {
+              "diff": 0.0101,
+              "ci95": [
+                0.0,
+                0.0303
+              ]
+            },
+            "desc": 0.6869,
+            "desc - short": {
+              "diff": 0.0101,
+              "ci95": [
+                -0.0505,
+                0.0707
+              ]
+            }
           }
         },
         "test": {
@@ -11348,6 +15601,25 @@
               "ci95": [
                 -0.0686,
                 0.0196
+              ]
+            }
+          },
+          "mt-s13": {
+            "short": 0.7598,
+            "raw": 0.7549,
+            "raw - short": {
+              "diff": -0.0049,
+              "ci95": [
+                -0.0147,
+                0.0
+              ]
+            },
+            "desc": 0.7353,
+            "desc - short": {
+              "diff": -0.0245,
+              "ci95": [
+                -0.0539,
+                0.0049
               ]
             }
           }
@@ -11411,6 +15683,25 @@
                 0.0363
               ]
             }
+          },
+          "mt-s13": {
+            "short": 0.9395,
+            "raw": 0.9425,
+            "raw - short": {
+              "diff": 0.003,
+              "ci95": [
+                -0.0045,
+                0.0121
+              ]
+            },
+            "desc": 0.9259,
+            "desc - short": {
+              "diff": -0.0136,
+              "ci95": [
+                -0.0272,
+                0.0
+              ]
+            }
           }
         },
         "test": {
@@ -11468,6 +15759,25 @@
               "ci95": [
                 -0.0078,
                 0.0227
+              ]
+            }
+          },
+          "mt-s13": {
+            "short": 0.9255,
+            "raw": 0.9261,
+            "raw - short": {
+              "diff": 0.0006,
+              "ci95": [
+                -0.0032,
+                0.0045
+              ]
+            },
+            "desc": 0.9157,
+            "desc - short": {
+              "diff": -0.0097,
+              "ci95": [
+                -0.0201,
+                0.0006
               ]
             }
           }

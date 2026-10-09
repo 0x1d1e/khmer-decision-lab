@@ -27,6 +27,7 @@ and non-autoregressive decision models.
 | [R003](research/R003-full-finetune/) | Full-encoder fine-tuning, 8-bit optimizer | done |
 | [R004](research/R004-cross-task/) | Cross-task generalization (SIB-200, Khmer News) | done |
 | [R005](research/R005-decision-complexity/) | Decision complexity: candidate count, option order, option text | done |
+| [R006](research/R006-multitask/) | Multi-task fine-tuning (MASSIVE + Khmer News + SIB-200) | done |
 
 Machine-readable metrics: `research/results.json`.
 
@@ -49,5 +50,6 @@ for t in sib200-km khmer-news; do for s in validation test; do
 done; done
 # R004 max_len control: see research/R004-cross-task/README.md
 # R005: prepare_r005.py + eval loop in research/R005-decision-complexity/README.md
+# R006: prepare_r006.py + train/eval loop in research/R006-multitask/README.md
 uv run python scripts/summarize_runs.py            # research/results.json
 ```
