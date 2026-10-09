@@ -4,9 +4,11 @@ Run after prepare_massive.py and prepare_r004.py. Validation and test only.
 Nothing here looks at model outputs; every variant is fixed by a seed.
 
 - massive-km-k{K}: nested candidate sets. Per row, one seeded random order of
-  all 60 intents; the K-candidate set is the gold plus the first K-1 other
-  intents in that order, shown in that order. So k=2 is inside k=5 is inside
-  k=7 and so on, and the gold position is uniform within each set.
+  the other 59 intents picks the negatives: the K-candidate set is the gold
+  plus the first K-1 of them, so k=2 is inside k=5 is inside k=7 and so on.
+  A second, independent random order of all 60 intents sets the display
+  order, so the gold position is uniform within each set. (Reusing the
+  selection order for display put the gold last in 98.6% of k=2 rows.)
 - {task}-perm{P}: the R001-R004 rows with each row's options reordered by a
   seeded shuffle. The option texts are unchanged.
 - {task}-raw: option text is the raw dataset label id.
@@ -91,12 +93,13 @@ for split in SPLITS:
     by_k = {k: [] for k in KS}
     for row in sources["massive-km"]:
         gold = gold_of(row)
-        order = intents[:]
-        rng.shuffle(order)
-        others = [label for label in order if label != gold]
+        others = [label for label in intents if label != gold]
+        rng.shuffle(others)
+        display = intents[:]
+        rng.shuffle(display)
         for k in KS:
             chosen = {gold, *others[: k - 1]}
-            labels = [label for label in order if label in chosen]
+            labels = [label for label in display if label in chosen]
             by_k[k].append(
                 with_criteria(row, {lab: lab.replace("_", " ") for lab in labels})
             )

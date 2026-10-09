@@ -1,9 +1,10 @@
 """Summarize laya-evals reports into research/results.json.
 
-Reads existing reports only; no model is loaded. Adds what laya-evals does
-not report: macro-F1 over gold labels, chance and majority-class accuracy,
-and for MASSIVE, accuracy split by whether the utterance also appears verbatim
-in the training file.
+Reads existing reports only; no model is loaded (R005 loads the tokenizer to
+find options that truncation makes indistinguishable). Adds what laya-evals
+does not report: macro-F1 over gold labels, chance and majority-class
+accuracy, for MASSIVE accuracy split by whether the utterance also appears
+verbatim in the training file, and the R005 cross-variant comparisons.
 """
 
 import json
@@ -18,10 +19,26 @@ OUTPUT = Path("research/results.json")
 
 # task -> (data file pattern, experiments that report on it)
 TASKS = {
-    "massive-km": ("massive-km-{split}-full.jsonl", ["R001", "R002", "R003"]),
-    "sib200-km": ("sib200-km-{split}.jsonl", ["R004"]),
-    "khmer-news": ("khmer-news-{split}.jsonl", ["R004"]),
+    "massive-km": ("massive-km-{split}-full.jsonl", ["R001", "R002", "R003", "R005"]),
+    "sib200-km": ("sib200-km-{split}.jsonl", ["R004", "R005"]),
+    "khmer-news": ("khmer-news-{split}.jsonl", ["R004", "R005"]),
 }
+# R005 variants (scripts/prepare_r005.py); k60-long reruns k60 with a larger
+# token budget, so it shares the data file.
+KS = (2, 5, 7, 20, 60)
+PERMS = tuple(f"perm{p}" for p in range(5))
+for k in KS:
+    TASKS[f"massive-km-k{k}"] = (f"massive-km-k{k}-{{split}}.jsonl", ["R005"])
+TASKS["massive-km-k60-long"] = ("massive-km-k60-{split}.jsonl", ["R005"])
+TEXT_VARIANTS = {
+    "massive-km": ("raw",),
+    "sib200-km": ("raw", "desc"),
+    "khmer-news": ("raw", "desc"),
+}
+for base_task, variants in TEXT_VARIANTS.items():
+    for v in PERMS + variants:
+        TASKS[f"{base_task}-{v}"] = (f"{base_task}-{v}-{{split}}.jsonl", ["R005"])
+R005_MODELS = ("control-base-maxlen512", "head-e2", "full-e2-8bit")
 SPLITS = ("validation", "test")
 MODELS = {
     "multilingual": "base (R001)",
@@ -109,6 +126,7 @@ massive_train = {
 }
 
 results = {}
+outcomes = {}  # (task, split, model) -> (per-row correct, per-row prediction)
 for task, (pattern, experiments) in TASKS.items():
     for split in SPLITS:
         data_path = DATA / pattern.format(split=split)
@@ -130,7 +148,7 @@ for task, (pattern, experiments) in TASKS.items():
             "models": {},
         }
         in_train = None
-        if task == "massive-km":
+        if task.startswith("massive-km"):
             in_train = [
                 normalize(r["state"]["utterance"]) in massive_train for r in rows
             ]
@@ -157,6 +175,7 @@ for task, (pattern, experiments) in TASKS.items():
             entry["macro_f1"] = round(macro_f1(golds, preds), 4)
             entry["recall_by_label"] = label_recall(golds, preds)
             correct[model] = [int(c["correct"]) for c in cases]
+            outcomes[task, split, model] = (correct[model], preds)
             if "peak_vram_mib" in report["config"]:
                 entry["peak_vram_mib"] = report["config"]["peak_vram_mib"]
             if in_train is not None:
@@ -174,9 +193,116 @@ for task, (pattern, experiments) in TASKS.items():
         }
         results.setdefault(task, {})[split] = split_entry
 
+
+def colliding_intents(head_max_len):
+    """MASSIVE intents whose option span at k=60 equals another intent's."""
+    from laya.common import build_head
+    from transformers import AutoTokenizer
+
+    tok = AutoTokenizer.from_pretrained(
+        "artifacts/checkpoints/R003-full-e2-8bit/tokenizer"
+    )
+    row = read_jsonl(DATA / "massive-km-k60-test.jsonl")[0]
+    question = row["questions"]["intent"]
+    labels = list(question["criteria"])
+    q = {"t": "choice", "ins": question["instructions"], "crit": question["criteria"]}
+    ids, markers, _ = build_head(tok, q, head_max_len)
+    ends = markers[1:] + [len(ids) - 1]
+    spans = [tuple(ids[a:b]) for a, b in zip(markers, ends)]
+    counts = Counter(spans)
+    return sorted(lab for lab, span in zip(labels, spans) if counts[span] > 1)
+
+
+def r005():
+    """Cross-variant comparisons, all paired over the same rows and model."""
+    out = {"complexity": {}, "order": {}, "text": {}}
+    collided = colliding_intents(256)
+    out["k60_colliding_intents_at_head_max_len_256"] = collided
+    for split in SPLITS:
+        golds = [gold for _, gold in _golds("massive-km-k60", split)]
+        for model in R005_MODELS:
+            entry = {}
+            for k in KS:
+                if (f"massive-km-k{k}", split, model) in outcomes:
+                    entry[f"k{k}"] = round(
+                        accuracy_of(f"massive-km-k{k}", split, model), 4
+                    )
+            pair = [
+                ("massive-km-k60", split, model),
+                ("massive-km-k60-long", split, model),
+            ]
+            if all(key in outcomes for key in pair):
+                default, long = (outcomes[key][0] for key in pair)
+                entry["k60_long - k60"] = paired_bootstrap(default, long)
+                for name, (flags, _) in zip(
+                    ("k60", "k60_long"), (outcomes[key] for key in pair)
+                ):
+                    hit = [f for f, g in zip(flags, golds) if g in collided]
+                    miss = [f for f, g in zip(flags, golds) if g not in collided]
+                    entry[f"{name}_acc_gold_colliding"] = round(sum(hit) / len(hit), 4)
+                    entry[f"{name}_acc_gold_distinct"] = round(sum(miss) / len(miss), 4)
+                entry["n_gold_colliding"] = len(hit)
+            if entry:
+                out["complexity"].setdefault(split, {})[model] = entry
+
+        for base_task, variants in TEXT_VARIANTS.items():
+            for model in R005_MODELS:
+                keys = [(f"{base_task}-{p}", split, model) for p in PERMS]
+                if all(key in outcomes for key in keys):
+                    accs = [accuracy_of(*key) for key in keys]
+                    preds = list(zip(*(outcomes[key][1] for key in keys)))
+                    flips = [int(len(set(p)) > 1) for p in preds]
+                    out["order"].setdefault(base_task, {}).setdefault(split, {})[
+                        model
+                    ] = {
+                        "accuracy_by_permutation": [round(a, 4) for a in accs],
+                        "accuracy_range": round(max(accs) - min(accs), 4),
+                        "flip_rate": round(sum(flips) / len(flips), 4),
+                        "_flips": flips,
+                    }
+                ref = (base_task, split, model)
+                if ref not in outcomes:
+                    continue
+                text = {"short": round(accuracy_of(*ref), 4)}
+                for v in variants:
+                    key = (f"{base_task}-{v}", split, model)
+                    if key in outcomes:
+                        text[v] = round(accuracy_of(*key), 4)
+                        text[f"{v} - short"] = paired_bootstrap(
+                            outcomes[ref][0], outcomes[key][0]
+                        )
+                out["text"].setdefault(base_task, {}).setdefault(split, {})[model] = (
+                    text
+                )
+            order = out["order"].get(base_task, {}).get(split, {})
+            base = order.get("control-base-maxlen512")
+            for model in ("head-e2", "full-e2-8bit"):
+                if base and model in order:
+                    order[model]["flip_rate - base"] = paired_bootstrap(
+                        base["_flips"], order[model]["_flips"]
+                    )
+    for splits in out["order"].values():
+        for models in splits.values():
+            for entry in models.values():
+                del entry["_flips"]
+    return out
+
+
+def accuracy_of(task, split, model):
+    flags = outcomes[task, split, model][0]
+    return sum(flags) / len(flags)
+
+
+def _golds(task, split):
+    pattern = TASKS[task][0]
+    rows = read_jsonl(DATA / pattern.format(split=split))
+    return [next(iter(r["expected"].items())) for r in rows]
+
+
+results = {"tasks": results, "R005": r005()}
 OUTPUT.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
 
-for task, splits in results.items():
+for task, splits in results["tasks"].items():
     for split, s in splits.items():
         print(
             f"\n{task} {split} (n={s['n']}, chance {s['chance_accuracy']:.4f},"
