@@ -1,0 +1,26 @@
+[project]
+name = "khmer-decision-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "LazyGreed", email = "kosalseng3010@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=1.1.1",
+    "laya==0.4.1",
+]
+
+[project.scripts]
+khmer-decision-lab = "khmer_decision_lab:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]

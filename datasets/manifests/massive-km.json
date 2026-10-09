@@ -1,0 +1,7 @@
+{
+  "dataset": "mteb/amazon_massive_intent",
+  "config": "km",
+  "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2",
+  "seed": 13,
+  "choices": 20
+}
