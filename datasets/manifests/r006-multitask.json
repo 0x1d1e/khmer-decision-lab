@@ -1,0 +1,29 @@
+{
+  "seed": 13,
+  "rows": {
+    "massive-km": 11514,
+    "khmer-news": 5136,
+    "sib200-km": 701
+  },
+  "khmer_news_train_dropped_as_in_validation_or_test": 4,
+  "sources": {
+    "sib200-km": {
+      "dataset": "Davlan/sib200",
+      "config": "khm_Khmr",
+      "revision": "38977a667f6fc264d5c26ec57a01e16db040b358",
+      "note": "Original release. mteb/sib200 khm_Khmr was rejected: its validation split is identical to its test split."
+    },
+    "khmer-news": {
+      "dataset": "CADT-IDRI/Khmer_News_classification_unsegmented",
+      "config": "default",
+      "revision": "2707fac4b9f1ffb820d4cae1257fece6a0b380c6",
+      "note": "Unsegmented variant, closest to real input. License not stated on the dataset card."
+    }
+  },
+  "sha256": {
+    "data/processed/massive-km-train-full.jsonl": "0d9a37e0579106fd406aa174a130e3cca5fecc575d6856fceb5d61aed4330ab5",
+    "data/processed/khmer-news-train.jsonl": "25c3ebd3a52fdcc364fcfe622e24b5c6119bfb6ee516daa29185685a21c87c0b",
+    "data/processed/sib200-km-train.jsonl": "f1a7114248d4f7612636d0a0be200e8e08bfc930da00f450095a109747d3b08a",
+    "data/processed/r006-multitask-train.jsonl": "509efb156bf676ea11882d6af052a4b6447984165929ef88b798df92e81043b3"
+  }
+}

@@ -49,6 +49,17 @@ NEWS_LABELS = {
     "sport": "sport",
     "technology": "technology",
 }
+SIB_QUESTION = {
+    "type": "choice",
+    "instructions": "What is the topic of `text`?",
+    "criteria": SIB_LABELS,
+}
+NEWS_QUESTION = {
+    "type": "choice",
+    "instructions": "What is the news category of the article in `title` "
+    "and `content`?",
+    "criteria": NEWS_LABELS,
+}
 
 
 def write(name, split, rows, question, meta):
@@ -67,11 +78,7 @@ def write(name, split, rows, question, meta):
 
 
 def sib200():
-    question = {
-        "type": "choice",
-        "instructions": "What is the topic of `text`?",
-        "criteria": SIB_LABELS,
-    }
+    question = SIB_QUESTION
     meta = {**SIB, "labels": list(SIB_LABELS)}
     for source, split in (("dev", "validation"), ("test", "test")):
         path = hf_hub_download(
@@ -89,12 +96,7 @@ def sib200():
 
 
 def khmer_news():
-    question = {
-        "type": "choice",
-        "instructions": "What is the news category of the article in `title` "
-        "and `content`?",
-        "criteria": NEWS_LABELS,
-    }
+    question = NEWS_QUESTION
     meta = {**NEWS, "labels": list(NEWS_LABELS)}
     ds = load_dataset(NEWS["dataset"], revision=NEWS["revision"])
     names = ds["test"].features["label"].names
@@ -108,9 +110,10 @@ def khmer_news():
     return meta
 
 
-OUT.mkdir(parents=True, exist_ok=True)
-MANIFESTS.mkdir(parents=True, exist_ok=True)
-for name, prepare in (("sib200-km", sib200), ("khmer-news", khmer_news)):
-    meta = prepare()
-    path = MANIFESTS / f"{name}.json"
-    path.write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
+if __name__ == "__main__":
+    OUT.mkdir(parents=True, exist_ok=True)
+    MANIFESTS.mkdir(parents=True, exist_ok=True)
+    for name, prepare in (("sib200-km", sib200), ("khmer-news", khmer_news)):
+        meta = prepare()
+        path = MANIFESTS / f"{name}.json"
+        path.write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")

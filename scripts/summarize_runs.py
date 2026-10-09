@@ -19,9 +19,12 @@ OUTPUT = Path("research/results.json")
 
 # task -> (data file pattern, experiments that report on it)
 TASKS = {
-    "massive-km": ("massive-km-{split}-full.jsonl", ["R001", "R002", "R003", "R005"]),
-    "sib200-km": ("sib200-km-{split}.jsonl", ["R004", "R005"]),
-    "khmer-news": ("khmer-news-{split}.jsonl", ["R004", "R005"]),
+    "massive-km": (
+        "massive-km-{split}-full.jsonl",
+        ["R001", "R002", "R003", "R005", "R006"],
+    ),
+    "sib200-km": ("sib200-km-{split}.jsonl", ["R004", "R005", "R006"]),
+    "khmer-news": ("khmer-news-{split}.jsonl", ["R004", "R005", "R006"]),
 }
 # R005 variants (scripts/prepare_r005.py); k60-long reruns k60 with a larger
 # token budget, so it shares the data file.
@@ -38,13 +41,15 @@ TEXT_VARIANTS = {
 for base_task, variants in TEXT_VARIANTS.items():
     for v in PERMS + variants:
         TASKS[f"{base_task}-{v}"] = (f"{base_task}-{v}-{{split}}.jsonl", ["R005"])
-R005_MODELS = ("control-base-maxlen512", "head-e2", "full-e2-8bit")
+R005_MODELS = ("control-base-maxlen512", "head-e2", "full-e2-8bit", "mt-s13")
 SPLITS = ("validation", "test")
 MODELS = {
     "multilingual": "base (R001)",
     "head-e2": "R002",
     "full-e2-8bit": "R003",
     "control-base-maxlen512": "base@512",
+    "mt-s13": "R006 s13",
+    "mt-s14": "R006 s14",
 }
 # (reference, compared) pairs for paired accuracy differences
 PAIRS = (
@@ -52,6 +57,11 @@ PAIRS = (
     ("multilingual", "full-e2-8bit"),
     ("control-base-maxlen512", "head-e2"),
     ("control-base-maxlen512", "full-e2-8bit"),
+    ("full-e2-8bit", "mt-s13"),
+    ("full-e2-8bit", "mt-s14"),
+    ("control-base-maxlen512", "mt-s13"),
+    ("control-base-maxlen512", "mt-s14"),
+    ("mt-s13", "mt-s14"),
 )
 KEPT = (
     "choice_accuracy",
@@ -276,7 +286,7 @@ def r005():
                 )
             order = out["order"].get(base_task, {}).get(split, {})
             base = order.get("control-base-maxlen512")
-            for model in ("head-e2", "full-e2-8bit"):
+            for model in R005_MODELS[1:]:
                 if base and model in order:
                     order[model]["flip_rate - base"] = paired_bootstrap(
                         base["_flips"], order[model]["_flips"]

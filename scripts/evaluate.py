@@ -27,6 +27,8 @@ CHECKPOINTS = {
     "full-e2-8bit": "artifacts/checkpoints/R003-full-e2-8bit",
     # R004 control: base weights with max_len 512 (see research/R004-cross-task).
     "control-base-maxlen512": "artifacts/checkpoints/control-base-maxlen512",
+    "mt-s13": "artifacts/checkpoints/R006-mt-s13",
+    "mt-s14": "artifacts/checkpoints/R006-mt-s14",
 }
 MODELS = ("multilingual", "head-e2", "full-e2-8bit")
 if len(sys.argv) > 3:
