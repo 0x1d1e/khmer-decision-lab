@@ -1,0 +1,630 @@
+{
+  "manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+  "analysis": {
+    "method": "paired uniform-group bootstrap; row-weighted accuracy ratio",
+    "samples": 10000,
+    "seed": 13,
+    "interval": "percentile 2.5/97.5",
+    "ece_bins": 15,
+    "brier": "top-answer confidence versus correctness",
+    "asag_macro_f1_labels": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "baseline_tie_break": "lexicographically first audit maximum-frequency label"
+  },
+  "targets": {
+    "asag": {
+      "scope": "descriptive diagnostic; crossed students, no inferential CIs",
+      "test_rows": 358,
+      "test_groups": 23,
+      "dataset_sha256": "8b26fcea2efa4468223cc21b749ebd9bdde7610fd936554afbec82dbda786a0f",
+      "baseline": {
+        "fit_partition": "audit",
+        "selected_label": "4",
+        "audit_label_counts": {
+          "0": 2,
+          "1": 27,
+          "2": 42,
+          "3": 24,
+          "4": 48
+        },
+        "test_accuracy": 0.4273743016759777,
+        "uniform_random_expected_accuracy": 0.20000000000000134
+      },
+      "models": {
+        "control-base-maxlen512": {
+          "choice_accuracy": 0.06983240223463687,
+          "ece": 0.3965731843575419,
+          "brier": 0.24814308290502793,
+          "aurc": 0.9611381805729275,
+          "selective_accuracy@50": 0.0335195530726257,
+          "selective_accuracy@80": 0.05574912891986063,
+          "latency_p50_ms": 751.3694909976039,
+          "latency_p95_ms": 1037.2830750020512,
+          "cost_per_decision_p50_ms": 93.92118637470048,
+          "cost_per_decision_p95_ms": 129.6603843752564,
+          "recall_by_grade": {
+            "0": 0.7,
+            "1": 0.11538461538461539,
+            "2": 0.014705882352941176,
+            "3": 0.16326530612244897,
+            "4": 0.0
+          },
+          "macro_f1": 0.08155158370012083,
+          "actual_selective_coverage": {
+            "0.5": 0.5,
+            "0.8": 0.8016759776536313
+          },
+          "report": "artifacts/runs/r007-asag-frozen/control-base-maxlen512.json",
+          "report_sha256": "cc8acb482cfa1cc67e245685b6c3c5fafc7e3e47171963d15772b4a3839271e6",
+          "run_config": {
+            "dataset": "data/processed/r007-asag-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8b26fcea2efa4468223cc21b749ebd9bdde7610fd936554afbec82dbda786a0f",
+            "model": "control-base-maxlen512",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 2048,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 5213.618,
+            "warmup_ms": 1016.6664,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "500918827d46db8346576f0143f9fbe6e68f3c529c8c26a4ef720b5161416e5e",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 45,
+              "rows_grouped": 358,
+              "rows_alone": 0,
+              "max_chunk": 8
+            },
+            "peak_vram_mib": 1963.6
+          }
+        },
+        "full-e2-8bit": {
+          "choice_accuracy": 0.15363128491620112,
+          "ece": 0.1916173184357542,
+          "brier": 0.17229470290502794,
+          "aurc": 0.8480166014140185,
+          "selective_accuracy@50": 0.16666666666666666,
+          "selective_accuracy@80": 0.17073170731707318,
+          "latency_p50_ms": 752.814611998474,
+          "latency_p95_ms": 1034.5363710002857,
+          "cost_per_decision_p50_ms": 94.10182649980925,
+          "cost_per_decision_p95_ms": 129.31704637503572,
+          "recall_by_grade": {
+            "0": 0.1,
+            "1": 0.2692307692307692,
+            "2": 0.029411764705882353,
+            "3": 0.5918367346938775,
+            "4": 0.013071895424836602
+          },
+          "macro_f1": 0.12176200480661667,
+          "actual_selective_coverage": {
+            "0.5": 0.5027932960893855,
+            "0.8": 0.8016759776536313
+          },
+          "report": "artifacts/runs/r007-asag-frozen/full-e2-8bit.json",
+          "report_sha256": "9b4e79ac45a3215e2a82675df69424bb279bded1e4fa1f8b8298fb294848edf1",
+          "run_config": {
+            "dataset": "data/processed/r007-asag-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8b26fcea2efa4468223cc21b749ebd9bdde7610fd936554afbec82dbda786a0f",
+            "model": "full-e2-8bit",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 2048,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 2737.6911,
+            "warmup_ms": 920.9953,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "500918827d46db8346576f0143f9fbe6e68f3c529c8c26a4ef720b5161416e5e",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 45,
+              "rows_grouped": 358,
+              "rows_alone": 0,
+              "max_chunk": 8
+            },
+            "peak_vram_mib": 1963.6
+          }
+        },
+        "mt-s13": {
+          "choice_accuracy": 0.164804469273743,
+          "ece": 0.20411396648044686,
+          "brier": 0.18537782631284916,
+          "aurc": 0.8238150021537622,
+          "selective_accuracy@50": 0.19553072625698323,
+          "selective_accuracy@80": 0.17073170731707318,
+          "latency_p50_ms": 752.119231998222,
+          "latency_p95_ms": 1034.6891049994156,
+          "cost_per_decision_p50_ms": 94.01490399977774,
+          "cost_per_decision_p95_ms": 129.33613812492695,
+          "recall_by_grade": {
+            "0": 0.1,
+            "1": 0.038461538461538464,
+            "2": 0.16176470588235295,
+            "3": 0.7346938775510204,
+            "4": 0.05228758169934641
+          },
+          "macro_f1": 0.13305072343810012,
+          "actual_selective_coverage": {
+            "0.5": 0.5,
+            "0.8": 0.8016759776536313
+          },
+          "report": "artifacts/runs/r007-asag-frozen/mt-s13.json",
+          "report_sha256": "1f21c07b11cc273b6760bab06ec0f00130db30bcd39a66d3fbb153c4a829f474",
+          "run_config": {
+            "dataset": "data/processed/r007-asag-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8b26fcea2efa4468223cc21b749ebd9bdde7610fd936554afbec82dbda786a0f",
+            "model": "mt-s13",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 2048,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 2594.0731,
+            "warmup_ms": 930.8381,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "500918827d46db8346576f0143f9fbe6e68f3c529c8c26a4ef720b5161416e5e",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 45,
+              "rows_grouped": 358,
+              "rows_alone": 0,
+              "max_chunk": 8
+            },
+            "peak_vram_mib": 1963.6
+          }
+        },
+        "mt-s14": {
+          "choice_accuracy": 0.2011173184357542,
+          "ece": 0.18448547486033523,
+          "brier": 0.2042308323463687,
+          "aurc": 0.8059478204684644,
+          "selective_accuracy@50": 0.17318435754189945,
+          "selective_accuracy@80": 0.18815331010452963,
+          "latency_p50_ms": 752.6422330010973,
+          "latency_p95_ms": 1035.269353997137,
+          "cost_per_decision_p50_ms": 94.08027912513717,
+          "cost_per_decision_p95_ms": 129.40866924964212,
+          "recall_by_grade": {
+            "0": 0.5,
+            "1": 0.3974358974358974,
+            "2": 0.23529411764705882,
+            "3": 0.40816326530612246,
+            "4": 0.0
+          },
+          "macro_f1": 0.23101525327104105,
+          "actual_selective_coverage": {
+            "0.5": 0.5,
+            "0.8": 0.8016759776536313
+          },
+          "report": "artifacts/runs/r007-asag-frozen/mt-s14.json",
+          "report_sha256": "dbe5c01b4f8469632688bb4b99128036fcc355bd05b83f36ae98ac94f391ead0",
+          "run_config": {
+            "dataset": "data/processed/r007-asag-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8b26fcea2efa4468223cc21b749ebd9bdde7610fd936554afbec82dbda786a0f",
+            "model": "mt-s14",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 2048,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 2796.959,
+            "warmup_ms": 835.9886,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "500918827d46db8346576f0143f9fbe6e68f3c529c8c26a4ef720b5161416e5e",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 45,
+              "rows_grouped": 358,
+              "rows_alone": 0,
+              "max_chunk": 8
+            },
+            "peak_vram_mib": 1963.6
+          }
+        }
+      },
+      "accuracy_differences": {
+        "mt-s13 - full-e2-8bit": {
+          "difference_pp": 1.1173184357541899
+        },
+        "mt-s14 - full-e2-8bit": {
+          "difference_pp": 4.748603351955307
+        },
+        "full-e2-8bit - control-base-maxlen512": {
+          "difference_pp": 8.379888268156424
+        },
+        "mt-s13 - control-base-maxlen512": {
+          "difference_pp": 9.497206703910614
+        },
+        "mt-s14 - control-base-maxlen512": {
+          "difference_pp": 13.128491620111731
+        }
+      },
+      "h1_positive_pattern": null
+    },
+    "mkqa-entity-choice": {
+      "scope": "exploratory primary",
+      "test_rows": 2093,
+      "test_groups": 1723,
+      "dataset_sha256": "8acbec57074f9cfb2a5ec8fa0fb8c89cdfa19cd9f1f349dbf9bdff822e58e58f",
+      "baseline": {
+        "fit_partition": "audit",
+        "selected_label": "C",
+        "audit_label_counts": {
+          "A": 181,
+          "B": 163,
+          "C": 197,
+          "D": 153
+        },
+        "test_accuracy": 0.2408026755852843,
+        "uniform_random_expected_accuracy": 0.25
+      },
+      "models": {
+        "control-base-maxlen512": {
+          "choice_accuracy": 0.39369326325848064,
+          "ece": 0.14393760152890592,
+          "brier": 0.2529468614429049,
+          "aurc": 0.49921338465432497,
+          "selective_accuracy@50": 0.4794651384909265,
+          "selective_accuracy@80": 0.42208955223880595,
+          "latency_p50_ms": 12.057478998031002,
+          "latency_p95_ms": 13.213767000706866,
+          "cost_per_decision_p50_ms": 12.057478998031002,
+          "cost_per_decision_p95_ms": 13.213767000706866,
+          "recall_by_answer_position": {
+            "A": 0.6,
+            "B": 0.37937384898710863,
+            "C": 0.3392857142857143,
+            "D": 0.2533589251439539
+          },
+          "actual_selective_coverage": {
+            "0.5": 0.5002388915432394,
+            "0.8": 0.8002866698518872
+          },
+          "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/control-base-maxlen512.json",
+          "report_sha256": "82088a6fde828e2d9d7b215b413e98105832e55764900686dec3c4c5fad86465",
+          "run_config": {
+            "dataset": "data/processed/r007-mkqa-entity-choice-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8acbec57074f9cfb2a5ec8fa0fb8c89cdfa19cd9f1f349dbf9bdff822e58e58f",
+            "model": "control-base-maxlen512",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 512,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 4813.2222,
+            "warmup_ms": 388.8638,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "8f403012aabbdf550a41402f6f17b2770d065c1fde0042cf4f0ad8934b7880a8",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 2093,
+              "rows_grouped": 0,
+              "rows_alone": 2093,
+              "max_chunk": 1
+            },
+            "peak_vram_mib": 1500.8
+          }
+        },
+        "full-e2-8bit": {
+          "choice_accuracy": 0.4319159101767797,
+          "ece": 0.06886741519350216,
+          "brier": 0.23622894699952218,
+          "aurc": 0.4471096417015841,
+          "selective_accuracy@50": 0.5209923664122137,
+          "selective_accuracy@80": 0.4638805970149254,
+          "latency_p50_ms": 12.008484998659696,
+          "latency_p95_ms": 13.22218100176542,
+          "cost_per_decision_p50_ms": 12.008484998659696,
+          "cost_per_decision_p95_ms": 13.22218100176542,
+          "recall_by_answer_position": {
+            "A": 0.6266666666666667,
+            "B": 0.34806629834254144,
+            "C": 0.47023809523809523,
+            "D": 0.28598848368522073
+          },
+          "actual_selective_coverage": {
+            "0.5": 0.5007166746297181,
+            "0.8": 0.8002866698518872
+          },
+          "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/full-e2-8bit.json",
+          "report_sha256": "a1eb4710d36b2123f5a159f7577765d9c07ee9753468d25798e3a9e1307f33ef",
+          "run_config": {
+            "dataset": "data/processed/r007-mkqa-entity-choice-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8acbec57074f9cfb2a5ec8fa0fb8c89cdfa19cd9f1f349dbf9bdff822e58e58f",
+            "model": "full-e2-8bit",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 512,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 2676.3743,
+            "warmup_ms": 203.8268,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "8f403012aabbdf550a41402f6f17b2770d065c1fde0042cf4f0ad8934b7880a8",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 2093,
+              "rows_grouped": 0,
+              "rows_alone": 2093,
+              "max_chunk": 1
+            },
+            "peak_vram_mib": 1500.8
+          }
+        },
+        "mt-s13": {
+          "choice_accuracy": 0.4175824175824176,
+          "ece": 0.0770647873865265,
+          "brier": 0.23698121160057334,
+          "aurc": 0.4677843979328446,
+          "selective_accuracy@50": 0.5004775549188156,
+          "selective_accuracy@80": 0.44656716417910447,
+          "latency_p50_ms": 12.133561001974158,
+          "latency_p95_ms": 13.287154000863666,
+          "cost_per_decision_p50_ms": 12.133561001974158,
+          "cost_per_decision_p95_ms": 13.287154000863666,
+          "recall_by_answer_position": {
+            "A": 0.6857142857142857,
+            "B": 0.3996316758747698,
+            "C": 0.38492063492063494,
+            "D": 0.19769673704414586
+          },
+          "actual_selective_coverage": {
+            "0.5": 0.5002388915432394,
+            "0.8": 0.8002866698518872
+          },
+          "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/mt-s13.json",
+          "report_sha256": "fa1734198bfbd72d157fe3a2e7abb6da85f096a12ffb925f58d8e019b50aebe9",
+          "run_config": {
+            "dataset": "data/processed/r007-mkqa-entity-choice-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8acbec57074f9cfb2a5ec8fa0fb8c89cdfa19cd9f1f349dbf9bdff822e58e58f",
+            "model": "mt-s13",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 512,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 2906.1416,
+            "warmup_ms": 219.925,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "8f403012aabbdf550a41402f6f17b2770d065c1fde0042cf4f0ad8934b7880a8",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 2093,
+              "rows_grouped": 0,
+              "rows_alone": 2093,
+              "max_chunk": 1
+            },
+            "peak_vram_mib": 1500.8
+          }
+        },
+        "mt-s14": {
+          "choice_accuracy": 0.45054945054945056,
+          "ece": 0.0488071667462972,
+          "brier": 0.2354460126039178,
+          "aurc": 0.42897542429634944,
+          "selective_accuracy@50": 0.5405921680993314,
+          "selective_accuracy@80": 0.4853731343283582,
+          "latency_p50_ms": 12.041272999340435,
+          "latency_p95_ms": 13.716759996896144,
+          "cost_per_decision_p50_ms": 12.041272999340435,
+          "cost_per_decision_p95_ms": 13.716759996896144,
+          "recall_by_answer_position": {
+            "A": 0.758095238095238,
+            "B": 0.35359116022099446,
+            "C": 0.44047619047619047,
+            "D": 0.2514395393474088
+          },
+          "actual_selective_coverage": {
+            "0.5": 0.5002388915432394,
+            "0.8": 0.8002866698518872
+          },
+          "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/mt-s14.json",
+          "report_sha256": "0d0b43ebd1947c67a808a2a03f39a4cb351c3c91bea97787d8bcd47ecb88bc8d",
+          "run_config": {
+            "dataset": "data/processed/r007-mkqa-entity-choice-test.jsonl",
+            "frozen_manifest_sha256": "c6a5d4aaecae039f766e4dad49f33138b3ad30354ebe727661e2856437c87267",
+            "dataset_sha256": "8acbec57074f9cfb2a5ec8fa0fb8c89cdfa19cd9f1f349dbf9bdff822e58e58f",
+            "model": "mt-s14",
+            "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+            "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92",
+            "device": "cuda",
+            "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+            "budget_override": {
+              "max_len": 512,
+              "head_max_len": 256
+            },
+            "measurement_protocol": "isolated-warm-v1",
+            "model_load_ms": 2791.7736,
+            "warmup_ms": 220.6394,
+            "warmup_examples": 8,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "brier_definition": "mean((P(reported answer is correct) - correct)**2)",
+            "schema": "laya-evals-report/1",
+            "questions_sha256": "8f403012aabbdf550a41402f6f17b2770d065c1fde0042cf4f0ad8934b7880a8",
+            "coverage_metric_definition": 2,
+            "laya_version": "0.4.1",
+            "timing": {
+              "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+              "cost_metric": "per decision: that call divided by its own chunk size",
+              "batch_size": 8,
+              "batch_form": "states",
+              "sort_by_length": false,
+              "sort_by_length_sent": false,
+              "min_confidence": null,
+              "min_confidence_sent": false,
+              "chunks": 2093,
+              "rows_grouped": 0,
+              "rows_alone": 2093,
+              "max_chunk": 1
+            },
+            "peak_vram_mib": 1500.8
+          }
+        }
+      },
+      "accuracy_differences": {
+        "mt-s13 - full-e2-8bit": {
+          "difference_pp": -1.433349259436216,
+          "ci95_pp": [
+            -3.4762318791261153,
+            0.6299602330121324
+          ]
+        },
+        "mt-s14 - full-e2-8bit": {
+          "difference_pp": 1.8633540372670807,
+          "ci95_pp": [
+            -0.09634609477534917,
+            3.877884358232903
+          ]
+        },
+        "full-e2-8bit - control-base-maxlen512": {
+          "difference_pp": 3.8222646918299095,
+          "ci95_pp": [
+            1.67062446482902,
+            6.0403739306530975
+          ]
+        },
+        "mt-s13 - control-base-maxlen512": {
+          "difference_pp": 2.388915432393693,
+          "ci95_pp": [
+            0.18366689323279936,
+            4.6433700335088535
+          ]
+        },
+        "mt-s14 - control-base-maxlen512": {
+          "difference_pp": 5.68561872909699,
+          "ci95_pp": [
+            3.362101768795067,
+            8.005801777776544
+          ]
+        }
+      },
+      "h1_positive_pattern": false
+    }
+  }
+}

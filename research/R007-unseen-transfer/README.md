@@ -1,9 +1,10 @@
 # R007 - Frozen-checkpoint transfer
 
-**Status: exploratory protocol locked; no target checkpoint predictions or
-benchmark results.** ASAG and MKQA
-replace the conditional SEA-NLI target. No publisher access approval is
-needed for these public sources.
+**Status: exploratory protocol locked; frozen-checkpoint scoring complete.**
+The primary MKQA hypothesis was not supported under its prespecified rule;
+results are summarized below and stored in [`results.json`](results.json).
+ASAG and MKQA replace the conditional SEA-NLI target. No publisher access
+approval is needed for these public sources.
 
 Question: do the frozen R006 checkpoints transfer better than MASSIVE-only
 R003 to tasks absent from their adaptation data? This does not establish
@@ -213,3 +214,22 @@ compare them directly with the earlier cold-load measurement protocol.
 No new training is planned. OCR robustness and matched single-task controls
 remain separate follow-ups. Resolve the recorded AMP scheduler issue before
 any later training experiment.
+
+## Observed results
+
+The primary derived MKQA test has 2,093 rows in 1,723 groups. R003
+(`full-e2-8bit`) reached 43.2% accuracy; R006 `mt-s13` reached 41.8%
+(difference -1.43 pp, paired 95% CI [-3.48, 0.63]) and `mt-s14` reached
+45.1% (+1.86 pp, CI [-0.10, 3.88]). Both intervals include zero, so the
+prespecified requirement that both lower bounds exceed zero is not met.
+This is inconclusive evidence for the positive hypothesis, not evidence of
+equivalence. These are results on the derived English-entity-choice task,
+not standard MKQA.
+
+ASAG is descriptive only: on 358 rows across 23 question groups, accuracy
+was 15.4% for R003, 16.5% for `mt-s13` and 20.1% for `mt-s14`. The audit-fit
+constant-label baseline reached 42.7%. Treat this as teacher-agreement
+diagnostic evidence, not a valid standalone grading result; students cross
+partitions and the study has one teacher. ASAG does not alter the primary
+MKQA decision. All evaluated checkpoints remained frozen; no target training
+or recalibration was done.
