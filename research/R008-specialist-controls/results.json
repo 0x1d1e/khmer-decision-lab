@@ -1,0 +1,332 @@
+{
+  "study": "R008-specialist-controls",
+  "status": "exploratory_results",
+  "manifest_sha256": "97f956f1022bccc1b046739cc279d1aab61504327df050263fbedb3ace4599b3",
+  "analysis": {
+    "primary_metric": "choice_accuracy",
+    "comparison": "paired multitask minus matching specialist, same seed and rows",
+    "bootstrap": "uniform exact-normalized-state groups; row-weighted accuracy difference",
+    "samples": 10000,
+    "seed": 13,
+    "interval": "percentile 2.5/97.5",
+    "noninferiority_margin_percentage_points": -2.0,
+    "interpretation": "Exploratory intervals are conditional on the two preregistered seeds; they do not establish population-level equivalence or confirmatory non-inferiority."
+  },
+  "tasks": {
+    "khmer-news": {
+      "test_file": "data/processed/khmer-news-test.jsonl",
+      "test_sha256": "8a710b7f17f06424b45b61d7ce07756a9bde8fc4ed8075647628063cbb67551e",
+      "test_rows": 1543,
+      "test_groups": 1542,
+      "models": {
+        "multitask-s13": {
+          "metrics": {
+            "choice_accuracy": 0.9267660401814647,
+            "mean_confidence": 0.9373976668826961,
+            "ece": 0.017572391445236486,
+            "brier": 0.053864518016850285,
+            "aurc": 0.01192359660284998,
+            "selective_accuracy@50": 0.9974093264248705,
+            "selective_accuracy@80": 0.9781376518218623,
+            "latency_p50_ms": 184.75502799992682,
+            "latency_p95_ms": 188.09890499687754,
+            "cost_per_decision_p50_ms": 23.095782499694906,
+            "cost_per_decision_p95_ms": 23.549642874968413
+          },
+          "recall_by_label": {
+            "economic": 0.9140625,
+            "entertainment": 0.9238095238095239,
+            "life": 0.8476190476190476,
+            "politic": 0.9755011135857461,
+            "sport": 0.9760765550239234,
+            "technology": 0.8708133971291866
+          },
+          "rows": 1543,
+          "groups": 1542,
+          "report_sha256": "059ad78b558a4ad1600552ff003539ebfa53082943fb628d21dfae038bc8c803",
+          "report": "artifacts/runs/R008/khmer-news/multitask-s13.json",
+          "calibration": "artifacts/checkpoints/R008-mt-s13/calibration-khmer-news.json",
+          "calibration_sha256": "b8474f40ae017bc662bfc60fd39ce9c36d827ffb7ffbc2b6b65531a01cc8185b"
+        },
+        "khmer-news-specialist-s13": {
+          "metrics": {
+            "choice_accuracy": 0.9228775113415425,
+            "mean_confidence": 0.9264568373298768,
+            "ece": 0.008872002592352528,
+            "brier": 0.05618506507453014,
+            "aurc": 0.013436954677299825,
+            "selective_accuracy@50": 0.9935233160621761,
+            "selective_accuracy@80": 0.9789473684210527,
+            "latency_p50_ms": 185.31914000050165,
+            "latency_p95_ms": 189.41407300007995,
+            "cost_per_decision_p50_ms": 23.169293124738033,
+            "cost_per_decision_p95_ms": 23.690734249612433
+          },
+          "recall_by_label": {
+            "economic": 0.92578125,
+            "entertainment": 0.9285714285714286,
+            "life": 0.8380952380952381,
+            "politic": 0.9710467706013363,
+            "sport": 0.9521531100478469,
+            "technology": 0.8660287081339713
+          },
+          "rows": 1543,
+          "groups": 1542,
+          "report_sha256": "182c9395feb1a9da45996137552822f99849e5d6cf414a4ec733d31a75964f95",
+          "report": "artifacts/runs/R008/khmer-news/khmer-news-specialist-s13.json",
+          "calibration": "artifacts/checkpoints/R008-news-s13/calibration-khmer-news.json",
+          "calibration_sha256": "876727555101d230e059966693ff3d16abccc65955a5efa209f31207cce9712d"
+        },
+        "multitask-s14": {
+          "metrics": {
+            "choice_accuracy": 0.9300064808813999,
+            "mean_confidence": 0.9384664290343486,
+            "ece": 0.01730959170447187,
+            "brier": 0.05301462760207388,
+            "aurc": 0.012884500152548953,
+            "selective_accuracy@50": 0.9935400516795866,
+            "selective_accuracy@80": 0.977327935222672,
+            "latency_p50_ms": 187.40325800172286,
+            "latency_p95_ms": 198.21531899651745,
+            "cost_per_decision_p50_ms": 23.428261624758306,
+            "cost_per_decision_p95_ms": 24.77691487456468
+          },
+          "recall_by_label": {
+            "economic": 0.93359375,
+            "entertainment": 0.9285714285714286,
+            "life": 0.8380952380952381,
+            "politic": 0.9799554565701559,
+            "sport": 0.9665071770334929,
+            "technology": 0.8755980861244019
+          },
+          "rows": 1543,
+          "groups": 1542,
+          "report_sha256": "bb05cb5d751ffe9838e62174283b0f84978d51b9fd68ebcb69f3a3e9a3a621a1",
+          "report": "artifacts/runs/R008/khmer-news/multitask-s14.json",
+          "calibration": "artifacts/checkpoints/R008-mt-s14/calibration-khmer-news.json",
+          "calibration_sha256": "8b8896d9db1cd1e23a91a75799e8fb8a98c42a6414a7c0e973cee0573d634082"
+        },
+        "khmer-news-specialist-s14": {
+          "metrics": {
+            "choice_accuracy": 0.9274141283214518,
+            "mean_confidence": 0.9243767984445884,
+            "ece": 0.012669475048606563,
+            "brier": 0.051638766429034345,
+            "aurc": 0.011385905511895123,
+            "selective_accuracy@50": 0.9948320413436692,
+            "selective_accuracy@80": 0.9789473684210527,
+            "latency_p50_ms": 185.9500400023535,
+            "latency_p95_ms": 189.67447899922263,
+            "cost_per_decision_p50_ms": 23.2487677503741,
+            "cost_per_decision_p95_ms": 23.715588249615394
+          },
+          "recall_by_label": {
+            "economic": 0.92578125,
+            "entertainment": 0.9476190476190476,
+            "life": 0.8142857142857143,
+            "politic": 0.9688195991091314,
+            "sport": 0.9712918660287081,
+            "technology": 0.8899521531100478
+          },
+          "rows": 1543,
+          "groups": 1542,
+          "report_sha256": "a9590dfad0aeca385d9466a59e09ff7fec5a3070a003877bb29cd32d2e05a4ed",
+          "report": "artifacts/runs/R008/khmer-news/khmer-news-specialist-s14.json",
+          "calibration": "artifacts/checkpoints/R008-news-s14/calibration-khmer-news.json",
+          "calibration_sha256": "e7d5080b1214273f21881818ec72505e48e8eb69616861234961d10b5135af7a"
+        }
+      },
+      "paired_comparisons": {
+        "13": {
+          "multitask_model": "multitask-s13",
+          "specialist_model": "khmer-news-specialist-s13",
+          "difference_percentage_points": 0.38885288399222295,
+          "paired_group_bootstrap_ci95_percentage_points": [
+            -0.5188067444876765,
+            1.2970168612192023
+          ],
+          "noninferiority_pass": true,
+          "negative_difference_supported": false,
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 13,
+          "group_count": 1542
+        },
+        "14": {
+          "multitask_model": "multitask-s14",
+          "specialist_model": "khmer-news-specialist-s14",
+          "difference_percentage_points": 0.2592352559948153,
+          "paired_group_bootstrap_ci95_percentage_points": [
+            -0.777705767984449,
+            1.2961762799740706
+          ],
+          "noninferiority_pass": true,
+          "negative_difference_supported": false,
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 13,
+          "group_count": 1542
+        }
+      },
+      "all_seeds_pass_noninferiority": true
+    },
+    "sib200-km": {
+      "test_file": "data/processed/sib200-km-test.jsonl",
+      "test_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+      "test_rows": 204,
+      "test_groups": 204,
+      "models": {
+        "multitask-s13": {
+          "metrics": {
+            "choice_accuracy": 0.7254901960784313,
+            "mean_confidence": 0.7677401960784314,
+            "ece": 0.06799803921568626,
+            "brier": 0.14951622509803925,
+            "aurc": 0.10839782785184587,
+            "selective_accuracy@50": 0.9019607843137255,
+            "selective_accuracy@80": 0.823170731707317,
+            "latency_p50_ms": 103.51367799739819,
+            "latency_p95_ms": 152.99715799483238,
+            "cost_per_decision_p50_ms": 12.939209749674774,
+            "cost_per_decision_p95_ms": 19.124644749354047
+          },
+          "recall_by_label": {
+            "entertainment": 0.5789473684210527,
+            "geography": 0.5294117647058824,
+            "health": 0.7272727272727273,
+            "politics": 0.7666666666666667,
+            "science/technology": 0.7450980392156863,
+            "sports": 0.8,
+            "travel": 0.775
+          },
+          "rows": 204,
+          "groups": 204,
+          "report_sha256": "ac7ac77fec644ec73f5a8320ca5e047e9447d9f7e78e1ab28c2258da2973771a",
+          "report": "artifacts/runs/R008/sib200-km/multitask-s13.json",
+          "calibration": "artifacts/checkpoints/R008-mt-s13/calibration-sib200-km.json",
+          "calibration_sha256": "dedc4e640532467f9293f30534c5b60866128772d302240098dfec12f7dfff60"
+        },
+        "sib200-specialist-s13": {
+          "metrics": {
+            "choice_accuracy": 0.7058823529411765,
+            "mean_confidence": 0.7137651960784314,
+            "ece": 0.05593578431372548,
+            "brier": 0.17142993573529408,
+            "aurc": 0.14166592542750142,
+            "selective_accuracy@50": 0.8921568627450981,
+            "selective_accuracy@80": 0.774390243902439,
+            "latency_p50_ms": 104.59984699991765,
+            "latency_p95_ms": 154.16844600258628,
+            "cost_per_decision_p50_ms": 13.074980874989706,
+            "cost_per_decision_p95_ms": 19.271055750323285
+          },
+          "recall_by_label": {
+            "entertainment": 0.5263157894736842,
+            "geography": 0.7058823529411765,
+            "health": 0.5454545454545454,
+            "politics": 0.8,
+            "science/technology": 0.6862745098039216,
+            "sports": 0.76,
+            "travel": 0.8
+          },
+          "rows": 204,
+          "groups": 204,
+          "report_sha256": "e9a01464d0111d9161e1ff9045bcb1fecb3cafdaeaa8e5a037196cd94b8fa2e4",
+          "report": "artifacts/runs/R008/sib200-km/sib200-specialist-s13.json",
+          "calibration": "artifacts/checkpoints/R008-sib-s13/calibration-sib200-km.json",
+          "calibration_sha256": "6b14a595def1778bc2f28f3848a7d0a920580f295e77d3b34e4c185c1161e973"
+        },
+        "multitask-s14": {
+          "metrics": {
+            "choice_accuracy": 0.7549019607843137,
+            "mean_confidence": 0.7317161764705883,
+            "ece": 0.06384460784313722,
+            "brier": 0.1503632269117647,
+            "aurc": 0.09371271457077007,
+            "selective_accuracy@50": 0.9117647058823529,
+            "selective_accuracy@80": 0.8170731707317073,
+            "latency_p50_ms": 103.71751499769744,
+            "latency_p95_ms": 162.16880199499428,
+            "cost_per_decision_p50_ms": 12.96468937471218,
+            "cost_per_decision_p95_ms": 20.271100249374285
+          },
+          "recall_by_label": {
+            "entertainment": 0.5789473684210527,
+            "geography": 0.7058823529411765,
+            "health": 0.6363636363636364,
+            "politics": 0.8666666666666667,
+            "science/technology": 0.8235294117647058,
+            "sports": 0.8,
+            "travel": 0.725
+          },
+          "rows": 204,
+          "groups": 204,
+          "report_sha256": "01fae8977e191dcf75821650b78dfc6db845519fe22c46d8b328d7371029e665",
+          "report": "artifacts/runs/R008/sib200-km/multitask-s14.json",
+          "calibration": "artifacts/checkpoints/R008-mt-s14/calibration-sib200-km.json",
+          "calibration_sha256": "7bcc5afadd820342f1c9cfc2804cb740179e8e863d909e99742b156d69bae383"
+        },
+        "sib200-specialist-s14": {
+          "metrics": {
+            "choice_accuracy": 0.6666666666666666,
+            "mean_confidence": 0.7011230392156863,
+            "ece": 0.07507205882352938,
+            "brier": 0.18483391279411765,
+            "aurc": 0.1685401663432257,
+            "selective_accuracy@50": 0.8529411764705882,
+            "selective_accuracy@80": 0.7560975609756098,
+            "latency_p50_ms": 103.87700999854133,
+            "latency_p95_ms": 153.22911900148029,
+            "cost_per_decision_p50_ms": 12.984626249817666,
+            "cost_per_decision_p95_ms": 19.153639875185036
+          },
+          "recall_by_label": {
+            "entertainment": 0.6842105263157895,
+            "geography": 0.7058823529411765,
+            "health": 0.5909090909090909,
+            "politics": 0.6333333333333333,
+            "science/technology": 0.5490196078431373,
+            "sports": 0.76,
+            "travel": 0.8
+          },
+          "rows": 204,
+          "groups": 204,
+          "report_sha256": "5610c14e4ff5eefcbd63d712dae13d7637249b74409dd6edead3ca40a43bce9d",
+          "report": "artifacts/runs/R008/sib200-km/sib200-specialist-s14.json",
+          "calibration": "artifacts/checkpoints/R008-sib-s14/calibration-sib200-km.json",
+          "calibration_sha256": "d280e750e6c286580dc02ddfc86e23c78f2bd7e62e8b0c1c2b18926810487a60"
+        }
+      },
+      "paired_comparisons": {
+        "13": {
+          "multitask_model": "multitask-s13",
+          "specialist_model": "sib200-specialist-s13",
+          "difference_percentage_points": 1.9607843137254901,
+          "paired_group_bootstrap_ci95_percentage_points": [
+            -3.4313725490196068,
+            7.352941176470596
+          ],
+          "noninferiority_pass": false,
+          "negative_difference_supported": false,
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 13,
+          "group_count": 204
+        },
+        "14": {
+          "multitask_model": "multitask-s14",
+          "specialist_model": "sib200-specialist-s14",
+          "difference_percentage_points": 8.823529411764707,
+          "paired_group_bootstrap_ci95_percentage_points": [
+            2.450980392156865,
+            15.19607843137255
+          ],
+          "noninferiority_pass": true,
+          "negative_difference_supported": false,
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 13,
+          "group_count": 204
+        }
+      },
+      "all_seeds_pass_noninferiority": false
+    }
+  },
+  "joint_noninferiority_supported": false
+}
