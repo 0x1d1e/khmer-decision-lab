@@ -1,0 +1,234 @@
+{
+  "study": "R010-massive-ocr-cascade",
+  "status": "locked_exploratory",
+  "protocol_sha256": "ab71632bbaab0fbc93b92aa66c255581fcb0de241205a0848023284d1fe8f9d5",
+  "implementation_sha256": {
+    "scripts/r008_identity.py": "61f23f4eff8f7cef7b8218abf3e997d4219b78a773c6c078fbf3515f16f8ad11",
+    "scripts/r010_identity.py": "b5161e54fb0201fd4bc0cb62b713f9ac94f08d182c05609134bc67ceca0dde7d",
+    "scripts/prepare_r010.py": "589628c5313be1023389f057448f692f6d703a5c6cf78ce87c295b30ac496863",
+    "scripts/evaluate_r010.py": "61aa5f611d40c9d80755b6f63fbc3bae3087f531f7080da984f4708f87688d85",
+    "scripts/summarize_r010.py": "4467519f9108653a891ec6bbb39c2d8844aac990a58eb66d30ef5393d3c401da",
+    "tests/test_r010_ocr.py": "47b247a520615962464cd0c41e7aa3cdc3ee4f0dfae9267ed031fc50166156cc"
+  },
+  "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "km",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2",
+    "massive_manifest": "datasets/manifests/massive-km.json",
+    "massive_manifest_sha256": "848c327f63a4d819eef42d7474932f413344b1b984ddf8d00086a572e1e715b9",
+    "r006_manifest": "datasets/manifests/r006-multitask.json",
+    "r006_manifest_sha256": "f0ce6488d679f3b33ecab6c525c6a6f9e82ad0d40d9d17fff15de7f91c00fd78",
+    "train_file": "data/processed/massive-km-train-full.jsonl",
+    "train_sha256": "0d9a37e0579106fd406aa174a130e3cca5fecc575d6856fceb5d61aed4330ab5",
+    "train_rows": 11514,
+    "test_file": "data/processed/massive-km-test-full.jsonl",
+    "test_sha256": "a7ba21896c2cc244d195d3ed79e1e5080495acb63d1f17d789863f9d7df8373e",
+    "test_rows": 2974,
+    "audit": {
+      "test_rows": 2974,
+      "normalized_test_groups": 2786,
+      "conflicting_label_groups": 34,
+      "conflicting_label_rows": 129,
+      "exact_train_overlap_groups": 267,
+      "exact_train_overlap_rows": 429
+    }
+  },
+  "models": {
+    "full-e2-8bit": {
+      "checkpoint": "artifacts/checkpoints/R003-full-e2-8bit",
+      "role": "contextual_baseline",
+      "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+      "seed": 13,
+      "max_len": 512,
+      "head_max_len": 256,
+      "choice_temperature": [
+        1.2770577669143677,
+        1.0,
+        1.0
+      ],
+      "inference_files_sha256": {
+        "encoder/config.json": "81d6856137aeb1d9cfbc1c1776d5b8196eed2e6ff879e894f517a21a580cc9d3",
+        "model.safetensors": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93",
+        "questions.json": "f360770b4df5a36e12d3586adbbcb5e936d9dbcbc1c5dc368995c75f268b8594",
+        "rl_agent_config.json": "3650a7f990fd81951a4a8e5cdf5beba4900580f531493e3b531abafe3502b0a1",
+        "tokenizer/tokenizer.json": "dbba919c6e5e492bc22beb80abb64e6fcc7e8744dc696e8388b8c977767afa4b",
+        "tokenizer/tokenizer_config.json": "f2ff584a8f78ac9f3b6fd0afcf9ab310e41c2d445ef628f9ab4b0d594e992b7a"
+      }
+    },
+    "mt-s13": {
+      "checkpoint": "artifacts/checkpoints/R006-mt-s13",
+      "role": "primary_fixed_checkpoint",
+      "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+      "seed": 13,
+      "max_len": 512,
+      "head_max_len": 256,
+      "choice_temperature": [
+        1.26199209690094,
+        1.0,
+        1.0
+      ],
+      "inference_files_sha256": {
+        "encoder/config.json": "81d6856137aeb1d9cfbc1c1776d5b8196eed2e6ff879e894f517a21a580cc9d3",
+        "model.safetensors": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9",
+        "questions.json": "a3e9b3535593ea3b4bfb1c8236295252ed3f681b03ea72e13d687d8d993723a5",
+        "rl_agent_config.json": "653578227c1c0457ee7793d08001d03a1ffcc9063869351586c7d1dc4aa466ac",
+        "tokenizer/tokenizer.json": "dbba919c6e5e492bc22beb80abb64e6fcc7e8744dc696e8388b8c977767afa4b",
+        "tokenizer/tokenizer_config.json": "f2ff584a8f78ac9f3b6fd0afcf9ab310e41c2d445ef628f9ab4b0d594e992b7a"
+      }
+    },
+    "mt-s14": {
+      "checkpoint": "artifacts/checkpoints/R006-mt-s14",
+      "role": "primary_fixed_checkpoint",
+      "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+      "seed": 14,
+      "max_len": 512,
+      "head_max_len": 256,
+      "choice_temperature": [
+        1.255082130432129,
+        1.0,
+        1.0
+      ],
+      "inference_files_sha256": {
+        "encoder/config.json": "81d6856137aeb1d9cfbc1c1776d5b8196eed2e6ff879e894f517a21a580cc9d3",
+        "model.safetensors": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92",
+        "questions.json": "a3e9b3535593ea3b4bfb1c8236295252ed3f681b03ea72e13d687d8d993723a5",
+        "rl_agent_config.json": "dd4a483f5d4ddb7c3df46136570d76617a24da981a4327363a4352eb2cdac92e",
+        "tokenizer/tokenizer.json": "dbba919c6e5e492bc22beb80abb64e6fcc7e8744dc696e8388b8c977767afa4b",
+        "tokenizer/tokenizer_config.json": "f2ff584a8f78ac9f3b6fd0afcf9ab310e41c2d445ef628f9ab4b0d594e992b7a"
+      }
+    }
+  },
+  "ocr": {
+    "engine": "Tesseract",
+    "languages": "khm+eng",
+    "oem": 1,
+    "psm": 7,
+    "render_font": "/usr/share/fonts/noto/NotoSansKhmer-Regular.ttf",
+    "render_font_sizes_px": {
+      "ocr_48px": 48,
+      "ocr_24px": 24,
+      "ocr_12px": 12
+    },
+    "layout_engine": "Pillow RAQM",
+    "image_format": "PNG",
+    "background": "white",
+    "text_color": "black",
+    "padding_px": {
+      "left": 16,
+      "right": 16,
+      "top": 12,
+      "bottom": 12
+    },
+    "minimum_image_size_px": {
+      "width": 256,
+      "height": 60
+    },
+    "deduplication_key": "exact raw utterance per font condition"
+  },
+  "recipe": {
+    "conditions": [
+      "clean",
+      "ocr_48px",
+      "ocr_24px",
+      "ocr_12px"
+    ],
+    "models": [
+      "full-e2-8bit",
+      "mt-s13",
+      "mt-s14"
+    ],
+    "training": false,
+    "checkpoint_selection": false,
+    "test_recalibration": false,
+    "choice_temperature": "retain each checkpoint value pinned in models",
+    "inference": {
+      "device": "cuda",
+      "autocast_dtype": "bfloat16",
+      "laya_cuda_amp": "bf16"
+    },
+    "evaluation_batch_size": 8,
+    "warmup_examples_per_model_condition": 8
+  },
+  "evaluation": {
+    "primary_metric": "choice_accuracy",
+    "primary_comparison": "R006 mt-s13 and mt-s14: ocr_12px minus clean",
+    "primary_success": "both seed-specific 95% paired group-bootstrap intervals have upper bound below zero",
+    "secondary_conditions": [
+      "ocr_48px",
+      "ocr_24px"
+    ],
+    "group_key": "SHA-256 of NFKC-normalized, case-folded, whitespace-collapsed utterance",
+    "bootstrap_method": "resample groups with replacement; retain every row in each sampled group; row-weight the difference",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 13,
+    "interval_percentiles": [
+      2.5,
+      97.5
+    ],
+    "cer_normalization": "NFC, collapse whitespace and trim",
+    "cer_metrics": [
+      "codepoint CER",
+      "Unicode extended grapheme cluster CER"
+    ],
+    "reported_metrics": [
+      "choice_accuracy",
+      "macro_f1",
+      "per_label_recall",
+      "mean_confidence",
+      "ece",
+      "top_answer_brier",
+      "aurc",
+      "selective_accuracy@50",
+      "selective_accuracy@80",
+      "codepoint_cer",
+      "grapheme_cer"
+    ],
+    "diagnostic_strata": [
+      "exact_train_overlap",
+      "exact_vs_changed_ocr_transcription"
+    ]
+  },
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Linux-7.2.9-2-cachyos-x86_64-with-glibc2.44",
+    "laya": "0.4.1",
+    "torch": "2.14.1",
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda": "13.0",
+    "transformers": "5.19.0",
+    "tokenizers": "0.23.2",
+    "safetensors": "0.8.0",
+    "numpy": "2.4.6",
+    "pillow": "12.3.0",
+    "pillow_freetype": "2.14.3",
+    "pillow_raqm": "0.10.5",
+    "pillow_harfbuzz": "14.2.1",
+    "pillow_fribidi": "1.0.17",
+    "regex": "2026.9.29",
+    "uv_lock_sha256": "d688cb8273cf5b4f10f23f33b7ae09060776fa9f239acb49429311535f7488fb",
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "gpu_capability": [
+      8,
+      6
+    ],
+    "gpu_driver": "615.78.08",
+    "cuda_available": true,
+    "tesseract_path": "/usr/bin/tesseract",
+    "tesseract_version": "tesseract 5.5.3",
+    "tesseract_sha256": "037aac252011c50f005b6c98d879154a64f1b78511b9ae5c5200ac9d5f9f4b45",
+    "tessdata_directory": "/usr/share/tessdata",
+    "tessdata_sha256": {
+      "khm": "cb3538123a24fe08e3611b1a6598030aa81993ea884b39458b1a856cbd0bfd54",
+      "eng": "daa0c97d651c19fba3b25e81317cd697e9908c8208090c94c3905381c23fc047"
+    },
+    "font_path": "/usr/share/fonts/noto/NotoSansKhmer-Regular.ttf",
+    "font_sha256": "e66675f2082788f0511a714bef5a1748928294b38c8e286a96ea73a864b5e605",
+    "pillow_raqm_enabled": true
+  },
+  "pre_score_amendments": [
+    "Before R010 preparation or model scoring, added explicit Python types to the OCR preparer after ty diagnostics; rendering, test conditions, and analysis plan are unchanged.",
+    "Independent pre-E2E review fixes bound r010_identity to scripts/r008_identity.py, recompute transcript train-overlap against source rows, handle Laya's scalar expected label, and add Laya-report regression coverage; these preserve the locked inputs and analysis.",
+    "Before R010 scoring, clarified test fixture types and applied Ruff formatting; no experimental behavior changed.",
+    "Lifecycle regression review found the previous Laya agent remained locally referenced across router unload and replacement construction; the evaluator now drops that reference before Router collection, and an actual-Router stub integration test confirms release before the next build. This enforces the locked single-resident-model measurement scope without changing inference or analysis."
+  ]
+}

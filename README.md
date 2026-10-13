@@ -31,6 +31,7 @@ and non-autoregressive decision models.
 | [R007](research/R007-unseen-transfer/) | Frozen transfer: derived MKQA choices + ASAG grading | exploratory; protocol locked, primary hypothesis not supported |
 | [R008](research/R008-specialist-controls/README.md) ([results](research/R008-specialist-controls/results.md)) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 inconclusive |
 | [R009](research/R009-sib-specialist-continuation/README.md) ([results](research/R009-sib-specialist-continuation/results.md)) | Continue R008 SIB-200 specialist training | exploratory; improvement unsupported, results inconclusive or mixed |
+| [R010](research/R010-massive-ocr-cascade/README.md) ([results](research/R010-massive-ocr-cascade/results.md)) | Synthetic OCR cascade on MASSIVE intent | exploratory; 12 px OCR lowered accuracy for both fixed R006 seeds |
 
 Machine-readable metrics: `research/results.json`.
 
@@ -45,9 +46,12 @@ six-epoch specialist continuation did not support improved SIB-200 accuracy:
 both seed-specific 95% paired group-bootstrap intervals include zero, and the
 test split was reused from R008.
 Transfer on other unseen tasks and multitask superiority over task-specific
-specialists remain unresolved. See [R007](research/R007-unseen-transfer/)
-and [R009](research/R009-sib-specialist-continuation/results.md) for results.
-OCR robustness and tokenizer/context changes remain separate research goals.
+specialists remain unresolved. R010 found an approximately 10-point accuracy
+loss under 12 px synthetic Tesseract OCR for both fixed R006 seeds; this does
+not establish real-image OCR performance. See [R007](research/R007-unseen-transfer/),
+[R009](research/R009-sib-specialist-continuation/results.md), and
+[R010](research/R010-massive-ocr-cascade/results.md) for results. OCR-domain
+calibration and real-image evaluation remain open.
 
 Metric definitions: `brier` is the Brier score of top-answer confidence
 against correctness, not multiclass Brier. `latency_*` is request wall time;
@@ -82,5 +86,9 @@ done; done
 # R006: prepare_r006.py + train/eval loop in research/R006-multitask/README.md
 uv run python scripts/prepare_r007.py              # R007 exploratory exports; no scoring
 # R007: scoring requires the committed locked manifest; see research/R007-unseen-transfer/README.md
+# R010: synthetic OCR cascade; see research/R010-massive-ocr-cascade/README.md
+uv run --frozen python scripts/prepare_r010.py
+uv run --frozen python scripts/evaluate_r010.py
+uv run --frozen python scripts/summarize_r010.py
 uv run python scripts/summarize_runs.py            # research/results.json
 ```

@@ -732,6 +732,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "pytest" },
+    { name = "regex" },
     { name = "ruff" },
 ]
 
@@ -747,6 +748,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "pytest", specifier = ">=9.1.1" },
+    { name = "regex", specifier = ">=2024.5.15" },
     { name = "ruff", specifier = ">=0.16.10" },
 ]
 
