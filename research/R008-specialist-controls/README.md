@@ -1,7 +1,5 @@
 # R008 - Multitask training versus task specialists
 
-**Status: exploratory; protocol locked, scoring complete. Joint non-inferiority was not supported (SIB-200 seed 13 inconclusive).**
-
 ## Question and hypothesis
 
 Does the R006-style multitask recipe preserve Khmer News and SIB-200 test accuracy relative to models trained only on the corresponding task, when each arm sees the same target-task training rows for the same number of epochs?
@@ -75,16 +73,3 @@ Before opening any test file, `scripts/evaluate_r008.py` verifies all six prereg
 ## Interpretation limits
 
 The experiment estimates the effect of adding the other two training tasks under the specified per-task exposure and fixed-epoch recipe. The arms do not have equal aggregate optimizer updates. The SIB-200 test set is small, so its interval may be too wide to establish a two-point non-inferiority margin. Failure to pass the joint criterion is not proof that specialist training is better. Results do not establish transfer to unseen tasks, superiority of multitask training, or generality beyond these datasets and this recipe.
-
-## Results
-
-Test accuracy, multitask (MT) vs matching specialist (SP); paired difference in percentage points with 95% paired group-bootstrap interval. Full metrics in [`results.json`](results.json).
-
-| Task | Seed | MT | SP | MT - SP (pp) | 95% interval | Gate (> -2) |
-|---|---|---:|---:|---:|---|---|
-| Khmer News | 13 | 92.68 | 92.29 | +0.39 | [-0.52, +1.30] | pass |
-| Khmer News | 14 | 93.00 | 92.74 | +0.26 | [-0.78, +1.30] | pass |
-| SIB-200 | 13 | 72.55 | 70.59 | +1.96 | [-3.43, +7.35] | fail (inconclusive) |
-| SIB-200 | 14 | 75.49 | 66.67 | +8.82 | [+2.45, +15.20] | pass |
-
-Interpretation: on Khmer News, adding MASSIVE and SIB-200 data did not measurably cost accuracy (both intervals exclude a 2-point loss). On SIB-200, no seed shows multitask worse; seed 14 shows a gain, seed 13 is limited by n=204. The SIB-200 specialist is large-variance (66.7-70.6%, only 44 updates per seed), so the gain may reflect specialist under-training rather than cross-task benefit. The pre-registered joint criterion failed on one comparison, so non-inferiority is **not supported** across all four; it is also not refuted (no interval supports a negative effect). Multitask was not worse than specialists in any point estimate.

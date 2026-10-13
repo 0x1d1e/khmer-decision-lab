@@ -29,7 +29,7 @@ and non-autoregressive decision models.
 | [R005](research/R005-decision-complexity/) | Decision complexity: candidate count, option order, option text | done |
 | [R006](research/R006-multitask/) | Multi-task fine-tuning (MASSIVE + Khmer News + SIB-200) | done |
 | [R007](research/R007-unseen-transfer/) | Frozen transfer: derived MKQA choices + ASAG grading | exploratory; protocol locked, primary hypothesis not supported |
-| [R008](research/R008-specialist-controls/) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 inconclusive |
+| [R008](research/R008-specialist-controls/README.md) ([results](research/R008-specialist-controls/results.md)) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 inconclusive |
 
 Machine-readable metrics: `research/results.json`.
 
