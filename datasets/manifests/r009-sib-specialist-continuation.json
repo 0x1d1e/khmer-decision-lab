@@ -1,0 +1,147 @@
+{
+  "study": "R009-sib-specialist-continuation",
+  "status": "locked_exploratory",
+  "protocol_sha256": "dcf578d8d24bf3bf790733b6e8d82280a3b8cb351517e6cee416e9607629e2e4",
+  "implementation_sha256": {
+    "scripts/r009_identity.py": "9355d11808e513194639622d66d75236e25563fca4958377757fc1f52d932197",
+    "scripts/train_r009_continuation.py": "9421c65f346cd6ea8c7d933bea2e6af96acbe28e74f013202ad6e4fe8bab52d3",
+    "scripts/calibrate_r009.py": "eff238c53819cb2d4cedf12762ca529777fadbc6e896547e0aed2581ef8a198c",
+    "scripts/evaluate_r009.py": "355c413c2eba8df8779b6c031c441117fcde8ec5c1474423810175488a1ee1b9",
+    "tests/test_r009_evaluation.py": "d4ea24067d85e026495f95e0a801b3244129953c90638a28e4f5af51942708df"
+  },
+  "source": {
+    "r008_manifest": "datasets/manifests/r008-specialist-controls.json",
+    "r008_manifest_sha256": "97f956f1022bccc1b046739cc279d1aab61504327df050263fbedb3ace4599b3",
+    "training_file": "data/processed/r008-sib200-km-train.jsonl",
+    "training_sha256": "ed2ebd5fbb9e8bdbc78dd9eccaeaa146ee117c1809afc36305036740657930c3",
+    "training_rows": 681,
+    "validation_file": "data/processed/r008-sib200-km-calibration.jsonl",
+    "validation_sha256": "61c5fbeb3ce5467aa30aad076209b8e692c1ab8e180512e51e58555d5796d701",
+    "validation_rows": 99,
+    "test_file": "data/processed/sib200-km-test.jsonl",
+    "test_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+    "test_rows": 204,
+    "test_exact_state_groups": 204,
+    "source_dataset": "Davlan/sib200",
+    "source_dataset_revision": "38977a667f6fc264d5c26ec57a01e16db040b358",
+    "dataset_manifest": "datasets/manifests/sib200-km.json",
+    "dataset_manifest_sha256": "945b0728295db856d55346dfbb02f03e7b1d56aa43a518382e05925481548d63",
+    "r008_anchors": {
+      "13": {
+        "specialist": {
+          "checkpoint": "artifacts/checkpoints/R008-sib-s13",
+          "weights_sha256": "5780f7432d463e45d88b9d6594fca53dd379c4a2b6f2bd1a577f365c57bc0c48",
+          "training_provenance_sha256": "4608f16a29f7cd69fe05f9259625db7bf6071542cb0c1ef1b0961121fbefbaca",
+          "training_telemetry_sha256": "c37b0d051858471bb65b88432c0d4190b021246246c550ffc9fbaf47a407a678",
+          "calibration": "artifacts/checkpoints/R008-sib-s13/calibration-sib200-km.json",
+          "calibration_sha256": "6b14a595def1778bc2f28f3848a7d0a920580f295e77d3b34e4c185c1161e973",
+          "test_report": "artifacts/runs/R008/sib200-km/sib200-specialist-s13.json",
+          "test_report_sha256": "e9a01464d0111d9161e1ff9045bcb1fecb3cafdaeaa8e5a037196cd94b8fa2e4",
+          "test_accuracy": 0.7058823529411765
+        },
+        "multitask": {
+          "checkpoint": "artifacts/checkpoints/R008-mt-s13",
+          "weights_sha256": "5cfa89f75954d1602e682a23778bce45858e6387cb48677a007ac46de07a62cd",
+          "training_provenance_sha256": "c2271b97d49c8785745f28061393027f2f653ec8817ac340e7c51ba349f74c5f",
+          "training_telemetry_sha256": "df77241a64001ef0dcc33ba118a4c70aa8764ec79bbb935bf9a7f14b66f0c688",
+          "calibration": "artifacts/checkpoints/R008-mt-s13/calibration-sib200-km.json",
+          "calibration_sha256": "dedc4e640532467f9293f30534c5b60866128772d302240098dfec12f7dfff60",
+          "test_report": "artifacts/runs/R008/sib200-km/multitask-s13.json",
+          "test_report_sha256": "ac7ac77fec644ec73f5a8320ca5e047e9447d9f7e78e1ab28c2258da2973771a",
+          "test_accuracy": 0.7254901960784313
+        }
+      },
+      "14": {
+        "specialist": {
+          "checkpoint": "artifacts/checkpoints/R008-sib-s14",
+          "weights_sha256": "f71d278fec32f5e589fc37788d7750e8947ea0dc827a22adb450039092df8501",
+          "training_provenance_sha256": "c379bd05e176878a45189c3e4f3faa7526510b5afa47d757e764a60488f11799",
+          "training_telemetry_sha256": "1bb8d676e388c8c8cd5508c4980ecb9cdd3b991f8914fb799ebf8e1472c3a988",
+          "calibration": "artifacts/checkpoints/R008-sib-s14/calibration-sib200-km.json",
+          "calibration_sha256": "d280e750e6c286580dc02ddfc86e23c78f2bd7e62e8b0c1c2b18926810487a60",
+          "test_report": "artifacts/runs/R008/sib200-km/sib200-specialist-s14.json",
+          "test_report_sha256": "5610c14e4ff5eefcbd63d712dae13d7637249b74409dd6edead3ca40a43bce9d",
+          "test_accuracy": 0.6666666666666666
+        },
+        "multitask": {
+          "checkpoint": "artifacts/checkpoints/R008-mt-s14",
+          "weights_sha256": "9b5cac1ddb12b47ee2a340317d5d4809861a6d433fcb85a5c50e2306aa4ce25a",
+          "training_provenance_sha256": "89ad0ac8a8faa8e521675f7e3435ecfa5ad7b946623067b5a4e1ea570b4cedf4",
+          "training_telemetry_sha256": "0c4f5a4d9637d9d5c5e5c9031cbbd54fcbbe3baa8c1ef9e83c03ccbbe30df13a",
+          "calibration": "artifacts/checkpoints/R008-mt-s14/calibration-sib200-km.json",
+          "calibration_sha256": "7bcc5afadd820342f1c9cfc2804cb740179e8e863d909e99742b156d69bae383",
+          "test_report": "artifacts/runs/R008/sib200-km/multitask-s14.json",
+          "test_report_sha256": "01fae8977e191dcf75821650b78dfc6db845519fe22c46d8b328d7371029e665",
+          "test_accuracy": 0.7549019607843137
+        }
+      }
+    }
+  },
+  "recipe": {
+    "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "seeds": [13, 14],
+    "continuation_epochs": 6,
+    "optimizer_reset": true,
+    "micro_batch": 1,
+    "grad_accum": 32,
+    "encoder_lr": 2.5e-05,
+    "head_lr": 0.0001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "loss": "soft-ce",
+    "freeze_encoder": false,
+    "max_len": 512,
+    "head_max_len": 256,
+    "shuffle_options": ["choice"],
+    "amp": true,
+    "gradient_checkpointing": true,
+    "optimizer": "bitsandbytes.optim.adamw.PagedAdamW8bit",
+    "training_calibration_disabled": true,
+    "calib_seed": 20260922,
+    "validation_for_monitoring": true,
+    "validation_for_checkpoint_selection": false,
+    "early_stopping": false,
+    "expected_optimizer_attempts_per_seed": 132,
+    "inference_calibration": "temperature scaling on all 99 validation rows after training"
+  },
+  "environment": {
+    "uv_lock_sha256": "7513ff3426257f4c485549f9e49bfe43556bdebcf2c9967cb388fb900d211015",
+    "python": "3.11.15",
+    "laya": "0.4.1",
+    "torch": "2.14.1",
+    "bitsandbytes": "0.50.2",
+    "transformers": "5.19.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU"
+  },
+  "inference": {
+    "device": "cuda",
+    "autocast_dtype": "bfloat16",
+    "laya_cuda_amp": "bf16"
+  },
+  "evaluation": {
+    "test_reports": "artifacts/runs/R009/sib200-km/continued-s{seed}.json",
+    "summary": "research/R009-sib-specialist-continuation/results.json",
+    "primary_metric": "choice_accuracy",
+    "primary_comparison": "continued specialist minus matching R008 specialist",
+    "secondary_comparison": "continued specialist minus matching R008 multitask model",
+    "group_key": "sha256 of NFC-normalized, whitespace-collapsed full state JSON",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 13,
+    "interval_percentiles": [2.5, 97.5],
+    "primary_success": "both seed-specific 95% paired group-bootstrap intervals have lower bound above zero",
+    "reported_metrics": [
+      "choice_accuracy",
+      "macro_f1",
+      "per_label_recall",
+      "macro_ovr_auc",
+      "mean_confidence",
+      "ece",
+      "brier",
+      "aurc",
+      "selective_accuracy@50",
+      "selective_accuracy@80"
+    ]
+  }
+}

@@ -30,6 +30,7 @@ and non-autoregressive decision models.
 | [R006](research/R006-multitask/) | Multi-task fine-tuning (MASSIVE + Khmer News + SIB-200) | done |
 | [R007](research/R007-unseen-transfer/) | Frozen transfer: derived MKQA choices + ASAG grading | exploratory; protocol locked, primary hypothesis not supported |
 | [R008](research/R008-specialist-controls/README.md) ([results](research/R008-specialist-controls/results.md)) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 inconclusive |
+| [R009](research/R009-sib-specialist-continuation/README.md) ([results](research/R009-sib-specialist-continuation/results.md)) | Continue R008 SIB-200 specialist training | exploratory; improvement unsupported, results inconclusive or mixed |
 
 Machine-readable metrics: `research/results.json`.
 
@@ -39,9 +40,13 @@ Full-encoder adaptation reaches about 84% on MASSIVE Khmer with 20
 candidates. R006 adds Khmer News (93%) and SIB-200 (74-76%) without a
 measurable MASSIVE test loss across its two seeds. These are all trained
 tasks. R007's primary exploratory result did not support positive transfer
-over R003 on its derived MKQA test; ASAG is diagnostic only. Transfer on
-other unseen tasks and multitask superiority over task-specific specialists
-remain unresolved. See [R007](research/R007-unseen-transfer/) for results.
+over R003 on its derived MKQA test; ASAG is diagnostic only. R009's fixed
+six-epoch specialist continuation did not support improved SIB-200 accuracy:
+both seed-specific 95% paired group-bootstrap intervals include zero, and the
+test split was reused from R008.
+Transfer on other unseen tasks and multitask superiority over task-specific
+specialists remain unresolved. See [R007](research/R007-unseen-transfer/)
+and [R009](research/R009-sib-specialist-continuation/results.md) for results.
 OCR robustness and tokenizer/context changes remain separate research goals.
 
 Metric definitions: `brier` is the Brier score of top-answer confidence

@@ -1,0 +1,236 @@
+{
+  "study": "R009-sib-specialist-continuation",
+  "status": "scored_exploratory",
+  "manifest_sha256": "b63a224292e0eda8b80685f25d02b1f9c3ae4a97cc8a04b43161e4d6af0af354",
+  "r008_manifest_sha256": "97f956f1022bccc1b046739cc279d1aab61504327df050263fbedb3ace4599b3",
+  "test": {
+    "file": "data/processed/sib200-km-test.jsonl",
+    "sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+    "rows": 204,
+    "unique_state_groups": 204
+  },
+  "primary_hypothesis": {
+    "comparison": "continued specialist minus matching R008 specialist",
+    "success_rule": "both seed-specific 95% paired group-bootstrap intervals have lower bound above zero",
+    "decision": "not supported; results are inconclusive or mixed",
+    "per_seed": [
+      {
+        "seed": 13,
+        "continued_metrics": {
+          "choice_accuracy": 0.6862745098039216,
+          "mean_confidence": 0.7486887254901958,
+          "ece": 0.09162696078431376,
+          "brier": 0.1743198185784314,
+          "aurc": 0.15939111936938474,
+          "selective_accuracy@50": 0.8627450980392157,
+          "selective_accuracy@80": 0.7621951219512195,
+          "macro_f1": 0.6832997260297101,
+          "per_label_recall": {
+            "entertainment": 0.631578947368421,
+            "geography": 0.5882352941176471,
+            "health": 0.6818181818181818,
+            "politics": 0.7333333333333333,
+            "science/technology": 0.6470588235294118,
+            "sports": 0.68,
+            "travel": 0.775
+          },
+          "macro_ovr_auc": 0.9050136454617537
+        },
+        "r008_specialist_metrics": {
+          "choice_accuracy": 0.7058823529411765,
+          "mean_confidence": 0.7137651960784323,
+          "ece": 0.05593578431372548,
+          "brier": 0.17142993573529408,
+          "aurc": 0.14166592542750142,
+          "selective_accuracy@50": 0.8921568627450981,
+          "selective_accuracy@80": 0.774390243902439,
+          "macro_f1": 0.6944403728331121,
+          "per_label_recall": {
+            "entertainment": 0.5263157894736842,
+            "geography": 0.7058823529411765,
+            "health": 0.5454545454545454,
+            "politics": 0.8,
+            "science/technology": 0.6862745098039216,
+            "sports": 0.76,
+            "travel": 0.8
+          },
+          "macro_ovr_auc": 0.9129845316927
+        },
+        "r008_multitask_metrics": {
+          "choice_accuracy": 0.7254901960784313,
+          "mean_confidence": 0.7677401960784309,
+          "ece": 0.06799803921568626,
+          "brier": 0.14951622509803925,
+          "aurc": 0.10839782785184587,
+          "selective_accuracy@50": 0.9019607843137255,
+          "selective_accuracy@80": 0.823170731707317,
+          "macro_f1": 0.7141414141414142,
+          "per_label_recall": {
+            "entertainment": 0.5789473684210527,
+            "geography": 0.5294117647058824,
+            "health": 0.7272727272727273,
+            "politics": 0.7666666666666667,
+            "science/technology": 0.7450980392156863,
+            "sports": 0.8,
+            "travel": 0.775
+          },
+          "macro_ovr_auc": 0.9345379394161731
+        },
+        "continued_minus_r008_specialist": {
+          "difference_percentage_points": -1.9607843137254901,
+          "paired_group_bootstrap_95_percent_interval_percentage_points": [
+            -6.8627450980392135,
+            2.941176470588236
+          ]
+        },
+        "continued_minus_r008_multitask": {
+          "difference_percentage_points": -3.9215686274509802,
+          "paired_group_bootstrap_95_percent_interval_percentage_points": [
+            -8.823529411764708,
+            0.9803921568627416
+          ]
+        },
+        "training_updates": {
+          "attempts": 132,
+          "successful": 129,
+          "skipped": 3,
+          "seconds": 374.7453364719995,
+          "peak_allocated_bytes": 3422438400
+        },
+        "test_report": {
+          "path": "artifacts/runs/R009/sib200-km/continued-s13.json",
+          "sha256": "7412fa995c41549c962fa10e630b7461c55f990274fc3583fba2e82b274f96de",
+          "overall": {
+            "choice_accuracy": 0.6862745098039216,
+            "mean_confidence": 0.7486887254901958,
+            "ece": 0.09162696078431376,
+            "brier": 0.1743198185784314,
+            "aurc": 0.15939111936938474,
+            "selective_accuracy@50": 0.8627450980392157,
+            "selective_accuracy@80": 0.7621951219512195,
+            "macro_f1": 0.6832997260297101,
+            "per_label_recall": {
+              "entertainment": 0.631578947368421,
+              "geography": 0.5882352941176471,
+              "health": 0.6818181818181818,
+              "politics": 0.7333333333333333,
+              "science/technology": 0.6470588235294118,
+              "sports": 0.68,
+              "travel": 0.775
+            },
+            "macro_ovr_auc": 0.9050136454617537
+          }
+        }
+      },
+      {
+        "seed": 14,
+        "continued_metrics": {
+          "choice_accuracy": 0.6568627450980392,
+          "mean_confidence": 0.792002450980392,
+          "ece": 0.1725642156862745,
+          "brier": 0.19938361328431373,
+          "aurc": 0.1968202570198968,
+          "selective_accuracy@50": 0.8155339805825242,
+          "selective_accuracy@80": 0.7439024390243902,
+          "macro_f1": 0.6383631948749272,
+          "per_label_recall": {
+            "entertainment": 0.5263157894736842,
+            "geography": 0.6470588235294118,
+            "health": 0.5,
+            "politics": 0.8,
+            "science/technology": 0.7450980392156863,
+            "sports": 0.68,
+            "travel": 0.575
+          },
+          "macro_ovr_auc": 0.877736613849147
+        },
+        "r008_specialist_metrics": {
+          "choice_accuracy": 0.6666666666666666,
+          "mean_confidence": 0.7011230392156866,
+          "ece": 0.07507205882352938,
+          "brier": 0.18483391279411765,
+          "aurc": 0.1685401663432257,
+          "selective_accuracy@50": 0.8529411764705882,
+          "selective_accuracy@80": 0.7560975609756098,
+          "macro_f1": 0.6691188364026971,
+          "per_label_recall": {
+            "entertainment": 0.6842105263157895,
+            "geography": 0.7058823529411765,
+            "health": 0.5909090909090909,
+            "politics": 0.6333333333333333,
+            "science/technology": 0.5490196078431373,
+            "sports": 0.76,
+            "travel": 0.8
+          },
+          "macro_ovr_auc": 0.9024695788660351
+        },
+        "r008_multitask_metrics": {
+          "choice_accuracy": 0.7549019607843137,
+          "mean_confidence": 0.7317161764705883,
+          "ece": 0.06384460784313722,
+          "brier": 0.1503632269117647,
+          "aurc": 0.09371271457077007,
+          "selective_accuracy@50": 0.9117647058823529,
+          "selective_accuracy@80": 0.8170731707317073,
+          "macro_f1": 0.7554124628602453,
+          "per_label_recall": {
+            "entertainment": 0.5789473684210527,
+            "geography": 0.7058823529411765,
+            "health": 0.6363636363636364,
+            "politics": 0.8666666666666667,
+            "science/technology": 0.8235294117647058,
+            "sports": 0.8,
+            "travel": 0.725
+          },
+          "macro_ovr_auc": 0.9404664489568237
+        },
+        "continued_minus_r008_specialist": {
+          "difference_percentage_points": -0.9803921568627451,
+          "paired_group_bootstrap_95_percent_interval_percentage_points": [
+            -6.862745098039225,
+            4.90196078431373
+          ]
+        },
+        "continued_minus_r008_multitask": {
+          "difference_percentage_points": -9.803921568627452,
+          "paired_group_bootstrap_95_percent_interval_percentage_points": [
+            -15.686274509803921,
+            -4.411764705882348
+          ]
+        },
+        "training_updates": {
+          "attempts": 132,
+          "successful": 128,
+          "skipped": 4,
+          "seconds": 367.9654318739995,
+          "peak_allocated_bytes": 3422438400
+        },
+        "test_report": {
+          "path": "artifacts/runs/R009/sib200-km/continued-s14.json",
+          "sha256": "75c28801949c73251977ce45acec45fb38652a403790301684ac3c5b3da84e8a",
+          "overall": {
+            "choice_accuracy": 0.6568627450980392,
+            "mean_confidence": 0.792002450980392,
+            "ece": 0.1725642156862745,
+            "brier": 0.19938361328431373,
+            "aurc": 0.1968202570198968,
+            "selective_accuracy@50": 0.8155339805825242,
+            "selective_accuracy@80": 0.7439024390243902,
+            "macro_f1": 0.6383631948749272,
+            "per_label_recall": {
+              "entertainment": 0.5263157894736842,
+              "geography": 0.6470588235294118,
+              "health": 0.5,
+              "politics": 0.8,
+              "science/technology": 0.7450980392156863,
+              "sports": 0.68,
+              "travel": 0.575
+            },
+            "macro_ovr_auc": 0.877736613849147
+          }
+        }
+      }
+    ]
+  },
+  "interpretation_limit": "Two seed-matched continuations on one 204-row task test support only a conditional exploratory conclusion; no population-level or cross-task claim is warranted."
+}
