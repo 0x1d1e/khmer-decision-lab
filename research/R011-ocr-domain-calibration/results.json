@@ -1,0 +1,146 @@
+{
+  "study": "R011-ocr-domain-calibration",
+  "status": "scored_exploratory",
+  "manifest_sha256": "78075aecffc25575ea463f7f0edf5e172b1d5c6453d12933edb0f11e84ea8ad3",
+  "protocol_sha256": "1c37953abbfb35828b045b06c7644742384d4a6588b5ad6502b53769ddea59d2",
+  "r010_manifest_sha256": "dc52941150b820c5064c0eeb020fa266db6ac1e8b3b85ac6c29507a7094ffb01",
+  "calibration": {
+    "source": "MASSIVE official validation split",
+    "eligible_rows": 1715,
+    "eligible_normalized_groups": 1715,
+    "validation_rows": 2033,
+    "validation_normalized_groups": 1932,
+    "excluded_group_union": 217,
+    "excluded_conflicting_label_groups": 21,
+    "excluded_train_overlap_groups": 196,
+    "excluded_test_overlap_groups": 90,
+    "ocr_condition": "R010 synthetic 12 px Tesseract",
+    "codepoint_cer": 0.11584802271076781,
+    "grapheme_cer": 0.15807560137457044,
+    "exact_transcriptions": 402,
+    "blank_transcriptions": 0,
+    "temperature_by_seed": {
+      "13": {
+        "existing": 1.26199209690094,
+        "ocr_fitted": 1.375568151473999,
+        "calibration_sha256": "175d0d8864a3b3abd37f11f9df3449d776f770399471d1110d4420d2dbe10ff8"
+      },
+      "14": {
+        "existing": 1.255082130432129,
+        "ocr_fitted": 1.3800501823425293,
+        "calibration_sha256": "0e78c46e7f85516ed3ab6154a8f8f8ad5aec4582fc55f974c27503b47f443515"
+      }
+    }
+  },
+  "test": {
+    "file": "R010 prepared 12 px OCR MASSIVE test",
+    "rows": 2974,
+    "normalized_groups": 2786,
+    "conflicting_label_groups": 34,
+    "conflicting_label_rows": 129,
+    "exact_train_overlap_rows": 429,
+    "primary_rows": 2545,
+    "primary_groups": 2519,
+    "previously_scored_in": "R001-R010",
+    "inference_parity": {
+      "batch_size": 8,
+      "grouping": "Laya evals.evaluate: consecutive identical question schemas, singleton predict",
+      "raw_prediction_mismatches_by_seed": {
+        "13": 0,
+        "14": 0
+      }
+    }
+  },
+  "primary_hypothesis": {
+    "metric": "mean choice NLL difference: OCR-fitted temperature minus existing checkpoint temperature",
+    "success_rule": "both seed-specific paired group-bootstrap 95% interval upper bounds below zero",
+    "bootstrap": {
+      "groups": 2519,
+      "draws": 10000,
+      "seed": 13,
+      "weighting": "resample groups with replacement, retain every row, row-weight differences"
+    },
+    "supported": true,
+    "per_seed": {
+      "13": {
+        "rows": 2545,
+        "groups": 2519,
+        "mean_nll_existing": 0.8592189592980146,
+        "mean_nll_ocr_fitted": 0.8508175123859328,
+        "mean_nll_difference": -0.008401446912081606,
+        "paired_group_bootstrap_95_percent_interval": [
+          -0.01217142437740729,
+          -0.004792858355578705
+        ],
+        "choice_accuracy": 0.7481335952848723,
+        "top_answer_brier_existing": 0.11935225875272167,
+        "top_answer_brier_ocr_fitted": 0.11752497026407707,
+        "ece_existing": 0.037815022827728015,
+        "ece_ocr_fitted": 0.018430407143390785,
+        "mean_confidence_existing": 0.7856366084723009,
+        "mean_confidence_ocr_fitted": 0.7640938441175236,
+        "aurc_existing": 0.06824146877355602,
+        "aurc_ocr_fitted": 0.06805499849699641,
+        "selective_accuracy_50_existing": 0.9646504320502749,
+        "selective_accuracy_50_ocr_fitted": 0.9662215239591516,
+        "selective_accuracy_80_existing": 0.8590373280943026,
+        "selective_accuracy_80_ocr_fitted": 0.8605108055009824,
+        "accuracy_changed_rows": 0
+      },
+      "14": {
+        "rows": 2545,
+        "groups": 2519,
+        "mean_nll_existing": 0.8757220466497879,
+        "mean_nll_ocr_fitted": 0.8677020540258182,
+        "mean_nll_difference": -0.00801999262396954,
+        "paired_group_bootstrap_95_percent_interval": [
+          -0.0122301651636061,
+          -0.0039645351729875825
+        ],
+        "choice_accuracy": 0.7410609037328094,
+        "top_answer_brier_existing": 0.12472903422318862,
+        "top_answer_brier_ocr_fitted": 0.1224251994280693,
+        "ece_existing": 0.04606261763325988,
+        "ece_ocr_fitted": 0.026683640612454082,
+        "mean_confidence_existing": 0.7816301369373901,
+        "mean_confidence_ocr_fitted": 0.7562331153165877,
+        "aurc_existing": 0.0737808492628252,
+        "aurc_ocr_fitted": 0.07365342350918871,
+        "selective_accuracy_50_existing": 0.9654359780047133,
+        "selective_accuracy_50_ocr_fitted": 0.9654359780047133,
+        "selective_accuracy_80_existing": 0.8472495088408645,
+        "selective_accuracy_80_ocr_fitted": 0.8487229862475442,
+        "accuracy_changed_rows": 0
+      }
+    }
+  },
+  "all_test_rows_secondary": {
+    "mt-s13": {
+      "choice_accuracy": 0.7420981842636181,
+      "mean_nll_existing": 0.8925359639025464,
+      "mean_nll_ocr_fitted": 0.8842542855467288,
+      "top_answer_brier_existing": 0.12054948231538799,
+      "top_answer_brier_ocr_fitted": 0.11911547891486135,
+      "ece_existing": 0.03269192027083477,
+      "ece_ocr_fitted": 0.015235498752260785,
+      "accuracy_changed_rows": 0
+    },
+    "mt-s14": {
+      "choice_accuracy": 0.7357094821788837,
+      "mean_nll_existing": 0.9071217184054556,
+      "mean_nll_ocr_fitted": 0.8996308362711514,
+      "top_answer_brier_existing": 0.12475141649676386,
+      "top_answer_brier_ocr_fitted": 0.12287158011738428,
+      "ece_existing": 0.03884020733043809,
+      "ece_ocr_fitted": 0.024142281316680628,
+      "accuracy_changed_rows": 0
+    }
+  },
+  "execution_validation": {
+    "initial_batch16_attempt": "aborted before valid evaluation after 16/2974 seed-13 raw-prediction mismatches; temperatures were superseded",
+    "corrected_path": "R010-compatible eval batching; calibration refit on validation; all test predictions matched R010",
+    "post_review_rerun": "calibration temperatures and payload hashes reproduced byte-for-byte; evaluation and summary rerun",
+    "independent_review": "test metrics and paired bootstrap independently reproduced from saved artifacts; validation logits were not retained for an independent temperature refit"
+  },
+  "interpretation_limit": "Exploratory evidence for two fixed checkpoints on synthetic 12 px OCR and a MASSIVE test split reused in R001-R010; no claim of real-image robustness, independent confirmation, accuracy recovery, or deployment value."
+}

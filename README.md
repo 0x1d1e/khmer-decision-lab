@@ -32,8 +32,9 @@ and non-autoregressive decision models.
 | [R008](research/R008-specialist-controls/README.md) ([results](research/R008-specialist-controls/results.md)) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 inconclusive |
 | [R009](research/R009-sib-specialist-continuation/README.md) ([results](research/R009-sib-specialist-continuation/results.md)) | Continue R008 SIB-200 specialist training | exploratory; improvement unsupported, results inconclusive or mixed |
 | [R010](research/R010-massive-ocr-cascade/README.md) ([results](research/R010-massive-ocr-cascade/results.md)) | Synthetic OCR cascade on MASSIVE intent | exploratory; 12 px OCR lowered accuracy for both fixed R006 seeds |
+| [R011](research/R011-ocr-domain-calibration/README.md) ([results](research/R011-ocr-domain-calibration/results.md)) | Synthetic OCR-domain temperature calibration | exploratory; lower NLL for both fixed seeds, accuracy unchanged |
 
-Machine-readable metrics: `research/results.json`.
+Core benchmark metrics: `research/results.json`. Per-study machine-readable outcomes are linked from each results page.
 
 ## Current evidence
 
@@ -48,10 +49,15 @@ test split was reused from R008.
 Transfer on other unseen tasks and multitask superiority over task-specific
 specialists remain unresolved. R010 found an approximately 10-point accuracy
 loss under 12 px synthetic Tesseract OCR for both fixed R006 seeds; this does
-not establish real-image OCR performance. See [R007](research/R007-unseen-transfer/),
-[R009](research/R009-sib-specialist-continuation/results.md), and
-[R010](research/R010-massive-ocr-cascade/results.md) for results. OCR-domain
-calibration and real-image evaluation remain open.
+not establish real-image OCR performance. R011's validation-fitted OCR
+temperature lowered mean NLL by 0.0084 and 0.0080 for those seeds on the
+train-nonoverlap subset, with no accuracy change. This remains exploratory on
+the reused MASSIVE test split and does not establish real-image performance.
+See [R007](research/R007-unseen-transfer/),
+[R009](research/R009-sib-specialist-continuation/results.md),
+[R010](research/R010-massive-ocr-cascade/results.md), and
+[R011](research/R011-ocr-domain-calibration/results.md) for results. Real-image
+evaluation remains open.
 
 Metric definitions: `brier` is the Brier score of top-answer confidence
 against correctness, not multiclass Brier. `latency_*` is request wall time;
@@ -90,5 +96,10 @@ uv run python scripts/prepare_r007.py              # R007 exploratory exports; n
 uv run --frozen python scripts/prepare_r010.py
 uv run --frozen python scripts/evaluate_r010.py
 uv run --frozen python scripts/summarize_r010.py
+# R011: validation-only OCR temperature calibration; see locked protocol.
+uv run --frozen python scripts/prepare_r011.py
+uv run --frozen python scripts/calibrate_r011.py
+uv run --frozen python scripts/evaluate_r011.py
+uv run --frozen python scripts/summarize_r011.py
 uv run python scripts/summarize_runs.py            # research/results.json
 ```
