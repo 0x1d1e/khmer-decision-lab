@@ -33,6 +33,7 @@ and non-autoregressive decision models.
 | [R009](research/R009-sib-specialist-continuation/README.md) ([results](research/R009-sib-specialist-continuation/results.md)) | Continue R008 SIB-200 specialist training | exploratory; improvement unsupported, results inconclusive or mixed |
 | [R010](research/R010-massive-ocr-cascade/README.md) ([results](research/R010-massive-ocr-cascade/results.md)) | Synthetic OCR cascade on MASSIVE intent | exploratory; 12 px OCR lowered accuracy for both fixed R006 seeds |
 | [R011](research/R011-ocr-domain-calibration/README.md) ([results](research/R011-ocr-domain-calibration/results.md)) | Synthetic OCR-domain temperature calibration | exploratory; lower NLL for both fixed seeds, accuracy unchanged |
+| [R012](research/R012-ocr-continuation/README.md) ([results](research/R012-ocr-continuation/results.md)) | Matched clean and synthetic-OCR continuation | exploratory; OCR continuation improved 12 px accuracy for both fixed seeds within the clean-text tolerance |
 
 Core benchmark metrics: `research/results.json`. Per-study machine-readable outcomes are linked from each results page.
 
@@ -48,16 +49,20 @@ both seed-specific 95% paired group-bootstrap intervals include zero, and the
 test split was reused from R008.
 Transfer on other unseen tasks and multitask superiority over task-specific
 specialists remain unresolved. R010 found an approximately 10-point accuracy
-loss under 12 px synthetic Tesseract OCR for both fixed R006 seeds; this does
-not establish real-image OCR performance. R011's validation-fitted OCR
-temperature lowered mean NLL by 0.0084 and 0.0080 for those seeds on the
-train-nonoverlap subset, with no accuracy change. This remains exploratory on
-the reused MASSIVE test split and does not establish real-image performance.
+loss under 12 px synthetic Tesseract OCR for both fixed R006 seeds. R011's
+validation-fitted OCR temperature lowered mean NLL by 0.0084 and 0.0080, with
+no accuracy change. R012's OCR continuation improved 12 px accuracy over clean
+continuation by 3.18 pp and 2.43 pp for the two fixed R006 seeds; both clean
+comparisons stayed within the preregistered -2 pp tolerance. These OCR findings
+use the reused MASSIVE test split and synthetic typesetting, so they are
+exploratory and do not establish real-image performance.
+
 See [R007](research/R007-unseen-transfer/),
 [R009](research/R009-sib-specialist-continuation/results.md),
-[R010](research/R010-massive-ocr-cascade/results.md), and
-[R011](research/R011-ocr-domain-calibration/results.md) for results. Real-image
-evaluation remains open.
+[R010](research/R010-massive-ocr-cascade/results.md),
+[R011](research/R011-ocr-domain-calibration/results.md), and
+[R012](research/R012-ocr-continuation/results.md). Real-image evaluation
+remains open.
 
 Metric definitions: `brier` is the Brier score of top-answer confidence
 against correctness, not multiclass Brier. `latency_*` is request wall time;
