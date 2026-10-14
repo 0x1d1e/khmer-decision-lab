@@ -1,0 +1,169 @@
+{
+  "base": {
+    "inference_files_sha256": {
+      "encoder/config.json": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4",
+      "model.safetensors": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+      "rl_agent_config.json": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6",
+      "tokenizer/tokenizer.json": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+      "tokenizer/tokenizer_config.json": "6c6b2d8e3c84ce0e671c129cd6b374b235d6f9863042a5836358d00a89bbb5a1"
+    },
+    "repo": "convaiinnovations/laya",
+    "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "subdir": "multilingual"
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "gpu_capability": [
+      8,
+      6
+    ],
+    "gpu_driver": "615.78.08",
+    "gpu_memory_mib": 5857,
+    "packages": {
+      "bitsandbytes": "0.50.2",
+      "datasets": "5.1.0",
+      "huggingface-hub": "1.33.0",
+      "laya": "0.4.1",
+      "numpy": "2.4.6",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.2",
+      "torch": "2.14.1",
+      "transformers": "5.19.0"
+    },
+    "platform": "Linux-7.2.9-2-cachyos-x86_64-with-glibc2.44",
+    "python": "3.11.15",
+    "torch_build": "2.14.1+cu130",
+    "torch_cuda": "13.0",
+    "uv_lock_sha256": "d688cb8273cf5b4f10f23f33b7ae09060776fa9f239acb49429311535f7488fb"
+  },
+  "evaluation": {
+    "bootstrap_draws": 10000,
+    "bootstrap_interval": "percentile; numpy.quantile(method='linear') at 2.5 and 97.5",
+    "bootstrap_seed": 13,
+    "bootstrap_weighting": "resample normalized utterance groups; retain all rows; row-weight difference",
+    "generalization_scope": "the fixed selected 12-intent set, not a population of unseen intents",
+    "known_test_auroc": "per-intent OvR AUROC uses only rows whose 20-choice candidate set contains that label",
+    "primary_comparison": "seen-only minus frozen multilingual base on test-unseen",
+    "primary_metric": "top-1 choice accuracy",
+    "reported_metrics": [
+      "choice_accuracy",
+      "macro_f1",
+      "per_intent_recall",
+      "macro_ovr_auc",
+      "mean_multiclass_nll",
+      "categorical_brier",
+      "top_answer_brier",
+      "ece_15_equal_width_bins",
+      "mean_answer_confidence",
+      "aurc",
+      "selective_accuracy@50",
+      "selective_accuracy@80"
+    ],
+    "support_rule": "both seed-specific paired group-bootstrap 95% lower bounds > 0"
+  },
+  "implementation_sha256": {
+    "scripts/evaluate_r013.py": "15aaf442202e3412018151416a36aad8a87c68a7f56e78ef526ef13a14182d8a",
+    "scripts/laya_amp.py": "9c1eb076971201a502f8c6327bce09cfda92f4733b4383b0c5caa888f34972f6",
+    "scripts/prepare_r013.py": "d5d388c6db4192a377b5301758ae9a279fe8c89a97e03b72e18cf9f0d99a0a4a",
+    "scripts/r008_identity.py": "61f23f4eff8f7cef7b8218abf3e997d4219b78a773c6c078fbf3515f16f8ad11",
+    "scripts/r013_identity.py": "a443b11bdefcc35b52f0663b2cd4ad6760c96d700a629eb61b939936fac2ad9d",
+    "scripts/r013_inference.py": "8e7f6f319295d870862c6c93bcbfcd0fab85f3165721ead2a7a907fc0de20c41",
+    "scripts/summarize_r013.py": "d7a60fae7c95b9ae54cefce45a8ead27830bce0c2e49ed3fee907532f2b2b1bc",
+    "scripts/train_r013.py": "9af1db8cfa971b18c325c68a5c3974cab7a1202d6e4d2823df8fd6004ef05987",
+    "tests/test_r013_unseen_intent.py": "33ced30d06c0dbe7c8a77f790f3fe053513302876218aa980fb13c7504c370a7"
+  },
+  "protocol_sha256": "4e205c93f88218a3089e7341b26c7008bcca0eaeee0f3b27ca449a938b95a433",
+  "recipe": {
+    "amp": true,
+    "arms": [
+      "seen-only",
+      "all-label"
+    ],
+    "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "calib_frac": 0.0,
+    "calib_max": 0,
+    "encoder_lr": 2.5e-05,
+    "epochs": 2,
+    "eval_data": null,
+    "expected_optimizer_attempts": 376,
+    "freeze_encoder": false,
+    "grad_accum": 32,
+    "grad_clip": 1.0,
+    "gradient_checkpointing": true,
+    "head_lr": 0.0001,
+    "head_max_len": 256,
+    "inference": {
+      "autocast_dtype": "bfloat16",
+      "batch_size": 8,
+      "device": "cuda",
+      "laya_cuda_amp": "bf16"
+    },
+    "loss": "soft-ce",
+    "max_len": 512,
+    "maximum_paired_update_difference": 5,
+    "micro_batch": 1,
+    "min_lr": 1e-06,
+    "minimum_successful_updates": 358,
+    "optimizer": "bitsandbytes.optim.adamw.PagedAdamW8bit",
+    "seeds": [
+      13,
+      14
+    ],
+    "shuffle_options": [
+      "choice"
+    ],
+    "training_rows_per_arm": 6012,
+    "weight_decay": 0.01
+  },
+  "source": {
+    "config": "km",
+    "dataset": "mteb/amazon_massive_intent",
+    "file": "data/processed/massive-km-train-full.jsonl",
+    "license": {
+      "pinned_repository_card": "Apache-2.0",
+      "upstream_amazon_massive": "CC BY 4.0"
+    },
+    "massive_manifest_sha256": "848c327f63a4d819eef42d7474932f413344b1b984ddf8d00086a572e1e715b9",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2",
+    "rows": 11514,
+    "sha256": "0d9a37e0579106fd406aa174a130e3cca5fecc575d6856fceb5d61aed4330ab5"
+  },
+  "split": {
+    "expected_counts": {
+      "conflicting_label_groups": 127,
+      "conflicting_label_rows": 789,
+      "distinct_normalized_groups": 10320,
+      "eligible_groups": 10193,
+      "eligible_labels": 53,
+      "heldout_test_groups": 320,
+      "known_test_groups": 1720,
+      "same_label_duplicate_groups": 330,
+      "seen_only_train_groups": 6012,
+      "source_rows": 11514,
+      "test_groups": 2040,
+      "train_groups": 7139,
+      "validation_groups": 1014,
+      "validation_seen_groups": 856,
+      "validation_unseen_groups": 158
+    },
+    "heldout_intents": [
+      "datetime_convert",
+      "email_addcontact",
+      "iot_hue_lightdim",
+      "iot_hue_lightoff",
+      "iot_hue_lightup",
+      "news_query",
+      "play_game",
+      "play_podcasts",
+      "qa_definition",
+      "qa_stock",
+      "recommendation_movies",
+      "takeaway_order"
+    ],
+    "normalization": "NFKC, casefold, collapse whitespace",
+    "partition_seed": 20261014,
+    "selection_seed": 20261014
+  },
+  "status": "locked_exploratory",
+  "study": "R013-unseen-intent-transfer"
+}
