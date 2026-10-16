@@ -1,0 +1,1197 @@
+{
+  "schema": "r014-results/1",
+  "study": "R014-sea-nli-khmer-transfer",
+  "status": "completed_exploratory",
+  "manifest_sha256": "7f3b49f0590f7b75477fb41b390867ac4f6ce0a314e5467283a8f642c56544ba",
+  "protocol_sha256": "e6c6af64cd73f657d8a3107fa87bcaca14380194a3859de31dd5f82053621165",
+  "evaluation": {
+    "primary_metric": "top-1 choice accuracy",
+    "primary_comparison": "each R006 seed minus the frozen multilingual base on pooled Khmer rows",
+    "support_rule": "both R006 seed-specific paired group-bootstrap 95% lower bounds > 0",
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 13,
+    "bootstrap_interval": "percentile; numpy.quantile(method='linear') at 2.5 and 97.5",
+    "bootstrap_weighting": "resample premise groups; retain all rows; row-weighted accuracy difference in percentage points",
+    "degeneracy_threshold": 0.9,
+    "degeneracy_guard": "primary invalid when any arm assigns more than 90% of pooled Khmer rows to a single label",
+    "reported_metrics": [
+      "choice_accuracy",
+      "macro_f1",
+      "top_answer_brier",
+      "ece_15_equal_width_bins",
+      "mean_confidence",
+      "per_class_recall",
+      "predicted_label_distribution"
+    ],
+    "power_note": "The Khmer slice is 65 rows in 37 premise groups, so only very large effects are resolvable."
+  },
+  "exports": {
+    "km-normal": {
+      "path": "data/processed/sea-nli-km-normal-test.jsonl",
+      "sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+      "ids": "data/processed/sea-nli-km-normal-test-ids.json",
+      "ids_sha256": "32c9be7f6edb3e125a1f3dd8130223ea3b169eec8a78aa15754acd8d80871006"
+    },
+    "km-hard": {
+      "path": "data/processed/sea-nli-km-hard-test.jsonl",
+      "sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+      "ids": "data/processed/sea-nli-km-hard-test-ids.json",
+      "ids_sha256": "3760c9b410e857e616e306a9f4ca93f4b04f28296a78af543ed29af0e616e4b3"
+    },
+    "en-normal": {
+      "path": "data/processed/sea-nli-en-normal-test.jsonl",
+      "sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+      "ids": "data/processed/sea-nli-en-normal-test-ids.json",
+      "ids_sha256": "32c9be7f6edb3e125a1f3dd8130223ea3b169eec8a78aa15754acd8d80871006"
+    },
+    "en-hard": {
+      "path": "data/processed/sea-nli-en-hard-test.jsonl",
+      "sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+      "ids": "data/processed/sea-nli-en-hard-test-ids.json",
+      "ids_sha256": "3760c9b410e857e616e306a9f4ca93f4b04f28296a78af543ed29af0e616e4b3"
+    },
+    "other": {
+      "path": "data/processed/sea-nli-other-test.jsonl",
+      "sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+      "ids": "data/processed/sea-nli-other-test-ids.json",
+      "ids_sha256": "aa7c0e936a0686f6b6d8024837d945faac43520ffe097ab9d98016118839cd28"
+    }
+  },
+  "reports": {
+    "km-normal/multilingual": {
+      "path": "artifacts/runs/R014/km-normal/multilingual.json",
+      "sha256": "895d55c14e1765a7316ccb486816a7e94e6538e77987608ab2423e44649b5226",
+      "dataset_sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+      "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    },
+    "km-normal/mt-s13": {
+      "path": "artifacts/runs/R014/km-normal/mt-s13.json",
+      "sha256": "0d051720c6fe05ae8170b80c1791e4f91f4cb6f464c9b2f433e8c58827797823",
+      "dataset_sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+      "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9"
+    },
+    "km-normal/mt-s14": {
+      "path": "artifacts/runs/R014/km-normal/mt-s14.json",
+      "sha256": "37b3a53f951141439a98b1fd8699a038722424b4a36e872c709a29e9f73c952c",
+      "dataset_sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+      "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92"
+    },
+    "km-normal/full-e2-8bit": {
+      "path": "artifacts/runs/R014/km-normal/full-e2-8bit.json",
+      "sha256": "11391daaa2c6a1567b1853eb5f3794d3eca70830c50fe32afea1d8884150908f",
+      "dataset_sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+      "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93"
+    },
+    "km-hard/multilingual": {
+      "path": "artifacts/runs/R014/km-hard/multilingual.json",
+      "sha256": "c3e96ab3bfb6aaa5915d96db21bfe9682115c685f693827955c9349ba428f5f0",
+      "dataset_sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+      "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    },
+    "km-hard/mt-s13": {
+      "path": "artifacts/runs/R014/km-hard/mt-s13.json",
+      "sha256": "20acbe4e0269ce1b553f21bba5e463aff1848ee94921be267a99a6d872472c1b",
+      "dataset_sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+      "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9"
+    },
+    "km-hard/mt-s14": {
+      "path": "artifacts/runs/R014/km-hard/mt-s14.json",
+      "sha256": "b2f760aad10e0aaf34c6e308bc58bf4758923559eab830c1c53f4faef1a02d62",
+      "dataset_sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+      "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92"
+    },
+    "km-hard/full-e2-8bit": {
+      "path": "artifacts/runs/R014/km-hard/full-e2-8bit.json",
+      "sha256": "b17d3e2f80d35a8692d07dceed52e066328b192b6a8dc425b7cb1a7586a852bd",
+      "dataset_sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+      "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93"
+    },
+    "en-normal/multilingual": {
+      "path": "artifacts/runs/R014/en-normal/multilingual.json",
+      "sha256": "bb9c16afc505ad10db1d9ec95ccf4a035febe0a7c0f26329b81dbc61895cefae",
+      "dataset_sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+      "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    },
+    "en-normal/mt-s13": {
+      "path": "artifacts/runs/R014/en-normal/mt-s13.json",
+      "sha256": "25219d6e0c230be8e55621770f3ed3367164525087aaf6e614c480813b8a8b4e",
+      "dataset_sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+      "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9"
+    },
+    "en-normal/mt-s14": {
+      "path": "artifacts/runs/R014/en-normal/mt-s14.json",
+      "sha256": "ad5e6a71cd90a88fb9a89bcb8efc1f9cb8368ffec43c003679990fbfa3040975",
+      "dataset_sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+      "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92"
+    },
+    "en-normal/full-e2-8bit": {
+      "path": "artifacts/runs/R014/en-normal/full-e2-8bit.json",
+      "sha256": "3b95896880848f84d52fafa9dded82e53bac0c86bae03a09f88ea85a3fe1cc0e",
+      "dataset_sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+      "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93"
+    },
+    "en-hard/multilingual": {
+      "path": "artifacts/runs/R014/en-hard/multilingual.json",
+      "sha256": "1a526241e2285d4abe60e4a901747c15c095ab9ad4116561979dec4328c14cb6",
+      "dataset_sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+      "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    },
+    "en-hard/mt-s13": {
+      "path": "artifacts/runs/R014/en-hard/mt-s13.json",
+      "sha256": "16179c1c645d67d100226b7687a0621b5d08a207f90a3011bacc0cd144c29e2d",
+      "dataset_sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+      "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9"
+    },
+    "en-hard/mt-s14": {
+      "path": "artifacts/runs/R014/en-hard/mt-s14.json",
+      "sha256": "64072d20314dc62170ef3bfa169f7c96f150f6e1fe7ef7c1e6b945cbed352080",
+      "dataset_sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+      "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92"
+    },
+    "en-hard/full-e2-8bit": {
+      "path": "artifacts/runs/R014/en-hard/full-e2-8bit.json",
+      "sha256": "433313bac90fa49334d8ba180d968c36322fadafff39f285733a02e1ce05be6e",
+      "dataset_sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+      "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93"
+    },
+    "other/multilingual": {
+      "path": "artifacts/runs/R014/other/multilingual.json",
+      "sha256": "bc8a89cf7c83847d3a983e19f59029af2768a2863eed075f2cbae3352532a0b3",
+      "dataset_sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+      "weights_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    },
+    "other/mt-s13": {
+      "path": "artifacts/runs/R014/other/mt-s13.json",
+      "sha256": "4a950e29523280408c414901738941f699851e4673354acab7cf2cd120c7fa47",
+      "dataset_sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+      "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9"
+    },
+    "other/mt-s14": {
+      "path": "artifacts/runs/R014/other/mt-s14.json",
+      "sha256": "9ce8a905900c78580ec38513286d74af812b8586ca113c7f6475f9d97cdb2880",
+      "dataset_sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+      "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92"
+    },
+    "other/full-e2-8bit": {
+      "path": "artifacts/runs/R014/other/full-e2-8bit.json",
+      "sha256": "9771b461decf27c987bbb1cdfa0000afcc4330582d7d19b200b1aef7acd68a20",
+      "dataset_sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+      "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93"
+    }
+  },
+  "degeneracy": {
+    "guard": "primary invalid when any arm assigns more than 90% of pooled Khmer rows to a single label",
+    "threshold": 0.9,
+    "per_arm": {
+      "multilingual": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 39,
+          "neutral": 8,
+          "contradiction": 18
+        },
+        "max_label_fraction": 0.6,
+        "degenerate": false
+      },
+      "mt-s13": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 8,
+          "neutral": 47,
+          "contradiction": 10
+        },
+        "max_label_fraction": 0.7230769230769231,
+        "degenerate": false
+      },
+      "mt-s14": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 44,
+          "neutral": 14,
+          "contradiction": 7
+        },
+        "max_label_fraction": 0.676923076923077,
+        "degenerate": false
+      },
+      "full-e2-8bit": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 37,
+          "neutral": 16,
+          "contradiction": 12
+        },
+        "max_label_fraction": 0.5692307692307692,
+        "degenerate": false
+      }
+    },
+    "degenerate": false,
+    "arms": []
+  },
+  "prior_collapse_diagnostics": {
+    "status": "post-scoring, post-hoc diagnostic",
+    "note": "Post-scoring, post-hoc diagnostic computed from the existing reports. It changes no threshold, no endpoint, no estimand, no row set, and no support rule; the locked primary and its verdict are unchanged. Every pooled arm is dominated by a single predicted label, but a different one, and the pooled deltas are consistent with seed-level label-prior drift rather than acquired NLI capability.",
+    "constant_majority_reference": {
+      "rows": 65,
+      "gold_distribution": {
+        "entailment": 25,
+        "neutral": 25,
+        "contradiction": 15
+      },
+      "accuracy": 0.38461538461538464,
+      "labels": [
+        "entailment",
+        "neutral"
+      ],
+      "label_accuracy": {
+        "entailment": 0.38461538461538464,
+        "neutral": 0.38461538461538464,
+        "contradiction": 0.23076923076923078
+      }
+    },
+    "per_arm": {
+      "multilingual": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 39,
+          "neutral": 8,
+          "contradiction": 18
+        },
+        "dominant_label": "entailment",
+        "dominant_fraction": 0.6,
+        "choice_accuracy": 0.47692307692307695,
+        "constant_majority_accuracy": 0.38461538461538464,
+        "margin_over_constant_majority_pp": 9.230769230769232,
+        "cohen_kappa_vs_gold": 0.2050359712230216
+      },
+      "mt-s13": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 8,
+          "neutral": 47,
+          "contradiction": 10
+        },
+        "dominant_label": "neutral",
+        "dominant_fraction": 0.7230769230769231,
+        "choice_accuracy": 0.5076923076923077,
+        "constant_majority_accuracy": 0.38461538461538464,
+        "margin_over_constant_majority_pp": 12.307692307692303,
+        "cohen_kappa_vs_gold": 0.22962962962962952
+      },
+      "mt-s14": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 44,
+          "neutral": 14,
+          "contradiction": 7
+        },
+        "dominant_label": "entailment",
+        "dominant_fraction": 0.676923076923077,
+        "choice_accuracy": 0.5384615384615384,
+        "constant_majority_accuracy": 0.38461538461538464,
+        "margin_over_constant_majority_pp": 15.38461538461538,
+        "cohen_kappa_vs_gold": 0.26966292134831443
+      },
+      "full-e2-8bit": {
+        "rows": 65,
+        "predicted_label_distribution": {
+          "entailment": 37,
+          "neutral": 16,
+          "contradiction": 12
+        },
+        "dominant_label": "entailment",
+        "dominant_fraction": 0.5692307692307692,
+        "choice_accuracy": 0.5384615384615384,
+        "constant_majority_accuracy": 0.38461538461538464,
+        "margin_over_constant_majority_pp": 15.38461538461538,
+        "cohen_kappa_vs_gold": 0.28308823529411753
+      }
+    },
+    "label_agreement": {
+      "multilingual__mt-s13": {
+        "rows": 65,
+        "agreeing_rows": 24,
+        "agreement_fraction": 0.36923076923076925
+      },
+      "multilingual__mt-s14": {
+        "rows": 65,
+        "agreeing_rows": 44,
+        "agreement_fraction": 0.676923076923077
+      },
+      "multilingual__full-e2-8bit": {
+        "rows": 65,
+        "agreeing_rows": 48,
+        "agreement_fraction": 0.7384615384615385
+      },
+      "mt-s13__mt-s14": {
+        "rows": 65,
+        "agreeing_rows": 26,
+        "agreement_fraction": 0.4
+      }
+    },
+    "net_flips_vs_base": {
+      "mt-s13": {
+        "base_wrong_model_right": 19,
+        "base_right_model_wrong": 17,
+        "discordant_rows": 36,
+        "net_flipped_rows": 2,
+        "mcnemar_exact_two_sided_p": 0.8679394004284404
+      },
+      "mt-s14": {
+        "base_wrong_model_right": 8,
+        "base_right_model_wrong": 4,
+        "discordant_rows": 12,
+        "net_flipped_rows": 4,
+        "mcnemar_exact_two_sided_p": 0.3876953125
+      }
+    },
+    "collapse_threshold_counterfactual": {
+      "locked_threshold": 0.9,
+      "locked_guard_triggered": false,
+      "stricter_threshold": 0.6666666666666666,
+      "arms_invalidated_at_stricter_threshold": [
+        "mt-s13",
+        "mt-s14"
+      ]
+    }
+  },
+  "primary": {
+    "per_seed": {
+      "13": {
+        "difference_pp": 3.076923076923077,
+        "ci95_pp": [
+          -14.925373134328357,
+          20.634920634920633
+        ],
+        "draws": 10000,
+        "seed": 13,
+        "groups": 37,
+        "rows": 65,
+        "quantile_method": "numpy.quantile(method='linear')",
+        "model": "mt-s13",
+        "base_accuracy": 0.47692307692307695,
+        "model_accuracy": 0.5076923076923077,
+        "lower_bound_above_zero": false
+      },
+      "14": {
+        "difference_pp": 6.153846153846154,
+        "ci95_pp": [
+          -4.477611940298507,
+          17.393029675638346
+        ],
+        "draws": 10000,
+        "seed": 13,
+        "groups": 37,
+        "rows": 65,
+        "quantile_method": "numpy.quantile(method='linear')",
+        "model": "mt-s14",
+        "base_accuracy": 0.47692307692307695,
+        "model_accuracy": 0.5384615384615384,
+        "lower_bound_above_zero": false
+      }
+    },
+    "valid": true,
+    "supported": false,
+    "comparison": "each R006 seed minus the frozen multilingual base on pooled Khmer rows",
+    "support_rule": "both R006 seed-specific paired group-bootstrap 95% lower bounds > 0"
+  },
+  "secondary": {
+    "per_config": {
+      "km-normal": {
+        "rows": 42,
+        "13": {
+          "difference_pp": 9.523809523809524,
+          "ci95_pp": [
+            -9.523809523809524,
+            28.57142857142857
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 14,
+          "rows": 42,
+          "quantile_method": "numpy.quantile(method='linear')"
+        },
+        "14": {
+          "difference_pp": 7.142857142857142,
+          "ci95_pp": [
+            -9.523809523809524,
+            23.809523809523807
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 14,
+          "rows": 42,
+          "quantile_method": "numpy.quantile(method='linear')"
+        }
+      },
+      "km-hard": {
+        "rows": 23,
+        "13": {
+          "difference_pp": -8.695652173913043,
+          "ci95_pp": [
+            -43.47826086956522,
+            26.08695652173913
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 23,
+          "rows": 23,
+          "quantile_method": "numpy.quantile(method='linear')"
+        },
+        "14": {
+          "difference_pp": 4.3478260869565215,
+          "ci95_pp": [
+            0.0,
+            13.043478260869565
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 23,
+          "rows": 23,
+          "quantile_method": "numpy.quantile(method='linear')"
+        }
+      }
+    },
+    "single_task_contrast": {
+      "difference_pp": 6.153846153846154,
+      "ci95_pp": [
+        -2.818942641355377,
+        15.873015873015872
+      ],
+      "draws": 10000,
+      "seed": 13,
+      "groups": 37,
+      "rows": 65,
+      "quantile_method": "numpy.quantile(method='linear')",
+      "base_accuracy": 0.47692307692307695,
+      "model_accuracy": 0.5384615384615384,
+      "note": "descriptive multitask-vs-single-task question; R003 has one seed against the two R006 seeds, so this is not a matched-seed contrast"
+    },
+    "non_khmer": {
+      "note": "weak Khmer-specificity check; the mixed slice covers seven other cultures and cannot isolate Khmer-ness; no support claims",
+      "metrics": {
+        "multilingual": {
+          "rows": 2095,
+          "groups": 1150,
+          "choice_accuracy": 0.5661097852028639,
+          "macro_f1": 0.5606790389111626,
+          "per_class_f1": {
+            "entailment": 0.6597938144329897,
+            "neutral": 0.4341692789968652,
+            "contradiction": 0.5880740233036327
+          },
+          "per_class_recall": {
+            "entailment": 0.5970149253731343,
+            "neutral": 0.4222560975609756,
+            "contradiction": 0.6755905511811023
+          },
+          "top_answer_brier": 0.3459474969307875,
+          "ece_15_equal_width_bins": 0.3238685918854415,
+          "mean_confidence": 0.8896876849642005,
+          "predicted_label_distribution": {
+            "entailment": 651,
+            "neutral": 620,
+            "contradiction": 824
+          }
+        },
+        "mt-s13": {
+          "rows": 2095,
+          "groups": 1150,
+          "choice_accuracy": 0.5412887828162292,
+          "macro_f1": 0.5461561362986241,
+          "per_class_f1": {
+            "entailment": 0.5586497890295359,
+            "neutral": 0.4985302763080541,
+            "contradiction": 0.5812883435582822
+          },
+          "per_class_recall": {
+            "entailment": 0.4116915422885572,
+            "neutral": 0.6463414634146342,
+            "contradiction": 0.5968503937007874
+          },
+          "top_answer_brier": 0.35270920468735084,
+          "ece_15_equal_width_bins": 0.3350373269689737,
+          "mean_confidence": 0.8763261097852029,
+          "predicted_label_distribution": {
+            "entailment": 381,
+            "neutral": 1045,
+            "contradiction": 669
+          }
+        },
+        "mt-s14": {
+          "rows": 2095,
+          "groups": 1150,
+          "choice_accuracy": 0.60381861575179,
+          "macro_f1": 0.5982008582890712,
+          "per_class_f1": {
+            "entailment": 0.7186666666666667,
+            "neutral": 0.48727833461835,
+            "contradiction": 0.5886575735821967
+          },
+          "per_class_recall": {
+            "entailment": 0.6703980099502488,
+            "neutral": 0.4817073170731707,
+            "contradiction": 0.6456692913385826
+          },
+          "top_answer_brier": 0.29246972435322194,
+          "ece_15_equal_width_bins": 0.2502305489260144,
+          "mean_confidence": 0.8540491646778043,
+          "predicted_label_distribution": {
+            "entailment": 696,
+            "neutral": 641,
+            "contradiction": 758
+          }
+        },
+        "full-e2-8bit": {
+          "rows": 2095,
+          "groups": 1150,
+          "choice_accuracy": 0.5689737470167064,
+          "macro_f1": 0.5660556627264942,
+          "per_class_f1": {
+            "entailment": 0.6685552407932012,
+            "neutral": 0.4490106544901065,
+            "contradiction": 0.5806010928961749
+          },
+          "per_class_recall": {
+            "entailment": 0.5870646766169154,
+            "neutral": 0.4496951219512195,
+            "contradiction": 0.6692913385826772
+          },
+          "top_answer_brier": 0.3221160229260143,
+          "ece_15_equal_width_bins": 0.29281694510739853,
+          "mean_confidence": 0.8596094988066825,
+          "predicted_label_distribution": {
+            "entailment": 608,
+            "neutral": 658,
+            "contradiction": 829
+          }
+        }
+      }
+    },
+    "english_control": {
+      "note": "descriptive only; the english arm shares row identity, grouping, and gold with the native arm, so this difference is the within-model native-vs-English text gap; no support claims",
+      "per_model": {
+        "multilingual": {
+          "difference_pp": 6.153846153846154,
+          "ci95_pp": [
+            -11.267605633802818,
+            22.669620253164513
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 37,
+          "rows": 65,
+          "quantile_method": "numpy.quantile(method='linear')",
+          "native_accuracy": 0.47692307692307695,
+          "english_accuracy": 0.5384615384615384
+        },
+        "mt-s13": {
+          "difference_pp": 7.6923076923076925,
+          "ci95_pp": [
+            -7.047356603388442,
+            22.22222222222222
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 37,
+          "rows": 65,
+          "quantile_method": "numpy.quantile(method='linear')",
+          "native_accuracy": 0.5076923076923077,
+          "english_accuracy": 0.5846153846153846
+        },
+        "mt-s14": {
+          "difference_pp": 7.6923076923076925,
+          "ci95_pp": [
+            -9.523809523809524,
+            24.65753424657534
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 37,
+          "rows": 65,
+          "quantile_method": "numpy.quantile(method='linear')",
+          "native_accuracy": 0.5384615384615384,
+          "english_accuracy": 0.6153846153846154
+        },
+        "full-e2-8bit": {
+          "difference_pp": 3.076923076923077,
+          "ci95_pp": [
+            -14.285714285714285,
+            19.402985074626866
+          ],
+          "draws": 10000,
+          "seed": 13,
+          "groups": 37,
+          "rows": 65,
+          "quantile_method": "numpy.quantile(method='linear')",
+          "native_accuracy": 0.5384615384615384,
+          "english_accuracy": 0.5692307692307692
+        }
+      }
+    }
+  },
+  "metrics": {
+    "km-normal": {
+      "multilingual": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.4523809523809524,
+        "macro_f1": 0.4375,
+        "per_class_f1": {
+          "entailment": 0.5625,
+          "neutral": 0.25,
+          "contradiction": 0.5
+        },
+        "per_class_recall": {
+          "entailment": 0.6923076923076923,
+          "neutral": 0.1875,
+          "contradiction": 0.5384615384615384
+        },
+        "top_answer_brier": 0.3698863695238095,
+        "ece_15_equal_width_bins": 0.3618761904761904,
+        "mean_confidence": 0.8094619047619049,
+        "predicted_label_distribution": {
+          "entailment": 19,
+          "neutral": 8,
+          "contradiction": 15
+        }
+      },
+      "mt-s13": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.5476190476190477,
+        "macro_f1": 0.5277967646388698,
+        "per_class_f1": {
+          "entailment": 0.42105263157894735,
+          "neutral": 0.5909090909090909,
+          "contradiction": 0.5714285714285714
+        },
+        "per_class_recall": {
+          "entailment": 0.3076923076923077,
+          "neutral": 0.8125,
+          "contradiction": 0.46153846153846156
+        },
+        "top_answer_brier": 0.36289620833333336,
+        "ece_15_equal_width_bins": 0.3428404761904762,
+        "mean_confidence": 0.8732500000000001,
+        "predicted_label_distribution": {
+          "entailment": 6,
+          "neutral": 28,
+          "contradiction": 8
+        }
+      },
+      "mt-s14": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.5238095238095238,
+        "macro_f1": 0.516493937546569,
+        "per_class_f1": {
+          "entailment": 0.5945945945945946,
+          "neutral": 0.42857142857142855,
+          "contradiction": 0.5263157894736842
+        },
+        "per_class_recall": {
+          "entailment": 0.8461538461538461,
+          "neutral": 0.375,
+          "contradiction": 0.38461538461538464
+        },
+        "top_answer_brier": 0.2756460911904762,
+        "ece_15_equal_width_bins": 0.27863095238095237,
+        "mean_confidence": 0.8024404761904764,
+        "predicted_label_distribution": {
+          "entailment": 24,
+          "neutral": 12,
+          "contradiction": 6
+        }
+      },
+      "full-e2-8bit": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.5238095238095238,
+        "macro_f1": 0.5347222222222222,
+        "per_class_f1": {
+          "entailment": 0.5,
+          "neutral": 0.4375,
+          "contradiction": 0.6666666666666666
+        },
+        "per_class_recall": {
+          "entailment": 0.5384615384615384,
+          "neutral": 0.4375,
+          "contradiction": 0.6153846153846154
+        },
+        "top_answer_brier": 0.355272360952381,
+        "ece_15_equal_width_bins": 0.36254285714285717,
+        "mean_confidence": 0.8023142857142856,
+        "predicted_label_distribution": {
+          "entailment": 15,
+          "neutral": 16,
+          "contradiction": 11
+        }
+      }
+    },
+    "km-hard": {
+      "multilingual": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.5217391304347826,
+        "macro_f1": 0.3625,
+        "per_class_f1": {
+          "entailment": 0.6875,
+          "neutral": 0.0,
+          "contradiction": 0.4
+        },
+        "per_class_recall": {
+          "entailment": 0.9166666666666666,
+          "neutral": 0.0,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.41957809695652165,
+        "ece_15_equal_width_bins": 0.4573347826086955,
+        "mean_confidence": 0.9325695652173911,
+        "predicted_label_distribution": {
+          "entailment": 20,
+          "neutral": 0,
+          "contradiction": 3
+        }
+      },
+      "mt-s13": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.43478260869565216,
+        "macro_f1": 0.4047619047619047,
+        "per_class_f1": {
+          "entailment": 0.14285714285714285,
+          "neutral": 0.5714285714285714,
+          "contradiction": 0.5
+        },
+        "per_class_recall": {
+          "entailment": 0.08333333333333333,
+          "neutral": 0.8888888888888888,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.4920679317391304,
+        "ece_15_equal_width_bins": 0.49163043478260865,
+        "mean_confidence": 0.8776565217391304,
+        "predicted_label_distribution": {
+          "entailment": 2,
+          "neutral": 19,
+          "contradiction": 2
+        }
+      },
+      "mt-s14": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.5652173913043478,
+        "macro_f1": 0.5119949494949495,
+        "per_class_f1": {
+          "entailment": 0.6875,
+          "neutral": 0.18181818181818182,
+          "contradiction": 0.6666666666666666
+        },
+        "per_class_recall": {
+          "entailment": 0.9166666666666666,
+          "neutral": 0.1111111111111111,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.28483268391304345,
+        "ece_15_equal_width_bins": 0.32171739130434795,
+        "mean_confidence": 0.8315869565217391,
+        "predicted_label_distribution": {
+          "entailment": 20,
+          "neutral": 2,
+          "contradiction": 1
+        }
+      },
+      "full-e2-8bit": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.5652173913043478,
+        "macro_f1": 0.45751633986928103,
+        "per_class_f1": {
+          "entailment": 0.7058823529411765,
+          "neutral": 0.0,
+          "contradiction": 0.6666666666666666
+        },
+        "per_class_recall": {
+          "entailment": 1.0,
+          "neutral": 0.0,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.3582123213043478,
+        "ece_15_equal_width_bins": 0.35650000000000004,
+        "mean_confidence": 0.9217173913043477,
+        "predicted_label_distribution": {
+          "entailment": 22,
+          "neutral": 0,
+          "contradiction": 1
+        }
+      }
+    },
+    "en-normal": {
+      "multilingual": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.5714285714285714,
+        "macro_f1": 0.5367647058823529,
+        "per_class_f1": {
+          "entailment": 0.375,
+          "neutral": 0.5294117647058824,
+          "contradiction": 0.7058823529411765
+        },
+        "per_class_recall": {
+          "entailment": 0.23076923076923078,
+          "neutral": 0.5625,
+          "contradiction": 0.9230769230769231
+        },
+        "top_answer_brier": 0.3439094519047619,
+        "ece_15_equal_width_bins": 0.37149999999999994,
+        "mean_confidence": 0.8933666666666669,
+        "predicted_label_distribution": {
+          "entailment": 3,
+          "neutral": 18,
+          "contradiction": 21
+        }
+      },
+      "mt-s13": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.6428571428571429,
+        "macro_f1": 0.6155674390968509,
+        "per_class_f1": {
+          "entailment": 0.47058823529411764,
+          "neutral": 0.5882352941176471,
+          "contradiction": 0.7878787878787878
+        },
+        "per_class_recall": {
+          "entailment": 0.3076923076923077,
+          "neutral": 0.625,
+          "contradiction": 1.0
+        },
+        "top_answer_brier": 0.2792364878571429,
+        "ece_15_equal_width_bins": 0.28499285714285716,
+        "mean_confidence": 0.8799595238095238,
+        "predicted_label_distribution": {
+          "entailment": 4,
+          "neutral": 18,
+          "contradiction": 20
+        }
+      },
+      "mt-s14": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.6190476190476191,
+        "macro_f1": 0.61687552213868,
+        "per_class_f1": {
+          "entailment": 0.631578947368421,
+          "neutral": 0.5333333333333333,
+          "contradiction": 0.6857142857142857
+        },
+        "per_class_recall": {
+          "entailment": 0.46153846153846156,
+          "neutral": 0.5,
+          "contradiction": 0.9230769230769231
+        },
+        "top_answer_brier": 0.302979065,
+        "ece_15_equal_width_bins": 0.3302833333333334,
+        "mean_confidence": 0.8702166666666667,
+        "predicted_label_distribution": {
+          "entailment": 6,
+          "neutral": 14,
+          "contradiction": 22
+        }
+      },
+      "full-e2-8bit": {
+        "rows": 42,
+        "groups": 14,
+        "choice_accuracy": 0.6190476190476191,
+        "macro_f1": 0.6037037037037037,
+        "per_class_f1": {
+          "entailment": 0.5555555555555556,
+          "neutral": 0.5333333333333333,
+          "contradiction": 0.7222222222222222
+        },
+        "per_class_recall": {
+          "entailment": 0.38461538461538464,
+          "neutral": 0.5,
+          "contradiction": 1.0
+        },
+        "top_answer_brier": 0.31964213523809526,
+        "ece_15_equal_width_bins": 0.3037761904761905,
+        "mean_confidence": 0.8658523809523808,
+        "predicted_label_distribution": {
+          "entailment": 5,
+          "neutral": 14,
+          "contradiction": 23
+        }
+      }
+    },
+    "en-hard": {
+      "multilingual": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.4782608695652174,
+        "macro_f1": 0.4452798663324979,
+        "per_class_f1": {
+          "entailment": 0.5263157894736842,
+          "neutral": 0.47619047619047616,
+          "contradiction": 0.3333333333333333
+        },
+        "per_class_recall": {
+          "entailment": 0.4166666666666667,
+          "neutral": 0.5555555555555556,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.43383555869565216,
+        "ece_15_equal_width_bins": 0.4723173913043477,
+        "mean_confidence": 0.8820217391304348,
+        "predicted_label_distribution": {
+          "entailment": 7,
+          "neutral": 12,
+          "contradiction": 4
+        }
+      },
+      "mt-s13": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.4782608695652174,
+        "macro_f1": 0.4568627450980392,
+        "per_class_f1": {
+          "entailment": 0.47058823529411764,
+          "neutral": 0.5,
+          "contradiction": 0.4
+        },
+        "per_class_recall": {
+          "entailment": 0.3333333333333333,
+          "neutral": 0.6666666666666666,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.3899446065217392,
+        "ece_15_equal_width_bins": 0.4002304347826088,
+        "mean_confidence": 0.878491304347826,
+        "predicted_label_distribution": {
+          "entailment": 5,
+          "neutral": 15,
+          "contradiction": 3
+        }
+      },
+      "mt-s14": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.6086956521739131,
+        "macro_f1": 0.5387205387205387,
+        "per_class_f1": {
+          "entailment": 0.7272727272727273,
+          "neutral": 0.5555555555555556,
+          "contradiction": 0.3333333333333333
+        },
+        "per_class_recall": {
+          "entailment": 0.6666666666666666,
+          "neutral": 0.5555555555555556,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.3346203873913043,
+        "ece_15_equal_width_bins": 0.34410869565217395,
+        "mean_confidence": 0.7979695652173912,
+        "predicted_label_distribution": {
+          "entailment": 10,
+          "neutral": 9,
+          "contradiction": 4
+        }
+      },
+      "full-e2-8bit": {
+        "rows": 23,
+        "groups": 23,
+        "choice_accuracy": 0.4782608695652174,
+        "macro_f1": 0.43391902215431627,
+        "per_class_f1": {
+          "entailment": 0.47058823529411764,
+          "neutral": 0.5454545454545454,
+          "contradiction": 0.2857142857142857
+        },
+        "per_class_recall": {
+          "entailment": 0.3333333333333333,
+          "neutral": 0.6666666666666666,
+          "contradiction": 0.5
+        },
+        "top_answer_brier": 0.3361945447826087,
+        "ece_15_equal_width_bins": 0.3618652173913043,
+        "mean_confidence": 0.7760565217391304,
+        "predicted_label_distribution": {
+          "entailment": 5,
+          "neutral": 13,
+          "contradiction": 5
+        }
+      }
+    },
+    "other": {
+      "multilingual": {
+        "rows": 2095,
+        "groups": 1150,
+        "choice_accuracy": 0.5661097852028639,
+        "macro_f1": 0.5606790389111626,
+        "per_class_f1": {
+          "entailment": 0.6597938144329897,
+          "neutral": 0.4341692789968652,
+          "contradiction": 0.5880740233036327
+        },
+        "per_class_recall": {
+          "entailment": 0.5970149253731343,
+          "neutral": 0.4222560975609756,
+          "contradiction": 0.6755905511811023
+        },
+        "top_answer_brier": 0.3459474969307875,
+        "ece_15_equal_width_bins": 0.3238685918854415,
+        "mean_confidence": 0.8896876849642005,
+        "predicted_label_distribution": {
+          "entailment": 651,
+          "neutral": 620,
+          "contradiction": 824
+        }
+      },
+      "mt-s13": {
+        "rows": 2095,
+        "groups": 1150,
+        "choice_accuracy": 0.5412887828162292,
+        "macro_f1": 0.5461561362986241,
+        "per_class_f1": {
+          "entailment": 0.5586497890295359,
+          "neutral": 0.4985302763080541,
+          "contradiction": 0.5812883435582822
+        },
+        "per_class_recall": {
+          "entailment": 0.4116915422885572,
+          "neutral": 0.6463414634146342,
+          "contradiction": 0.5968503937007874
+        },
+        "top_answer_brier": 0.35270920468735084,
+        "ece_15_equal_width_bins": 0.3350373269689737,
+        "mean_confidence": 0.8763261097852029,
+        "predicted_label_distribution": {
+          "entailment": 381,
+          "neutral": 1045,
+          "contradiction": 669
+        }
+      },
+      "mt-s14": {
+        "rows": 2095,
+        "groups": 1150,
+        "choice_accuracy": 0.60381861575179,
+        "macro_f1": 0.5982008582890712,
+        "per_class_f1": {
+          "entailment": 0.7186666666666667,
+          "neutral": 0.48727833461835,
+          "contradiction": 0.5886575735821967
+        },
+        "per_class_recall": {
+          "entailment": 0.6703980099502488,
+          "neutral": 0.4817073170731707,
+          "contradiction": 0.6456692913385826
+        },
+        "top_answer_brier": 0.29246972435322194,
+        "ece_15_equal_width_bins": 0.2502305489260144,
+        "mean_confidence": 0.8540491646778043,
+        "predicted_label_distribution": {
+          "entailment": 696,
+          "neutral": 641,
+          "contradiction": 758
+        }
+      },
+      "full-e2-8bit": {
+        "rows": 2095,
+        "groups": 1150,
+        "choice_accuracy": 0.5689737470167064,
+        "macro_f1": 0.5660556627264942,
+        "per_class_f1": {
+          "entailment": 0.6685552407932012,
+          "neutral": 0.4490106544901065,
+          "contradiction": 0.5806010928961749
+        },
+        "per_class_recall": {
+          "entailment": 0.5870646766169154,
+          "neutral": 0.4496951219512195,
+          "contradiction": 0.6692913385826772
+        },
+        "top_answer_brier": 0.3221160229260143,
+        "ece_15_equal_width_bins": 0.29281694510739853,
+        "mean_confidence": 0.8596094988066825,
+        "predicted_label_distribution": {
+          "entailment": 608,
+          "neutral": 658,
+          "contradiction": 829
+        }
+      }
+    }
+  },
+  "descriptors": {
+    "by_config": {
+      "normal": {
+        "selected_rows": 42,
+        "premise_groups": 14,
+        "concepts": 14,
+        "true_label": {
+          "contradiction": 13,
+          "entailment": 13,
+          "neutral": 16
+        },
+        "entailment_type_vs_true_label_disagreement": 4,
+        "is_misclassified": {
+          "False": 28,
+          "True": 14
+        },
+        "step_misclassified": {
+          "step 1": 42
+        },
+        "rows_per_concept": {
+          "3": 14
+        }
+      },
+      "hard": {
+        "selected_rows": 23,
+        "premise_groups": 23,
+        "concepts": 23,
+        "true_label": {
+          "contradiction": 2,
+          "entailment": 12,
+          "neutral": 9
+        },
+        "entailment_type_vs_true_label_disagreement": 7,
+        "is_misclassified": {
+          "True": 23
+        },
+        "step_misclassified": {
+          "step 2": 8,
+          "step 3": 10,
+          "step 4": 5
+        },
+        "rows_per_concept": {
+          "1": 23
+        }
+      }
+    },
+    "concept_id_overlap": 0,
+    "note": "Descriptive composition only. Rows are never filtered on is_misclassified or step_misclassified: their exact semantics are unverified and filtering would drop all 23 hard rows and 14 normal rows. Both fields are dropped before export."
+  },
+  "is_misclassified_stratification": {
+    "note": "descriptive only; is_misclassified semantics are unverified, so no row was filtered on it and it never reaches a model input",
+    "by_config": {
+      "km-normal": {
+        "False": 28,
+        "True": 14
+      },
+      "km-hard": {
+        "True": 23
+      }
+    }
+  },
+  "generated_utc": "2026-10-16T11:33:37.741518+00:00",
+  "limitations": [
+    "Test split only; no train or validation split exists, so no SEA-NLI temperature is fitted.",
+    "The Khmer slice is 65 rows in 37 premise groups, so only very large effects are resolvable.",
+    "The predicted-label distribution is dominated by a single different label per arm; the post-scoring diagnostics above show that this is consistent with label-prior drift.",
+    "The Khmer text is machine-generated from Wikipedia concepts with native verification, not naturalistic user input.",
+    "The non-Khmer slice mixes seven other cultures and cannot isolate Khmer-ness.",
+    "R003 contributes one seed to the single-task contrast while R006 contributes two.",
+    "The english arm is a descriptive control only; it shares rows and gold with the native arm.",
+    "is_misclassified and step_misclassified are disclosed but never filtered on; their semantics are unverified.",
+    "Labels are public on Hugging Face; sealing is procedural only."
+  ]
+}

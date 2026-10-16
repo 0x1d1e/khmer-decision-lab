@@ -35,6 +35,7 @@ and non-autoregressive decision models.
 | [R011](research/R011-ocr-domain-calibration/README.md) ([results](research/R011-ocr-domain-calibration/results.md)) | Synthetic OCR-domain temperature calibration | exploratory; lower NLL for both fixed seeds, accuracy unchanged |
 | [R012](research/R012-ocr-continuation/README.md) ([results](research/R012-ocr-continuation/results.md)) | Matched clean and synthetic-OCR continuation | exploratory; OCR continuation improved 12 px accuracy for both fixed seeds within the clean-text tolerance |
 | [R013](research/R013-unseen-intent-transfer/README.md) ([results](research/R013-unseen-intent-transfer/results.md)) | Seen-only adaptation on held-out MASSIVE intent options | exploratory; positive on the fixed selected option set for both seeds |
+| [R014](research/R014-sea-nli-khmer-transfer/README.md) ([results](research/R014-sea-nli-khmer-transfer/results.md)) | SEA-NLI Khmer NLI: transfer to an unseen task type | exploratory; primary unsupported and inconclusive |
 
 Core benchmark metrics: `research/results.json`. Per-study machine-readable outcomes are linked from each results page.
 
@@ -63,12 +64,28 @@ comparisons stayed within the preregistered -2 pp tolerance. These OCR findings
 use the reused MASSIVE test split and synthetic typesetting, so they are
 exploratory and do not establish real-image performance.
 
+R014 moves to an unseen task type: the 65 Khmer rows of SEA-NLI, asked as a
+fixed three-option NLI choice over 37 premise clusters. It was not supported.
+Pooled Khmer accuracy changed by +3.08 pp for seed 13 (95% paired
+group-bootstrap CI [-14.93, +20.63]) and +6.15 pp for seed 14 ([-4.48,
++17.39]); neither lower bound exceeds zero, so the result is inconclusive, not
+evidence of equivalence or of no transfer. Every arm is dominated by a single
+predicted label but a different one (base entailment 0.60, seed 13 neutral
+0.72, seed 14 entailment 0.68), the two same-recipe seeds agree on only 26/65
+rows, exact McNemar p is 0.87 and 0.39, and Cohen κ against gold is 0.205 to
+0.283. The English-text control puts every arm 3.1 to 7.7 pp higher in English
+than in Khmer, also with intervals crossing zero. R014 shows no stable NLI
+capability and does not close the independent-benchmark gap. The Khmer text is
+machine-generated, not naturalistic user input, and the labels are public, so
+sealing is procedural only.
+
 See [R007](research/R007-unseen-transfer/),
 [R009](research/R009-sib-specialist-continuation/results.md),
 [R010](research/R010-massive-ocr-cascade/results.md),
 [R011](research/R011-ocr-domain-calibration/results.md),
 [R012](research/R012-ocr-continuation/results.md), and
-[R013](research/R013-unseen-intent-transfer/results.md). Real-image evaluation
+[R013](research/R013-unseen-intent-transfer/results.md), and
+[R014](research/R014-sea-nli-khmer-transfer/results.md). Real-image evaluation
 remains open.
 
 Metric definitions: `brier` is the Brier score of top-answer confidence

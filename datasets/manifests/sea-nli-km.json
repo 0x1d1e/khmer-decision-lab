@@ -1,0 +1,316 @@
+{
+  "study": "R014-sea-nli-khmer-transfer",
+  "dataset": "aisingapore/SEA-NLI",
+  "revision": "f3a73ccb4213ff995ef2bf8bcb903eaf53195713",
+  "gated": true,
+  "access": "manual; test split only; no train or validation split exists",
+  "configs": [
+    "normal",
+    "hard"
+  ],
+  "files": [
+    {
+      "config": "normal",
+      "path": "normal/test-00000-of-00001.parquet",
+      "sha256": "ce40581872e55f331334d47403d7f6713219283541b4b65c1062a1574ba6a4d3"
+    },
+    {
+      "config": "hard",
+      "path": "hard/test-00000-of-00001.parquet",
+      "sha256": "5cb8a62fbca0223e546ceeafcdcfe6b417b334cc96dbaf46cec6866f385770b4"
+    }
+  ],
+  "task": {
+    "qid": "relationship",
+    "type": "choice",
+    "instructions": "What is the relationship between the premise in `premise` and the hypothesis in `hypothesis`?",
+    "labels": [
+      "entailment",
+      "neutral",
+      "contradiction"
+    ],
+    "criterion_descriptions": {
+      "entailment": "",
+      "neutral": "",
+      "contradiction": ""
+    },
+    "option_order": "fixed; entailment, neutral, contradiction for every row"
+  },
+  "state_fields": [
+    "premise",
+    "hypothesis"
+  ],
+  "field_mapping": {
+    "native": {
+      "premise": "premise_native",
+      "hypothesis": "hypothesis_native"
+    },
+    "english": {
+      "premise": "premise_english",
+      "hypothesis": "hypothesis_english"
+    },
+    "note": "state keys are always premise/hypothesis"
+  },
+  "allowlist": [
+    "premise_native",
+    "hypothesis_native",
+    "premise_english",
+    "hypothesis_english",
+    "true_label",
+    "culture (selection only, never exported)"
+  ],
+  "selection": {
+    "rule": "casefolded culture equals 'cambodian'",
+    "field": "culture",
+    "value": "cambodian",
+    "counts": {
+      "selected": {
+        "normal": 42,
+        "hard": 23
+      },
+      "non_khmer": {
+        "normal": 1401,
+        "hard": 694
+      }
+    }
+  },
+  "validation": {
+    "rule": "premise_native and hypothesis_native contain a codepoint in U+1780-U+17FF",
+    "fields": [
+      "premise_native",
+      "hypothesis_native"
+    ],
+    "range": "U+1780-U+17FF",
+    "checked_rows": 65,
+    "passed": true
+  },
+  "arms": {
+    "native": {
+      "state_source": {
+        "premise": "premise_native",
+        "hypothesis": "hypothesis_native"
+      },
+      "exports": [
+        "km-normal",
+        "km-hard"
+      ]
+    },
+    "english": {
+      "state_source": {
+        "premise": "premise_english",
+        "hypothesis": "hypothesis_english"
+      },
+      "exports": [
+        "en-normal",
+        "en-hard"
+      ]
+    },
+    "note": "native and english arms share row identity (source_index), grouping (group_id), and gold; only the state text differs"
+  },
+  "dedup": {
+    "scope": "per export; normal and hard are never deduped together",
+    "key": "sha256(normalized native premise, normalized native hypothesis, true_label)",
+    "keep": "lowest source row index"
+  },
+  "grouping": {
+    "key": "sha256(NFKC + casefold + collapse-whitespace + strip U+200B/U+200C/U+200D/U+FEFF on the native premise)",
+    "note": "grouping normalization never touches model-visible text"
+  },
+  "descriptors": {
+    "by_config": {
+      "normal": {
+        "selected_rows": 42,
+        "premise_groups": 14,
+        "concepts": 14,
+        "true_label": {
+          "contradiction": 13,
+          "entailment": 13,
+          "neutral": 16
+        },
+        "entailment_type_vs_true_label_disagreement": 4,
+        "is_misclassified": {
+          "False": 28,
+          "True": 14
+        },
+        "step_misclassified": {
+          "step 1": 42
+        },
+        "rows_per_concept": {
+          "3": 14
+        }
+      },
+      "hard": {
+        "selected_rows": 23,
+        "premise_groups": 23,
+        "concepts": 23,
+        "true_label": {
+          "contradiction": 2,
+          "entailment": 12,
+          "neutral": 9
+        },
+        "entailment_type_vs_true_label_disagreement": 7,
+        "is_misclassified": {
+          "True": 23
+        },
+        "step_misclassified": {
+          "step 2": 8,
+          "step 3": 10,
+          "step 4": 5
+        },
+        "rows_per_concept": {
+          "1": 23
+        }
+      }
+    },
+    "concept_id_overlap": 0,
+    "note": "Descriptive composition only. Rows are never filtered on is_misclassified or step_misclassified: their exact semantics are unverified and filtering would drop all 23 hard rows and 14 normal rows. Both fields are dropped before export."
+  },
+  "config_label_distribution": {
+    "normal": {
+      "contradiction": 13,
+      "entailment": 13,
+      "neutral": 16
+    },
+    "hard": {
+      "contradiction": 2,
+      "entailment": 12,
+      "neutral": 9
+    }
+  },
+  "exports": {
+    "data/processed/sea-nli-km-normal-test.jsonl": {
+      "export": "km-normal",
+      "kind": "khmer",
+      "arm": "native",
+      "source_configs": [
+        "normal"
+      ],
+      "state_fields": {
+        "premise": "premise_native",
+        "hypothesis": "hypothesis_native"
+      },
+      "rows": 42,
+      "groups": 14,
+      "duplicates_removed": 0,
+      "rows_sharing_premise": 42,
+      "shared_premise_groups": 14,
+      "label_distribution": {
+        "contradiction": 13,
+        "entailment": 13,
+        "neutral": 16
+      },
+      "exclusions": {},
+      "sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+      "ids": "data/processed/sea-nli-km-normal-test-ids.json",
+      "ids_sha256": "32c9be7f6edb3e125a1f3dd8130223ea3b169eec8a78aa15754acd8d80871006"
+    },
+    "data/processed/sea-nli-km-hard-test.jsonl": {
+      "export": "km-hard",
+      "kind": "khmer",
+      "arm": "native",
+      "source_configs": [
+        "hard"
+      ],
+      "state_fields": {
+        "premise": "premise_native",
+        "hypothesis": "hypothesis_native"
+      },
+      "rows": 23,
+      "groups": 23,
+      "duplicates_removed": 0,
+      "rows_sharing_premise": 0,
+      "shared_premise_groups": 0,
+      "label_distribution": {
+        "contradiction": 2,
+        "entailment": 12,
+        "neutral": 9
+      },
+      "exclusions": {},
+      "sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+      "ids": "data/processed/sea-nli-km-hard-test-ids.json",
+      "ids_sha256": "3760c9b410e857e616e306a9f4ca93f4b04f28296a78af543ed29af0e616e4b3"
+    },
+    "data/processed/sea-nli-en-normal-test.jsonl": {
+      "export": "en-normal",
+      "kind": "khmer",
+      "arm": "english",
+      "source_configs": [
+        "normal"
+      ],
+      "state_fields": {
+        "premise": "premise_english",
+        "hypothesis": "hypothesis_english"
+      },
+      "rows": 42,
+      "groups": 14,
+      "duplicates_removed": 0,
+      "rows_sharing_premise": 42,
+      "shared_premise_groups": 14,
+      "label_distribution": {
+        "contradiction": 13,
+        "entailment": 13,
+        "neutral": 16
+      },
+      "exclusions": {},
+      "sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+      "ids": "data/processed/sea-nli-en-normal-test-ids.json",
+      "ids_sha256": "32c9be7f6edb3e125a1f3dd8130223ea3b169eec8a78aa15754acd8d80871006"
+    },
+    "data/processed/sea-nli-en-hard-test.jsonl": {
+      "export": "en-hard",
+      "kind": "khmer",
+      "arm": "english",
+      "source_configs": [
+        "hard"
+      ],
+      "state_fields": {
+        "premise": "premise_english",
+        "hypothesis": "hypothesis_english"
+      },
+      "rows": 23,
+      "groups": 23,
+      "duplicates_removed": 0,
+      "rows_sharing_premise": 0,
+      "shared_premise_groups": 0,
+      "label_distribution": {
+        "contradiction": 2,
+        "entailment": 12,
+        "neutral": 9
+      },
+      "exclusions": {},
+      "sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+      "ids": "data/processed/sea-nli-en-hard-test-ids.json",
+      "ids_sha256": "3760c9b410e857e616e306a9f4ca93f4b04f28296a78af543ed29af0e616e4b3"
+    },
+    "data/processed/sea-nli-other-test.jsonl": {
+      "export": "other",
+      "kind": "non_khmer",
+      "arm": "native",
+      "source_configs": [
+        "normal",
+        "hard"
+      ],
+      "state_fields": {
+        "premise": "premise_native",
+        "hypothesis": "hypothesis_native"
+      },
+      "rows": 2095,
+      "groups": 1150,
+      "duplicates_removed": 0,
+      "rows_sharing_premise": 1423,
+      "shared_premise_groups": 478,
+      "label_distribution": {
+        "contradiction": 635,
+        "entailment": 804,
+        "neutral": 656
+      },
+      "exclusions": {},
+      "sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+      "ids": "data/processed/sea-nli-other-test-ids.json",
+      "ids_sha256": "aa7c0e936a0686f6b6d8024837d945faac43520ffe097ab9d98016118839cd28"
+    }
+  },
+  "exclusion_counts_by_reason": {},
+  "preparer": "scripts/prepare_r014.py",
+  "preparer_sha256": "334e242b44d89bd99762ff7dc5c1f780ae6655f232cb8e74ce0f935650666de2"
+}
