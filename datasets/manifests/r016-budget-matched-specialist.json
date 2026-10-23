@@ -1,0 +1,96 @@
+{
+  "study": "R016-budget-matched-specialist",
+  "status": "scored_exploratory",
+  "question": "Does matching the multitask arm's ~1,060 optimizer-update budget remove the SIB-200 specialist's accuracy gap versus same-seed multitask?",
+  "endpoint": "D_s = acc(SP@budget, seed s) - acc(MT, seed s) on the SIB-200 test split",
+  "source": {
+    "training_file": "data/processed/r008-sib200-km-train.jsonl",
+    "training_sha256": "ed2ebd5fbb9e8bdbc78dd9eccaeaa146ee117c1809afc36305036740657930c3",
+    "training_rows": 681,
+    "test_file": "data/processed/sib200-km-test.jsonl",
+    "test_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+    "test_rows": 204,
+    "test_state_groups": 204
+  },
+  "arms": {
+    "specialist": {
+      "description": "SIB-200-only specialist trained on the budget-matched update budget",
+      "file": "data/processed/r008-sib200-km-train.jsonl",
+      "rows": 681,
+      "checkpoints": {
+        "13": "artifacts/checkpoints/R016-budget-sib-s13",
+        "14": "artifacts/checkpoints/R016-budget-sib-s14"
+      }
+    },
+    "multitask": {
+      "description": "R008 multitask same-seed comparator (trained under R008, not modified by R016)",
+      "file": "data/processed/r008-multitask-train.jsonl",
+      "checkpoints": {
+        "13": "artifacts/checkpoints/R008-mt-s13",
+        "14": "artifacts/checkpoints/R008-mt-s14"
+      }
+    }
+  },
+  "recipe": {
+    "base_model": "convaiinnovations/laya",
+    "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "epochs": 48,
+    "micro_batch": 1,
+    "grad_accum": 32,
+    "encoder_lr": 2.5e-05,
+    "head_lr": 0.0001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "loss": "soft-ce",
+    "freeze_encoder": false,
+    "max_len": 512,
+    "head_max_len": 256,
+    "shuffle_options": [
+      "choice"
+    ],
+    "amp": true,
+    "gradient_checkpointing": true,
+    "optimizer": "bitsandbytes.optim.PagedAdamW8bit",
+    "laya_training_calibration_disabled": true,
+    "eval_data_during_training": null,
+    "target_optimizer_updates": 1060,
+    "expected_optimizer_updates": 1056,
+    "updates_per_epoch": 22,
+    "seeds": [
+      13,
+      14
+    ]
+  },
+  "evaluation": {
+    "protocol": "isolated-warm-v1",
+    "test_task_rows": {
+      "sib200-km": 204
+    },
+    "grouping": "sha256 of NFC-normalized, whitespace-collapsed state JSON",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 13,
+    "interval_percentiles": [
+      2.5,
+      97.5
+    ],
+    "reports": "artifacts/runs/R016/{model}.json"
+  },
+  "implementation_sha256": {
+    "scripts/train_r016_budget_specialist.py": "91bda4eff0481a5f9ceffdd7a42bf6d33dcdcc25434fc2450b04b03b944cb7bc",
+    "scripts/evaluate_r016_budget_specialist.py": "b20099e6191cf115122ce6a19500dc12d83f9bd7da27a2668477d08133c642ea",
+    "scripts/summarize_r016.py": "e37eb105b3fe57cea93ae46fef81488dd5bce614173918ab8d52eec390640d61",
+    "scripts/laya_amp.py": "9c1eb076971201a502f8c6327bce09cfda92f4733b4383b0c5caa888f34972f6"
+  },
+  "environment": {
+    "uv_lock_sha256": "d688cb8273cf5b4f10f23f33b7ae09060776fa9f239acb49429311535f7488fb",
+    "laya": "0.4.1",
+    "torch": "2.14.1+cu130",
+    "bitsandbytes": "0.50.2"
+  },
+  "interpretation": {
+    "caveat": "The SIB-200 test split has only 204 rows. R008's -2 pp non-inferiority gate requires a point estimate above roughly +3.4 to +4.4 pp against a ~5.4 pp minimum detectable effect at n=204, so the gate is untestable here and this study cannot resolve R008's non-inferiority question. All conclusions are exploratory and conditional on these two seeds and this test set.",
+    "minimum_detectable_effect_percentage_points": "~5.4",
+    "noninferiority_untestable_at_n_204": true
+  }
+}
