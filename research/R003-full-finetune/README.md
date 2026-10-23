@@ -6,6 +6,12 @@ it run on a 6 GB GPU?
 Hypothesis: full fine-tuning far exceeds head-only training, and fits in
 6 GB once optimizer state is 8-bit.
 
+Seeds: 13 (original run below) and 14 (added later, identical recipe). The
+seed-14 run exists so that R006's multitask comparison has a seed-matched
+single-task baseline; its record is
+[`results-seed14.md`](results-seed14.md). Seed 13's checkpoint and report are
+unchanged by it.
+
 ## Run
 
 `uv run python scripts/train_full_8bit.py`
@@ -32,6 +38,17 @@ Hypothesis: full fine-tuning far exceeds head-only training, and fits in
 Failed run: the same config through `laya-train` with standard AdamW ran out
 of the 6 GB VRAM. The exact error and peak memory were not saved.
 
+### Seed 14
+
+Same recipe, output `artifacts/checkpoints/R003-full-e2-8bit-s14`, weights
+SHA-256 `91478920...0cd4`. Run through `scripts/train_with_telemetry.py`, which
+executes the trainer unchanged and only observes it. Wall clock 64.9 min
+(training-only 63.0 min), peak training VRAM 3,260 MiB, 696 scheduler steps
+over 692 successful optimizer updates and 4 GradScaler skips, temperature
+1.2318. Test accuracy 82.18%, validation 83.33%. The seed-14 test result is
+1.51 pp below seed 13 (paired 95% CI [-2.53, -0.50]); see
+[`results-seed14.md`](results-seed14.md).
+
 ## Results
 
 Independent eval via `scripts/evaluate.py`:
@@ -46,6 +63,11 @@ R003 test: AURC 0.0380, accuracy at 50% coverage 98.59%, latency p50 17.42 ms,
 p95 19.95 ms (batch 1, see R001). Validation macro-F1 is 0.7946. Accuracy on test
 utterances not seen verbatim in train: 83.81% (n=2,545), versus 82.98% on seen
 ones (n=429), so there is no sign that overlap inflates the result.
+
+Seed 14, same protocol: test 82.18%, validation 83.33%, test macro-F1 0.7728,
+ECE 0.0178, Brier 0.0965, AURC 0.0386, accuracy at 50% coverage 98.66%,
+validation macro-F1 0.7960, unseen/seen 82.40% / 80.89%.
+
 
 Outcome: supported on MASSIVE Khmer with 20 candidates. Do not generalize it
 to other Khmer tasks yet (R004).
@@ -65,7 +87,8 @@ to other Khmer tasks yet (R004).
 ## Not recorded
 
 Peak training VRAM, training-only duration, and throughput. Capture these on
-the next training run. Do not retrain just to get them.
+the next training run. Do not retrain just to get them. (Seed 14 records all
+three; seed 13's values are not reconstructed.)
 
 Note: `rl_agent_config.json` `training.updates/hours/epochs_completed`
 (15987 / 4.97 / 4) are inherited from the base checkpoint, not from this run.

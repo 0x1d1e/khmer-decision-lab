@@ -167,8 +167,15 @@ longer).
 
 - No single-task News or SIB-200 controls: whether multi-task beats
   task-specific fine-tuning is untested.
-- R003 has one seed; the R006 - R003 comparison mixes method and seed
-  variance.
+- R003 has two seeds, not one: seed 14 was added later with the identical
+  recipe ([R003 seed-14 results](../R003-full-finetune/results-seed14.md)).
+  Against R003 seed 14 on test, both R006 seeds are above it (s13 +1.92
+  [+0.93, +2.93], s14 +1.51 [+0.51, +2.54]); against R003 seed 13 the same
+  contrasts are +0.40 [-0.57, +1.38] and 0.00 [-0.99, +1.00]. The two R003
+  seeds differ by 1.51 pp [-2.53, -0.50] on test, so which R003 seed is the
+  reference changes the MASSIVE conclusion, and neither reading isolates a
+  method effect. H1's direction is unaffected (all four lower bounds are above
+  -2.0 pp).
 - SIB-200 test has 204 rows; its CIs are wide and its ECE is noisy.
 - One pooled choice temperature is fit on a 400-row slice of the mixed file.
   Only 20 of those rows are SIB-200 (audit below), so the slice offers little

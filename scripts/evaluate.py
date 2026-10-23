@@ -41,6 +41,8 @@ BASE_REVISION = "7b928d828b7b0e022f929d9bd2e44165aa270148"
 CHECKPOINTS = {
     "head-e2": "artifacts/checkpoints/R002-head",
     "full-e2-8bit": "artifacts/checkpoints/R003-full-e2-8bit",
+    # R003 seed 14: identical recipe, separate output directory.
+    "full-e2-8bit-s14": "artifacts/checkpoints/R003-full-e2-8bit-s14",
     # R004 control: base weights with max_len 512 (see research/R004-cross-task).
     "control-base-maxlen512": "artifacts/checkpoints/control-base-maxlen512",
     "mt-s13": "artifacts/checkpoints/R006-mt-s13",

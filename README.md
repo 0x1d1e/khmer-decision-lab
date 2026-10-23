@@ -29,7 +29,7 @@ and non-autoregressive decision models.
 | [R005](research/R005-decision-complexity/) | Decision complexity: candidate count, option order, option text | done |
 | [R006](research/R006-multitask/) | Multi-task fine-tuning (MASSIVE + Khmer News + SIB-200) | done |
 | [R007](research/R007-unseen-transfer/) | Frozen transfer: derived MKQA choices + ASAG grading | exploratory; protocol locked, primary hypothesis not supported |
-| [R008](research/R008-specialist-controls/README.md) ([results](research/R008-specialist-controls/results.md)) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 inconclusive |
+| [R008](research/R008-specialist-controls/README.md) ([results](research/R008-specialist-controls/results.md)) | Multitask vs task-specialist controls (News, SIB-200) | exploratory; no multitask loss on News, SIB-200 non-inferiority untestable at n=204 (post-hoc power note) |
 | [R009](research/R009-sib-specialist-continuation/README.md) ([results](research/R009-sib-specialist-continuation/results.md)) | Continue R008 SIB-200 specialist training | exploratory; improvement unsupported, results inconclusive or mixed |
 | [R010](research/R010-massive-ocr-cascade/README.md) ([results](research/R010-massive-ocr-cascade/results.md)) | Synthetic OCR cascade on MASSIVE intent | exploratory; 12 px OCR lowered accuracy for both fixed R006 seeds |
 | [R011](research/R011-ocr-domain-calibration/README.md) ([results](research/R011-ocr-domain-calibration/results.md)) | Synthetic OCR-domain temperature calibration | exploratory; lower NLL for both fixed seeds, accuracy unchanged |
