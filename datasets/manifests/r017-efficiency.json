@@ -1,0 +1,108 @@
+{
+  "study": "R017-efficiency",
+  "status": "measured",
+  "question": "How do existing trained Khmer checkpoints compare on latency (p50/p95), per-decision cost (ms/row), peak VRAM, and load time on the fixed MASSIVE Khmer test set under isolated-warm-v1?",
+  "endpoint": "per-checkpoint x batch-size latency/cost/peak-VRAM/load-time matrix, one RTX 3050 (6 GB), data/processed/massive-km-test-full.jsonl (2,974 rows), batch sizes 1, 4, 8, 16",
+  "protocol": "isolated-warm-v1",
+  "protocol_sha256": "d4716e218da15d4d21f05e13632e8cecd498f86762a1d83457871eccd1f13005",
+  "source": {
+    "dataset": "data/processed/massive-km-test-full.jsonl",
+    "dataset_sha256": "a7ba21896c2cc244d195d3ed79e1e5080495acb63d1f17d789863f9d7df8373e",
+    "dataset_rows": 2974
+  },
+  "batch_configs": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "measurement_scope": {
+    "warmup_examples": 8,
+    "warmup_batch_size": 8,
+    "scored_metrics": [
+      "latency_p50_ms",
+      "latency_p95_ms",
+      "latency_mean_ms",
+      "cost_per_decision_p50_ms",
+      "cost_per_decision_p95_ms",
+      "peak_vram_allocated_mib",
+      "peak_vram_reserved_mib",
+      "model_load_ms",
+      "warmup_ms"
+    ],
+    "gpu_serialization": "flock /tmp/khmer-gpu.lock (exclusive, held for the whole run)",
+    "excluded_from_scored_measurement": [
+      "model loading",
+      "one 8-example warm-up pass"
+    ],
+    "not_comparable_to": "historical reports that include cold loading or count a preceding model's peak VRAM",
+    "hardware": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "generalization": "specific to this hardware, dataset, and configuration"
+  },
+  "checkpoints": {
+    "full-e2-8bit": {
+      "origin": "R003",
+      "seed": 13,
+      "checkpoint": "artifacts/checkpoints/R003-full-e2-8bit",
+      "weights_sha256": "b5c682c025001fdd2d7f5dcbfeef7a7022edc1bfe7e87fbafc08a8907b587f93"
+    },
+    "full-e2-8bit-s14": {
+      "origin": "R003",
+      "seed": 14,
+      "checkpoint": "artifacts/checkpoints/R003-full-e2-8bit-s14",
+      "weights_sha256": "9147892015a8d5f191f768309470696eb5deef3164cf5c6eb9ceac93def80cd4"
+    },
+    "mt-s13": {
+      "origin": "R006",
+      "seed": 13,
+      "checkpoint": "artifacts/checkpoints/R006-mt-s13",
+      "weights_sha256": "ae4042ab1eb5748d5618f3996e222fd696c617d293a430717c79a1bbdb492da9"
+    },
+    "mt-s14": {
+      "origin": "R006",
+      "seed": 14,
+      "checkpoint": "artifacts/checkpoints/R006-mt-s14",
+      "weights_sha256": "e2ff8c7d7149af6692e653e35ed625781919789c35ac6a6017ee01a5062e5d92"
+    },
+    "R008-sib-s13": {
+      "origin": "R008",
+      "seed": 13,
+      "checkpoint": "artifacts/checkpoints/R008-sib-s13",
+      "weights_sha256": "5780f7432d463e45d88b9d6594fca53dd379c4a2b6f2bd1a577f365c57bc0c48"
+    },
+    "R008-mt-s13": {
+      "origin": "R008",
+      "seed": 13,
+      "checkpoint": "artifacts/checkpoints/R008-mt-s13",
+      "weights_sha256": "5cfa89f75954d1602e682a23778bce45858e6387cb48677a007ac46de07a62cd"
+    },
+    "R013-seen-only-s13": {
+      "origin": "R013",
+      "seed": 13,
+      "checkpoint": "artifacts/checkpoints/R013-seen-only-s13",
+      "weights_sha256": "1c55746a27f0ba76389d89d28a11d97b083a3a8f266bfa9e9cec87d104017bb4"
+    },
+    "R013-all-label-s13": {
+      "origin": "R013",
+      "seed": 13,
+      "checkpoint": "artifacts/checkpoints/R013-all-label-s13",
+      "weights_sha256": "ee69ab0e710fdcafe27b99b034bead15277971ba95609eac44b0ba5b6512be37"
+    }
+  },
+  "implementation_sha256": {
+    "scripts/measure_r017_efficiency.py": "3121ce5c3e78e2fce3c305b342fdc7512ec3918febca2c26a1ade1d21b4647b0",
+    "scripts/summarize_r017.py": "f0b9538b197b253ade705ff6c29d59a5f6f85f7cdad0d6966a12c3c83d506d4c"
+  },
+  "measurements": "artifacts/runs/R017/measurements/{checkpoint}_bs{batch}.json",
+  "summary": "artifacts/runs/R017/summary.json",
+  "preparation": "artifacts/runs/R017/preparation.json",
+  "results": "research/R017-efficiency/results.md",
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "laya": "0.4.1",
+    "uv_lock_sha256": "d688cb8273cf5b4f10f23f33b7ae09060776fa9f239acb49429311535f7488fb"
+  },
+  "limitations": "Numbers are specific to one RTX 3050 (6 GB), one dataset (data/processed/massive-km-test-full.jsonl, 2,974 rows), and one batch configuration per run. They are not comparable to historical reports that include cold loading or count a preceding model's peak VRAM, and they do not generalize beyond this hardware, dataset, and configuration."
+}
