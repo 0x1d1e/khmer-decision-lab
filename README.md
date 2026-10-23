@@ -36,6 +36,9 @@ and non-autoregressive decision models.
 | [R012](research/R012-ocr-continuation/README.md) ([results](research/R012-ocr-continuation/results.md)) | Matched clean and synthetic-OCR continuation | exploratory; OCR continuation improved 12 px accuracy for both fixed seeds within the clean-text tolerance |
 | [R013](research/R013-unseen-intent-transfer/README.md) ([results](research/R013-unseen-intent-transfer/results.md)) | Seen-only adaptation on held-out MASSIVE intent options | exploratory; positive on the fixed selected option set for both seeds |
 | [R014](research/R014-sea-nli-khmer-transfer/README.md) ([results](research/R014-sea-nli-khmer-transfer/results.md)) | SEA-NLI Khmer NLI: transfer to an unseen task type | exploratory; primary unsupported and inconclusive |
+| [R015](research/R015-document-image-ocr/README.md) ([results](research/R015-document-image-ocr/results.md)) | Document-image OCR: real decree line-crops vs synthetic renders | exploratory; ~+8.6 pp codepoint CER gap, images are PDF re-renders not scans |
+| [R016](research/R016-budget-matched-specialist/README.md) ([results](research/R016-budget-matched-specialist/results.md)) | Budget-matched SIB-200 specialist control (~1k updates) | exploratory; memorization at ~1k updates, specialist still loses to multitask |
+| [R017](research/R017-efficiency/README.md) ([results](research/R017-efficiency/results.md)) | Isolated-warm-v1 efficiency across existing checkpoints | done; ~17.3 ms p50 across all checkpoints/batch sizes |
 
 Core benchmark metrics: `research/results.json`. Per-study machine-readable outcomes are linked from each results page.
 
@@ -60,9 +63,15 @@ names may be opaque. R010 found an approximately 10-point accuracy loss under
 validation-fitted OCR temperature lowered mean NLL by 0.0084 and 0.0080, with
 no accuracy change. R012's OCR continuation improved 12 px accuracy over clean
 continuation by 3.18 pp and 2.43 pp for the two fixed R006 seeds; both clean
-comparisons stayed within the preregistered -2 pp tolerance. These OCR findings
-use the reused MASSIVE test split and synthetic typesetting, so they are
-exploratory and do not establish real-image performance.
+comparisons stayed within the preregistered -2 pp tolerance. R015's paired
+document-image control found real decree line-crops worse than matched
+synthetic renders by ~+8.6 pp codepoint CER (macro delta +8.62 pp, 95% CI
+[7.73, 9.51]; grapheme +12.11 pp, 95% CI [11.31, 12.87] over 4,778 lines /
+148 pages / 17 decree groups; real 10.69% vs synthetic 2.07%), but the images
+are PDF re-renders of Word-exported decrees, not scans, so capture degradation
+is unmeasured and real-image performance is not established. These OCR
+findings use the reused MASSIVE test split and synthetic typesetting, so they
+are exploratory and do not establish real-image performance.
 
 R014 moves to an unseen task type: the 65 Khmer rows of SEA-NLI, asked as a
 fixed three-option NLI choice over 37 premise clusters. It was not supported.
@@ -79,13 +88,33 @@ capability and does not close the independent-benchmark gap. The Khmer text is
 machine-generated, not naturalistic user input, and the labels are public, so
 sealing is procedural only.
 
+R016's budget-matched SIB-200 specialist control trained both seeds to
+~1,056 updates matching multitask's ~1,060-update budget; loss collapsed to
+0.000 (memorization of 681 rows) and the specialist did not close the gap on
+the 204-row test (D_s = -0.49 pp seed 13, -4.90 pp seed 14; both intervals
+include zero), so specialist under-training at R008's 44-update budget is not
+supported as the explanation for the R008 gap; non-inferiority is untestable
+at n=204, exploratory only.
+
+R017's isolated-warm-v1 efficiency measurement covered eight existing
+checkpoints at batch sizes 1/4/8/16 (32 configs, no OOMs): all checkpoints
+cluster at ~17.3 ms/row p50 (~19.9 ms p95, ~17 ms/row per-decision cost),
+batch size barely moves latency, and load time (~2.5–5.2 s) is the one real
+variable; the R008 specialist and its same-seed multitask comparator are
+indistinguishable, so there is no task-specific cost difference between arms.
+Results are specific to one RTX 3050, one dataset, and one config and are not
+comparable to historical reports with cold loading or preceding-model VRAM.
+
 See [R007](research/R007-unseen-transfer/),
 [R009](research/R009-sib-specialist-continuation/results.md),
 [R010](research/R010-massive-ocr-cascade/results.md),
 [R011](research/R011-ocr-domain-calibration/results.md),
 [R012](research/R012-ocr-continuation/results.md), and
 [R013](research/R013-unseen-intent-transfer/results.md), and
-[R014](research/R014-sea-nli-khmer-transfer/results.md). Real-image evaluation
+[R014](research/R014-sea-nli-khmer-transfer/results.md),
+[R015](research/R015-document-image-ocr/results.md),
+[R016](research/R016-budget-matched-specialist/results.md),
+and [R017](research/R017-efficiency/results.md). Real-image evaluation
 remains open.
 
 Metric definitions: `brier` is the Brier score of top-answer confidence
@@ -131,4 +160,15 @@ uv run --frozen python scripts/calibrate_r011.py
 uv run --frozen python scripts/evaluate_r011.py
 uv run --frozen python scripts/summarize_r011.py
 uv run python scripts/summarize_runs.py            # research/results.json
+# R015: document-image OCR on PDF re-renders (not scans); no training commands,
+# see research/R015-document-image-ocr/results.md for the harness and results.
+# R016: budget-matched SIB-200 specialist (GPU-serialized via /tmp/khmer-gpu.lock)
+flock /tmp/khmer-gpu.lock -c 'uv run --frozen python scripts/train_r016_budget_specialist.py 13'
+flock /tmp/khmer-gpu.lock -c 'uv run --frozen python scripts/train_r016_budget_specialist.py 14'
+uv run --frozen python scripts/evaluate_r016_budget_specialist.py
+uv run --frozen python scripts/summarize_r016.py
+# R017: isolated-warm-v1 efficiency across existing checkpoints
+uv run --frozen python scripts/measure_r017_efficiency.py --dry-run
+uv run --frozen python scripts/measure_r017_efficiency.py   # GPU-serialized internally via /tmp/khmer-gpu.lock
+uv run --frozen python scripts/summarize_r017.py
 ```
