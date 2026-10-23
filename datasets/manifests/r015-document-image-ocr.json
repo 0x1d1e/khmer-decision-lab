@@ -1,0 +1,124 @@
+{
+  "study": "R015-document-image-ocr",
+  "status": "locked_exploratory",
+  "protocol_sha256": "3411d311c2968972a62fd0b7134cfa2a1bda3c89ec3a66b2c8028305d0db051b",
+  "implementation_sha256": {
+    "scripts/prepare_r015.py": "3411d311c2968972a62fd0b7134cfa2a1bda3c89ec3a66b2c8028305d0db051b",
+    "scripts/r015_metrics.py": "ea0eeaa7cb119b3e01c227a13fa1a1374957cf08a4b08037952da2e751d85d45",
+    "scripts/summarize_r015.py": "b036d21d677dc66ccded1c0216630fc6b171538914367c185e0250a6172ac8d7",
+    "tests/test_r015.py": "96f2146039fb385d405a2273aebfe4d17e01c621680b422bd638d564a49371be"
+  },
+  "source": {
+    "data_root": "/home/k/data/structure-839",
+    "data_manifest_sha256": "d21b9207f044a7d7d285454e02cd46661cedc0351c16e2e056ae57344d3b022e",
+    "data_split_sha256": "2240432c039d7c155c3369f5f655f21f35e1a721bdd0e8b20f31e31fa94774c4",
+    "image_dir": "images",
+    "line_gt_dir": "lines_gt",
+    "split_file": "lines_gt_split.json",
+    "quality_file": "lines_gt_quality.json",
+    "manifest_file": "lines_gt_manifest.json",
+    "train_pages": 575,
+    "train_lines": 17219,
+    "val_pages": 86,
+    "val_lines": 2679,
+    "test_pages_total": 175,
+    "test_lines_total": 5565,
+    "decree_groups_total": 78,
+    "decree_groups_in_test": 17,
+    "split_basis": "decree (number and year), never page",
+    "seed": 20260101,
+    "dropped_pages_no_text_layer": 38
+  },
+  "quality_filter": {
+    "text_ok": true,
+    "duplicate_rect_frac_max": 0.02,
+    "bad_coeng_frac_max": 0.002,
+    "dep_dep_frac_max": 0.02
+  },
+  "filtered_test": {
+    "pages": 148,
+    "lines": 4778,
+    "no_text_layer_pages_in_test": 4
+  },
+  "protocol": {
+    "engine": "Tesseract",
+    "languages": "khm+eng",
+    "oem": 1,
+    "psm": 7,
+    "conditions": ["real_document_crop", "synthetic_render"],
+    "render_font": "/usr/share/fonts/noto/NotoSansKhmer-Regular.ttf",
+    "render_font_size_px": 48,
+    "render_layout_engine": "Pillow RAQM",
+    "render_padding_px": {
+      "left": 16,
+      "right": 16,
+      "top": 12,
+      "bottom": 12
+    },
+    "render_minimum_image_px": {
+      "width": 256,
+      "height": 60
+    },
+    "render_background": "white",
+    "render_text_color": "black"
+  },
+  "metrics": {
+    "primary": "paired macro codepoint CER delta (real minus synthetic)",
+    "secondary": ["macro grapheme CER delta", "exact match rate", "blank output rate"],
+    "cer_metrics": ["codepoint CER", "Unicode extended grapheme cluster CER"],
+    "bootstrap_method": "decree-grouped; resample groups with replacement, retain all lines in sampled group",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260101,
+    "interval_percentiles": [2.5, 97.5],
+    "cer_normalization": "NFC, collapse whitespace and trim"
+  },
+  "results": {
+    "real_codepoint_cer": 0.106876,
+    "real_grapheme_cer": 0.150469,
+    "real_exact_rate": 0.099205,
+    "real_blank_outputs": 3,
+    "synthetic_codepoint_cer": 0.020676,
+    "synthetic_grapheme_cer": 0.029368,
+    "synthetic_exact_rate": 0.559021,
+    "synthetic_blank_outputs": 18,
+    "macro_codepoint_delta_pp": 8.62,
+    "macro_grapheme_delta_pp": 12.11,
+    "macro_codepoint_95ci_pp": [7.73, 9.51],
+    "macro_grapheme_95ci_pp": [11.31, 12.87],
+    "line_mean_codepoint_delta_pp": 12.96,
+    "line_mean_grapheme_delta_pp": 17.91,
+    "line_mean_codepoint_95ci_pp": [11.45, 14.22],
+    "line_mean_grapheme_95ci_pp": [16.69, 19.13]
+  },
+  "harness_validation": {
+    "description": "rendered 300 MASSIVE Khmer test utterances through the synthetic pipeline and scored with Tesseract",
+    "observed_codepoint_cer": 0.05259,
+    "reference_r010_codepoint_cer": 0.0526,
+    "tolerance_pp": 1.0,
+    "passed": true
+  },
+  "limitations": [
+    "Images are PDF re-renders of Word-exported decrees, not photographed scans. Capture degradation (camera, lighting, skew, blur) is not measured.",
+    "The pages dropped for a missing text layer include the genuine scans in this collection; they carry zero labels and cannot be scored.",
+    "This measures OCR text error on line crops, not end-task intent accuracy; real-image intent evaluation remains blocked.",
+    "Only one Tesseract version, one language configuration, one PSM/OEM setting and one render font are tested."
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Linux-7.2.11-1-cachyos-x86_64-with-glibc2.44",
+    "pillow": "12.3.0",
+    "pillow_raqm": "0.10.5",
+    "numpy": "2.4.6",
+    "regex": "2026.9.29",
+    "tesseract_path": "/usr/bin/tesseract",
+    "tesseract_version": "tesseract 5.5.3",
+    "tesseract_sha256": "037aac252011c50f005b6c98d879154a64f1b78511b9ae5c5200ac9d5f9f4b45",
+    "tessdata_sha256": {
+      "khm": "cb3538123a24fe08e3611b1a6598030aa81993ea884b39458b1a856cbd0bfd54",
+      "eng": "daa0c97d651c19fba3b25e81317cd697e9908c8208090c94c3905381c23fc047"
+    },
+    "font_path": "/usr/share/fonts/noto/NotoSansKhmer-Regular.ttf",
+    "font_sha256": "e66675f2082788f0511a714bef5a1748928294b38c8e286a96ea73a864b5e605",
+    "font_size": 48
+  }
+}
