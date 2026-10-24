@@ -14801,6 +14801,3759 @@
           }
         }
       }
+    },
+    "asag-r007": {
+      "test": {
+        "experiments": [
+          "R007"
+        ],
+        "n": 358,
+        "options_per_row": [
+          5
+        ],
+        "chance_accuracy": 0.2,
+        "majority_accuracy": 0.4274,
+        "dataset_sha256": "8b26fcea2efa4468223cc21b749ebd9bdde7610fd936554afbec82dbda786a0f",
+        "models": {
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.1536,
+            "ece": 0.1916,
+            "brier": 0.1723,
+            "aurc": 0.848,
+            "mean_confidence": 0.3452,
+            "selective_accuracy@50": 0.1667,
+            "selective_accuracy@80": 0.1707,
+            "latency_p50_ms": 752.8146,
+            "latency_p95_ms": 1034.5364,
+            "cost_per_decision_p50_ms": 94.1018,
+            "macro_f1": 0.1218,
+            "recall_by_label": {
+              "0": 0.1,
+              "1": 0.2692,
+              "2": 0.0294,
+              "3": 0.5918,
+              "4": 0.0131
+            },
+            "peak_vram_mib": 1963.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-asag-frozen/full-e2-8bit.json"
+          },
+          "control-base-maxlen512": {
+            "label": "base@512",
+            "choice_accuracy": 0.0698,
+            "ece": 0.3966,
+            "brier": 0.2481,
+            "aurc": 0.9611,
+            "mean_confidence": 0.4664,
+            "selective_accuracy@50": 0.0335,
+            "selective_accuracy@80": 0.0557,
+            "latency_p50_ms": 751.3695,
+            "latency_p95_ms": 1037.2831,
+            "cost_per_decision_p50_ms": 93.9212,
+            "macro_f1": 0.0816,
+            "recall_by_label": {
+              "0": 0.7,
+              "1": 0.1154,
+              "2": 0.0147,
+              "3": 0.1633,
+              "4": 0.0
+            },
+            "peak_vram_mib": 1963.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-asag-frozen/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.1648,
+            "ece": 0.2041,
+            "brier": 0.1854,
+            "aurc": 0.8238,
+            "mean_confidence": 0.3671,
+            "selective_accuracy@50": 0.1955,
+            "selective_accuracy@80": 0.1707,
+            "latency_p50_ms": 752.1192,
+            "latency_p95_ms": 1034.6891,
+            "cost_per_decision_p50_ms": 94.0149,
+            "macro_f1": 0.1331,
+            "recall_by_label": {
+              "0": 0.1,
+              "1": 0.0385,
+              "2": 0.1618,
+              "3": 0.7347,
+              "4": 0.0523
+            },
+            "peak_vram_mib": 1963.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-asag-frozen/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.2011,
+            "ece": 0.1845,
+            "brier": 0.2042,
+            "aurc": 0.8059,
+            "mean_confidence": 0.3856,
+            "selective_accuracy@50": 0.1732,
+            "selective_accuracy@80": 0.1882,
+            "latency_p50_ms": 752.6422,
+            "latency_p95_ms": 1035.2694,
+            "cost_per_decision_p50_ms": 94.0803,
+            "macro_f1": 0.231,
+            "recall_by_label": {
+              "0": 0.5,
+              "1": 0.3974,
+              "2": 0.2353,
+              "3": 0.4082,
+              "4": 0.0
+            },
+            "peak_vram_mib": 1963.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-asag-frozen/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - control-base-maxlen512": {
+            "diff": 0.0838,
+            "ci95": [
+              0.0447,
+              0.1229
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0112,
+            "ci95": [
+              -0.0307,
+              0.0531
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0475,
+            "ci95": [
+              0.0028,
+              0.0922
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.095,
+            "ci95": [
+              0.0531,
+              0.1397
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.1313,
+            "ci95": [
+              0.0894,
+              0.176
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.0363,
+            "ci95": [
+              -0.0112,
+              0.0838
+            ]
+          }
+        }
+      }
+    },
+    "mkqa-entity-choice-r007": {
+      "test": {
+        "experiments": [
+          "R007"
+        ],
+        "n": 2093,
+        "options_per_row": [
+          4
+        ],
+        "chance_accuracy": 0.25,
+        "majority_accuracy": 0.2594,
+        "dataset_sha256": "8acbec57074f9cfb2a5ec8fa0fb8c89cdfa19cd9f1f349dbf9bdff822e58e58f",
+        "models": {
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.4319,
+            "ece": 0.0689,
+            "brier": 0.2362,
+            "aurc": 0.4471,
+            "mean_confidence": 0.4999,
+            "selective_accuracy@50": 0.521,
+            "selective_accuracy@80": 0.4639,
+            "latency_p50_ms": 12.0085,
+            "latency_p95_ms": 13.2222,
+            "cost_per_decision_p50_ms": 12.0085,
+            "macro_f1": 0.4243,
+            "recall_by_label": {
+              "A": 0.6267,
+              "B": 0.3481,
+              "C": 0.4702,
+              "D": 0.286
+            },
+            "peak_vram_mib": 1500.8,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/full-e2-8bit.json"
+          },
+          "control-base-maxlen512": {
+            "label": "base@512",
+            "choice_accuracy": 0.3937,
+            "ece": 0.1439,
+            "brier": 0.2529,
+            "aurc": 0.4992,
+            "mean_confidence": 0.5369,
+            "selective_accuracy@50": 0.4795,
+            "selective_accuracy@80": 0.4221,
+            "latency_p50_ms": 12.0575,
+            "latency_p95_ms": 13.2138,
+            "cost_per_decision_p50_ms": 12.0575,
+            "macro_f1": 0.3843,
+            "recall_by_label": {
+              "A": 0.6,
+              "B": 0.3794,
+              "C": 0.3393,
+              "D": 0.2534
+            },
+            "peak_vram_mib": 1500.8,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/control-base-maxlen512.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.4176,
+            "ece": 0.0771,
+            "brier": 0.237,
+            "aurc": 0.4678,
+            "mean_confidence": 0.4944,
+            "selective_accuracy@50": 0.5005,
+            "selective_accuracy@80": 0.4466,
+            "latency_p50_ms": 12.1336,
+            "latency_p95_ms": 13.2872,
+            "cost_per_decision_p50_ms": 12.1336,
+            "macro_f1": 0.4008,
+            "recall_by_label": {
+              "A": 0.6857,
+              "B": 0.3996,
+              "C": 0.3849,
+              "D": 0.1977
+            },
+            "peak_vram_mib": 1500.8,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.4505,
+            "ece": 0.0488,
+            "brier": 0.2354,
+            "aurc": 0.429,
+            "mean_confidence": 0.4838,
+            "selective_accuracy@50": 0.5406,
+            "selective_accuracy@80": 0.4854,
+            "latency_p50_ms": 12.0413,
+            "latency_p95_ms": 13.7168,
+            "cost_per_decision_p50_ms": 12.0413,
+            "macro_f1": 0.437,
+            "recall_by_label": {
+              "A": 0.7581,
+              "B": 0.3536,
+              "C": 0.4405,
+              "D": 0.2514
+            },
+            "peak_vram_mib": 1500.8,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/r007-mkqa-entity-choice-frozen/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - control-base-maxlen512": {
+            "diff": 0.0382,
+            "ci95": [
+              0.0162,
+              0.0597
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": -0.0143,
+            "ci95": [
+              -0.0344,
+              0.0057
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0186,
+            "ci95": [
+              -0.0014,
+              0.0382
+            ]
+          },
+          "mt-s13 - control-base-maxlen512": {
+            "diff": 0.0239,
+            "ci95": [
+              0.0024,
+              0.0463
+            ]
+          },
+          "mt-s14 - control-base-maxlen512": {
+            "diff": 0.0569,
+            "ci95": [
+              0.0339,
+              0.0798
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.033,
+            "ci95": [
+              0.0134,
+              0.0526
+            ]
+          }
+        }
+      }
+    },
+    "khmer-news-r008-mt": {
+      "test": {
+        "experiments": [
+          "R008"
+        ],
+        "n": 1543,
+        "options_per_row": [
+          6
+        ],
+        "chance_accuracy": 0.1667,
+        "majority_accuracy": 0.291,
+        "dataset_sha256": "8a710b7f17f06424b45b61d7ce07756a9bde8fc4ed8075647628063cbb67551e",
+        "models": {
+          "multitask-s13": {
+            "label": "R008 multitask s13",
+            "choice_accuracy": 0.9268,
+            "ece": 0.0176,
+            "brier": 0.0539,
+            "aurc": 0.0119,
+            "mean_confidence": 0.9374,
+            "selective_accuracy@50": 0.9974,
+            "selective_accuracy@80": 0.9781,
+            "latency_p50_ms": 184.755,
+            "latency_p95_ms": 188.0989,
+            "cost_per_decision_p50_ms": 23.0958,
+            "macro_f1": 0.9182,
+            "recall_by_label": {
+              "economic": 0.9141,
+              "entertainment": 0.9238,
+              "life": 0.8476,
+              "politic": 0.9755,
+              "sport": 0.9761,
+              "technology": 0.8708
+            },
+            "report": "artifacts/runs/R008/khmer-news/multitask-s13.json"
+          },
+          "multitask-s14": {
+            "label": "R008 multitask s14",
+            "choice_accuracy": 0.93,
+            "ece": 0.0173,
+            "brier": 0.053,
+            "aurc": 0.0129,
+            "mean_confidence": 0.9385,
+            "selective_accuracy@50": 0.9935,
+            "selective_accuracy@80": 0.9773,
+            "latency_p50_ms": 187.4033,
+            "latency_p95_ms": 198.2153,
+            "cost_per_decision_p50_ms": 23.4283,
+            "macro_f1": 0.9208,
+            "recall_by_label": {
+              "economic": 0.9336,
+              "entertainment": 0.9286,
+              "life": 0.8381,
+              "politic": 0.98,
+              "sport": 0.9665,
+              "technology": 0.8756
+            },
+            "report": "artifacts/runs/R008/khmer-news/multitask-s14.json"
+          },
+          "khmer-news-specialist-s13": {
+            "label": "R008 khmer-news-specialist s13",
+            "choice_accuracy": 0.9229,
+            "ece": 0.0089,
+            "brier": 0.0562,
+            "aurc": 0.0134,
+            "mean_confidence": 0.9265,
+            "selective_accuracy@50": 0.9935,
+            "selective_accuracy@80": 0.9789,
+            "latency_p50_ms": 185.3191,
+            "latency_p95_ms": 189.4141,
+            "cost_per_decision_p50_ms": 23.1693,
+            "macro_f1": 0.9144,
+            "recall_by_label": {
+              "economic": 0.9258,
+              "entertainment": 0.9286,
+              "life": 0.8381,
+              "politic": 0.971,
+              "sport": 0.9522,
+              "technology": 0.866
+            },
+            "report": "artifacts/runs/R008/khmer-news/khmer-news-specialist-s13.json"
+          },
+          "khmer-news-specialist-s14": {
+            "label": "R008 khmer-news-specialist s14",
+            "choice_accuracy": 0.9274,
+            "ece": 0.0127,
+            "brier": 0.0516,
+            "aurc": 0.0114,
+            "mean_confidence": 0.9244,
+            "selective_accuracy@50": 0.9948,
+            "selective_accuracy@80": 0.9789,
+            "latency_p50_ms": 185.95,
+            "latency_p95_ms": 189.6745,
+            "cost_per_decision_p50_ms": 23.2488,
+            "macro_f1": 0.9191,
+            "recall_by_label": {
+              "economic": 0.9258,
+              "entertainment": 0.9476,
+              "life": 0.8143,
+              "politic": 0.9688,
+              "sport": 0.9713,
+              "technology": 0.89
+            },
+            "report": "artifacts/runs/R008/khmer-news/khmer-news-specialist-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "multitask-s14 - multitask-s13": {
+            "diff": 0.0032,
+            "ci95": [
+              -0.0065,
+              0.013
+            ]
+          },
+          "khmer-news-specialist-s14 - khmer-news-specialist-s13": {
+            "diff": 0.0045,
+            "ci95": [
+              -0.0052,
+              0.0143
+            ]
+          }
+        }
+      }
+    },
+    "khmer-news-r008-specialist": {
+      "test": {
+        "experiments": [
+          "R008"
+        ],
+        "n": 1543,
+        "options_per_row": [
+          6
+        ],
+        "chance_accuracy": 0.1667,
+        "majority_accuracy": 0.291,
+        "dataset_sha256": "8a710b7f17f06424b45b61d7ce07756a9bde8fc4ed8075647628063cbb67551e",
+        "models": {
+          "multitask-s13": {
+            "label": "R008 multitask s13",
+            "choice_accuracy": 0.9268,
+            "ece": 0.0176,
+            "brier": 0.0539,
+            "aurc": 0.0119,
+            "mean_confidence": 0.9374,
+            "selective_accuracy@50": 0.9974,
+            "selective_accuracy@80": 0.9781,
+            "latency_p50_ms": 184.755,
+            "latency_p95_ms": 188.0989,
+            "cost_per_decision_p50_ms": 23.0958,
+            "macro_f1": 0.9182,
+            "recall_by_label": {
+              "economic": 0.9141,
+              "entertainment": 0.9238,
+              "life": 0.8476,
+              "politic": 0.9755,
+              "sport": 0.9761,
+              "technology": 0.8708
+            },
+            "report": "artifacts/runs/R008/khmer-news/multitask-s13.json"
+          },
+          "multitask-s14": {
+            "label": "R008 multitask s14",
+            "choice_accuracy": 0.93,
+            "ece": 0.0173,
+            "brier": 0.053,
+            "aurc": 0.0129,
+            "mean_confidence": 0.9385,
+            "selective_accuracy@50": 0.9935,
+            "selective_accuracy@80": 0.9773,
+            "latency_p50_ms": 187.4033,
+            "latency_p95_ms": 198.2153,
+            "cost_per_decision_p50_ms": 23.4283,
+            "macro_f1": 0.9208,
+            "recall_by_label": {
+              "economic": 0.9336,
+              "entertainment": 0.9286,
+              "life": 0.8381,
+              "politic": 0.98,
+              "sport": 0.9665,
+              "technology": 0.8756
+            },
+            "report": "artifacts/runs/R008/khmer-news/multitask-s14.json"
+          },
+          "khmer-news-specialist-s13": {
+            "label": "R008 khmer-news-specialist s13",
+            "choice_accuracy": 0.9229,
+            "ece": 0.0089,
+            "brier": 0.0562,
+            "aurc": 0.0134,
+            "mean_confidence": 0.9265,
+            "selective_accuracy@50": 0.9935,
+            "selective_accuracy@80": 0.9789,
+            "latency_p50_ms": 185.3191,
+            "latency_p95_ms": 189.4141,
+            "cost_per_decision_p50_ms": 23.1693,
+            "macro_f1": 0.9144,
+            "recall_by_label": {
+              "economic": 0.9258,
+              "entertainment": 0.9286,
+              "life": 0.8381,
+              "politic": 0.971,
+              "sport": 0.9522,
+              "technology": 0.866
+            },
+            "report": "artifacts/runs/R008/khmer-news/khmer-news-specialist-s13.json"
+          },
+          "khmer-news-specialist-s14": {
+            "label": "R008 khmer-news-specialist s14",
+            "choice_accuracy": 0.9274,
+            "ece": 0.0127,
+            "brier": 0.0516,
+            "aurc": 0.0114,
+            "mean_confidence": 0.9244,
+            "selective_accuracy@50": 0.9948,
+            "selective_accuracy@80": 0.9789,
+            "latency_p50_ms": 185.95,
+            "latency_p95_ms": 189.6745,
+            "cost_per_decision_p50_ms": 23.2488,
+            "macro_f1": 0.9191,
+            "recall_by_label": {
+              "economic": 0.9258,
+              "entertainment": 0.9476,
+              "life": 0.8143,
+              "politic": 0.9688,
+              "sport": 0.9713,
+              "technology": 0.89
+            },
+            "report": "artifacts/runs/R008/khmer-news/khmer-news-specialist-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "multitask-s14 - multitask-s13": {
+            "diff": 0.0032,
+            "ci95": [
+              -0.0065,
+              0.013
+            ]
+          },
+          "khmer-news-specialist-s14 - khmer-news-specialist-s13": {
+            "diff": 0.0045,
+            "ci95": [
+              -0.0052,
+              0.0143
+            ]
+          }
+        }
+      }
+    },
+    "sib200-km-r008-mt": {
+      "test": {
+        "experiments": [
+          "R008"
+        ],
+        "n": 204,
+        "options_per_row": [
+          7
+        ],
+        "chance_accuracy": 0.1429,
+        "majority_accuracy": 0.25,
+        "dataset_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+        "models": {
+          "multitask-s13": {
+            "label": "R008 multitask s13",
+            "choice_accuracy": 0.7255,
+            "ece": 0.068,
+            "brier": 0.1495,
+            "aurc": 0.1084,
+            "mean_confidence": 0.7677,
+            "selective_accuracy@50": 0.902,
+            "selective_accuracy@80": 0.8232,
+            "latency_p50_ms": 103.5137,
+            "latency_p95_ms": 152.9972,
+            "cost_per_decision_p50_ms": 12.9392,
+            "macro_f1": 0.7141,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.5294,
+              "health": 0.7273,
+              "politics": 0.7667,
+              "science/technology": 0.7451,
+              "sports": 0.8,
+              "travel": 0.775
+            },
+            "report": "artifacts/runs/R008/sib200-km/multitask-s13.json"
+          },
+          "multitask-s14": {
+            "label": "R008 multitask s14",
+            "choice_accuracy": 0.7549,
+            "ece": 0.0638,
+            "brier": 0.1504,
+            "aurc": 0.0937,
+            "mean_confidence": 0.7317,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.8171,
+            "latency_p50_ms": 103.7175,
+            "latency_p95_ms": 162.1688,
+            "cost_per_decision_p50_ms": 12.9647,
+            "macro_f1": 0.7554,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.7059,
+              "health": 0.6364,
+              "politics": 0.8667,
+              "science/technology": 0.8235,
+              "sports": 0.8,
+              "travel": 0.725
+            },
+            "report": "artifacts/runs/R008/sib200-km/multitask-s14.json"
+          },
+          "sib200-specialist-s13": {
+            "label": "R008 sib200-specialist s13",
+            "choice_accuracy": 0.7059,
+            "ece": 0.0559,
+            "brier": 0.1714,
+            "aurc": 0.1417,
+            "mean_confidence": 0.7138,
+            "selective_accuracy@50": 0.8922,
+            "selective_accuracy@80": 0.7744,
+            "latency_p50_ms": 104.5998,
+            "latency_p95_ms": 154.1684,
+            "cost_per_decision_p50_ms": 13.075,
+            "macro_f1": 0.6944,
+            "recall_by_label": {
+              "entertainment": 0.5263,
+              "geography": 0.7059,
+              "health": 0.5455,
+              "politics": 0.8,
+              "science/technology": 0.6863,
+              "sports": 0.76,
+              "travel": 0.8
+            },
+            "report": "artifacts/runs/R008/sib200-km/sib200-specialist-s13.json"
+          },
+          "sib200-specialist-s14": {
+            "label": "R008 sib200-specialist s14",
+            "choice_accuracy": 0.6667,
+            "ece": 0.0751,
+            "brier": 0.1848,
+            "aurc": 0.1685,
+            "mean_confidence": 0.7011,
+            "selective_accuracy@50": 0.8529,
+            "selective_accuracy@80": 0.7561,
+            "latency_p50_ms": 103.877,
+            "latency_p95_ms": 153.2291,
+            "cost_per_decision_p50_ms": 12.9846,
+            "macro_f1": 0.6691,
+            "recall_by_label": {
+              "entertainment": 0.6842,
+              "geography": 0.7059,
+              "health": 0.5909,
+              "politics": 0.6333,
+              "science/technology": 0.549,
+              "sports": 0.76,
+              "travel": 0.8
+            },
+            "report": "artifacts/runs/R008/sib200-km/sib200-specialist-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "multitask-s14 - multitask-s13": {
+            "diff": 0.0294,
+            "ci95": [
+              -0.0147,
+              0.0735
+            ]
+          },
+          "sib200-specialist-s14 - sib200-specialist-s13": {
+            "diff": -0.0392,
+            "ci95": [
+              -0.0882,
+              0.0098
+            ]
+          }
+        }
+      }
+    },
+    "sib200-km-r008-specialist": {
+      "test": {
+        "experiments": [
+          "R008"
+        ],
+        "n": 204,
+        "options_per_row": [
+          7
+        ],
+        "chance_accuracy": 0.1429,
+        "majority_accuracy": 0.25,
+        "dataset_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+        "models": {
+          "multitask-s13": {
+            "label": "R008 multitask s13",
+            "choice_accuracy": 0.7255,
+            "ece": 0.068,
+            "brier": 0.1495,
+            "aurc": 0.1084,
+            "mean_confidence": 0.7677,
+            "selective_accuracy@50": 0.902,
+            "selective_accuracy@80": 0.8232,
+            "latency_p50_ms": 103.5137,
+            "latency_p95_ms": 152.9972,
+            "cost_per_decision_p50_ms": 12.9392,
+            "macro_f1": 0.7141,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.5294,
+              "health": 0.7273,
+              "politics": 0.7667,
+              "science/technology": 0.7451,
+              "sports": 0.8,
+              "travel": 0.775
+            },
+            "report": "artifacts/runs/R008/sib200-km/multitask-s13.json"
+          },
+          "multitask-s14": {
+            "label": "R008 multitask s14",
+            "choice_accuracy": 0.7549,
+            "ece": 0.0638,
+            "brier": 0.1504,
+            "aurc": 0.0937,
+            "mean_confidence": 0.7317,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.8171,
+            "latency_p50_ms": 103.7175,
+            "latency_p95_ms": 162.1688,
+            "cost_per_decision_p50_ms": 12.9647,
+            "macro_f1": 0.7554,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.7059,
+              "health": 0.6364,
+              "politics": 0.8667,
+              "science/technology": 0.8235,
+              "sports": 0.8,
+              "travel": 0.725
+            },
+            "report": "artifacts/runs/R008/sib200-km/multitask-s14.json"
+          },
+          "sib200-specialist-s13": {
+            "label": "R008 sib200-specialist s13",
+            "choice_accuracy": 0.7059,
+            "ece": 0.0559,
+            "brier": 0.1714,
+            "aurc": 0.1417,
+            "mean_confidence": 0.7138,
+            "selective_accuracy@50": 0.8922,
+            "selective_accuracy@80": 0.7744,
+            "latency_p50_ms": 104.5998,
+            "latency_p95_ms": 154.1684,
+            "cost_per_decision_p50_ms": 13.075,
+            "macro_f1": 0.6944,
+            "recall_by_label": {
+              "entertainment": 0.5263,
+              "geography": 0.7059,
+              "health": 0.5455,
+              "politics": 0.8,
+              "science/technology": 0.6863,
+              "sports": 0.76,
+              "travel": 0.8
+            },
+            "report": "artifacts/runs/R008/sib200-km/sib200-specialist-s13.json"
+          },
+          "sib200-specialist-s14": {
+            "label": "R008 sib200-specialist s14",
+            "choice_accuracy": 0.6667,
+            "ece": 0.0751,
+            "brier": 0.1848,
+            "aurc": 0.1685,
+            "mean_confidence": 0.7011,
+            "selective_accuracy@50": 0.8529,
+            "selective_accuracy@80": 0.7561,
+            "latency_p50_ms": 103.877,
+            "latency_p95_ms": 153.2291,
+            "cost_per_decision_p50_ms": 12.9846,
+            "macro_f1": 0.6691,
+            "recall_by_label": {
+              "entertainment": 0.6842,
+              "geography": 0.7059,
+              "health": 0.5909,
+              "politics": 0.6333,
+              "science/technology": 0.549,
+              "sports": 0.76,
+              "travel": 0.8
+            },
+            "report": "artifacts/runs/R008/sib200-km/sib200-specialist-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "multitask-s14 - multitask-s13": {
+            "diff": 0.0294,
+            "ci95": [
+              -0.0147,
+              0.0735
+            ]
+          },
+          "sib200-specialist-s14 - sib200-specialist-s13": {
+            "diff": -0.0392,
+            "ci95": [
+              -0.0882,
+              0.0098
+            ]
+          }
+        }
+      }
+    },
+    "sib200-km-r009": {
+      "test": {
+        "experiments": [
+          "R009"
+        ],
+        "n": 204,
+        "options_per_row": [
+          7
+        ],
+        "chance_accuracy": 0.1429,
+        "majority_accuracy": 0.25,
+        "dataset_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+        "models": {
+          "continued-s13": {
+            "label": "R009 continued s13",
+            "choice_accuracy": 0.6863,
+            "ece": 0.0916,
+            "brier": 0.1743,
+            "aurc": 0.1594,
+            "mean_confidence": 0.7487,
+            "selective_accuracy@50": 0.8627,
+            "selective_accuracy@80": 0.7622,
+            "latency_p50_ms": 102.4022,
+            "latency_p95_ms": 151.8472,
+            "cost_per_decision_p50_ms": 12.8003,
+            "macro_f1": 0.6833,
+            "recall_by_label": {
+              "entertainment": 0.6316,
+              "geography": 0.5882,
+              "health": 0.6818,
+              "politics": 0.7333,
+              "science/technology": 0.6471,
+              "sports": 0.68,
+              "travel": 0.775
+            },
+            "report": "artifacts/runs/R009/sib200-km/continued-s13.json"
+          },
+          "continued-s14": {
+            "label": "R009 continued s14",
+            "choice_accuracy": 0.6569,
+            "ece": 0.1726,
+            "brier": 0.1994,
+            "aurc": 0.1968,
+            "mean_confidence": 0.792,
+            "selective_accuracy@50": 0.8155,
+            "selective_accuracy@80": 0.7439,
+            "latency_p50_ms": 96.2578,
+            "latency_p95_ms": 136.2587,
+            "cost_per_decision_p50_ms": 12.0322,
+            "macro_f1": 0.6384,
+            "recall_by_label": {
+              "entertainment": 0.5263,
+              "geography": 0.6471,
+              "health": 0.5,
+              "politics": 0.8,
+              "science/technology": 0.7451,
+              "sports": 0.68,
+              "travel": 0.575
+            },
+            "report": "artifacts/runs/R009/sib200-km/continued-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "continued-s14 - continued-s13": {
+            "diff": -0.0294,
+            "ci95": [
+              -0.0833,
+              0.0294
+            ]
+          }
+        }
+      }
+    },
+    "massive-km-r010-clean": {
+      "test": {
+        "experiments": [
+          "R010"
+        ],
+        "n": 2974,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0703,
+        "dataset_sha256": "cbfa2967d7997e22ee420df9250ba560d61a94aed1f322b7ff35c9198f6c2b97",
+        "models": {
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.8369,
+            "ece": 0.0193,
+            "brier": 0.0965,
+            "aurc": 0.038,
+            "mean_confidence": 0.8352,
+            "selective_accuracy@50": 0.9859,
+            "selective_accuracy@80": 0.9248,
+            "latency_p50_ms": 17.1196,
+            "latency_p95_ms": 19.6879,
+            "cost_per_decision_p50_ms": 17.1196,
+            "macro_f1": 0.7822,
+            "recall_by_label": {
+              "alarm_query": 0.8824,
+              "alarm_remove": 0.6667,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 1.0,
+              "audio_volume_mute": 0.7812,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8651,
+              "calendar_remove": 0.9701,
+              "calendar_set": 0.8947,
+              "cooking_recipe": 0.8194,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8523,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9496,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9298,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.6864,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.7843,
+              "lists_remove": 0.6154,
+              "music_dislikeness": 0.75,
+              "music_likeness": 0.75,
+              "music_query": 0.8286,
+              "music_settings": 0.1667,
+              "news_query": 0.8226,
+              "play_audiobook": 0.8293,
+              "play_game": 0.8571,
+              "play_music": 0.9432,
+              "play_podcasts": 0.8095,
+              "play_radio": 0.875,
+              "qa_currency": 0.8718,
+              "qa_definition": 0.7719,
+              "qa_factoid": 0.8794,
+              "qa_maths": 0.88,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6279,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8889,
+              "social_query": 0.52,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8571,
+              "transport_query": 0.6471,
+              "transport_taxi": 0.7391,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8269
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8298,
+            "accuracy_utterance_not_in_train": 0.8381,
+            "report": "artifacts/runs/R010/massive-km/clean/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.841,
+            "ece": 0.0207,
+            "brier": 0.0901,
+            "aurc": 0.0346,
+            "mean_confidence": 0.8419,
+            "selective_accuracy@50": 0.9866,
+            "selective_accuracy@80": 0.9307,
+            "latency_p50_ms": 17.2129,
+            "latency_p95_ms": 19.7606,
+            "cost_per_decision_p50_ms": 17.2129,
+            "macro_f1": 0.7878,
+            "recall_by_label": {
+              "alarm_query": 0.7941,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9512,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.8125,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8413,
+              "calendar_remove": 0.9403,
+              "calendar_set": 0.9282,
+              "cooking_recipe": 0.7222,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8864,
+              "email_addcontact": 0.8333,
+              "email_query": 0.958,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6982,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.9259,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8974,
+              "lists_query": 0.7255,
+              "lists_remove": 0.5962,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8333,
+              "music_query": 0.8286,
+              "music_settings": 0.6667,
+              "news_query": 0.8065,
+              "play_audiobook": 0.9024,
+              "play_game": 0.8857,
+              "play_music": 0.9489,
+              "play_podcasts": 0.8413,
+              "play_radio": 0.9167,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.7719,
+              "qa_factoid": 0.8652,
+              "qa_maths": 0.96,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6512,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8395,
+              "social_query": 0.52,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7429,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8438,
+            "accuracy_utterance_not_in_train": 0.8405,
+            "report": "artifacts/runs/R010/massive-km/clean/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.8369,
+            "ece": 0.0157,
+            "brier": 0.0971,
+            "aurc": 0.0373,
+            "mean_confidence": 0.8327,
+            "selective_accuracy@50": 0.9832,
+            "selective_accuracy@80": 0.924,
+            "latency_p50_ms": 17.2231,
+            "latency_p95_ms": 19.8002,
+            "cost_per_decision_p50_ms": 17.2231,
+            "macro_f1": 0.7834,
+            "recall_by_label": {
+              "alarm_query": 0.8235,
+              "alarm_remove": 0.7143,
+              "alarm_set": 0.9756,
+              "audio_volume_down": 0.9091,
+              "audio_volume_mute": 0.9062,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.5385,
+              "calendar_query": 0.8333,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.89,
+              "cooking_recipe": 0.7222,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.7955,
+              "email_addcontact": 0.75,
+              "email_query": 0.9412,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9474,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7456,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9444,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.8519,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8462,
+              "lists_query": 0.7255,
+              "lists_remove": 0.75,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.8056,
+              "music_query": 0.7429,
+              "music_settings": 0.5,
+              "news_query": 0.8145,
+              "play_audiobook": 0.8049,
+              "play_game": 0.9143,
+              "play_music": 0.9659,
+              "play_podcasts": 0.873,
+              "play_radio": 0.8472,
+              "qa_currency": 0.9231,
+              "qa_definition": 0.7368,
+              "qa_factoid": 0.8369,
+              "qa_maths": 0.88,
+              "qa_stock": 0.9615,
+              "recommendation_events": 0.7209,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8765,
+              "social_query": 0.56,
+              "takeaway_order": 0.9091,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8368,
+            "accuracy_utterance_not_in_train": 0.8369,
+            "report": "artifacts/runs/R010/massive-km/clean/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.004,
+            "ci95": [
+              -0.0057,
+              0.0138
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0,
+            "ci95": [
+              -0.0104,
+              0.0101
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.004,
+            "ci95": [
+              -0.0141,
+              0.0057
+            ]
+          }
+        }
+      }
+    },
+    "massive-km-r010-ocr_48px": {
+      "test": {
+        "experiments": [
+          "R010"
+        ],
+        "n": 2974,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0703,
+        "dataset_sha256": "734d33e2a6168e4a0fa1a031b42b18ab2ac6e806b44ffab4c53956d9d52de8fe",
+        "models": {
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.8151,
+            "ece": 0.0217,
+            "brier": 0.1053,
+            "aurc": 0.0459,
+            "mean_confidence": 0.8192,
+            "selective_accuracy@50": 0.9839,
+            "selective_accuracy@80": 0.9067,
+            "latency_p50_ms": 17.2021,
+            "latency_p95_ms": 19.779,
+            "cost_per_decision_p50_ms": 17.2021,
+            "macro_f1": 0.7639,
+            "recall_by_label": {
+              "alarm_query": 0.8529,
+              "alarm_remove": 0.6667,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.9091,
+              "audio_volume_mute": 0.8125,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.5385,
+              "calendar_query": 0.8333,
+              "calendar_remove": 0.9552,
+              "calendar_set": 0.8756,
+              "cooking_recipe": 0.7917,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8182,
+              "email_addcontact": 0.75,
+              "email_query": 0.9412,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.9298,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.6923,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.7843,
+              "lists_remove": 0.6154,
+              "music_dislikeness": 0.75,
+              "music_likeness": 0.7222,
+              "music_query": 0.7714,
+              "music_settings": 0.1667,
+              "news_query": 0.8145,
+              "play_audiobook": 0.8293,
+              "play_game": 0.8,
+              "play_music": 0.9375,
+              "play_podcasts": 0.746,
+              "play_radio": 0.875,
+              "qa_currency": 0.7949,
+              "qa_definition": 0.6842,
+              "qa_factoid": 0.8511,
+              "qa_maths": 0.84,
+              "qa_stock": 0.7692,
+              "recommendation_events": 0.5814,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8519,
+              "social_query": 0.48,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.6667,
+              "transport_taxi": 0.6957,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.7821
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 345,
+            "accuracy_utterance_in_train": 0.8116,
+            "accuracy_utterance_not_in_train": 0.8155,
+            "report": "artifacts/runs/R010/massive-km/ocr_48px/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8164,
+            "ece": 0.0182,
+            "brier": 0.1024,
+            "aurc": 0.0439,
+            "mean_confidence": 0.8231,
+            "selective_accuracy@50": 0.9832,
+            "selective_accuracy@80": 0.911,
+            "latency_p50_ms": 17.186,
+            "latency_p95_ms": 19.7076,
+            "cost_per_decision_p50_ms": 17.186,
+            "macro_f1": 0.7658,
+            "recall_by_label": {
+              "alarm_query": 0.7941,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9512,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.875,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.5385,
+              "calendar_query": 0.8254,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.9139,
+              "cooking_recipe": 0.6806,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8636,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9496,
+              "email_querycontact": 0.6538,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6982,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8372,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.9259,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.9,
+              "lists_createoradd": 0.8974,
+              "lists_query": 0.7255,
+              "lists_remove": 0.5769,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8333,
+              "music_query": 0.7143,
+              "music_settings": 0.6667,
+              "news_query": 0.7984,
+              "play_audiobook": 0.8537,
+              "play_game": 0.7714,
+              "play_music": 0.9432,
+              "play_podcasts": 0.7302,
+              "play_radio": 0.9028,
+              "qa_currency": 0.8205,
+              "qa_definition": 0.6491,
+              "qa_factoid": 0.8369,
+              "qa_maths": 0.88,
+              "qa_stock": 0.7308,
+              "recommendation_events": 0.6279,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8272,
+              "social_query": 0.52,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.7714,
+              "transport_query": 0.6078,
+              "transport_taxi": 0.7391,
+              "transport_ticket": 0.7429,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8013
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 345,
+            "accuracy_utterance_in_train": 0.8406,
+            "accuracy_utterance_not_in_train": 0.8132,
+            "report": "artifacts/runs/R010/massive-km/ocr_48px/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.8104,
+            "ece": 0.0207,
+            "brier": 0.1063,
+            "aurc": 0.0464,
+            "mean_confidence": 0.8166,
+            "selective_accuracy@50": 0.9798,
+            "selective_accuracy@80": 0.9021,
+            "latency_p50_ms": 17.1796,
+            "latency_p95_ms": 19.7152,
+            "cost_per_decision_p50_ms": 17.1796,
+            "macro_f1": 0.7551,
+            "recall_by_label": {
+              "alarm_query": 0.7647,
+              "alarm_remove": 0.7143,
+              "alarm_set": 0.9756,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.9375,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.4615,
+              "calendar_query": 0.8016,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.8852,
+              "cooking_recipe": 0.7083,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.7841,
+              "email_addcontact": 0.6667,
+              "email_query": 0.9328,
+              "email_querycontact": 0.7308,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7396,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.8889,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.8462,
+              "lists_query": 0.7255,
+              "lists_remove": 0.7308,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.8056,
+              "music_query": 0.6857,
+              "music_settings": 0.3333,
+              "news_query": 0.8065,
+              "play_audiobook": 0.7805,
+              "play_game": 0.8286,
+              "play_music": 0.9545,
+              "play_podcasts": 0.7619,
+              "play_radio": 0.8611,
+              "qa_currency": 0.8205,
+              "qa_definition": 0.614,
+              "qa_factoid": 0.8156,
+              "qa_maths": 0.84,
+              "qa_stock": 0.7308,
+              "recommendation_events": 0.6977,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.8,
+              "social_post": 0.7778,
+              "social_query": 0.52,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.7714,
+              "transport_query": 0.6078,
+              "transport_taxi": 0.6957,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8141
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 345,
+            "accuracy_utterance_in_train": 0.829,
+            "accuracy_utterance_not_in_train": 0.8079,
+            "report": "artifacts/runs/R010/massive-km/ocr_48px/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0013,
+            "ci95": [
+              -0.0091,
+              0.0114
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": -0.0047,
+            "ci95": [
+              -0.0155,
+              0.0061
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0061,
+            "ci95": [
+              -0.0161,
+              0.004
+            ]
+          }
+        }
+      }
+    },
+    "massive-km-r010-ocr_24px": {
+      "test": {
+        "experiments": [
+          "R010"
+        ],
+        "n": 2974,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0703,
+        "dataset_sha256": "6731da21b76da02ea9a769be4d600381fbed7a43ce8572f5c71b22baa9952fd5",
+        "models": {
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.8026,
+            "ece": 0.0195,
+            "brier": 0.1077,
+            "aurc": 0.0494,
+            "mean_confidence": 0.8131,
+            "selective_accuracy@50": 0.9818,
+            "selective_accuracy@80": 0.9,
+            "latency_p50_ms": 17.1778,
+            "latency_p95_ms": 19.6728,
+            "cost_per_decision_p50_ms": 17.1778,
+            "macro_f1": 0.7482,
+            "recall_by_label": {
+              "alarm_query": 0.6765,
+              "alarm_remove": 0.4762,
+              "alarm_set": 0.8537,
+              "audio_volume_down": 1.0,
+              "audio_volume_mute": 0.7812,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8492,
+              "calendar_remove": 0.9552,
+              "calendar_set": 0.8852,
+              "cooking_recipe": 0.7361,
+              "datetime_convert": 0.6667,
+              "datetime_query": 0.8409,
+              "email_addcontact": 0.75,
+              "email_query": 0.9244,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9211,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.6982,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8095,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.7179,
+              "lists_query": 0.7059,
+              "lists_remove": 0.5577,
+              "music_dislikeness": 0.75,
+              "music_likeness": 0.7222,
+              "music_query": 0.7714,
+              "music_settings": 0.1667,
+              "news_query": 0.7661,
+              "play_audiobook": 0.8537,
+              "play_game": 0.8,
+              "play_music": 0.9205,
+              "play_podcasts": 0.746,
+              "play_radio": 0.8611,
+              "qa_currency": 0.8462,
+              "qa_definition": 0.6667,
+              "qa_factoid": 0.8511,
+              "qa_maths": 0.92,
+              "qa_stock": 0.7308,
+              "recommendation_events": 0.5349,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8025,
+              "social_query": 0.48,
+              "takeaway_order": 0.7727,
+              "takeaway_query": 0.7714,
+              "transport_query": 0.6667,
+              "transport_taxi": 0.6957,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8013
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 342,
+            "accuracy_utterance_in_train": 0.807,
+            "accuracy_utterance_not_in_train": 0.8021,
+            "report": "artifacts/runs/R010/massive-km/ocr_24px/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8043,
+            "ece": 0.0294,
+            "brier": 0.1032,
+            "aurc": 0.047,
+            "mean_confidence": 0.8183,
+            "selective_accuracy@50": 0.9792,
+            "selective_accuracy@80": 0.9046,
+            "latency_p50_ms": 17.1746,
+            "latency_p95_ms": 19.6605,
+            "cost_per_decision_p50_ms": 17.1746,
+            "macro_f1": 0.7533,
+            "recall_by_label": {
+              "alarm_query": 0.6471,
+              "alarm_remove": 0.619,
+              "alarm_set": 0.8537,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.8125,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8333,
+              "calendar_remove": 0.9254,
+              "calendar_set": 0.9091,
+              "cooking_recipe": 0.6389,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8864,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9328,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.9298,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6864,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8095,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.9259,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.7179,
+              "lists_query": 0.6275,
+              "lists_remove": 0.5,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8056,
+              "music_query": 0.7429,
+              "music_settings": 0.6667,
+              "news_query": 0.7742,
+              "play_audiobook": 0.878,
+              "play_game": 0.7429,
+              "play_music": 0.9261,
+              "play_podcasts": 0.746,
+              "play_radio": 0.8889,
+              "qa_currency": 0.8718,
+              "qa_definition": 0.6842,
+              "qa_factoid": 0.8369,
+              "qa_maths": 0.96,
+              "qa_stock": 0.7308,
+              "recommendation_events": 0.5814,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.85,
+              "social_post": 0.7901,
+              "social_query": 0.48,
+              "takeaway_order": 0.7273,
+              "takeaway_query": 0.6857,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8261,
+              "transport_ticket": 0.7429,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8397
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 342,
+            "accuracy_utterance_in_train": 0.8275,
+            "accuracy_utterance_not_in_train": 0.8013,
+            "report": "artifacts/runs/R010/massive-km/ocr_24px/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.8006,
+            "ece": 0.0246,
+            "brier": 0.1087,
+            "aurc": 0.0498,
+            "mean_confidence": 0.8115,
+            "selective_accuracy@50": 0.9778,
+            "selective_accuracy@80": 0.8941,
+            "latency_p50_ms": 17.1741,
+            "latency_p95_ms": 19.6889,
+            "cost_per_decision_p50_ms": 17.1741,
+            "macro_f1": 0.7444,
+            "recall_by_label": {
+              "alarm_query": 0.6471,
+              "alarm_remove": 0.5238,
+              "alarm_set": 0.9268,
+              "audio_volume_down": 0.9091,
+              "audio_volume_mute": 0.9062,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.5385,
+              "calendar_query": 0.7937,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.8708,
+              "cooking_recipe": 0.6944,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.8068,
+              "email_addcontact": 0.75,
+              "email_query": 0.9244,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9386,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.7515,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8095,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.8889,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.6923,
+              "lists_query": 0.6275,
+              "lists_remove": 0.6346,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.8056,
+              "music_query": 0.6857,
+              "music_settings": 0.3333,
+              "news_query": 0.7823,
+              "play_audiobook": 0.8293,
+              "play_game": 0.8,
+              "play_music": 0.9375,
+              "play_podcasts": 0.7619,
+              "play_radio": 0.8472,
+              "qa_currency": 0.8974,
+              "qa_definition": 0.614,
+              "qa_factoid": 0.7943,
+              "qa_maths": 0.88,
+              "qa_stock": 0.6923,
+              "recommendation_events": 0.6279,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.8,
+              "social_post": 0.7654,
+              "social_query": 0.52,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.7143,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.7826,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.5333,
+              "weather_query": 0.8462
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 342,
+            "accuracy_utterance_in_train": 0.8158,
+            "accuracy_utterance_not_in_train": 0.7986,
+            "report": "artifacts/runs/R010/massive-km/ocr_24px/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0017,
+            "ci95": [
+              -0.0084,
+              0.0114
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": -0.002,
+            "ci95": [
+              -0.0128,
+              0.0084
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0037,
+            "ci95": [
+              -0.0138,
+              0.0064
+            ]
+          }
+        }
+      }
+    },
+    "massive-km-r010-ocr_12px": {
+      "test": {
+        "experiments": [
+          "R010"
+        ],
+        "n": 2974,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0703,
+        "dataset_sha256": "d90f68aaacf6e9e10d47e5b2da1069781cc43ee33f6b5b3a7cc6a5c0f713409e",
+        "models": {
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.7377,
+            "ece": 0.0383,
+            "brier": 0.1261,
+            "aurc": 0.0766,
+            "mean_confidence": 0.7728,
+            "selective_accuracy@50": 0.963,
+            "selective_accuracy@80": 0.8412,
+            "latency_p50_ms": 17.1643,
+            "latency_p95_ms": 19.6148,
+            "cost_per_decision_p50_ms": 17.1643,
+            "macro_f1": 0.6662,
+            "recall_by_label": {
+              "alarm_query": 0.4118,
+              "alarm_remove": 0.4286,
+              "alarm_set": 0.7317,
+              "audio_volume_down": 0.8182,
+              "audio_volume_mute": 0.5938,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.3077,
+              "calendar_query": 0.754,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.8134,
+              "cooking_recipe": 0.6528,
+              "datetime_convert": 0.6667,
+              "datetime_query": 0.7955,
+              "email_addcontact": 0.6667,
+              "email_query": 0.8571,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.8684,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6864,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.8056,
+              "iot_hue_lightchange": 0.8333,
+              "iot_hue_lightdim": 0.381,
+              "iot_hue_lightoff": 0.6512,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.7407,
+              "iot_wemo_off": 0.3333,
+              "iot_wemo_on": 0.6,
+              "lists_createoradd": 0.7692,
+              "lists_query": 0.6863,
+              "lists_remove": 0.5577,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.6667,
+              "music_query": 0.7714,
+              "music_settings": 0.1667,
+              "news_query": 0.7177,
+              "play_audiobook": 0.7561,
+              "play_game": 0.6,
+              "play_music": 0.858,
+              "play_podcasts": 0.7302,
+              "play_radio": 0.8056,
+              "qa_currency": 0.7692,
+              "qa_definition": 0.6491,
+              "qa_factoid": 0.7801,
+              "qa_maths": 0.76,
+              "qa_stock": 0.7692,
+              "recommendation_events": 0.5116,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.7,
+              "social_post": 0.8272,
+              "social_query": 0.48,
+              "takeaway_order": 0.7273,
+              "takeaway_query": 0.8,
+              "transport_query": 0.5882,
+              "transport_taxi": 0.6522,
+              "transport_ticket": 0.6857,
+              "transport_traffic": 0.4667,
+              "weather_query": 0.7692
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 256,
+            "accuracy_utterance_in_train": 0.793,
+            "accuracy_utterance_not_in_train": 0.7325,
+            "report": "artifacts/runs/R010/massive-km/ocr_12px/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7421,
+            "ece": 0.0327,
+            "brier": 0.1205,
+            "aurc": 0.0711,
+            "mean_confidence": 0.7745,
+            "selective_accuracy@50": 0.9603,
+            "selective_accuracy@80": 0.855,
+            "latency_p50_ms": 17.1666,
+            "latency_p95_ms": 19.6517,
+            "cost_per_decision_p50_ms": 17.1666,
+            "macro_f1": 0.6739,
+            "recall_by_label": {
+              "alarm_query": 0.3235,
+              "alarm_remove": 0.5238,
+              "alarm_set": 0.7561,
+              "audio_volume_down": 0.5455,
+              "audio_volume_mute": 0.75,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.3846,
+              "calendar_query": 0.7619,
+              "calendar_remove": 0.8657,
+              "calendar_set": 0.8278,
+              "cooking_recipe": 0.5556,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.8636,
+              "email_addcontact": 0.8333,
+              "email_query": 0.8739,
+              "email_querycontact": 0.6923,
+              "email_sendemail": 0.8596,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6746,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.8333,
+              "iot_hue_lightchange": 0.8333,
+              "iot_hue_lightdim": 0.4286,
+              "iot_hue_lightoff": 0.6279,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.7778,
+              "iot_wemo_off": 0.3333,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8205,
+              "lists_query": 0.6275,
+              "lists_remove": 0.5577,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.6944,
+              "music_query": 0.7429,
+              "music_settings": 0.5,
+              "news_query": 0.7097,
+              "play_audiobook": 0.8049,
+              "play_game": 0.6,
+              "play_music": 0.8295,
+              "play_podcasts": 0.7143,
+              "play_radio": 0.8611,
+              "qa_currency": 0.7692,
+              "qa_definition": 0.6842,
+              "qa_factoid": 0.8014,
+              "qa_maths": 0.84,
+              "qa_stock": 0.7308,
+              "recommendation_events": 0.4651,
+              "recommendation_locations": 0.8387,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8148,
+              "social_query": 0.52,
+              "takeaway_order": 0.7273,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.5098,
+              "transport_taxi": 0.7391,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.4667,
+              "weather_query": 0.8013
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 256,
+            "accuracy_utterance_in_train": 0.8125,
+            "accuracy_utterance_not_in_train": 0.7355,
+            "report": "artifacts/runs/R010/massive-km/ocr_12px/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.7357,
+            "ece": 0.0388,
+            "brier": 0.1248,
+            "aurc": 0.0759,
+            "mean_confidence": 0.7709,
+            "selective_accuracy@50": 0.9623,
+            "selective_accuracy@80": 0.845,
+            "latency_p50_ms": 17.1716,
+            "latency_p95_ms": 19.6789,
+            "cost_per_decision_p50_ms": 17.1716,
+            "macro_f1": 0.6605,
+            "recall_by_label": {
+              "alarm_query": 0.2941,
+              "alarm_remove": 0.4762,
+              "alarm_set": 0.7561,
+              "audio_volume_down": 0.6364,
+              "audio_volume_mute": 0.75,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.2308,
+              "calendar_query": 0.7302,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.7943,
+              "cooking_recipe": 0.6111,
+              "datetime_convert": 0.4667,
+              "datetime_query": 0.8068,
+              "email_addcontact": 0.5833,
+              "email_query": 0.8571,
+              "email_querycontact": 0.7308,
+              "email_sendemail": 0.8684,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.7101,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.8333,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.381,
+              "iot_hue_lightoff": 0.6977,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.7778,
+              "iot_wemo_off": 0.2778,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.7436,
+              "lists_query": 0.6078,
+              "lists_remove": 0.6923,
+              "music_dislikeness": 0.0,
+              "music_likeness": 0.6944,
+              "music_query": 0.6571,
+              "music_settings": 0.3333,
+              "news_query": 0.7339,
+              "play_audiobook": 0.6829,
+              "play_game": 0.6286,
+              "play_music": 0.8295,
+              "play_podcasts": 0.7143,
+              "play_radio": 0.8333,
+              "qa_currency": 0.7949,
+              "qa_definition": 0.5614,
+              "qa_factoid": 0.8014,
+              "qa_maths": 0.8,
+              "qa_stock": 0.7308,
+              "recommendation_events": 0.5814,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.75,
+              "social_post": 0.7654,
+              "social_query": 0.56,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8,
+              "transport_query": 0.5294,
+              "transport_taxi": 0.5652,
+              "transport_ticket": 0.6286,
+              "transport_traffic": 0.4,
+              "weather_query": 0.8333
+            },
+            "peak_vram_mib": 1504.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "n_utterance_in_train": 256,
+            "accuracy_utterance_in_train": 0.8203,
+            "accuracy_utterance_not_in_train": 0.7277,
+            "report": "artifacts/runs/R010/massive-km/ocr_12px/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0044,
+            "ci95": [
+              -0.0064,
+              0.0155
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": -0.002,
+            "ci95": [
+              -0.0131,
+              0.0094
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0064,
+            "ci95": [
+              -0.0175,
+              0.0044
+            ]
+          }
+        }
+      }
+    },
+    "massive-km-r012-clean": {
+      "test": {
+        "experiments": [
+          "R012"
+        ],
+        "n": 2974,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0703,
+        "dataset_sha256": "cbfa2967d7997e22ee420df9250ba560d61a94aed1f322b7ff35c9198f6c2b97",
+        "models": {
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.8386,
+            "ece": 0.0202,
+            "brier": 0.0951,
+            "aurc": 0.0359,
+            "mean_confidence": 0.8531,
+            "selective_accuracy@50": 0.9852,
+            "selective_accuracy@80": 0.9282,
+            "latency_p50_ms": 17.5845,
+            "latency_p95_ms": 20.2045,
+            "cost_per_decision_p50_ms": 17.5845,
+            "macro_f1": 0.7896,
+            "recall_by_label": {
+              "alarm_query": 0.7059,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9512,
+              "audio_volume_down": 0.6364,
+              "audio_volume_mute": 0.8438,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.6154,
+              "calendar_query": 0.8413,
+              "calendar_remove": 0.9403,
+              "calendar_set": 0.9187,
+              "cooking_recipe": 0.7778,
+              "datetime_convert": 0.7333,
+              "datetime_query": 0.8523,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9496,
+              "email_querycontact": 0.7308,
+              "email_sendemail": 0.9474,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6627,
+              "iot_cleaning": 0.9231,
+              "iot_coffee": 0.8889,
+              "iot_hue_lightchange": 0.8889,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.907,
+              "iot_hue_lighton": 0.6667,
+              "iot_hue_lightup": 0.963,
+              "iot_wemo_off": 0.9444,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.7059,
+              "lists_remove": 0.5962,
+              "music_dislikeness": 0.5,
+              "music_likeness": 0.8611,
+              "music_query": 0.8286,
+              "music_settings": 0.5,
+              "news_query": 0.8226,
+              "play_audiobook": 0.878,
+              "play_game": 0.8571,
+              "play_music": 0.9489,
+              "play_podcasts": 0.8571,
+              "play_radio": 0.9167,
+              "qa_currency": 0.9231,
+              "qa_definition": 0.807,
+              "qa_factoid": 0.8227,
+              "qa_maths": 1.0,
+              "qa_stock": 1.0,
+              "recommendation_events": 0.6977,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.85,
+              "social_post": 0.8272,
+              "social_query": 0.56,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8,
+              "transport_query": 0.6275,
+              "transport_taxi": 0.8696,
+              "transport_ticket": 0.7714,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8462
+            },
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8368,
+            "accuracy_utterance_not_in_train": 0.8389,
+            "report": "artifacts/runs/R012/clean/mt-s13/clean.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.8352,
+            "ece": 0.0251,
+            "brier": 0.0956,
+            "aurc": 0.0373,
+            "mean_confidence": 0.8434,
+            "selective_accuracy@50": 0.9866,
+            "selective_accuracy@80": 0.9252,
+            "latency_p50_ms": 17.5514,
+            "latency_p95_ms": 20.0825,
+            "cost_per_decision_p50_ms": 17.5514,
+            "macro_f1": 0.7774,
+            "recall_by_label": {
+              "alarm_query": 0.8529,
+              "alarm_remove": 0.8095,
+              "alarm_set": 0.9756,
+              "audio_volume_down": 0.9091,
+              "audio_volume_mute": 0.9062,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.5385,
+              "calendar_query": 0.8254,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.8852,
+              "cooking_recipe": 0.8611,
+              "datetime_convert": 0.6,
+              "datetime_query": 0.8636,
+              "email_addcontact": 0.8333,
+              "email_query": 0.958,
+              "email_querycontact": 0.8077,
+              "email_sendemail": 0.9123,
+              "general_greet": 0.0,
+              "general_joke": 0.9474,
+              "general_quirky": 0.6805,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.9444,
+              "iot_hue_lightchange": 0.8611,
+              "iot_hue_lightdim": 0.8571,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.8889,
+              "iot_wemo_off": 0.8889,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.8718,
+              "lists_query": 0.6667,
+              "lists_remove": 0.7692,
+              "music_dislikeness": 0.0,
+              "music_likeness": 0.8056,
+              "music_query": 0.8286,
+              "music_settings": 0.3333,
+              "news_query": 0.7903,
+              "play_audiobook": 0.878,
+              "play_game": 0.9143,
+              "play_music": 0.9602,
+              "play_podcasts": 0.8571,
+              "play_radio": 0.875,
+              "qa_currency": 0.8718,
+              "qa_definition": 0.7368,
+              "qa_factoid": 0.8298,
+              "qa_maths": 0.92,
+              "qa_stock": 0.9231,
+              "recommendation_events": 0.6744,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.8,
+              "social_post": 0.8395,
+              "social_query": 0.64,
+              "takeaway_order": 0.9091,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.5882,
+              "transport_taxi": 0.7826,
+              "transport_ticket": 0.7143,
+              "transport_traffic": 0.6,
+              "weather_query": 0.8333
+            },
+            "n_utterance_in_train": 429,
+            "accuracy_utterance_in_train": 0.8415,
+            "accuracy_utterance_not_in_train": 0.8342,
+            "report": "artifacts/runs/R012/clean/mt-s14/clean.json"
+          }
+        },
+        "accuracy_diffs": {
+          "mt-s14 - mt-s13": {
+            "diff": -0.0034,
+            "ci95": [
+              -0.0141,
+              0.0077
+            ]
+          }
+        }
+      }
+    },
+    "massive-km-r012-ocr12": {
+      "test": {
+        "experiments": [
+          "R012"
+        ],
+        "n": 2974,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0703,
+        "dataset_sha256": "d90f68aaacf6e9e10d47e5b2da1069781cc43ee33f6b5b3a7cc6a5c0f713409e",
+        "models": {
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.7767,
+            "ece": 0.0204,
+            "brier": 0.1069,
+            "aurc": 0.0551,
+            "mean_confidence": 0.7666,
+            "selective_accuracy@50": 0.9758,
+            "selective_accuracy@80": 0.8882,
+            "latency_p50_ms": 17.1826,
+            "latency_p95_ms": 19.6826,
+            "cost_per_decision_p50_ms": 17.1826,
+            "macro_f1": 0.714,
+            "recall_by_label": {
+              "alarm_query": 0.6765,
+              "alarm_remove": 0.619,
+              "alarm_set": 0.878,
+              "audio_volume_down": 0.5455,
+              "audio_volume_mute": 0.6875,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.3846,
+              "calendar_query": 0.7778,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.8469,
+              "cooking_recipe": 0.7639,
+              "datetime_convert": 0.5333,
+              "datetime_query": 0.8068,
+              "email_addcontact": 0.8333,
+              "email_query": 0.9244,
+              "email_querycontact": 0.7308,
+              "email_sendemail": 0.9211,
+              "general_greet": 0.0,
+              "general_joke": 0.8947,
+              "general_quirky": 0.6391,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.8333,
+              "iot_hue_lightchange": 0.8056,
+              "iot_hue_lightdim": 0.5714,
+              "iot_hue_lightoff": 0.8837,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.7037,
+              "iot_wemo_off": 0.2778,
+              "iot_wemo_on": 0.7,
+              "lists_createoradd": 0.7692,
+              "lists_query": 0.6863,
+              "lists_remove": 0.5577,
+              "music_dislikeness": 0.25,
+              "music_likeness": 0.6667,
+              "music_query": 0.7143,
+              "music_settings": 0.5,
+              "news_query": 0.7661,
+              "play_audiobook": 0.8537,
+              "play_game": 0.6286,
+              "play_music": 0.9148,
+              "play_podcasts": 0.746,
+              "play_radio": 0.8472,
+              "qa_currency": 0.8205,
+              "qa_definition": 0.5789,
+              "qa_factoid": 0.7943,
+              "qa_maths": 0.92,
+              "qa_stock": 0.9615,
+              "recommendation_events": 0.6279,
+              "recommendation_locations": 0.871,
+              "recommendation_movies": 0.75,
+              "social_post": 0.8272,
+              "social_query": 0.68,
+              "takeaway_order": 0.8636,
+              "takeaway_query": 0.8,
+              "transport_query": 0.549,
+              "transport_taxi": 0.7826,
+              "transport_ticket": 0.6571,
+              "transport_traffic": 0.4667,
+              "weather_query": 0.8462
+            },
+            "n_utterance_in_train": 256,
+            "accuracy_utterance_in_train": 0.8086,
+            "accuracy_utterance_not_in_train": 0.7737,
+            "report": "artifacts/runs/R012/ocr12/mt-s13/ocr_12px.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.7744,
+            "ece": 0.0194,
+            "brier": 0.1104,
+            "aurc": 0.0571,
+            "mean_confidence": 0.7708,
+            "selective_accuracy@50": 0.9711,
+            "selective_accuracy@80": 0.8824,
+            "latency_p50_ms": 17.4552,
+            "latency_p95_ms": 19.9985,
+            "cost_per_decision_p50_ms": 17.4552,
+            "macro_f1": 0.7084,
+            "recall_by_label": {
+              "alarm_query": 0.6471,
+              "alarm_remove": 0.619,
+              "alarm_set": 0.8293,
+              "audio_volume_down": 0.7273,
+              "audio_volume_mute": 0.7188,
+              "audio_volume_other": 0.1667,
+              "audio_volume_up": 0.4615,
+              "calendar_query": 0.7698,
+              "calendar_remove": 0.9104,
+              "calendar_set": 0.8708,
+              "cooking_recipe": 0.6806,
+              "datetime_convert": 0.4667,
+              "datetime_query": 0.8409,
+              "email_addcontact": 0.6667,
+              "email_query": 0.9244,
+              "email_querycontact": 0.7692,
+              "email_sendemail": 0.8947,
+              "general_greet": 0.0,
+              "general_joke": 0.8421,
+              "general_quirky": 0.6272,
+              "iot_cleaning": 0.8846,
+              "iot_coffee": 0.8056,
+              "iot_hue_lightchange": 0.7778,
+              "iot_hue_lightdim": 0.6667,
+              "iot_hue_lightoff": 0.8605,
+              "iot_hue_lighton": 0.3333,
+              "iot_hue_lightup": 0.7778,
+              "iot_wemo_off": 0.2778,
+              "iot_wemo_on": 0.8,
+              "lists_createoradd": 0.7692,
+              "lists_query": 0.6078,
+              "lists_remove": 0.5962,
+              "music_dislikeness": 0.0,
+              "music_likeness": 0.75,
+              "music_query": 0.7429,
+              "music_settings": 0.3333,
+              "news_query": 0.7581,
+              "play_audiobook": 0.7561,
+              "play_game": 0.6857,
+              "play_music": 0.9205,
+              "play_podcasts": 0.746,
+              "play_radio": 0.8333,
+              "qa_currency": 0.8205,
+              "qa_definition": 0.6842,
+              "qa_factoid": 0.8085,
+              "qa_maths": 0.88,
+              "qa_stock": 0.9231,
+              "recommendation_events": 0.6047,
+              "recommendation_locations": 0.9032,
+              "recommendation_movies": 0.75,
+              "social_post": 0.8272,
+              "social_query": 0.48,
+              "takeaway_order": 0.8182,
+              "takeaway_query": 0.8286,
+              "transport_query": 0.5098,
+              "transport_taxi": 0.7826,
+              "transport_ticket": 0.8571,
+              "transport_traffic": 0.4,
+              "weather_query": 0.8141
+            },
+            "n_utterance_in_train": 256,
+            "accuracy_utterance_in_train": 0.8125,
+            "accuracy_utterance_not_in_train": 0.7708,
+            "report": "artifacts/runs/R012/ocr12/mt-s14/ocr_12px.json"
+          }
+        },
+        "accuracy_diffs": {
+          "mt-s14 - mt-s13": {
+            "diff": -0.0024,
+            "ci95": [
+              -0.0134,
+              0.0087
+            ]
+          }
+        }
+      }
+    },
+    "r013-test-seen": {
+      "test-seen": {
+        "experiments": [
+          "R013"
+        ],
+        "n": 1720,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.0924,
+        "dataset_sha256": "d8c24fd00ee88306059444f5cc826581f97d4f5cc26267920ed1eda73c6f3031",
+        "models": {
+          "base": {
+            "label": "R013 base",
+            "choice_accuracy": 0.1488,
+            "ece": 0.4608,
+            "brier": 0.3723,
+            "aurc": 0.7558,
+            "mean_confidence": 0.6097,
+            "selective_accuracy@50": 0.2081,
+            "selective_accuracy@80": 0.1672,
+            "latency_p50_ms": 18.0655,
+            "latency_p95_ms": 20.5982,
+            "cost_per_decision_p50_ms": 18.0655,
+            "macro_f1": 0.1065,
+            "recall_by_label": {
+              "alarm_query": 0.0476,
+              "alarm_remove": 0.1538,
+              "alarm_set": 0.2,
+              "audio_volume_down": 0.1667,
+              "audio_volume_mute": 0.1538,
+              "audio_volume_other": 0.0,
+              "audio_volume_up": 0.0714,
+              "calendar_query": 0.055,
+              "calendar_remove": 0.1186,
+              "calendar_set": 0.0252,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.1316,
+              "datetime_query": 0.1404,
+              "email_query": 0.0122,
+              "email_querycontact": 0.04,
+              "email_sendemail": 0.029,
+              "general_greet": 0.8,
+              "general_joke": 0.1429,
+              "general_quirky": 0.3491,
+              "iot_cleaning": 0.0667,
+              "iot_coffee": 0.0833,
+              "iot_hue_lightchange": 0.56,
+              "iot_hue_lighton": 0.3333,
+              "iot_wemo_off": 0.1429,
+              "iot_wemo_on": 0.3333,
+              "lists_createoradd": 0.0,
+              "lists_query": 0.0,
+              "lists_remove": 0.0,
+              "music_dislikeness": 0.3333,
+              "music_likeness": 0.087,
+              "music_query": 0.0323,
+              "music_settings": 0.0,
+              "play_audiobook": 0.2414,
+              "play_music": 0.5537,
+              "play_radio": 0.0588,
+              "qa_currency": 0.7692,
+              "qa_factoid": 0.2621,
+              "qa_maths": 0.0,
+              "recommendation_events": 0.0,
+              "recommendation_locations": 0.0625,
+              "social_post": 0.0732,
+              "social_query": 0.0,
+              "takeaway_query": 0.0,
+              "transport_query": 0.0,
+              "transport_taxi": 0.0,
+              "transport_ticket": 0.0,
+              "transport_traffic": 0.1,
+              "weather_query": 0.1059
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-seen/base.json"
+          },
+          "seen-only-s13": {
+            "label": "R013 seen-only s13",
+            "choice_accuracy": 0.8134,
+            "ece": 0.0465,
+            "brier": 0.1065,
+            "aurc": 0.0465,
+            "mean_confidence": 0.8561,
+            "selective_accuracy@50": 0.9756,
+            "selective_accuracy@80": 0.9062,
+            "latency_p50_ms": 18.0505,
+            "latency_p95_ms": 20.5026,
+            "cost_per_decision_p50_ms": 18.0505,
+            "macro_f1": 0.7338,
+            "recall_by_label": {
+              "alarm_query": 0.7619,
+              "alarm_remove": 0.6154,
+              "alarm_set": 0.8333,
+              "audio_volume_down": 0.5,
+              "audio_volume_mute": 0.4615,
+              "audio_volume_other": 0.0,
+              "audio_volume_up": 0.5714,
+              "calendar_query": 0.8165,
+              "calendar_remove": 0.8644,
+              "calendar_set": 0.9119,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.9474,
+              "datetime_query": 0.807,
+              "email_query": 0.939,
+              "email_querycontact": 0.64,
+              "email_sendemail": 0.913,
+              "general_greet": 0.6,
+              "general_joke": 0.9286,
+              "general_quirky": 0.717,
+              "iot_cleaning": 0.8667,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.88,
+              "iot_hue_lighton": 1.0,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 0.5556,
+              "lists_createoradd": 0.8846,
+              "lists_query": 0.5769,
+              "lists_remove": 0.75,
+              "music_dislikeness": 0.6667,
+              "music_likeness": 0.6522,
+              "music_query": 0.7742,
+              "music_settings": 0.3,
+              "play_audiobook": 0.7586,
+              "play_music": 0.9091,
+              "play_radio": 0.8235,
+              "qa_currency": 0.8846,
+              "qa_factoid": 0.8155,
+              "qa_maths": 0.5,
+              "recommendation_events": 0.6562,
+              "recommendation_locations": 0.8125,
+              "social_post": 0.8293,
+              "social_query": 0.3571,
+              "takeaway_query": 0.9167,
+              "transport_query": 0.7368,
+              "transport_taxi": 0.9375,
+              "transport_ticket": 0.7273,
+              "transport_traffic": 0.55,
+              "weather_query": 0.9294
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-seen/seen-only-s13.json"
+          },
+          "all-label-s13": {
+            "label": "R013 all-label s13",
+            "choice_accuracy": 0.7942,
+            "ece": 0.0502,
+            "brier": 0.1152,
+            "aurc": 0.056,
+            "mean_confidence": 0.8442,
+            "selective_accuracy@50": 0.9663,
+            "selective_accuracy@80": 0.8939,
+            "latency_p50_ms": 18.1231,
+            "latency_p95_ms": 20.8409,
+            "cost_per_decision_p50_ms": 18.1231,
+            "macro_f1": 0.72,
+            "recall_by_label": {
+              "alarm_query": 0.7619,
+              "alarm_remove": 0.5385,
+              "alarm_set": 0.8,
+              "audio_volume_down": 0.3333,
+              "audio_volume_mute": 0.5385,
+              "audio_volume_other": 0.0,
+              "audio_volume_up": 0.4286,
+              "calendar_query": 0.8257,
+              "calendar_remove": 0.8475,
+              "calendar_set": 0.9182,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.8947,
+              "datetime_query": 0.8596,
+              "email_query": 0.9268,
+              "email_querycontact": 0.52,
+              "email_sendemail": 0.942,
+              "general_greet": 0.8,
+              "general_joke": 0.9286,
+              "general_quirky": 0.6792,
+              "iot_cleaning": 0.8667,
+              "iot_coffee": 0.9583,
+              "iot_hue_lightchange": 0.8,
+              "iot_hue_lighton": 1.0,
+              "iot_wemo_off": 0.8571,
+              "iot_wemo_on": 0.5556,
+              "lists_createoradd": 0.8462,
+              "lists_query": 0.5769,
+              "lists_remove": 0.625,
+              "music_dislikeness": 0.6667,
+              "music_likeness": 0.5652,
+              "music_query": 0.8387,
+              "music_settings": 0.2,
+              "play_audiobook": 0.6897,
+              "play_music": 0.9091,
+              "play_radio": 0.8039,
+              "qa_currency": 0.8462,
+              "qa_factoid": 0.7767,
+              "qa_maths": 0.3125,
+              "recommendation_events": 0.7188,
+              "recommendation_locations": 0.6562,
+              "social_post": 0.8049,
+              "social_query": 0.4286,
+              "takeaway_query": 0.875,
+              "transport_query": 0.7105,
+              "transport_taxi": 0.75,
+              "transport_ticket": 0.6818,
+              "transport_traffic": 0.65,
+              "weather_query": 0.9176
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-seen/all-label-s13.json"
+          },
+          "seen-only-s14": {
+            "label": "R013 seen-only s14",
+            "choice_accuracy": 0.814,
+            "ece": 0.0486,
+            "brier": 0.1077,
+            "aurc": 0.0455,
+            "mean_confidence": 0.8623,
+            "selective_accuracy@50": 0.9756,
+            "selective_accuracy@80": 0.9077,
+            "latency_p50_ms": 18.0994,
+            "latency_p95_ms": 20.5565,
+            "cost_per_decision_p50_ms": 18.0994,
+            "macro_f1": 0.7466,
+            "recall_by_label": {
+              "alarm_query": 0.7143,
+              "alarm_remove": 0.6154,
+              "alarm_set": 0.8667,
+              "audio_volume_down": 0.3333,
+              "audio_volume_mute": 0.6154,
+              "audio_volume_other": 0.3333,
+              "audio_volume_up": 0.5714,
+              "calendar_query": 0.8532,
+              "calendar_remove": 0.8305,
+              "calendar_set": 0.9057,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.9211,
+              "datetime_query": 0.8421,
+              "email_query": 0.9512,
+              "email_querycontact": 0.72,
+              "email_sendemail": 0.913,
+              "general_greet": 0.8,
+              "general_joke": 0.9286,
+              "general_quirky": 0.7358,
+              "iot_cleaning": 0.8667,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.76,
+              "iot_hue_lighton": 1.0,
+              "iot_wemo_off": 1.0,
+              "iot_wemo_on": 0.4444,
+              "lists_createoradd": 0.8846,
+              "lists_query": 0.5769,
+              "lists_remove": 0.7083,
+              "music_dislikeness": 0.6667,
+              "music_likeness": 0.6522,
+              "music_query": 0.7419,
+              "music_settings": 0.3,
+              "play_audiobook": 0.7241,
+              "play_music": 0.9339,
+              "play_radio": 0.8039,
+              "qa_currency": 0.8462,
+              "qa_factoid": 0.7961,
+              "qa_maths": 0.5,
+              "recommendation_events": 0.6875,
+              "recommendation_locations": 0.6875,
+              "social_post": 0.8293,
+              "social_query": 0.5,
+              "takeaway_query": 0.9167,
+              "transport_query": 0.6579,
+              "transport_taxi": 0.9375,
+              "transport_ticket": 0.7727,
+              "transport_traffic": 0.7,
+              "weather_query": 0.9176
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-seen/seen-only-s14.json"
+          },
+          "all-label-s14": {
+            "label": "R013 all-label s14",
+            "choice_accuracy": 0.807,
+            "ece": 0.0538,
+            "brier": 0.1097,
+            "aurc": 0.0466,
+            "mean_confidence": 0.8588,
+            "selective_accuracy@50": 0.9814,
+            "selective_accuracy@80": 0.9012,
+            "latency_p50_ms": 18.0868,
+            "latency_p95_ms": 20.5623,
+            "cost_per_decision_p50_ms": 18.0868,
+            "macro_f1": 0.7167,
+            "recall_by_label": {
+              "alarm_query": 0.8095,
+              "alarm_remove": 0.5385,
+              "alarm_set": 0.8333,
+              "audio_volume_down": 0.3333,
+              "audio_volume_mute": 0.6923,
+              "audio_volume_other": 0.0,
+              "audio_volume_up": 0.3571,
+              "calendar_query": 0.8807,
+              "calendar_remove": 0.8814,
+              "calendar_set": 0.8868,
+              "cooking_query": 0.0,
+              "cooking_recipe": 0.8947,
+              "datetime_query": 0.7719,
+              "email_query": 0.9268,
+              "email_querycontact": 0.76,
+              "email_sendemail": 0.913,
+              "general_greet": 0.6,
+              "general_joke": 0.7857,
+              "general_quirky": 0.7264,
+              "iot_cleaning": 0.8,
+              "iot_coffee": 0.9167,
+              "iot_hue_lightchange": 0.8,
+              "iot_hue_lighton": 0.6667,
+              "iot_wemo_off": 0.5714,
+              "iot_wemo_on": 0.5556,
+              "lists_createoradd": 0.7692,
+              "lists_query": 0.5769,
+              "lists_remove": 0.75,
+              "music_dislikeness": 0.6667,
+              "music_likeness": 0.6522,
+              "music_query": 0.8065,
+              "music_settings": 0.2,
+              "play_audiobook": 0.7241,
+              "play_music": 0.9008,
+              "play_radio": 0.8431,
+              "qa_currency": 0.8846,
+              "qa_factoid": 0.8058,
+              "qa_maths": 0.4375,
+              "recommendation_events": 0.6875,
+              "recommendation_locations": 0.7812,
+              "social_post": 0.8293,
+              "social_query": 0.5,
+              "takeaway_query": 0.9167,
+              "transport_query": 0.7895,
+              "transport_taxi": 0.8125,
+              "transport_ticket": 0.7727,
+              "transport_traffic": 0.6,
+              "weather_query": 0.9059
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-seen/all-label-s14.json"
+          }
+        },
+        "accuracy_diffs": {}
+      }
+    },
+    "r013-test-unseen": {
+      "test-unseen": {
+        "experiments": [
+          "R013"
+        ],
+        "n": 320,
+        "options_per_row": [
+          20
+        ],
+        "chance_accuracy": 0.05,
+        "majority_accuracy": 0.2375,
+        "dataset_sha256": "9037e3fafc7ade453b29c7ddb8a3b0627e4738ea6d75de5d09f995acf9f92c8d",
+        "models": {
+          "base": {
+            "label": "R013 base",
+            "choice_accuracy": 0.1187,
+            "ece": 0.5227,
+            "brier": 0.4374,
+            "aurc": 0.831,
+            "mean_confidence": 0.6393,
+            "selective_accuracy@50": 0.1688,
+            "selective_accuracy@80": 0.1245,
+            "latency_p50_ms": 18.1143,
+            "latency_p95_ms": 20.5598,
+            "cost_per_decision_p50_ms": 18.1143,
+            "macro_f1": 0.124,
+            "recall_by_label": {
+              "datetime_convert": 0.0,
+              "email_addcontact": 0.0,
+              "iot_hue_lightdim": 0.0769,
+              "iot_hue_lightoff": 0.0,
+              "iot_hue_lightup": 0.0714,
+              "news_query": 0.1053,
+              "play_game": 0.619,
+              "play_podcasts": 0.0,
+              "qa_definition": 0.2245,
+              "qa_stock": 0.0345,
+              "recommendation_movies": 0.2308,
+              "takeaway_order": 0.0
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-unseen/base.json"
+          },
+          "seen-only-s13": {
+            "label": "R013 seen-only s13",
+            "choice_accuracy": 0.3781,
+            "ece": 0.2772,
+            "brier": 0.2846,
+            "aurc": 0.4318,
+            "mean_confidence": 0.6553,
+            "selective_accuracy@50": 0.5188,
+            "selective_accuracy@80": 0.4414,
+            "latency_p50_ms": 18.1612,
+            "latency_p95_ms": 20.7553,
+            "cost_per_decision_p50_ms": 18.1612,
+            "macro_f1": 0.4022,
+            "recall_by_label": {
+              "datetime_convert": 0.6,
+              "email_addcontact": 0.9,
+              "iot_hue_lightdim": 0.2308,
+              "iot_hue_lightoff": 0.2857,
+              "iot_hue_lightup": 0.1429,
+              "news_query": 0.3158,
+              "play_game": 0.8571,
+              "play_podcasts": 0.0811,
+              "qa_definition": 0.551,
+              "qa_stock": 0.0,
+              "recommendation_movies": 0.4615,
+              "takeaway_order": 0.6296
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-unseen/seen-only-s13.json"
+          },
+          "all-label-s13": {
+            "label": "R013 all-label s13",
+            "choice_accuracy": 0.7906,
+            "ece": 0.0434,
+            "brier": 0.1054,
+            "aurc": 0.0483,
+            "mean_confidence": 0.8224,
+            "selective_accuracy@50": 0.9875,
+            "selective_accuracy@80": 0.8945,
+            "latency_p50_ms": 18.1981,
+            "latency_p95_ms": 20.6504,
+            "cost_per_decision_p50_ms": 18.1981,
+            "macro_f1": 0.8504,
+            "recall_by_label": {
+              "datetime_convert": 0.6,
+              "email_addcontact": 0.9,
+              "iot_hue_lightdim": 0.8462,
+              "iot_hue_lightoff": 0.9048,
+              "iot_hue_lightup": 0.7143,
+              "news_query": 0.7632,
+              "play_game": 0.8571,
+              "play_podcasts": 0.8649,
+              "qa_definition": 0.7347,
+              "qa_stock": 0.6897,
+              "recommendation_movies": 0.6923,
+              "takeaway_order": 0.9259
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-unseen/all-label-s13.json"
+          },
+          "seen-only-s14": {
+            "label": "R013 seen-only s14",
+            "choice_accuracy": 0.35,
+            "ece": 0.3274,
+            "brier": 0.3449,
+            "aurc": 0.5267,
+            "mean_confidence": 0.669,
+            "selective_accuracy@50": 0.425,
+            "selective_accuracy@80": 0.3867,
+            "latency_p50_ms": 18.09,
+            "latency_p95_ms": 20.5636,
+            "cost_per_decision_p50_ms": 18.09,
+            "macro_f1": 0.3539,
+            "recall_by_label": {
+              "datetime_convert": 0.6,
+              "email_addcontact": 1.0,
+              "iot_hue_lightdim": 0.1538,
+              "iot_hue_lightoff": 0.0,
+              "iot_hue_lightup": 0.0,
+              "news_query": 0.3026,
+              "play_game": 0.8095,
+              "play_podcasts": 0.1351,
+              "qa_definition": 0.5714,
+              "qa_stock": 0.0345,
+              "recommendation_movies": 0.4615,
+              "takeaway_order": 0.5185
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-unseen/seen-only-s14.json"
+          },
+          "all-label-s14": {
+            "label": "R013 all-label s14",
+            "choice_accuracy": 0.7781,
+            "ece": 0.0361,
+            "brier": 0.1059,
+            "aurc": 0.0502,
+            "mean_confidence": 0.8054,
+            "selective_accuracy@50": 0.9875,
+            "selective_accuracy@80": 0.8867,
+            "latency_p50_ms": 18.2521,
+            "latency_p95_ms": 20.7623,
+            "cost_per_decision_p50_ms": 18.2521,
+            "macro_f1": 0.7901,
+            "recall_by_label": {
+              "datetime_convert": 0.7,
+              "email_addcontact": 0.9,
+              "iot_hue_lightdim": 0.7692,
+              "iot_hue_lightoff": 0.7619,
+              "iot_hue_lightup": 0.2143,
+              "news_query": 0.8421,
+              "play_game": 0.9048,
+              "play_podcasts": 0.8378,
+              "qa_definition": 0.7347,
+              "qa_stock": 0.7241,
+              "recommendation_movies": 0.6923,
+              "takeaway_order": 0.8889
+            },
+            "peak_vram_mib": 1501.4,
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R013/evaluation/test-unseen/all-label-s14.json"
+          }
+        },
+        "accuracy_diffs": {}
+      }
+    },
+    "sea-nli-r014-km-hard": {
+      "test": {
+        "experiments": [
+          "R014"
+        ],
+        "n": 23,
+        "options_per_row": [
+          3
+        ],
+        "chance_accuracy": 0.3333,
+        "majority_accuracy": 0.5217,
+        "dataset_sha256": "254cef33db5147131f85c492b4ac65ab96fb09a7755402b35b8a17385e5971f5",
+        "models": {
+          "multilingual": {
+            "label": "base (R001)",
+            "choice_accuracy": 0.5217,
+            "ece": 0.4573,
+            "brier": 0.4196,
+            "aurc": 0.5336,
+            "mean_confidence": 0.9326,
+            "selective_accuracy@50": 0.5833,
+            "selective_accuracy@80": 0.5263,
+            "latency_p50_ms": 144.6171,
+            "latency_p95_ms": 169.1018,
+            "cost_per_decision_p50_ms": 18.0771,
+            "macro_f1": 0.3625,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.9167,
+              "neutral": 0.0
+            },
+            "peak_vram_mib": 1578.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-hard/multilingual.json"
+          },
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.5652,
+            "ece": 0.3565,
+            "brier": 0.3582,
+            "aurc": 0.4503,
+            "mean_confidence": 0.9217,
+            "selective_accuracy@50": 0.5833,
+            "selective_accuracy@80": 0.6316,
+            "latency_p50_ms": 132.9931,
+            "latency_p95_ms": 165.0713,
+            "cost_per_decision_p50_ms": 16.6241,
+            "macro_f1": 0.4575,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 1.0,
+              "neutral": 0.0
+            },
+            "peak_vram_mib": 1574.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-hard/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.4348,
+            "ece": 0.4916,
+            "brier": 0.4921,
+            "aurc": 0.5749,
+            "mean_confidence": 0.8777,
+            "selective_accuracy@50": 0.3333,
+            "selective_accuracy@80": 0.3684,
+            "latency_p50_ms": 133.3131,
+            "latency_p95_ms": 169.8424,
+            "cost_per_decision_p50_ms": 16.6641,
+            "macro_f1": 0.4048,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.0833,
+              "neutral": 0.8889
+            },
+            "peak_vram_mib": 1574.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-hard/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.5652,
+            "ece": 0.3217,
+            "brier": 0.2848,
+            "aurc": 0.2359,
+            "mean_confidence": 0.8316,
+            "selective_accuracy@50": 0.75,
+            "selective_accuracy@80": 0.6316,
+            "latency_p50_ms": 132.6803,
+            "latency_p95_ms": 164.7455,
+            "cost_per_decision_p50_ms": 16.585,
+            "macro_f1": 0.512,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.9167,
+              "neutral": 0.1111
+            },
+            "peak_vram_mib": 1574.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-hard/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - multilingual": {
+            "diff": 0.0435,
+            "ci95": [
+              0.0,
+              0.1304
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": -0.1304,
+            "ci95": [
+              -0.4783,
+              0.2609
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0,
+            "ci95": [
+              -0.1304,
+              0.1304
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.1304,
+            "ci95": [
+              -0.2174,
+              0.4783
+            ]
+          }
+        }
+      }
+    },
+    "sea-nli-r014-km-normal": {
+      "test": {
+        "experiments": [
+          "R014"
+        ],
+        "n": 42,
+        "options_per_row": [
+          3
+        ],
+        "chance_accuracy": 0.3333,
+        "majority_accuracy": 0.381,
+        "dataset_sha256": "f688d859acdeecf2e221bda4fb738028b774682f7136b30cd8c81b2fbd4410f5",
+        "models": {
+          "multilingual": {
+            "label": "base (R001)",
+            "choice_accuracy": 0.4524,
+            "ece": 0.3619,
+            "brier": 0.3699,
+            "aurc": 0.37,
+            "mean_confidence": 0.8095,
+            "selective_accuracy@50": 0.5714,
+            "selective_accuracy@80": 0.4412,
+            "latency_p50_ms": 88.0698,
+            "latency_p95_ms": 98.7042,
+            "cost_per_decision_p50_ms": 11.0087,
+            "macro_f1": 0.4375,
+            "recall_by_label": {
+              "contradiction": 0.5385,
+              "entailment": 0.6923,
+              "neutral": 0.1875
+            },
+            "peak_vram_mib": 1547.4,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-normal/multilingual.json"
+          },
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.5238,
+            "ece": 0.3625,
+            "brier": 0.3553,
+            "aurc": 0.3918,
+            "mean_confidence": 0.8023,
+            "selective_accuracy@50": 0.5238,
+            "selective_accuracy@80": 0.5,
+            "latency_p50_ms": 84.2338,
+            "latency_p95_ms": 95.9868,
+            "cost_per_decision_p50_ms": 10.5292,
+            "macro_f1": 0.5347,
+            "recall_by_label": {
+              "contradiction": 0.6154,
+              "entailment": 0.5385,
+              "neutral": 0.4375
+            },
+            "peak_vram_mib": 1540.9,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-normal/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.5476,
+            "ece": 0.3428,
+            "brier": 0.3629,
+            "aurc": 0.3509,
+            "mean_confidence": 0.8732,
+            "selective_accuracy@50": 0.619,
+            "selective_accuracy@80": 0.5882,
+            "latency_p50_ms": 88.4511,
+            "latency_p95_ms": 103.7634,
+            "cost_per_decision_p50_ms": 11.0564,
+            "macro_f1": 0.5278,
+            "recall_by_label": {
+              "contradiction": 0.4615,
+              "entailment": 0.3077,
+              "neutral": 0.8125
+            },
+            "peak_vram_mib": 1540.9,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-normal/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.5238,
+            "ece": 0.2786,
+            "brier": 0.2756,
+            "aurc": 0.2732,
+            "mean_confidence": 0.8024,
+            "selective_accuracy@50": 0.7143,
+            "selective_accuracy@80": 0.6471,
+            "latency_p50_ms": 83.8633,
+            "latency_p95_ms": 111.478,
+            "cost_per_decision_p50_ms": 10.4829,
+            "macro_f1": 0.5165,
+            "recall_by_label": {
+              "contradiction": 0.3846,
+              "entailment": 0.8462,
+              "neutral": 0.375
+            },
+            "peak_vram_mib": 1540.9,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/km-normal/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - multilingual": {
+            "diff": 0.0714,
+            "ci95": [
+              -0.0952,
+              0.2143
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0238,
+            "ci95": [
+              -0.1429,
+              0.1905
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0,
+            "ci95": [
+              -0.1667,
+              0.1667
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0238,
+            "ci95": [
+              -0.2143,
+              0.1667
+            ]
+          }
+        }
+      }
+    },
+    "sea-nli-r014-en-normal": {
+      "test": {
+        "experiments": [
+          "R014"
+        ],
+        "n": 42,
+        "options_per_row": [
+          3
+        ],
+        "chance_accuracy": 0.3333,
+        "majority_accuracy": 0.381,
+        "dataset_sha256": "242e5fae2ba2ea9745b43b02b104f8d634f574dc43a8fa2a6e0259f9909630c2",
+        "models": {
+          "multilingual": {
+            "label": "base (R001)",
+            "choice_accuracy": 0.5714,
+            "ece": 0.3715,
+            "brier": 0.3439,
+            "aurc": 0.2839,
+            "mean_confidence": 0.8934,
+            "selective_accuracy@50": 0.6667,
+            "selective_accuracy@80": 0.5882,
+            "latency_p50_ms": 39.9183,
+            "latency_p95_ms": 41.4979,
+            "cost_per_decision_p50_ms": 4.9898,
+            "macro_f1": 0.5368,
+            "recall_by_label": {
+              "contradiction": 0.9231,
+              "entailment": 0.2308,
+              "neutral": 0.5625
+            },
+            "peak_vram_mib": 1510.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-normal/multilingual.json"
+          },
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.619,
+            "ece": 0.3038,
+            "brier": 0.3196,
+            "aurc": 0.3085,
+            "mean_confidence": 0.8659,
+            "selective_accuracy@50": 0.7143,
+            "selective_accuracy@80": 0.6176,
+            "latency_p50_ms": 39.2031,
+            "latency_p95_ms": 40.9806,
+            "cost_per_decision_p50_ms": 4.9004,
+            "macro_f1": 0.6037,
+            "recall_by_label": {
+              "contradiction": 1.0,
+              "entailment": 0.3846,
+              "neutral": 0.5
+            },
+            "peak_vram_mib": 1510.7,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-normal/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.6429,
+            "ece": 0.285,
+            "brier": 0.2792,
+            "aurc": 0.2534,
+            "mean_confidence": 0.88,
+            "selective_accuracy@50": 0.7619,
+            "selective_accuracy@80": 0.6765,
+            "latency_p50_ms": 43.5646,
+            "latency_p95_ms": 43.9221,
+            "cost_per_decision_p50_ms": 5.4456,
+            "macro_f1": 0.6156,
+            "recall_by_label": {
+              "contradiction": 1.0,
+              "entailment": 0.3077,
+              "neutral": 0.625
+            },
+            "peak_vram_mib": 1510.7,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-normal/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.619,
+            "ece": 0.3303,
+            "brier": 0.303,
+            "aurc": 0.2656,
+            "mean_confidence": 0.8702,
+            "selective_accuracy@50": 0.7619,
+            "selective_accuracy@80": 0.6176,
+            "latency_p50_ms": 39.0595,
+            "latency_p95_ms": 41.1401,
+            "cost_per_decision_p50_ms": 4.8824,
+            "macro_f1": 0.6169,
+            "recall_by_label": {
+              "contradiction": 0.9231,
+              "entailment": 0.4615,
+              "neutral": 0.5
+            },
+            "peak_vram_mib": 1510.7,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-normal/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - multilingual": {
+            "diff": 0.0476,
+            "ci95": [
+              -0.0476,
+              0.1429
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0238,
+            "ci95": [
+              -0.0714,
+              0.1429
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0,
+            "ci95": [
+              -0.0952,
+              0.0952
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": -0.0238,
+            "ci95": [
+              -0.119,
+              0.0714
+            ]
+          }
+        }
+      }
+    },
+    "sea-nli-r014-en-hard": {
+      "test": {
+        "experiments": [
+          "R014"
+        ],
+        "n": 23,
+        "options_per_row": [
+          3
+        ],
+        "chance_accuracy": 0.3333,
+        "majority_accuracy": 0.5217,
+        "dataset_sha256": "6630217a443cd31cc8f9b17750c45496435e72b9e1983b5282a07fa1866761fe",
+        "models": {
+          "multilingual": {
+            "label": "base (R001)",
+            "choice_accuracy": 0.4783,
+            "ece": 0.4723,
+            "brier": 0.4338,
+            "aurc": 0.5011,
+            "mean_confidence": 0.882,
+            "selective_accuracy@50": 0.5833,
+            "selective_accuracy@80": 0.4737,
+            "latency_p50_ms": 61.153,
+            "latency_p95_ms": 62.0992,
+            "cost_per_decision_p50_ms": 7.6441,
+            "macro_f1": 0.4453,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.4167,
+              "neutral": 0.5556
+            },
+            "peak_vram_mib": 1518.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-hard/multilingual.json"
+          },
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.4783,
+            "ece": 0.3619,
+            "brier": 0.3362,
+            "aurc": 0.4152,
+            "mean_confidence": 0.7761,
+            "selective_accuracy@50": 0.5,
+            "selective_accuracy@80": 0.5789,
+            "latency_p50_ms": 60.9848,
+            "latency_p95_ms": 61.7527,
+            "cost_per_decision_p50_ms": 7.6231,
+            "macro_f1": 0.4339,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.3333,
+              "neutral": 0.6667
+            },
+            "peak_vram_mib": 1519.7,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-hard/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.4783,
+            "ece": 0.4002,
+            "brier": 0.3899,
+            "aurc": 0.386,
+            "mean_confidence": 0.8785,
+            "selective_accuracy@50": 0.6667,
+            "selective_accuracy@80": 0.5263,
+            "latency_p50_ms": 64.0053,
+            "latency_p95_ms": 64.9024,
+            "cost_per_decision_p50_ms": 8.1128,
+            "macro_f1": 0.4569,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.3333,
+              "neutral": 0.6667
+            },
+            "peak_vram_mib": 1519.7,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-hard/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.6087,
+            "ece": 0.3441,
+            "brier": 0.3346,
+            "aurc": 0.4764,
+            "mean_confidence": 0.798,
+            "selective_accuracy@50": 0.5,
+            "selective_accuracy@80": 0.5263,
+            "latency_p50_ms": 61.2611,
+            "latency_p95_ms": 61.7586,
+            "cost_per_decision_p50_ms": 7.6576,
+            "macro_f1": 0.5387,
+            "recall_by_label": {
+              "contradiction": 0.5,
+              "entailment": 0.6667,
+              "neutral": 0.5556
+            },
+            "peak_vram_mib": 1519.7,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/en-hard/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - multilingual": {
+            "diff": 0.0,
+            "ci95": [
+              -0.1739,
+              0.1739
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": 0.0,
+            "ci95": [
+              -0.1304,
+              0.1304
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.1304,
+            "ci95": [
+              -0.0435,
+              0.3043
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.1304,
+            "ci95": [
+              -0.0435,
+              0.3043
+            ]
+          }
+        }
+      }
+    },
+    "sea-nli-r014-other": {
+      "test": {
+        "experiments": [
+          "R014"
+        ],
+        "n": 2095,
+        "options_per_row": [
+          3
+        ],
+        "chance_accuracy": 0.3333,
+        "majority_accuracy": 0.3838,
+        "dataset_sha256": "74d0ad5aacc9c4f603e426c0638d290e653a5e36603ff2926010398ab06a60df",
+        "models": {
+          "multilingual": {
+            "label": "base (R001)",
+            "choice_accuracy": 0.5661,
+            "ece": 0.3239,
+            "brier": 0.3459,
+            "aurc": 0.3467,
+            "mean_confidence": 0.8897,
+            "selective_accuracy@50": 0.6574,
+            "selective_accuracy@80": 0.6044,
+            "latency_p50_ms": 63.4819,
+            "latency_p95_ms": 142.6833,
+            "cost_per_decision_p50_ms": 7.9352,
+            "macro_f1": 0.5607,
+            "recall_by_label": {
+              "contradiction": 0.6756,
+              "entailment": 0.597,
+              "neutral": 0.4223
+            },
+            "peak_vram_mib": 1603.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/other/multilingual.json"
+          },
+          "full-e2-8bit": {
+            "label": "R003",
+            "choice_accuracy": 0.569,
+            "ece": 0.2928,
+            "brier": 0.3221,
+            "aurc": 0.3357,
+            "mean_confidence": 0.8596,
+            "selective_accuracy@50": 0.6737,
+            "selective_accuracy@80": 0.6116,
+            "latency_p50_ms": 61.4539,
+            "latency_p95_ms": 143.0516,
+            "cost_per_decision_p50_ms": 7.6817,
+            "macro_f1": 0.5661,
+            "recall_by_label": {
+              "contradiction": 0.6693,
+              "entailment": 0.5871,
+              "neutral": 0.4497
+            },
+            "peak_vram_mib": 1597.9,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/other/full-e2-8bit.json"
+          },
+          "mt-s13": {
+            "label": "R006 s13",
+            "choice_accuracy": 0.5413,
+            "ece": 0.335,
+            "brier": 0.3527,
+            "aurc": 0.3448,
+            "mean_confidence": 0.8763,
+            "selective_accuracy@50": 0.646,
+            "selective_accuracy@80": 0.577,
+            "latency_p50_ms": 62.0267,
+            "latency_p95_ms": 142.3228,
+            "cost_per_decision_p50_ms": 7.7533,
+            "macro_f1": 0.5462,
+            "recall_by_label": {
+              "contradiction": 0.5969,
+              "entailment": 0.4117,
+              "neutral": 0.6463
+            },
+            "peak_vram_mib": 1597.9,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/other/mt-s13.json"
+          },
+          "mt-s14": {
+            "label": "R006 s14",
+            "choice_accuracy": 0.6038,
+            "ece": 0.2502,
+            "brier": 0.2925,
+            "aurc": 0.2846,
+            "mean_confidence": 0.854,
+            "selective_accuracy@50": 0.7092,
+            "selective_accuracy@80": 0.6426,
+            "latency_p50_ms": 61.5849,
+            "latency_p95_ms": 142.7875,
+            "cost_per_decision_p50_ms": 7.6981,
+            "macro_f1": 0.5982,
+            "recall_by_label": {
+              "contradiction": 0.6457,
+              "entailment": 0.6704,
+              "neutral": 0.4817
+            },
+            "peak_vram_mib": 1597.9,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R014/other/mt-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "full-e2-8bit - multilingual": {
+            "diff": 0.0029,
+            "ci95": [
+              -0.0119,
+              0.0177
+            ]
+          },
+          "mt-s13 - full-e2-8bit": {
+            "diff": -0.0277,
+            "ci95": [
+              -0.0463,
+              -0.0091
+            ]
+          },
+          "mt-s14 - full-e2-8bit": {
+            "diff": 0.0348,
+            "ci95": [
+              0.02,
+              0.0501
+            ]
+          },
+          "mt-s14 - mt-s13": {
+            "diff": 0.0625,
+            "ci95": [
+              0.0434,
+              0.0821
+            ]
+          }
+        }
+      }
+    },
+    "sib200-km-r016": {
+      "test": {
+        "experiments": [
+          "R016"
+        ],
+        "n": 204,
+        "options_per_row": [
+          7
+        ],
+        "chance_accuracy": 0.1429,
+        "majority_accuracy": 0.25,
+        "dataset_sha256": "6d539da9c2767143237bfc9f8cdf9a7395e9680400c3a761c9000a53b4f057cc",
+        "models": {
+          "R008-mt-s13": {
+            "label": "R016 R008-mt-s13",
+            "choice_accuracy": 0.7255,
+            "ece": 0.1269,
+            "brier": 0.1619,
+            "aurc": 0.1079,
+            "mean_confidence": 0.8472,
+            "selective_accuracy@50": 0.902,
+            "selective_accuracy@80": 0.8293,
+            "latency_p50_ms": 96.3551,
+            "latency_p95_ms": 138.089,
+            "cost_per_decision_p50_ms": 12.0444,
+            "macro_f1": 0.7141,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.5294,
+              "health": 0.7273,
+              "politics": 0.7667,
+              "science/technology": 0.7451,
+              "sports": 0.8,
+              "travel": 0.775
+            },
+            "peak_vram_mib": 1580.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R016/R008-mt-s13.json"
+          },
+          "R008-mt-s14": {
+            "label": "R016 R008-mt-s14",
+            "choice_accuracy": 0.7549,
+            "ece": 0.0659,
+            "brier": 0.152,
+            "aurc": 0.0941,
+            "mean_confidence": 0.7982,
+            "selective_accuracy@50": 0.9118,
+            "selective_accuracy@80": 0.8232,
+            "latency_p50_ms": 99.336,
+            "latency_p95_ms": 137.7915,
+            "cost_per_decision_p50_ms": 12.417,
+            "macro_f1": 0.7554,
+            "recall_by_label": {
+              "entertainment": 0.5789,
+              "geography": 0.7059,
+              "health": 0.6364,
+              "politics": 0.8667,
+              "science/technology": 0.8235,
+              "sports": 0.8,
+              "travel": 0.725
+            },
+            "peak_vram_mib": 1580.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R016/R008-mt-s14.json"
+          },
+          "R016-budget-sib-s13": {
+            "label": "R016 budget-sib-s13",
+            "choice_accuracy": 0.7206,
+            "ece": 0.263,
+            "brier": 0.2551,
+            "aurc": 0.2077,
+            "mean_confidence": 0.9813,
+            "selective_accuracy@50": 0.8,
+            "selective_accuracy@80": 0.7879,
+            "latency_p50_ms": 95.949,
+            "latency_p95_ms": 137.4735,
+            "cost_per_decision_p50_ms": 11.9936,
+            "macro_f1": 0.6983,
+            "recall_by_label": {
+              "entertainment": 0.5263,
+              "geography": 0.5294,
+              "health": 0.6818,
+              "politics": 0.8,
+              "science/technology": 0.8431,
+              "sports": 0.84,
+              "travel": 0.625
+            },
+            "peak_vram_mib": 1584.5,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R016/R016-budget-sib-s13.json"
+          },
+          "R016-budget-sib-s14": {
+            "label": "R016 budget-sib-s14",
+            "choice_accuracy": 0.7059,
+            "ece": 0.2927,
+            "brier": 0.2848,
+            "aurc": 0.2269,
+            "mean_confidence": 0.9829,
+            "selective_accuracy@50": 0.7826,
+            "selective_accuracy@80": 0.7633,
+            "latency_p50_ms": 96.1207,
+            "latency_p95_ms": 137.8341,
+            "cost_per_decision_p50_ms": 12.0151,
+            "macro_f1": 0.6924,
+            "recall_by_label": {
+              "entertainment": 0.4737,
+              "geography": 0.6471,
+              "health": 0.6364,
+              "politics": 0.8,
+              "science/technology": 0.7059,
+              "sports": 0.8,
+              "travel": 0.75
+            },
+            "peak_vram_mib": 1580.6,
+            "measurement_protocol": "isolated-warm-v1",
+            "peak_vram_scope": "single resident model, scored inference only",
+            "report": "artifacts/runs/R016/R016-budget-sib-s14.json"
+          }
+        },
+        "accuracy_diffs": {
+          "R008-mt-s14 - R008-mt-s13": {
+            "diff": 0.0294,
+            "ci95": [
+              -0.0147,
+              0.0735
+            ]
+          },
+          "R016-budget-sib-s14 - R016-budget-sib-s13": {
+            "diff": -0.0147,
+            "ci95": [
+              -0.0735,
+              0.0441
+            ]
+          }
+        }
+      }
     }
   },
   "R005": {
